@@ -28,6 +28,14 @@
     elisa
     oxygen
   ];
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-kde
+      ];
+    };
+  };
 
   services.pipewire = {
     enable = true;
@@ -39,11 +47,16 @@
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
 
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim
     wget
+    zsh
+    git
+    yakuakeee
+    firefox
+    vscode
   ];
-
   services.openssh.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
