@@ -1,46 +1,45 @@
 { config, pkgs, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  hardware.enableRedistributableFirmware = true;
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "niximaeus";
+  # Hardware
+  imports = [ ./niximaeus.nix ];
+  services.fwupd.enable = true;
+  hardware.logitech.wireless.enable = true;
+
+  # System
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  # Boot
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/efi";
-  boot.kernelParams = [ "quiet" ];
-  hardware.cpu.intel.updateMicrocode = true;
-  services.fwupd.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "quiet" "nowatchdog" ];
 
-  users.users.sdh = {
+  # Users
+  users.users.artimaeus = {
+    uid = 1000;
+    group = "artimaeus";
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
   };
+  users.groups.artimaeus.gid = 1000;
 
+  # Display
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "modesetting" ];
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-    ];
-  };
+  hardware.opengl.enable = true;
   services.xserver.libinput.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-
   services.xserver.desktopManager.plasma5.enable = true;
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-    elisa
-    oxygen
-  ];
+  environment.plasma5.excludePackages = with pkgs.plasma5Packages; [elisa oxygen];
   xdg = {
     portal = {
       enable = true;
@@ -50,6 +49,7 @@
     };
   };
 
+  # Audio
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -57,6 +57,7 @@
     jack.enable = true;
   };
 
+  # Networking
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
   services.resolved = {
@@ -66,37 +67,45 @@
     fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # System packages
   environment.systemPackages = with pkgs; [
     linux-firmware sof-firmware
-    vlc
-    yakuake konsole kate
+    intel-gpu-tools libva-utils
+    yakuake konsole kate plasma5Packages.ksshaskpass plasma5Packages.kdeconnect-kde plasma5Packages.ffmpegthumbs
     vim wget curl rsync git tmux htop ripgrep fzf eza peco sshfs
-    firefox chromium
-    vscode obsidian calibre tailscale
-    ffmpeg
+    firefox-devedition-bin chromium thunderbird slack
+    obsidian fava zotero
+    ffmpeg vlc calibre mcomix
+    activitywatch solaar syncthing
+    vscode nil nixfmt
+    rustup gcc gnumake jetbrains.rust-rover
+    (pkgs.python3.withPackages (ps: with ps; [beancount pip jupyter notebook ipykernel]))
   ];
   programs.zsh.enable = true;
+  environment.shellAliases = { ls = null; l = null; ll = null; };
   environment.shells = with pkgs; [ zsh ];
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
     meslo-lgs-nf
+    jetbrains-mono
   ];
-  services.openssh.enable = true;
+  services.tailscale.enable = true;
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad-vpn;
+  };
+  systemd.services.mullvad-daemon.environment = {
+    TALPID_NET_CLS_MOUNT_DIR= "/run/mullvad";
+  };
+  services.syncthing = {
+    enable = true;
+    systemService = false;
+    user = "artimaeus";
+    dataDir = "/home/artimaeus";
+  };
+  # services.openssh.enable = true;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It's perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.05";
 }
