@@ -4,13 +4,13 @@
   networking.hostName = "niximaeus";
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "sdhci_pci" ];
+  imports = [
+    ../configs/common.nix
+    ../configs/intel.nix
+    ../configs/fingerprintreader.nix
+  ];
 
-  # Intel
-  boot.kernelModules = [ "kvm-intel" ];
-  hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
-  hardware.opengl.extraPackages = with pkgs; [intel-media-driver];
-  powerManagement.cpuFreqGovernor = "powersave";
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "sdhci_pci" ];
 
   # Disable Nvidia
   boot.initrd.kernelModules = [ "bbswitch" ];
@@ -19,10 +19,6 @@
     options bbswitch load_state=0 unload_state=0
   '';
   boot.blacklistedKernelModules = [ "nouveau" ];
-
-  # Fingerprint reader
-  services.fprintd.enable = true;
-  security.pam.services.sudo.fprintAuth = false;
 
   # Disk partitions
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/9efed530-afe0-4ef8-aee4-24910d168a34";

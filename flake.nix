@@ -6,7 +6,7 @@
   outputs = { self, nixpkgs }: {
     nixosConfigurations.niximaeus = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./common.nix ./niximaeus.nix ] ;
+      modules = [ ./hosts/niximaeus.nix ] ;
     };
   };
 }
