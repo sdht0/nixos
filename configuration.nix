@@ -33,20 +33,20 @@
   users.groups.artimaeus.gid = 1000;
 
   # Display
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "modesetting" ];
   hardware.opengl.enable = true;
-  services.xserver.libinput.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  environment.plasma5.excludePackages = with pkgs.plasma5Packages; [elisa oxygen];
-  xdg = {
-    portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-kde
-      ];
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "modesetting" ];
+    libinput.enable = true;
+    displayManager = {
+      plasma5.enable = true;
+      sddm.enable = true;
     };
+  };
+  environment.plasma5.excludePackages = with pkgs.plasma5Packages; [elisa oxygen];
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
   };
 
   # Audio
@@ -68,6 +68,16 @@
   };
 
   # System packages
+  programs.zsh.enable = true;
+  environment.shellAliases = { ls = null; l = null; ll = null; };
+  environment.shells = with pkgs; [ zsh ];
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    meslo-lgs-nf
+    jetbrains-mono
+  ];
   environment.systemPackages = with pkgs; [
     linux-firmware sof-firmware
     intel-gpu-tools libva-utils
@@ -80,16 +90,6 @@
     vscode nil nixfmt
     rustup gcc gnumake jetbrains.rust-rover
     (pkgs.python3.withPackages (ps: with ps; [beancount pip jupyter notebook ipykernel]))
-  ];
-  programs.zsh.enable = true;
-  environment.shellAliases = { ls = null; l = null; ll = null; };
-  environment.shells = with pkgs; [ zsh ];
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    meslo-lgs-nf
-    jetbrains-mono
   ];
   services.tailscale.enable = true;
   services.mullvad-vpn = {
