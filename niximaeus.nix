@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, pkgs, ... }:
 
 {
   networking.hostName = "niximaeus";
@@ -12,13 +12,17 @@
   hardware.opengl.extraPackages = with pkgs; [intel-media-driver];
   powerManagement.cpuFreqGovernor = "powersave";
 
-  # Disable NVidia
+  # Disable Nvidia
   boot.initrd.kernelModules = [ "bbswitch" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ bbswitch ];
   boot.extraModprobeConfig = ''
     options bbswitch load_state=0 unload_state=0
   '';
   boot.blacklistedKernelModules = [ "nouveau" ];
+
+  # Fingerprint reader
+  services.fprintd.enable = true;
+  security.pam.services.sudo.fprintAuth = false;
 
   # Disk partitions
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/9efed530-afe0-4ef8-aee4-24910d168a34";
