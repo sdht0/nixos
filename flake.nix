@@ -31,12 +31,12 @@
         specialArgs = { inherit host user; };
         modules = [
           ./hosts/${host.hostname}/system.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${user.username} = import ./hosts/${host.hostname}/home.nix;
-            home-manager.extraSpecialArgs = { inherit user; };
-          }
+          # home-manager.nixosModules.home-manager {
+          #   home-manager.useGlobalPkgs = true;
+          #   home-manager.useUserPackages = true;
+          #   home-manager.users.${user.username} = import ./hosts/${host.hostname}/home.nix;
+          #   home-manager.extraSpecialArgs = { inherit user; };
+          # }
         ];
       };
     };

@@ -35,7 +35,7 @@
   ];
   environment.systemPackages = with pkgs; [
     linux-firmware sof-firmware
-    git wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
+    gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
     firefox-devedition-bin
   ];
   services.tailscale.enable = true;
