@@ -23,7 +23,7 @@
       };
     };
   };
-  environment.plasma5.excludePackages = with pkgs.plasma5Packages; [elisa oxygen];
+  environment.plasma5.excludePackages = with pkgs.plasma5Packages; [ elisa oxygen ];
   # Additional setup for plasma: panels, shortcuts, ssh agent, autostart, wallpapers
   xdg.portal = {
     enable = true;

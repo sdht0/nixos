@@ -29,14 +29,11 @@
   programs.zsh.enable = true;
   environment.shellAliases = { ls = null; l = null; ll = null; };
   environment.shells = with pkgs; [ zsh ];
-  fonts.packages = with pkgs; [
-    noto-fonts noto-fonts-cjk noto-fonts-emoji
-    jetbrains-mono meslo-lgs-nf
-  ];
   environment.systemPackages = with pkgs; [
     linux-firmware sof-firmware
     gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
     firefox-devedition-bin
+    ffmpeg gcc gnumake
   ];
   services.tailscale.enable = true;
   # Additional setup for tailscale:

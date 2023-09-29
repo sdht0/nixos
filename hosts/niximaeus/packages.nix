@@ -14,5 +14,7 @@
     (pkgs.python3.withPackages (ps: with ps; [
         beancount pip jupyter notebook ipykernel
     ]))
+    noto-fonts noto-fonts-cjk noto-fonts-emoji
+    jetbrains-mono meslo-lgs-nf
   ];
 }

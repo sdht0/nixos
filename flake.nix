@@ -11,11 +11,18 @@
 
   outputs = { self, nixpkgs, home-manager }:
   let
-    host = {
-      hostname = "niximaeus";
-      system = "x86_64-linux";
-      timezone = "America/Toronto";
-      locale = "en_CA.UTF-8";
+    hosts = {
+      niximaeus = {
+        system = "x86_64-linux";
+        timezone = "America/Toronto";
+        locale = "en_CA.UTF-8";
+      };
+      medialando =  {
+        hostname = "medialando";
+        system = "x86_64-linux";
+        timezone = "America/Toronto";
+        locale = "en_US.UTF-8";
+      };
     };
     user = rec {
       username = "artimaeus";
@@ -25,20 +32,18 @@
     };
   in
   {
-    nixosConfigurations = {
-      ${host.hostname} = nixpkgs.lib.nixosSystem {
-        system = host.system;
-        specialArgs = { inherit host user; };
+    nixosConfigurations =  nixpkgs.lib.mapAttrs (host: values: nixpkgs.lib.nixosSystem {
+        system = values.system;
+        specialArgs = { inherit user; host = values // { hostname = host; }; };
         modules = [
-          ./hosts/${host.hostname}/system.nix
+          ./hosts/${host}/system.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${user.username} = import ./hosts/${host.hostname}/home.nix;
+            home-manager.users.${user.username} = import ./hosts/${host}/home.nix;
             home-manager.extraSpecialArgs = { inherit user; };
           }
         ];
-      };
-    };
+      }) hosts;
   };
 }
