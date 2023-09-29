@@ -23,7 +23,8 @@
   boot.loader.efi.efiSysMountPoint = "/efi";
   boot.loader.systemd-boot.xbootMountPoint = "/boot";
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "sdhci_pci" ];
-  boot.kernelParams = [ "quiet" "nowatchdog" ];
+  boot.kernelParams = [ "quiet" "nowatchdog" "nmi_watchdog=0" ];
+  boot.blacklistedKernelModules = [ "iTCO_wdt" "iTCO_vendor_support" ];
 
   # Disk partitions
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/9efed530-afe0-4ef8-aee4-24910d168a34";
