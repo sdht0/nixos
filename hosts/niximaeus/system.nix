@@ -13,7 +13,7 @@
 
     ./packages.nix
 
-    ./custom-systemd-boot.nix
+    ../../configs/system/systemd-boot/custom-systemd-boot.nix
   ];
 
   # Boot
