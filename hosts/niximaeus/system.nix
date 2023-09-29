@@ -7,9 +7,12 @@
     ../../configs/hardware/ssd.nix
     ../../configs/hardware/logitech.nix
     ../../configs/hardware/fingerprintreader.nix
+
     ../../configs/system/common.nix
     ../../configs/system/plasma5.nix
+
     ./packages.nix
+
     ./custom-systemd-boot.nix
   ];
 
