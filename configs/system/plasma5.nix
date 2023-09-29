@@ -9,15 +9,17 @@
   };
   services.xserver.libinput.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.sddm = {
-    enable = true;
-    settings = {
-      Autologin = {
-        Session = "plasma.desktop";
-        User = "artimaeus";
-      };
-      General = {
-        DisplayServer = "x11-user";
+  services.xserver.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "artimaeus";
+    };
+    sddm = {
+      enable = true;
+      settings = {
+        General = {
+          DisplayServer = "x11-user";
+        };
       };
     };
   };
