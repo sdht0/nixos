@@ -10,6 +10,7 @@
     ../../configs/system/common.nix
     ../../configs/system/plasma5.nix
     ./packages.nix
+    ./custom-systemd-boot.nix
   ];
 
   # Boot
@@ -17,6 +18,7 @@
   boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/efi";
+  boot.loader.systemd-boot.xbootMountPoint = "/boot";
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "sdhci_pci" ];
   boot.kernelParams = [ "quiet" "nowatchdog" ];
 

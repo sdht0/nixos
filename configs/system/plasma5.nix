@@ -9,7 +9,18 @@
   };
   services.xserver.libinput.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    settings = {
+      Autologin = {
+        Session = "plasma.desktop";
+        User = "artimaeus";
+      };
+      General = {
+        DisplayServer = "x11-user";
+      };
+    };
+  };
   environment.plasma5.excludePackages = with pkgs.plasma5Packages; [elisa oxygen];
   # Additional setup for plasma: panels, shortcuts, ssh agent, autostart, wallpapers
   xdg.portal = {
