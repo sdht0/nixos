@@ -4,11 +4,13 @@
   imports = [
     ../../configs/system/sshd.nix
     ../../configs/system/syncthing.nix
+    ../../configs/system/yt-dlp/package.nix
   ];
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [ nodejs ];
 
   virtualisation.docker.enable = true;
+  programs.npm.enable = true;
 
   security.acme.acceptTerms = true;
   security.acme.defaults.email = "letsencrypt@sdht.in";

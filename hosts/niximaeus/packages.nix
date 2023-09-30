@@ -6,7 +6,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    chromium thunderbird slack
+    thunderbird slack
     ffmpeg vlc calibre mcomix
     nil nixfmt
     rustup gcc lldb openjdk17-bootstrap gnumake vscode jetbrains.rust-rover

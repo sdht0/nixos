@@ -1,0 +1,90 @@
+diff --git a/yt_dlp/YoutubeDL.py b/yt_dlp/YoutubeDL.py
+index a7dced8e8..e36079426 100644
+--- a/yt_dlp/YoutubeDL.py
++++ b/yt_dlp/YoutubeDL.py
+@@ -752,7 +752,7 @@ def preload_download_archive(fn):
+             try:
+                 with locked_file(fn, 'r', encoding='utf-8') as archive_file:
+                     for line in archive_file:
+-                        archive.add(line.strip())
++                        archive.add(" ".join(line.strip().split(" ")[:2]))
+             except OSError as ioe:
+                 if ioe.errno != errno.ENOENT:
+                     raise
+@@ -1449,8 +1449,8 @@ def check_filter():
+             else:
+                 break_opt, break_err = 'break_on_reject', RejectedVideoReached
+         if reason is not None:
+-            if not silent:
+-                self.to_screen('[download] ' + reason)
++            # if not silent:
++            #     self.to_screen('[download] ' + reason)
+             if self.params.get(break_opt, False):
+                 raise break_err()
+         return reason
+@@ -1859,6 +1859,7 @@ def __process_playlist(self, ie_result, download):
+             self.write_debug('The information of all playlist entries will be held in memory')
+ 
+         failures = 0
++        skip_reasons = {}
+         max_failures = self.params.get('skip_playlist_after_errors') or float('inf')
+         for i, (playlist_index, entry) in enumerate(entries):
+             if lazy:
+@@ -1877,7 +1878,19 @@ def __process_playlist(self, ie_result, download):
+                 'playlist_autonumber': i + 1,
+             })
+ 
+-            if self._match_entry(entry_copy, incomplete=True) is not None:
++            filter_ret = self._match_entry(entry_copy, incomplete=True)
++            if filter_ret is not None:
++                r = 'Does not pass filter'
++                if r.lower() in filter_ret:
++                    skip_reasons[r] = skip_reasons.get(r, 0) + 1
++                else:
++                    r = 'Already been recorded in the archive'
++                    if r.lower() in filter_ret:
++                        skip_reasons[r] = skip_reasons.get(r, 0) + 1
++                    else:
++                        r = "Other"
++                        skip_reasons[r] = skip_reasons.get(r, 0) + 1
++
+                 # For compatabilty with youtube-dl. See https://github.com/yt-dlp/yt-dlp/issues/4369
+                 resolved_entries[i] = (playlist_index, NO_DEFAULT)
+                 continue
+@@ -1912,6 +1925,10 @@ def __process_playlist(self, ie_result, download):
+             return
+ 
+         ie_result = self.run_all_pps('playlist', ie_result)
++        if len(skip_reasons) > 0:
++            self.to_screen(f'[download] Skipped items: {sum(skip_reasons.values())} / {n_entries}')
++            for reason in sorted(skip_reasons.keys()):
++                self.to_screen(f'[download] --> {reason}: {skip_reasons[reason]}')
+         self.to_screen(f'[download] Finished downloading playlist: {title}')
+         return ie_result
+ 
+@@ -2832,7 +2849,6 @@ def process_subtitles(self, video_id, normal_subtitles, automatic_captions):
+                 filter(lambda f: f.startswith('en'), normal_sub_langs),
+                 ['en'] if 'en' in all_sub_langs else [],
+                 filter(lambda f: f.startswith('en'), all_sub_langs),
+-                normal_sub_langs, all_sub_langs,
+             ))[:1]
+         if requested_langs:
+             self.to_screen(f'[info] {video_id}: Downloading subtitles: {", ".join(requested_langs)}')
+@@ -2858,6 +2874,8 @@ def process_subtitles(self, video_id, normal_subtitles, automatic_captions):
+                 self.report_warning(
+                     'No subtitle format found matching "%s" for language %s, '
+                     'using %s' % (formats_query, lang, f['ext']))
++            if lang not in normal_sub_langs:
++                f['ext'] = "auto." + f['ext']
+             subs[lang] = f
+         return subs
+ 
+@@ -3543,7 +3561,7 @@ def record_download_archive(self, info_dict):
+         self.write_debug(f'Adding to archive: {vid_id}')
+         if is_path_like(fn):
+             with locked_file(fn, 'a', encoding='utf-8') as archive_file:
+-                archive_file.write(vid_id + '\n')
++                archive_file.write(vid_id + f" | {info_dict.get('title','')} | https://www.youtube.com/watch?v={info_dict.get('id')}" + '\n')
+         self.archive.add(vid_id)
+ 
+     @staticmethod

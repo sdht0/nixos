@@ -21,9 +21,7 @@
     extraGroups = [ "wheel" ];
   };
   users.groups.${user.username}.gid = user.gid;
-  # Additional setup for user:
-  # 1. Get ssh keys, ~/.bashrc, ~/.bash_history
-  # 2. git clone git@github.com:sdht0/dotfiles.git ; git submodule update --recursive --remote ; bash ./setup.sh
+  # Additional setup for user: git clone git@github.com:sdht0/dotfiles.git ; git submodule update --recursive --remote
 
   # Networking
   networking.networkmanager.enable = true;
@@ -42,7 +40,7 @@
   environment.systemPackages = with pkgs; [
     linux-firmware sof-firmware
     gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
-    firefox-devedition-bin
+    firefox-devedition-bin chromium
     ffmpeg gcc gnumake
     nix-output-monitor
   ];
