@@ -10,7 +10,7 @@
   time.timeZone = host.timezone;
   i18n.defaultLocale = host.locale;
   services.fwupd.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.opengl.enable = true;
 
   # User
   users.users.${user.username} = {
@@ -25,6 +25,16 @@
   # 1. Get ssh keys, ~/.bashrc, ~/.bash_history
   # 2. git clone git@github.com:sdht0/dotfiles.git ; git submodule update --recursive --remote ; bash ./setup.sh
 
+  # Networking
+  networking.networkmanager.enable = true;
+  networking.firewall.enable = false;
+  services.resolved = {
+    enable = true;
+    dnssec = "false";
+    domains = [ "~." ];
+    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+  };
+
   # System packages
   programs.zsh.enable = true;
   environment.shellAliases = { ls = null; l = null; ll = null; };
@@ -34,6 +44,7 @@
     gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
     firefox-devedition-bin
     ffmpeg gcc gnumake
+    nix-output-monitor
   ];
   services.tailscale.enable = true;
   # Additional setup for tailscale:

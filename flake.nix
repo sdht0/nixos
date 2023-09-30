@@ -18,7 +18,6 @@
         locale = "en_CA.UTF-8";
       };
       medialando =  {
-        hostname = "medialando";
         system = "x86_64-linux";
         timezone = "America/Toronto";
         locale = "en_US.UTF-8";

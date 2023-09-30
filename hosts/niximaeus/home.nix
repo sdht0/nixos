@@ -1,9 +1,6 @@
-{ config, user, ... }:
+{ config, ... }:
 
 {
-  home.username = user.username;
-  home.homeDirectory = "/home/${user.username}";
-
   imports = [ ../../configs/home/common.nix ];
 
   home.file.".ssh/config".source =

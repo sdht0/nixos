@@ -2,7 +2,6 @@
 
 {
   # Display
-  hardware.opengl.enable = true;
   services.xserver = {
     enable = true;
     videoDrivers = [ "modesetting" ];
@@ -36,16 +35,6 @@
     alsa.enable = true;
     pulse.enable = true;
     jack.enable = true;
-  };
-
-  # Networking
-  networking.networkmanager.enable = true;
-  networking.firewall.enable = false;
-  services.resolved = {
-    enable = true;
-    dnssec = "false";
-    domains = [ "~." ];
-    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
   };
 
   # Extra packages
