@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ../../configs/system/syncthing.nix
+    ../../configs/packages/common.nix
+    ../../configs/packages/plasma5.nix
+    ../../configs/packages/syncthing.nix
   ];
 
   environment.systemPackages = with pkgs; [

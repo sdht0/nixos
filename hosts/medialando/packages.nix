@@ -2,9 +2,10 @@
 
 {
   imports = [
-    ../../configs/system/sshd.nix
-    ../../configs/system/syncthing.nix
-    ../../configs/system/yt-dlp/package.nix
+    ../../configs/packages/common.nix
+    ../../configs/packages/sshd.nix
+    ../../configs/packages/syncthing.nix
+    ../../configs/packages/yt-dlp/package.nix
   ];
 
   environment.systemPackages = with pkgs; [ nodejs ];

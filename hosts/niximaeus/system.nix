@@ -2,19 +2,16 @@
 
 {
   imports = [
-    ../../configs/hardware/intel.nix
-    ../../configs/hardware/nvidia.nix
-    ../../configs/hardware/ssd.nix
-    ../../configs/hardware/logitech.nix
-    ../../configs/hardware/fingerprintreader.nix
+    ../../configs/system/intel.nix
+    ../../configs/system/nvidia.nix
+    ../../configs/system/ssd.nix
+    ../../configs/system/logitech.nix
+    ../../configs/system/fingerprintreader.nix
 
-    ../../configs/system/common.nix
-    ../../configs/system/plasma5.nix
+    ../../configs/system/systemd-boot/custom-systemd-boot.nix
 
     ./partitions.nix
     ./packages.nix
-
-    ../../configs/system/systemd-boot/custom-systemd-boot.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

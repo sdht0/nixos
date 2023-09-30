@@ -2,10 +2,8 @@
 
 {
   imports = [
-    ../../configs/hardware/intel.nix
-    ../../configs/hardware/ssd.nix
-
-    ../../configs/system/common.nix
+    ../../configs/system/intel.nix
+    ../../configs/system/ssd.nix
     ../../configs/system/zfs.nix
 
     ./partitions.nix
