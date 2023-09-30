@@ -26,7 +26,7 @@
   boot.initrd.systemd.enable = true;
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "sdhci_pci" ];
   boot.kernelParams = [ "quiet" ];
-  boot.blacklistedKernelModules = [ "iTCO_wdt" "iTCO_vendor_support" ];
+  boot.blacklistedKernelModules = [ "iTCO_wdt" "iTCO_vendor_support" ]; # Disable watchdog
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

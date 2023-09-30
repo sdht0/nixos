@@ -1,7 +1,11 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/579f8166-d13f-4128-abf7-a19d845bc82a";
+  boot.initrd.luks.devices."root" = {
+    device = "/dev/disk/by-uuid/579f8166-d13f-4128-abf7-a19d845bc82a";
+    keyFile = "/root.key.bin";
+  };
+  boot.initrd.secrets = { "/root.key.bin" = /var/lib/secrets/root.key.bin; };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/6773e347-eee3-4078-980d-542ef28b9c4e";
