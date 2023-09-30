@@ -10,7 +10,7 @@
     '';
 
   home.file.".zshrc".text = ''
-    . ~/.dotfiles/bashrc
+    . ~/.bashrc
     . ~/.dotfiles/zshrc
     [[ -f ~/.dotfiles.safe/zshrc ]] && . ~/.dotfiles.safe/zshrc
     '';
