@@ -1,4 +1,4 @@
-{ user, ... }:
+{ config, pkgs, user, ... }:
 
 {
   services.sshd.enable = true;
