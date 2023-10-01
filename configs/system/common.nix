@@ -11,15 +11,6 @@
   services.fwupd.enable = true;
   hardware.opengl.enable = true;
 
-  users.users.${user.username} = {
-    uid = user.uid;
-    group = "${user.groupname}";
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" ];
-  };
-  users.groups.${user.username}.gid = user.gid;
-
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
   services.resolved = {
@@ -28,4 +19,16 @@
     domains = [ "~." ];
     fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
   };
+
+  users.users.${user.username} = {
+    uid = user.uid;
+    group = "${user.groupname}";
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" ];
+  };
+  users.groups.${user.username}.gid = user.gid;
+  programs.zsh.enable = true;
+  environment.shells = with pkgs; [ zsh ];
+  environment.shellAliases = { ls = null; l = null; ll = null; }; # Remove defaults
 }

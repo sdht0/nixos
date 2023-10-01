@@ -7,9 +7,6 @@ in
     ./mullvad/package.nix
   ];
 
-  programs.zsh.enable = true;
-  environment.shellAliases = { ls = null; l = null; ll = null; };
-  environment.shells = with pkgs; [ zsh ];
   environment.systemPackages = with pkgs; [
     linux-firmware sof-firmware
     nftables
