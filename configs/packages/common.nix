@@ -3,45 +3,6 @@ let
   nftExe = "${pkgs.nftables}/bin/nft";
 in
 {
-  hardware.enableRedistributableFirmware = true;
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # System
-  networking.hostName = host.hostname;
-  nixpkgs.hostPlatform = host.system;
-  time.timeZone = host.timezone;
-  i18n.defaultLocale = host.locale;
-  services.fwupd.enable = true;
-  hardware.opengl.enable = true;
-
-  # User
-  users.users.${user.username} = {
-    uid = user.uid;
-    group = "${user.groupname}";
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" ];
-  };
-  users.groups.${user.username}.gid = user.gid;
-  /* Additional setup for user:
-    git clone git@github.com:sdht0/dotfiles.git .dotfiles && \
-    cd .dotfiles && \
-    git submodule init && \
-    git submodule update --recursive --remote
-  */
-
-  # Networking
-  networking.networkmanager.enable = true;
-  networking.firewall.enable = false;
-  services.resolved = {
-    enable = true;
-    dnssec = "false";
-    domains = [ "~." ];
-    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-  };
-
-  # System packages
   programs.zsh.enable = true;
   environment.shellAliases = { ls = null; l = null; ll = null; };
   environment.shells = with pkgs; [ zsh ];

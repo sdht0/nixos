@@ -3,6 +3,7 @@
 {
   imports = [
     ../../configs/packages/common.nix
+
     ../../configs/packages/plasma5.nix
     ../../configs/packages/syncthing.nix
   ];

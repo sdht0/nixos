@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ../../configs/system/common.nix
+
     ../../configs/system/intel.nix
     ../../configs/system/nvidia.nix
     ../../configs/system/ssd.nix

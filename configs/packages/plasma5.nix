@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Display
   services.xserver = {
     enable = true;
     videoDrivers = [ "modesetting" ];
@@ -23,13 +22,11 @@
     };
   };
   environment.plasma5.excludePackages = with pkgs.plasma5Packages; [ elisa oxygen ];
-  # Additional setup for plasma: panels, shortcuts, ssh agent, autostart, wallpapers
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
   };
 
-  # Audio
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -37,7 +34,6 @@
     jack.enable = true;
   };
 
-  # Extra packages
   environment.systemPackages = with pkgs; [
     libnotify xclip
     yakuake konsole kate
