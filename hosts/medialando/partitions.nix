@@ -19,10 +19,10 @@
       options = [ "subvol=@home" "compress=zstd" "noatime" ];
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/D935-10CE";
-      fsType = "vfat";
-    };
+  # fileSystems."/boot" =
+  #   { device = "/dev/disk/by-uuid/D935-10CE";
+  #     fsType = "vfat";
+  #   };
 
   swapDevices = [ ];
 }
