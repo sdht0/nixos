@@ -74,7 +74,10 @@ in
     '';
     # FIXME: Remove when https://github.com/mullvad/mullvadvpn-app/pull/5011 is in a release
     postStart = ''
-      sleep 3 && ${nftExe} insert rule inet mullvad forward ip daddr 100.64.0.0/10 accept
+      sleep 3 && \
+      ${nftExe} list ruleset |& grep 'table inet mullvad {' && \
+        ${nftExe} insert rule inet mullvad forward ip daddr 100.64.0.0/10 accept || \
+        true
     '';
     postStop = ''
       ${nftExe} -f '${./mullvad/mullvad-ts-cleanup.nft}'
