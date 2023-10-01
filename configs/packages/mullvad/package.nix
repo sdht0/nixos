@@ -8,7 +8,7 @@ in
     package = pkgs.mullvad-vpn;
   };
   systemd.services.mullvad-daemon.environment = {
-    TALPID_NET_CLS_MOUNT_DIR= "/sys/fs/net_cls";
+    TALPID_NET_CLS_MOUNT_DIR= "/run/net_cls";
   };
   # Make mullvad play well with tailscale
   systemd.services.mullvad-daemon = {
