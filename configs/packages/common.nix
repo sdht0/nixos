@@ -11,7 +11,7 @@ in
 
   environment.systemPackages = with pkgs; [
     linux-firmware sof-firmware
-    nftables
+    nftables killall
     gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
     firefox-devedition-bin chromium
     ffmpeg gcc gnumake

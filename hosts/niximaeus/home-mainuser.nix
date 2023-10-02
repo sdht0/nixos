@@ -17,7 +17,6 @@ in
     { link = ".ssh/id_ed25519";     dest = ".dotfiles.safe/ssh/id_ed25519"; }
     { link = ".ssh/id_ed25519.pub"; dest = ".dotfiles.safe/ssh/id_ed25519.pub"; }
 
-    { link = ".local/share/applications/ff2.desktop";     dest = ".dotfiles.safe/apps/ff2.desktop"; }
     { link = ".local/share/applications/ff2nix.desktop";  dest = ".dotfiles.safe/apps/ff2nix.desktop"; }
   ] ++ (map lib'.autostartApplication [
     "org.kde.yakuake.desktop" "solaar.desktop" "aw-qt.desktop" "mullvad-vpn.desktop"
