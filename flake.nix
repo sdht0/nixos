@@ -33,6 +33,9 @@
     testuser = {
       username = "sdhtest";
     };
+    testuser2 = {
+      username = "sdhtest2";
+    };
     pkgs = nixpkgs.legacyPackages.${system};
   in
   {
@@ -47,8 +50,9 @@
             home-manager.users = {
               ${mainuser.username} = import ./hosts/${host}/home.nix;
               ${testuser.username} = import ./hosts/${host}/home-${testuser.username}.nix;
+              ${testuser2.username} = import ./hosts/${host}/home-${testuser2.username}.nix;
             };
-            home-manager.extraSpecialArgs = { inherit mainuser testuser; };
+            home-manager.extraSpecialArgs = { inherit mainuser testuser testuser2; };
           }
         ];
       }) hosts;

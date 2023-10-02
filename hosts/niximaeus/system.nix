@@ -34,6 +34,12 @@
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
   };
+  users.users.sdhtest2 = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" ];
+  };
+  services.xserver.displayManager.startx.enable = true;
 
   system.stateVersion = "23.05";
 }
