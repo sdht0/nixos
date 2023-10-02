@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -7,6 +7,8 @@
     ../../configs/packages/plasma5.nix
     ../../configs/packages/syncthing.nix
   ];
+
+  services.xserver.displayManager.startx.enable = true;
 
   environment.systemPackages = with pkgs; [
     thunderbird slack

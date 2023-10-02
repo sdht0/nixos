@@ -12,18 +12,7 @@
   outputs = { self, nixpkgs, home-manager }:
   let
     system = "x86_64-linux";
-    hosts = {
-      niximaeus = {
-        inherit system;
-        timezone = "America/Toronto";
-        locale = "en_CA.UTF-8";
-      };
-      medialando =  {
-        inherit system;
-        timezone = "America/Toronto";
-        locale = "en_US.UTF-8";
-      };
-    };
+
     mainuser = rec {
       username = "artimaeus";
       uid = 1000;
@@ -36,25 +25,45 @@
     testuser2 = {
       username = "sdhtest2";
     };
+
+    hosts = {
+      niximaeus = {
+        inherit system;
+        timezone = "America/Toronto";
+        locale = "en_CA.UTF-8";
+        users = { inherit mainuser testuser testuser2; };
+      };
+      medialando =  {
+        inherit system;
+        timezone = "America/Toronto";
+        locale = "en_US.UTF-8";
+        users = { inherit mainuser; };
+      };
+    };
+
     pkgs = nixpkgs.legacyPackages.${system};
+
+    userMapAttrFn = hostname:
+      user: userData:
+        nixpkgs.lib.nameValuePair userData.username (import ./hosts/${hostname}/home-${userData.username}.nix);
+
+    hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
+      system = hostData.system;
+      specialArgs = { hostData = hostData // { inherit hostname; }; };
+      modules = [
+        ./hosts/${hostname}/system.nix
+        home-manager.nixosModules.home-manager {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users = nixpkgs.lib.mapAttrs' (userMapAttrFn hostname) hostData.users;
+            extraSpecialArgs = { inherit (hostData) users; };
+          };
+        }
+      ];
+    };
   in
   {
-    nixosConfigurations =  nixpkgs.lib.mapAttrs (host: values: nixpkgs.lib.nixosSystem {
-        system = values.system;
-        specialArgs = { inherit mainuser; host = values // { hostname = host; }; };
-        modules = [
-          ./hosts/${host}/system.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users = {
-              ${mainuser.username} = import ./hosts/${host}/home.nix;
-              ${testuser.username} = import ./hosts/${host}/home-${testuser.username}.nix;
-              ${testuser2.username} = import ./hosts/${host}/home-${testuser2.username}.nix;
-            };
-            home-manager.extraSpecialArgs = { inherit mainuser testuser testuser2; };
-          }
-        ];
-      }) hosts;
+    nixosConfigurations =  nixpkgs.lib.mapAttrs hostMapFn hosts;
   };
 }

@@ -1,11 +1,11 @@
-{ lib, config, mainuser, ... }:
-
+{ config, lib, pkgs, users, ... }:
 let
   lib' = import ../../lib { inherit config lib; };
+  inherit (users.mainuser) username;
 in
 {
-  home.username = mainuser.username;
-  home.homeDirectory = "/home/${mainuser.username}";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   imports = [ ../../configs/home/common.nix ];
 

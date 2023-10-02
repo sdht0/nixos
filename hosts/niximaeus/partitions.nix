@@ -1,4 +1,4 @@
-{... }:
+{ config, lib, pkgs, ... }:
 
 {
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/9efed530-afe0-4ef8-aee4-24910d168a34";

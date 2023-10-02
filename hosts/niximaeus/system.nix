@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -28,18 +28,6 @@
   boot.blacklistedKernelModules = [ "iTCO_wdt" "iTCO_vendor_support" ]; # Disable watchdog
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  users.users.sdhtest = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" ];
-  };
-  users.users.sdhtest2 = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" ];
-  };
-  services.xserver.displayManager.startx.enable = true;
 
   system.stateVersion = "23.05";
 }

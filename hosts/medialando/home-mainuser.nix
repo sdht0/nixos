@@ -1,6 +1,6 @@
 { config, lib, pkgs, users, ... }:
 let
-  inherit (users.testuser2) username;
+  inherit (users.mainuser) username;
 in
 {
   home.username = username;
