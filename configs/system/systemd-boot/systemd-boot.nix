@@ -102,7 +102,7 @@ in {
 
     xbootMountPoint = mkOption {
       default = null;
-      type = types.nullOr types.string;
+      type = types.nullOr types.str;
       description = ''
         The vfat mount point for installling entries to an XBOOTLOADER partition.
       '';
