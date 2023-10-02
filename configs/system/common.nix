@@ -5,7 +5,7 @@ let
   userMapFn = user: {
     users.${user.username} = {
       uid = user.uid or null;
-      group = user.groupname or "";
+      group = user.groupname or user.username;
       isNormalUser = true;
       shell = pkgs.zsh;
       extraGroups = [ "wheel" ];

@@ -45,7 +45,7 @@
 
     userMapAttrFn = hostname:
       user: userData:
-        nixpkgs.lib.nameValuePair userData.username (import ./hosts/${hostname}/home-${userData.username}.nix);
+        nixpkgs.lib.nameValuePair userData.username (import ./hosts/${hostname}/home-${user}.nix);
 
     hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
       system = hostData.system;
@@ -54,10 +54,10 @@
         ./hosts/${hostname}/system.nix
         home-manager.nixosModules.home-manager {
           home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
             users = nixpkgs.lib.mapAttrs' (userMapAttrFn hostname) hostData.users;
             extraSpecialArgs = { inherit (hostData) users; };
+            useGlobalPkgs = true;
+            useUserPackages = true;
           };
         }
       ];
