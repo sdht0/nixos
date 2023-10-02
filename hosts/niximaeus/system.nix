@@ -29,5 +29,11 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  users.users.sdhtest = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" ];
+  };
+
   system.stateVersion = "23.05";
 }

@@ -1,8 +1,8 @@
-{ config, pkgs, mainuser, ... }:
+{ lib, config, testuser, ... }:
 
 {
-  home.username = mainuser.username;
-  home.homeDirectory = "/home/${mainuser.username}";
+  home.username = testuser.username;
+  home.homeDirectory = "/home/${testuser.username}";
 
   imports = [ ../../configs/home/common.nix ];
 

@@ -1,5 +1,6 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 let
+  lib' = import ../../../lib { inherit config lib; };
   nftExe = "${pkgs.nftables}/bin/nft";
 in
 {
@@ -10,6 +11,7 @@ in
   systemd.services.mullvad-daemon.environment = {
     TALPID_NET_CLS_MOUNT_DIR= "/run/net_cls";
   };
+
   # Make mullvad play well with tailscale
   systemd.services.mullvad-daemon = {
     preStart = ''
@@ -26,12 +28,19 @@ in
       ${nftExe} -f '${./mullvad-ts-cleanup.nft}'
     '';
   };
-  /* Additional setup for mullvad:
-    mullvad account login
-    mullvad relay set location ... && \
-    mullvad relay set tunnel-protocol wireguard && \
-    mullvad auto-connect set on && \
-    mullvad lan set allow && \
-    mullvad lockdown-mode set on
-  */
+
+  environment.etc = lib'.deepMerge [
+    (lib'.extraScript "mullvadLogin" ''
+      mullvad account login
+    '')
+    (lib'.extraScript "mullvadSetupRelay" ''
+      mullvad relay set location "$@"
+    '')
+    (lib'.extraScript "mullvadSetup" ''
+      mullvad relay set tunnel-protocol wireguard
+      mullvad auto-connect set on
+      mullvad lan set allow
+      mullvad lockdown-mode set on
+    '')
+  ];
 }

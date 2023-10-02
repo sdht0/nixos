@@ -1,9 +1,11 @@
-{ config, pkgs, host, user, ... }:
+{ lib, config, pkgs, ... }:
 let
+  lib' = import ../../lib { inherit config lib; };
   nftExe = "${pkgs.nftables}/bin/nft";
 in
 {
   imports = [
+    ./extra-setup.nix
     ./mullvad/package.nix
   ];
 
@@ -15,11 +17,13 @@ in
     ffmpeg gcc gnumake
     nix-output-monitor
   ];
+
   services.tailscale.enable = true;
-  /* Additional setup for tailscale:
+  environment.etc = (lib'.extraScript "tailscaleLogin" ''
     sudo tailscale login
-    sudo tailscale lock sign ...
-    sudo tailscale lock add ...
-    web: disable key expiry, add tag
-  */
+    echo "TODOs:"
+    echo "sudo tailscale lock sign ."
+    echo "sudo tailscale lock add ."
+    echo "web: disable key expiry, add tag"
+  '');
 }

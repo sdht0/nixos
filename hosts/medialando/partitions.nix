@@ -28,3 +28,35 @@ in
 
   swapDevices = [ ];
 }
+
+/*
+
+== Option 4: Copy key as file into the initrd (not recommended) ==
+If you want to temporarily enable booting without having to enter a passphrase, you can copy the keyfile into the initrd itself.
+
+Warning: This method is not recommended as anyone with physical access to your boot partition will be able to retrieve the key file and use it to decrypt your luks partition. Make sure you eventually remove the generated initrd when automatic booting is no longer needed.
+
+First move the key to a safe location.
+<syntaxhighlight lang="bash">
+# mkdir /var/lib/secrets
+# chown root:root /var/lib/secrets
+# chmod 700 /var/lib/secrets
+# mv -v hdd.key /var/lib/secrets/
+# chmod 600 /var/lib/secrets/hdd.key
+</syntaxhighlight>
+
+Then add the key to the initrd.
+<syntaxhighlight lang="nix">
+let
+  keyFile = "hdd.key";
+in
+{
+  boot.initrd.luks.devices."root" = {
+    device = "/dev/disk/by-uuid/<uuid>";
+    keyFile = "/${keyFile}";
+  };
+  boot.initrd.secrets = { "/${keyFile}" = /var/lib/secrets/${keyFile}; };
+}
+</syntaxhighlight>
+
+*/

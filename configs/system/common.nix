@@ -1,4 +1,7 @@
-{ config, pkgs, host, user, ... }:
+{ lib, config, pkgs, host, mainuser, ... }:
+let
+  lib' = import ../../lib { inherit config lib; };
+in
 {
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
@@ -20,14 +23,22 @@
     fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
   };
 
-  users.users.${user.username} = {
-    uid = user.uid;
-    group = "${user.groupname}";
+  users.users.${mainuser.username} = {
+    uid = mainuser.uid;
+    group = "${mainuser.groupname}";
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
   };
-  users.groups.${user.username}.gid = user.gid;
+  users.groups.${mainuser.username}.gid = mainuser.gid;
+  environment.etc = (lib'.extraScript "dotfilesClone" ''
+    [[ -d ~/.dotfiles ]] || git clone https://github.com/sdht0/dotfiles ~/.dotfiles
+    cd ~/.dotfiles
+    git submodule init
+    git submodule update --recursive --remote
+    git remote set-url origin git@github.com:sdht0/dotfiles.git
+  '');
+
   programs.zsh.enable = true;
   environment.shells = with pkgs; [ zsh ];
   environment.shellAliases = { ls = null; l = null; ll = null; }; # Remove defaults
