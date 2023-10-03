@@ -19,7 +19,7 @@ in
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  documentation.nixos.enable = false;
+  documentation.doc.enable = false;
 
   networking.hostName = hostData.hostname;
   nixpkgs.hostPlatform = hostData.system;
