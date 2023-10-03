@@ -1,7 +1,7 @@
-{ config, lib, pkgs, users, ... }:
+{ username }:
+{ config, lib, pkgs, ... }:
 let
   lib' = import ../../lib { inherit config lib; };
-  inherit (users.mainuser) username;
 in
 {
   home.username = username;

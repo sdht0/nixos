@@ -44,8 +44,9 @@
     pkgs = nixpkgs.legacyPackages.${system};
 
     userMapAttrFn = hostname:
-      user: userData:
-        nixpkgs.lib.nameValuePair userData.username (import ./hosts/${hostname}/home-${user}.nix);
+      user: userData: nixpkgs.lib.nameValuePair
+        userData.username
+        (import ./hosts/${hostname}/home-${user}.nix { inherit (userData) username; });
 
     hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
       system = hostData.system;

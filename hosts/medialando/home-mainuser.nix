@@ -1,7 +1,5 @@
-{ config, lib, pkgs, users, ... }:
-let
-  inherit (users.mainuser) username;
-in
+{ username }:
+{ config, lib, pkgs, ... }:
 {
   home.username = username;
   home.homeDirectory = "/home/${username}";
