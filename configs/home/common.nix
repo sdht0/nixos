@@ -4,6 +4,7 @@ let
   lib' = import ../../lib { inherit config lib; };
 in
 {
+  manual.manpages.enable = false;
   home.file = lib'.deepMerge [
     {
       ".zshrc".text = ''
