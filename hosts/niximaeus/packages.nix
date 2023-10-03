@@ -11,7 +11,7 @@
   services.xserver.displayManager.startx.enable = true;
 
   environment.systemPackages = with pkgs; [
-    thunderbird slack
+    thunderbird slack zoom-us
     ffmpeg vlc calibre mcomix
     nil nixfmt
     rustup gcc lldb openjdk17-bootstrap gnumake vscode jetbrains.rust-rover

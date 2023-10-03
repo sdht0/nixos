@@ -29,5 +29,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  hardware.bluetooth.enable = true;
+
   system.stateVersion = "23.05";
 }
