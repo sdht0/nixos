@@ -6,7 +6,6 @@ in
   environment.systemPackages = with pkgs; [ syncthing ];
   services.syncthing = {
     enable = true;
-    systemService = false;
     user = username;
     dataDir = "/home/${username}";
   };
