@@ -14,6 +14,10 @@
     nodejs
     (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ]))
   ];
-  virtualisation.docker.enable = true;
   programs.npm.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    autoPrune.enable = true;
+    autoPrune.dates = "daily";
+  };
 }
