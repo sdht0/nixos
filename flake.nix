@@ -41,8 +41,6 @@
       };
     };
 
-    pkgs = nixpkgs.legacyPackages.${system};
-
     userMapAttrFn = hostname:
       user: userData: nixpkgs.lib.nameValuePair
         userData.username
