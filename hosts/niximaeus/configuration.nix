@@ -3,17 +3,18 @@
 {
   imports = [
     ../../configs/system/common.nix
-
     ../../configs/system/intel.nix
     ../../configs/system/nvidia.nix
     ../../configs/system/ssd.nix
     ../../configs/system/logitech.nix
     ../../configs/system/fingerprintreader.nix
-
     ../../configs/system/systemd-boot/custom-systemd-boot.nix
 
+    ../../configs/packages/common.nix
+    ../../configs/packages/plasma5.nix
+    ../../configs/packages/syncthing.nix
+
     ./partitions.nix
-    ./packages.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -30,6 +31,21 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   hardware.bluetooth.enable = true;
+
+  services.xserver.displayManager.startx.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    thunderbird slack zoom-us
+    ffmpeg vlc calibre mcomix
+    nil nixfmt
+    rustup gcc lldb openjdk17-bootstrap gnumake vscode jetbrains.rust-rover
+    obsidian fava zotero activitywatch
+    (pkgs.python3.withPackages (ps: with ps; [
+        beancount pip notebook
+    ]))
+    noto-fonts noto-fonts-cjk noto-fonts-emoji
+    jetbrains-mono meslo-lgs-nf
+  ];
 
   system.stateVersion = "23.05";
 }

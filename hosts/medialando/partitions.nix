@@ -9,6 +9,7 @@ in
   };
   boot.initrd.secrets = { "/${keyFile}" = /var/lib/secrets/${keyFile}; };
 
+  # Allow systemd automount
   # fileSystems."/boot" =
   #   { device = "/dev/disk/by-uuid/D935-10CE";
   #     fsType = "vfat";

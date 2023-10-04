@@ -50,7 +50,7 @@
       system = hostData.system;
       specialArgs = { hostData = hostData // { inherit hostname; }; };
       modules = [
-        ./hosts/${hostname}/system.nix
+        ./hosts/${hostname}/configuration.nix
         home-manager.nixosModules.home-manager {
           home-manager = {
             users = nixpkgs.lib.mapAttrs' (userMapAttrFn hostname) hostData.users;

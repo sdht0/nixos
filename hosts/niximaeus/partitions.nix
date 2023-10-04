@@ -3,6 +3,7 @@
 {
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/9efed530-afe0-4ef8-aee4-24910d168a34";
 
+  # Allow systemd automount
   # fileSystems."/boot" =
   #   { device = "/dev/disk/by-uuid/57D4-A2B2";
   #     fsType = "vfat";
