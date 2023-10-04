@@ -37,6 +37,10 @@ in
     fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
   };
 
+  environment.systemPackages = with pkgs; [
+    linux-firmware sof-firmware
+  ];
+
   inherit users;
 
   environment.etc = (lib'.extraScript "dotfilesClone" ''

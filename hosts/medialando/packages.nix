@@ -7,11 +7,10 @@
     ../../configs/packages/letsencrypt.nix
     ../../configs/packages/sshd.nix
     ../../configs/packages/syncthing.nix
-    ../../configs/packages/yt-dlp/package.nix
   ];
 
   environment.systemPackages = with pkgs; [
-    nodejs
+    nodejs yt-dlp-git
     (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ]))
   ];
   programs.npm.enable = true;

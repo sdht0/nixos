@@ -59,6 +59,7 @@
             useUserPackages = true;
           };
         }
+        ({ lib, config, pkgs, ... }@args: { nixpkgs.overlays = import ./overlays args; })
       ];
     };
   in
