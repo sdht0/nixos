@@ -10,7 +10,10 @@
     ../../configs/packages/yt-dlp/package.nix
   ];
 
-  environment.systemPackages = with pkgs; [ nodejs ];
+  environment.systemPackages = with pkgs; [
+    nodejs
+    (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ]))
+  ];
   virtualisation.docker.enable = true;
   programs.npm.enable = true;
 }
