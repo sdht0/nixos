@@ -12,7 +12,7 @@ in
   environment.systemPackages = with pkgs; [
     nftables killall
     gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
-    firefox-devedition-bin chromium
+    firefox-devedition chromium
     ffmpeg gcc gnumake
     nix-output-monitor
   ];
