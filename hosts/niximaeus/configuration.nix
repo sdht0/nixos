@@ -8,6 +8,7 @@
     ../../configs/system/ssd.nix
     ../../configs/system/logitech.nix
     ../../configs/system/fingerprintreader.nix
+    ../../configs/system/canon-ts3420.nix
     ../../configs/system/systemd-boot/custom-systemd-boot.nix
 
     ../../configs/packages/common.nix
