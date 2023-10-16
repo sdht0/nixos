@@ -42,7 +42,8 @@
     rustup gcc lldb openjdk17-bootstrap gnumake vscode jetbrains.rust-rover
     obsidian fava zotero activitywatch
     (pkgs.python3.withPackages (ps: with ps; [
-        beancount pip notebook
+        beancount notebook
+        vincenty folium numba
     ]))
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     jetbrains-mono meslo-lgs-nf
