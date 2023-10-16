@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgsUnstable, ... }:
 
 {
   imports = [
@@ -35,19 +35,21 @@
 
   services.xserver.displayManager.startx.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    thunderbird slack zoom-us
+  environment.systemPackages = (with pkgs; [
+    thunderbird
     ffmpeg vlc calibre mcomix
     nil nixfmt
-    rustup gcc lldb openjdk17-bootstrap gnumake vscode jetbrains.rust-rover
-    obsidian fava zotero activitywatch
+    rustup gcc lldb openjdk17-bootstrap gnumake vscode
+    fava zotero activitywatch
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook
         vincenty folium numba
     ]))
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     jetbrains-mono meslo-lgs-nf
-  ];
+  ]) ++( with pkgsUnstable; [
+    obsidian jetbrains.rust-rover slack zoom-us
+  ]);
 
   system.stateVersion = "23.05";
 }
