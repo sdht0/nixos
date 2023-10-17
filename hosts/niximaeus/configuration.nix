@@ -41,6 +41,7 @@
     nil nixfmt
     rustup gcc lldb openjdk17-bootstrap gnumake vscode
     fava zotero activitywatch
+    bc
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook
         vincenty folium numba
