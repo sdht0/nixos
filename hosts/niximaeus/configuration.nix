@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgsUnstable, ... }:
+{ config, lib, pkgs, pkgsSelect, ... }:
 
 {
   imports = [
@@ -37,10 +37,11 @@
 
   environment.systemPackages = (with pkgs; [
     thunderbird
+    obsidian jetbrains.rust-rover slack zoom-us
     ffmpeg vlc calibre mcomix
     nil nixfmt
     rustup gcc lldb openjdk17-bootstrap gnumake vscode
-    fava zotero activitywatch
+    fava zotero
     bc
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook
@@ -48,8 +49,8 @@
     ]))
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     jetbrains-mono meslo-lgs-nf
-  ]) ++( with pkgsUnstable; [
-    obsidian jetbrains.rust-rover slack zoom-us
+  ]) ++( with pkgsSelect; [
+    activitywatch
   ]);
 
   system.stateVersion = "23.05";

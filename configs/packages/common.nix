@@ -1,4 +1,4 @@
-{ lib, config, pkgs, pkgsUnstable, ... }:
+{ lib, config, pkgs, ... }:
 let
   lib' = import ../../lib { inherit config lib; };
   nftExe = "${pkgs.nftables}/bin/nft";
@@ -9,14 +9,13 @@ in
     ./mullvad/package.nix
   ];
 
-  environment.systemPackages = (with pkgs; [
+  environment.systemPackages = with pkgs; [
+    firefox-devedition chromium
     nftables killall
     gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
     ffmpeg gcc gnumake
     nix-output-monitor
-  ]) ++ ( with pkgs; [
-    firefox-devedition chromium
-  ]);
+  ];
 
   services.tailscale.enable = true;
   environment.etc = (lib'.extraScript "tailscaleLogin" ''

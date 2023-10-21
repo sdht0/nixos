@@ -2,19 +2,19 @@
   description = "Artimaeus NixOS";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs.url = "github:nixos/nixpkgs/master";
-    nixpkgsUnstable.url = "github:nixos/nixpkgs/master";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgsSelect.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgsUnstable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgsSelect, home-manager }:
   let
     system = "x86_64-linux";
-    pkgsUnstable = import nixpkgsUnstable {inherit system; config.allowUnfree = true; };
+    pkgsSelect = import nixpkgsSelect {inherit system; config.allowUnfree = true; };
 
     mainuser = rec {
       username = "artimaeus";
@@ -51,7 +51,7 @@
 
     hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
       system = hostData.system;
-      specialArgs = { hostData = hostData // { inherit hostname; }; inherit pkgsUnstable; };
+      specialArgs = { hostData = hostData // { inherit hostname; }; inherit pkgsSelect; };
       modules = [
         ./hosts/${hostname}/configuration.nix
         home-manager.nixosModules.home-manager {
