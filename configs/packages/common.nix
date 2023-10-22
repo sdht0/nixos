@@ -7,6 +7,7 @@ in
   imports = [
     ./extra-setup.nix
     ./mullvad/package.nix
+    ./iproute2.nix
   ];
 
   environment.systemPackages = with pkgs; [
