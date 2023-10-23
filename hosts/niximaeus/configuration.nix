@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgsSelect, ... }:
+{ config, lib, pkgs, pkgsMaster, ... }:
 
 {
   imports = [
@@ -36,12 +36,12 @@
   services.xserver.displayManager.startx.enable = true;
 
   environment.systemPackages = (with pkgs; [
-    thunderbird
-    obsidian jetbrains.rust-rover slack zoom-us
+    thunderbird activitywatch
     ffmpeg vlc calibre mcomix
     nil nixfmt
     rustup gcc lldb openjdk17-bootstrap gnumake vscode
-    fava zotero
+    fava
+    #zotero
     bc
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook
@@ -49,8 +49,8 @@
     ]))
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     jetbrains-mono meslo-lgs-nf
-  ]) ++( with pkgsSelect; [
-    activitywatch
+  ]) ++( with pkgsMaster; [
+    zoom-us slack jetbrains.rust-rover obsidian
   ]);
 
   system.stateVersion = "23.05";
