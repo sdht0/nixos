@@ -45,7 +45,7 @@
     bc
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook
-        vincenty folium numba
+        #vincenty folium numba
     ]))
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     jetbrains-mono meslo-lgs-nf
