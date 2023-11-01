@@ -49,8 +49,9 @@
     ]))
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     jetbrains-mono meslo-lgs-nf
+    rust-rover-latest
   ]) ++( with pkgsMaster; [
-    zoom-us slack jetbrains.rust-rover obsidian
+    zoom-us slack obsidian
   ]);
 
   system.stateVersion = "23.05";
