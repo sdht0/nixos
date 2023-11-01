@@ -14,7 +14,7 @@ in
     nftables killall
     gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
     ffmpeg gcc gnumake
-    nix-output-monitor
+    nix-output-monitor nvd
   ];
 
   services.tailscale.enable = true;
