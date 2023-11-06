@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgsMaster, ... }:
+{ config, lib, pkgs, hostData, pkgsMaster, ... }:
 
 {
   imports = [
@@ -33,7 +33,11 @@
 
   hardware.bluetooth.enable = true;
 
-  services.xserver.displayManager.startx.enable = true;
+  services.xserver.displayManager.autoLogin = {
+    enable = true;
+    user = hostData.users.mainuser.username;
+  };
+  # services.xserver.displayManager.startx.enable = true;
 
   environment.systemPackages = (with pkgs; [
     thunderbird activitywatch

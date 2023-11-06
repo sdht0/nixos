@@ -12,8 +12,7 @@ in
   environment.systemPackages = with pkgs; [
     firefox-devedition chromium
     nftables killall
-    gitFull wget curl rsync vim tmux htop ripgrep fzf eza peco sshfs
-    ffmpeg gcc gnumake
+    gitFull wget curl rsync vim tmux htop ripgrep fzf eza peco sshfs ffmpeg
     nix-output-monitor nvd
   ];
   programs.gnupg.agent.enable = true;

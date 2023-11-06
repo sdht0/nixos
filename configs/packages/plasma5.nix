@@ -8,24 +8,16 @@
   services.xserver.libinput.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.displayManager = {
-    autoLogin = {
-      enable = true;
-      user = "artimaeus";
-    };
     sddm = {
       enable = true;
       settings = {
         General = {
-          DisplayServer = "x11-user";
+          DisplayServer = "x11-user"; # Rootless xorg
         };
       };
     };
   };
   environment.plasma5.excludePackages = with pkgs.plasma5Packages; [ elisa oxygen ];
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
-  };
 
   services.pipewire = {
     enable = true;
