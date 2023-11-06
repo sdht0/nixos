@@ -12,10 +12,11 @@ in
   environment.systemPackages = with pkgs; [
     firefox-devedition chromium
     nftables killall
-    gitFull wget curl rsync vim gnupg tmux htop ripgrep fzf eza peco sshfs
+    gitFull wget curl rsync vim tmux htop ripgrep fzf eza peco sshfs
     ffmpeg gcc gnumake
     nix-output-monitor nvd
   ];
+  programs.gnupg.agent.enable = true;
 
   services.tailscale.enable = true;
   environment.etc = (lib'.extraScript "tailscaleLogin" ''
