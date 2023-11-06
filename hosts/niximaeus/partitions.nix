@@ -25,5 +25,6 @@
       options = [ "subvol=@home" "compress=zstd" "noatime" ];
     };
 
+  boot.tmp.useTmpfs =  true;
   swapDevices = [ ];
 }

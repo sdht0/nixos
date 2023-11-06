@@ -20,6 +20,7 @@ in
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   documentation.doc.enable = false;
+  systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 
   networking.hostName = hostData.hostname;
   nixpkgs.hostPlatform = hostData.system;
