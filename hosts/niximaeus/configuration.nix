@@ -22,7 +22,7 @@
   boot.loader.systemd-boot.configurationLimit = 25;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/efi";
-  boot.loader.systemd-boot.xbootMountPoint = "/boot";
+  boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
 
   boot.initrd.systemd.enable = true;
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "sdhci_pci" ];
