@@ -1,4 +1,4 @@
-{ config, lib, pkgs, hostData, pkgsMaster, ... }:
+{ config, lib, pkgs, hostData, ... }:
 
 {
   imports = [
@@ -45,7 +45,7 @@
     nil nixfmt
     rustup gcc lldb openjdk17-bootstrap gnumake vscode
     fava
-    #zotero
+    zotero
     bc
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook
@@ -54,7 +54,6 @@
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     jetbrains-mono meslo-lgs-nf
     rust-rover-latest
-  ]) ++( with pkgsMaster; [
     zoom-us slack obsidian
   ]);
 

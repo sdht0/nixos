@@ -3,18 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    #nixpkgs.url = "github:nixos/nixpkgs/master";
-    nixpkgsMaster.url = "github:nixos/nixpkgs/master";
+    # nixpkgs.url = "github:nixos/nixpkgs/master";
+    # nixpkgsMaster.url = "github:nixos/nixpkgs/master";
     homeManager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgsMaster, nixpkgs, homeManager }:
+  outputs = { self, nixpkgs, homeManager }:
   let
     system = "x86_64-linux";
-    pkgsMaster = import nixpkgsMaster {inherit system; config.allowUnfree = true; };
+    # pkgsMaster = import nixpkgsMaster {inherit system; config.allowUnfree = true; };
 
     mainuser = rec {
       username = "artimaeus";
@@ -51,7 +51,7 @@
 
     hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
       system = hostData.system;
-      specialArgs = { hostData = hostData // { inherit hostname; }; inherit pkgsMaster; };
+      specialArgs = { hostData = hostData // { inherit hostname; }; };
       modules = [
         ./hosts/${hostname}/configuration.nix
         homeManager.nixosModules.home-manager {
