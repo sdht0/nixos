@@ -2,12 +2,12 @@
 
 (final: prev: {
   yt-dlp-git-overlay = prev.yt-dlp.overrideAttrs (old: {
-    name = "yt-dlp-git-21dc06";
+    name = "yt-dlp-git";
     src = pkgs.fetchFromGitHub {
       owner  = "yt-dlp";
       repo   = "yt-dlp";
-      rev    = "21dc069bea2d4d99345dd969e098f4535c751d45";
-      sha256 = "sha256-ZvMvDi+Wolh61yyvZEvhJYtYC0Q5neeAchFMpuZqnws=";
+      rev    = "a174c453ee1e853c584ceadeac17eef2bd433dc5";
+      sha256 = "sha256-OErBcvaFifm074vRenHl5q5ScVRO7bcNM/xtEJ34ddM=";
     };
     patches = [ ./enhance.patch ];
   });
