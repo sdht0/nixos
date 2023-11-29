@@ -40,21 +40,18 @@
   # services.xserver.displayManager.startx.enable = true;
 
   environment.systemPackages = (with pkgs; [
-    thunderbird activitywatch
+    bc dig
+    thunderbird activitywatch zotero
     ffmpeg vlc calibre mcomix
+    zoom-us slack obsidian
     nil nixfmt
-    rustup gcc lldb openjdk17-bootstrap gnumake vscode
+    rust-rover-latest rustup gcc lldb openjdk17-bootstrap gnumake vscode
     fava
-    zotero
-    bc
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook
         #vincenty folium numba
     ]))
-    noto-fonts noto-fonts-cjk noto-fonts-emoji
-    jetbrains-mono meslo-lgs-nf
-    rust-rover-latest
-    zoom-us slack obsidian
+    jetbrains-mono meslo-lgs-nf noto-fonts noto-fonts-cjk noto-fonts-emoji
   ]);
 
   system.stateVersion = "23.05";
