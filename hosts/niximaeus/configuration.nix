@@ -45,7 +45,7 @@
     ffmpeg vlc calibre mcomix
     zoom-us slack obsidian
     nil nixfmt
-    rust-rover-latest rustup gcc lldb openjdk17-bootstrap gnumake vscode
+    rust-rover-overlay rustup gcc lldb openjdk17-bootstrap gnumake vscode
     fava
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook

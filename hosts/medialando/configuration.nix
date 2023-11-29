@@ -29,7 +29,7 @@
   services.logind.lidSwitch = "ignore";
 
   environment.systemPackages = with pkgs; [
-    yt-dlp-git dig
+    yt-dlp-git-overlay dig
     nodejs (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ])) # download.sh
   ];
   programs.npm.enable = true;

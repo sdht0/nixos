@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 (final: prev: {
-  yt-dlp-git = prev.yt-dlp.overrideAttrs (old: {
+  yt-dlp-git-overlay = prev.yt-dlp.overrideAttrs (old: {
     name = "yt-dlp-git-21dc06";
     src = pkgs.fetchFromGitHub {
       owner  = "yt-dlp";
