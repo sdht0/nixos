@@ -41,14 +41,18 @@
 
   environment.systemPackages = (with pkgs; [
     bc dig
-    thunderbird activitywatch zotero
+    thunderbird activitywatch zotero libreoffice-qt
     ffmpeg vlc calibre mcomix
     zoom-us slack obsidian
     nil nixfmt
     rust-rover-overlay rustup gcc lldb openjdk17-bootstrap gnumake vscode
+    (texlive.combine { inherit (texlive) scheme-medium
+      glossaries glossaries-extra newtx xstring multirow enumitem hyphenat ifoddpage biblatex
+      fontaxes pdfcomment datetime2 zref marginnote soulpos titlesec doi pgfplots relsize minted ;
+    })
     fava
     (pkgs.python3.withPackages (ps: with ps; [
-        beancount notebook
+        beancount notebook pandas
         #vincenty folium numba
     ]))
     jetbrains-mono meslo-lgs-nf noto-fonts noto-fonts-cjk noto-fonts-emoji
