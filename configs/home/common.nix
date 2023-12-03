@@ -8,11 +8,11 @@ in
     {
       ".zshrc".text = ''
           . ~/.bashrc
-          . ~/.dotfiles/zshrc
+          [[ -f ~/.dotfiles/zshrc ]] && . ~/.dotfiles/zshrc
           [[ -f ~/.dotfiles.safe/zshrc ]] && . ~/.dotfiles.safe/zshrc
           '';
       ".bashrc".text = ''
-        . ~/.dotfiles/bashrc
+        [[ -f ~/.dotfiles/bashrc ]] && . ~/.dotfiles/bashrc
         [[ -f ~/.dotfiles.safe/bashrc ]] && . ~/.dotfiles.safe/bashrc
         '';
     }
