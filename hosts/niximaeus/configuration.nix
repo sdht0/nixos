@@ -43,16 +43,16 @@
     bc dig
     thunderbird activitywatch zotero libreoffice-qt
     ffmpeg vlc calibre mcomix
-    zoom-us slack obsidian
+    zoom-us slack obsidian fava
     nil nixfmt
-    rust-rover-overlay rustup gcc lldb openjdk17-bootstrap gnumake vscode
+    rust-rover-overlay rustup gcc lldb openjdk17-bootstrap gnumake vscode chromedriver
     (texlive.combine { inherit (texlive) scheme-medium
       glossaries glossaries-extra newtx xstring multirow enumitem hyphenat ifoddpage biblatex
       fontaxes pdfcomment datetime2 zref marginnote soulpos titlesec doi pgfplots relsize minted ;
     })
-    fava
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook pandas
+        titlecase selenium bibtexparser # publications
         #vincenty folium numba
     ]))
     jetbrains-mono meslo-lgs-nf noto-fonts noto-fonts-cjk noto-fonts-emoji
