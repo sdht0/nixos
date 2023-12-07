@@ -22,19 +22,19 @@
       groupname = username;
       gid = uid;
     };
-    testuser = {
-      username = "sdhtest";
-    };
-    testuser2 = {
-      username = "sdhtest2";
-    };
+    # testuser = {
+    #   username = "sdhtest";
+    # };
+    # testuser2 = {
+    #   username = "sdhtest2";
+    # };
 
     hosts = {
       niximaeus = {
         inherit system;
         timezone = "America/Toronto";
         locale = "en_CA.UTF-8";
-        users = { inherit mainuser testuser testuser2; };
+        users = { inherit mainuser; };
       };
       medialando =  {
         inherit system;
