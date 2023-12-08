@@ -7,6 +7,7 @@
     ../../configs/system/ssd.nix
     ../../configs/system/zfs.nix
 
+    ../../configs/packages/systemd-boot.nix
     ../../configs/packages/common.nix
     ../../configs/packages/letsencrypt.nix
     ../../configs/packages/sshd.nix
@@ -15,9 +16,6 @@
     ./partitions.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 25;
-  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
   boot.initrd.systemd.enable = true;
@@ -29,8 +27,7 @@
   services.logind.lidSwitch = "ignore";
 
   environment.systemPackages = with pkgs; [
-    yt-dlp-git-overlay dig
-    nodejs (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ])) # download.sh
+    yt-dlp-git-overlay nodejs (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ])) # download.sh
   ];
   programs.npm.enable = true;
   virtualisation.docker = {

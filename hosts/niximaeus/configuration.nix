@@ -9,8 +9,9 @@
     ../../configs/system/logitech.nix
     ../../configs/system/fingerprintreader.nix
     ../../configs/system/canon-ts3420.nix
-    ../../configs/system/systemd-boot/custom-systemd-boot.nix
 
+    ../../configs/packages/systemd-boot-module/custom-systemd-boot.nix
+    ../../configs/packages/systemd-boot.nix
     ../../configs/packages/common.nix
     ../../configs/packages/plasma5.nix
     ../../configs/packages/syncthing.nix
@@ -18,9 +19,6 @@
     ./partitions.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 25;
-  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/efi";
   boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
 
@@ -40,7 +38,6 @@
   # services.xserver.displayManager.startx.enable = true;
 
   environment.systemPackages = (with pkgs; [
-    bc dig
     thunderbird activitywatch zotero libreoffice-qt
     ffmpeg vlc calibre mcomix
     zoom-us slack obsidian fava
