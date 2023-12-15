@@ -42,8 +42,10 @@
     ffmpeg vlc calibre mcomix
     zoom-us slack obsidian fava
     nil nixfmt
-    rust-rover-overlay rustup gcc lldb openjdk17-bootstrap gnumake vscode chromedriver
-    (texlive.combine { inherit (texlive) scheme-medium
+    rust-rover-overlay vscode
+    chromedriver
+    rustup cargo rustc gcc lldb openjdk17-bootstrap gnumake
+    bibtool (texlive.combine { inherit (texlive) scheme-medium
       glossaries glossaries-extra newtx xstring multirow enumitem hyphenat ifoddpage biblatex
       fontaxes pdfcomment datetime2 zref marginnote soulpos titlesec doi pgfplots relsize minted ;
     })
@@ -54,6 +56,9 @@
     ]))
     jetbrains-mono meslo-lgs-nf noto-fonts noto-fonts-cjk noto-fonts-emoji
   ]);
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 
   system.stateVersion = "23.05";
 }
