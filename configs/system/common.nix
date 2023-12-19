@@ -1,6 +1,8 @@
-{ lib, config, pkgs, hostData, ... }:
+{ lib, config, nixpkgs, pkgs, hostData, ... }:
 let
   lib' = import ../../lib { inherit config lib; };
+
+  nixpkgsLink = "/etc/nix/nixpkgs";
 
   userMapFn = user: {
     users.${user.username} = {
@@ -19,6 +21,13 @@ in
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.registry.nixpkgs.flake = nixpkgs;
+  nix.nixPath = [
+    "nixpkgs=${nixpkgsLink}"
+    "nixos-config=/etc/nixos/configuration.nix"
+    "/nix/var/nix/profiles/per-user/root/channels"
+  ];
+  systemd.tmpfiles.rules = [ "L+ ${nixpkgsLink}     - - - - ${nixpkgs}" ];
   documentation.doc.enable = false;
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 

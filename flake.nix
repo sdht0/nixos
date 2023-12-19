@@ -51,7 +51,7 @@
 
     hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
       system = hostData.system;
-      specialArgs = { hostData = hostData // { inherit hostname; }; };
+      specialArgs = { hostData = hostData // { inherit hostname; }; inherit nixpkgs; };
       modules = [
         ./hosts/${hostname}/configuration.nix
         homeManager.nixosModules.home-manager {
