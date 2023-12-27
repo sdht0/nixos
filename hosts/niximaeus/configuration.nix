@@ -40,7 +40,7 @@
   environment.systemPackages = (with pkgs; [
     thunderbird activitywatch zotero libreoffice-qt
     ffmpeg vlc calibre mcomix
-    zoom-us slack obsidian fava
+    zoom-us slack obsidian-overlay fava
     nil nixfmt
     rust-rover-overlay vscode
     chromedriver

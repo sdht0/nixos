@@ -12,10 +12,19 @@
   (final: prev: {
     rust-rover-overlay = prev.jetbrains.rust-rover.overrideAttrs (old: {
       src = pkgs.fetchurl {
-        url = "https://download.jetbrains.com/rustrover/RustRover-233.10527.212.tar.gz";
-        sha256 = "8f523786bcfb0f112d1112c7c65f2fbda0112952357c931f215b628530c550cf";
+        url = "https://download.jetbrains.com/rustrover/RustRover-233.11799.306.tar.gz";
+        sha256 = "59cd5fac710b153efab94341594751bb50cdb1dff5d2292bb8067ec87085ad35";
       };
       buildInputs = old.buildInputs ++ [prev.xorg.libX11 prev.libGL prev.fontconfig];
+    });
+  })
+  (final: prev: {
+    obsidian-overlay = prev.obsidian.overrideAttrs (old: {
+      version = "1.5.3";
+      src = pkgs.fetchurl {
+        url = "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.3/obsidian-1.5.3.tar.gz";
+        hash = "sha256-F7nqWOeBGGSmSVNTpcx3lHRejSjNeM2BBqS9tsasTvg=";
+      };
     });
   })
   (final: prev: {
