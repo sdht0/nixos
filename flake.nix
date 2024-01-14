@@ -2,7 +2,7 @@
   description = "Artimaeus NixOS";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/317484b1ead87b9c1b8ac5261a8d2dd748a0492d";
     # nixpkgs.url = "github:nixos/nixpkgs/master";
     # nixpkgsMaster.url = "github:nixos/nixpkgs/master";
     homeManager = {
