@@ -27,7 +27,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    libnotify xclip
+    libnotify xclip xdotool
     yakuake konsole kate kio-fuse
     plasma5Packages.ksshaskpass plasma5Packages.kdeconnect-kde plasma5Packages.ffmpegthumbs
     libsForQt5.qt5.qtimageformats
