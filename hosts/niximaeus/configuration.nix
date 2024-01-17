@@ -1,4 +1,4 @@
-{ config, lib, pkgs, hostData, ... }:
+{ config, lib, pkgs, hostData, pkgsPrev, ... }:
 
 {
   imports = [
@@ -36,9 +36,14 @@
     user = hostData.users.mainuser.username;
   };
   # services.xserver.displayManager.startx.enable = true;
+  systemd.services.NetworkManager-wait-online = {
+    serviceConfig = {
+      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
+    };
+  };
 
   environment.systemPackages = (with pkgs; [
-    thunderbird activitywatch zotero libreoffice-qt
+    thunderbird zotero libreoffice-qt
     ffmpeg vlc calibre mcomix foliate
     zoom-us slack obsidian fava
     nil nixfmt
@@ -55,7 +60,7 @@
         #vincenty folium numba
     ]))
     jetbrains-mono meslo-lgs-nf noto-fonts noto-fonts-cjk noto-fonts-emoji
-  ]);
+  ]) ++ ([pkgsPrev.activitywatch]);
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
