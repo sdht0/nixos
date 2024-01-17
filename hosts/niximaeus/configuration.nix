@@ -42,11 +42,11 @@
     ffmpeg vlc calibre mcomix foliate
     zoom-us slack obsidian fava
     nil nixfmt
-    rust-rover-overlay vscode
+    rust-rover-overlay vscode hunspell hunspellDicts.en_CA
     chromedriver
     rustup cargo rustc gcc lldb openjdk17-bootstrap gnumake
     bibtool (texlive.combine { inherit (texlive) scheme-medium
-      glossaries glossaries-extra newtx xstring multirow enumitem hyphenat ifoddpage biblatex
+      standalone glossaries glossaries-extra newtx xstring multirow enumitem hyphenat ifoddpage biblatex
       fontaxes pdfcomment datetime2 zref marginnote soulpos titlesec doi pgfplots relsize minted ;
     })
     (pkgs.python3.withPackages (ps: with ps; [
