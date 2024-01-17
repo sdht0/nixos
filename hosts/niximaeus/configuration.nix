@@ -44,12 +44,16 @@
 
   environment.systemPackages = (with pkgs; [
     thunderbird zotero libreoffice-qt
-    ffmpeg vlc calibre mcomix foliate
-    zoom-us slack obsidian fava
+    ffmpeg vlc
+    calibre mcomix foliate
+    zoom-us slack
+    obsidian fava
     nil nixfmt
-    rust-rover-overlay hunspell hunspellDicts.en_CA
+    rust-rover-overlay rustup cargo rustc
     vscode
-    rustup cargo rustc gcc lldb temurin-bin-21 gnumake
+    gcc lldb
+    temurin-bin-21
+    gnumake
     bibtool drawio (texlive.combine { inherit (texlive) scheme-medium
       standalone glossaries glossaries-extra newtx xstring multirow enumitem hyphenat ifoddpage biblatex
       fontaxes pdfcomment datetime2 zref marginnote soulpos titlesec doi pgfplots relsize minted ;
