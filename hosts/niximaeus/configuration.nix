@@ -47,10 +47,10 @@
     ffmpeg vlc calibre mcomix foliate
     zoom-us slack obsidian fava
     nil nixfmt
-    rust-rover-overlay vscode hunspell hunspellDicts.en_CA
-    chromedriver
-    rustup cargo rustc gcc lldb openjdk17-bootstrap gnumake
-    bibtool (texlive.combine { inherit (texlive) scheme-medium
+    rust-rover-overlay hunspell hunspellDicts.en_CA
+    vscode
+    rustup cargo rustc gcc lldb temurin-bin-21 gnumake
+    bibtool drawio (texlive.combine { inherit (texlive) scheme-medium
       standalone glossaries glossaries-extra newtx xstring multirow enumitem hyphenat ifoddpage biblatex
       fontaxes pdfcomment datetime2 zref marginnote soulpos titlesec doi pgfplots relsize minted ;
     })
@@ -59,6 +59,7 @@
         titlecase selenium bibtexparser # publications
         #vincenty folium numba
     ]))
+    chromedriver
     jetbrains-mono meslo-lgs-nf noto-fonts noto-fonts-cjk noto-fonts-emoji
   ]) ++ ([pkgsPrev.activitywatch]);
   nixpkgs.config.permittedInsecurePackages = [
