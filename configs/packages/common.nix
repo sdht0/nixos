@@ -1,7 +1,6 @@
 { lib, config, pkgs, ... }:
 let
   lib' = import ../../lib { inherit config lib; };
-  nftExe = "${pkgs.nftables}/bin/nft";
 in
 {
   imports = [
@@ -25,4 +24,10 @@ in
     echo "sudo tailscale lock add ."
     echo "web: disable key expiry, add tag"
   '');
+
+  systemd.services.NetworkManager-wait-online = {
+    serviceConfig = {
+      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
+    };
+  };
 }

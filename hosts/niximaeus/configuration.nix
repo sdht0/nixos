@@ -36,11 +36,6 @@
     user = hostData.users.mainuser.username;
   };
   # services.xserver.displayManager.startx.enable = true;
-  systemd.services.NetworkManager-wait-online = {
-    serviceConfig = {
-      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
-    };
-  };
 
   environment.systemPackages = (with pkgs; [
     thunderbird zotero libreoffice-qt
