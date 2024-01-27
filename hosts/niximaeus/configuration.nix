@@ -51,7 +51,7 @@
     gnumake
     bibtool drawio (texlive.combine { inherit (texlive) scheme-medium
       standalone glossaries glossaries-extra newtx xstring multirow enumitem hyphenat ifoddpage biblatex
-      fontaxes pdfcomment datetime2 zref marginnote soulpos titlesec doi pgfplots relsize minted ;
+      fontaxes pdfcomment datetime2 zref marginnote soulpos titlesec doi pgfplots relsize minted silence;
     })
     (pkgs.python3.withPackages (ps: with ps; [
         beancount notebook pandas
