@@ -6,8 +6,8 @@
     src = pkgs.fetchFromGitHub {
       owner  = "yt-dlp";
       repo   = "yt-dlp";
-      rev    = "a174c453ee1e853c584ceadeac17eef2bd433dc5";
-      sha256 = "sha256-OErBcvaFifm074vRenHl5q5ScVRO7bcNM/xtEJ34ddM=";
+      rev    = "d63eae7e7ffb1f3e733e552b9e5e82355bfba214";
+      sha256 = "sha256-HncTDF+YbRBs8KyL76+fuH6iQuhV4PTNSGH7/fI/RN0=";
     };
     patches = [ ./enhance.patch ];
   });
