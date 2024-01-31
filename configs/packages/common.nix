@@ -17,6 +17,7 @@ in
   programs.nano.enable = false;
 
   services.tailscale.enable = true;
+  systemd.services.tailscaled.serviceConfig.Environment = [ "TS_NO_LOGS_NO_SUPPORT=true" ];
   environment.etc = (lib'.extraScript "tailscaleLogin" ''
     sudo tailscale login
     echo "TODOs:"
