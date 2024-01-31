@@ -46,7 +46,7 @@
     nil nixfmt
     rust-rover-overlay rustup cargo rustc
     vscode
-    gcc lldb
+    gcc lldb temurin-bin-21
     gnumake
     bibtool drawio texliveFull
     (pkgs.python3.withPackages (ps: with ps; [
