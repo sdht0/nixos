@@ -40,7 +40,7 @@
   environment.systemPackages = (with pkgs; [
     thunderbird zotero libreoffice-qt
     ffmpeg vlc
-    calibre mcomix foliate
+    mcomix foliate
     zoom-us slack
     obsidian fava
     nil nixfmt
