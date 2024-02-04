@@ -26,4 +26,16 @@
       '';
     });
   })
+  (final: prev: {
+    mcomix-overlay = prev.mcomix.overrideAttrs (old: rec {
+      version = "3.1.0";
+      src = pkgs.fetchurl {
+        url = "mirror://sourceforge/mcomix/mcomix-${version}.tar.gz";
+        hash = "sha256-+Shuun/7w86VKBNamTmCPEJfO76fdKY5+HBvzCi0xCc=";
+      };
+      postInstall = ''
+        cp -a share $out/
+      '';
+    });
+  })
 ]
