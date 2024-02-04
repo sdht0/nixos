@@ -12,8 +12,8 @@
   (final: prev: {
     rust-rover-overlay = prev.jetbrains.rust-rover.overrideAttrs (old: {
       src = pkgs.fetchurl {
-        url = "https://download.jetbrains.com/rustrover/RustRover-233.13135.116.tar.gz";
-        sha256 = "b2e6f76b9eb1d7d68a0ac874954aa394be1426e07a767bdebf1a421021764c0a";
+        url = "https://download.jetbrains.com/rustrover/RustRover-233.13135.127.tar.gz";
+        sha256 = "8d3e95f563641c20109ddd7572382663202c048a49b3ee0880cf4f69457d7f29";
       };
       buildInputs = old.buildInputs ++ [prev.xorg.libX11 prev.libGL prev.fontconfig];
     });
