@@ -28,6 +28,8 @@
 
   environment.systemPackages = (with pkgs; [
     libnotify xclip xdotool
+    qt6.qtimageformats
+    kio-fuse
   ]) ++ (with pkgsKde2nix; [
     yakuake
   ]);
