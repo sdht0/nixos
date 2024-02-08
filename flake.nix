@@ -5,20 +5,15 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:nixos/nixpkgs/master";
     # nixpkgsMaster.url = "github:nixos/nixpkgs/master";
-    kde2nix = {
-      url = "github:nix-community/kde2nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     homeManager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, homeManager, kde2nix }:
+  outputs = { self, nixpkgs, homeManager }:
   let
     system = "x86_64-linux";
-    pkgsKde2nix = kde2nix.packages.${system};
 
     mainuser = rec {
       username = "artimaeus";
@@ -55,9 +50,8 @@
 
     hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
       system = hostData.system;
-      specialArgs = { hostData = hostData // { inherit hostname; }; inherit nixpkgs pkgsKde2nix; };
+      specialArgs = { hostData = hostData // { inherit hostname; }; inherit nixpkgs; };
       modules = [
-        kde2nix.nixosModules.plasma6
         ./hosts/${hostname}/configuration.nix
         homeManager.nixosModules.home-manager {
           home-manager = {
