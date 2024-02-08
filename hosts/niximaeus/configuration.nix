@@ -57,8 +57,11 @@
         #vincenty folium numba
     ]))
     chromedriver
-    jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji
   ]);
+  fonts.packages = with pkgs; [
+    jetbrains-mono meslo-lgs-nf
+    noto-fonts noto-fonts-cjk-sans noto-fonts-color-emoji
+  ];
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
