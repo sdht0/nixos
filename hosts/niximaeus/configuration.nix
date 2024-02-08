@@ -1,4 +1,4 @@
-{ config, lib, pkgs, hostData, pkgsPrev, ... }:
+{ config, lib, pkgs, hostData, ... }:
 
 {
   imports = [
@@ -43,6 +43,7 @@
     mcomix-overlay foliate
     zoom-us slack
     obsidian fava
+    activitywatch
     nil nixfmt
     rust-rover-overlay rustup cargo rustc
     vscode
@@ -56,7 +57,7 @@
     ]))
     chromedriver
     jetbrains-mono meslo-lgs-nf noto-fonts noto-fonts-cjk noto-fonts-emoji
-  ]) ++ ([pkgsPrev.activitywatch]);
+  ]);
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
