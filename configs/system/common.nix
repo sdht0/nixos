@@ -20,7 +20,14 @@ in
 {
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+  };
+  documentation.doc.enable = false;
+  systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
+
+  # Normalize nixpkgs version
   nix.registry.nixpkgs.flake = nixpkgs;
   nix.nixPath = [
     "nixpkgs=${nixpkgsLink}"
@@ -28,8 +35,6 @@ in
     "/nix/var/nix/profiles/per-user/root/channels"
   ];
   systemd.tmpfiles.rules = [ "L+ ${nixpkgsLink}     - - - - ${nixpkgs}" ];
-  documentation.doc.enable = false;
-  systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 
   networking.hostName = hostData.hostname;
   nixpkgs.hostPlatform = hostData.system;
