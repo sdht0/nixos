@@ -12,10 +12,11 @@
   (final: prev: {
     rust-rover-overlay = prev.jetbrains.rust-rover.overrideAttrs (old: {
       src = pkgs.fetchurl {
-        url = "https://download.jetbrains.com/rustrover/RustRover-233.13135.127.tar.gz";
-        sha256 = "8d3e95f563641c20109ddd7572382663202c048a49b3ee0880cf4f69457d7f29";
+        url = "https://download.jetbrains.com/rustrover/RustRover-233.14015.147.tar.gz";
+        sha256 = "356c0d491045097f1b7fc82368d1b34c8025edc029a004c7dad47746834df083";
       };
       buildInputs = old.buildInputs ++ [prev.xorg.libX11 prev.libGL prev.fontconfig];
+      postPatch = builtins.replaceStrings ["patch"] ["true #patch"] old.postPatch;
     });
   })
   (final: prev: {
