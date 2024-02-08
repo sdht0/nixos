@@ -36,6 +36,7 @@
     user = hostData.users.mainuser.username;
   };
   # services.xserver.displayManager.startx.enable = true;
+  programs.ssh.startAgent = true;
 
   environment.systemPackages = (with pkgs; [
     thunderbird zotero libreoffice-qt
@@ -56,7 +57,7 @@
         #vincenty folium numba
     ]))
     chromedriver
-    jetbrains-mono meslo-lgs-nf noto-fonts noto-fonts-cjk noto-fonts-emoji
+    jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji
   ]);
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"

@@ -10,7 +10,6 @@ in
   imports = [ ../../configs/home/common.nix ];
 
   home.file = (lib'.linkFiles ([
-    { link = ".config/plasma-workspace/env/ssh-agent.sh"; dest = ".dotfiles/scripts/ssh-agent/ssh-agent.sh"; }
     { link = ".config/autostart/ssh-add.sh.desktop";      dest = ".dotfiles/scripts/ssh-agent/ssh-add.sh.desktop"; }
 
     { link = ".ssh/config";         dest = ".dotfiles.safe/ssh/config"; }
