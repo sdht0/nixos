@@ -10,7 +10,8 @@
     (builtins.attrNames (builtins.readDir ./.)))
 ) ++ [
   (final: prev: {
-    rust-rover-overlay = prev.jetbrains.rust-rover.overrideAttrs (old: {
+    rust-rover = prev.jetbrains.rust-rover.overrideAttrs (old: {
+      name = "overlay-${old.pname}-${old.version}";
       src = pkgs.fetchurl {
         url = "https://download.jetbrains.com/rustrover/RustRover-233.14015.147.tar.gz";
         sha256 = "356c0d491045097f1b7fc82368d1b34c8025edc029a004c7dad47746834df083";
@@ -20,7 +21,8 @@
     });
   })
   (final: prev: {
-    solaar-overlay = prev.solaar.overrideAttrs (old: {
+    solaar = prev.solaar.overrideAttrs (old: {
+      name = "overlay-${old.pname}-${old.version}";
       postFixup = ''
         ${old.postFixup}
         sed -i 's/Exec=solaar/Exec=solaar --window hide/' $out/share/applications/solaar.desktop

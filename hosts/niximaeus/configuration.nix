@@ -46,7 +46,7 @@
     obsidian fava
     activitywatch
     nil nixfmt
-    rust-rover-overlay rustup cargo rustc
+    rust-rover rustup cargo rustc
     vscode
     gcc lldb temurin-bin-21
     gnumake

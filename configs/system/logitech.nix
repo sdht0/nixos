@@ -2,5 +2,5 @@
 
 {
   hardware.logitech.wireless.enable = true;
-  environment.systemPackages = with pkgs; [ solaar-overlay ];
+  environment.systemPackages = with pkgs; [ solaar ];
 }

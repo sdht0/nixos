@@ -27,7 +27,7 @@
   services.logind.lidSwitch = "ignore";
 
   environment.systemPackages = with pkgs; [
-    yt-dlp-git-overlay nodejs (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ])) # download.sh
+    yt-dlp-git nodejs (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ])) # download.sh
   ];
   programs.npm.enable = true;
   virtualisation.docker = {
