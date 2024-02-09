@@ -41,7 +41,7 @@
   environment.systemPackages = (with pkgs; [
     thunderbird zotero libreoffice-qt
     ffmpeg vlc
-    mcomix-overlay foliate
+    mcomix foliate
     zoom-us slack
     obsidian fava
     activitywatch
