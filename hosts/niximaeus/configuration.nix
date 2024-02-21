@@ -39,6 +39,7 @@
   programs.ssh.startAgent = true;
 
   environment.systemPackages = (with pkgs; [
+    firefox
     thunderbird zotero libreoffice-qt
     ffmpeg vlc
     mcomix foliate

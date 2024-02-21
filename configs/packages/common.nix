@@ -9,7 +9,7 @@ in
   ];
 
   environment.systemPackages = with pkgs; [
-    firefox-devedition chromium
+    chromium
     nftables killall gitFull wget curl rsync vim tmux htop ripgrep fzf eza peco sshfs ffmpeg dig bc
     nix-output-monitor nvd
   ];
@@ -25,10 +25,4 @@ in
     echo "sudo tailscale lock add ."
     echo "web: disable key expiry, add tag"
   '');
-
-  systemd.services.NetworkManager-wait-online = {
-    serviceConfig = {
-      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
-    };
-  };
 }
