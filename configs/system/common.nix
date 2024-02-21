@@ -43,13 +43,21 @@ in
   services.fwupd.enable = true;
   hardware.opengl.enable = true;
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.macAddress = "stable";
+    ethernet.macAddress = "stable";
+    insertNameservers = [ "1.1.1.1" "8.8.8.8" ];
+  };
+  systemd.services.NetworkManager-wait-online = {
+    serviceConfig = {
+      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
+    };
+  };
   networking.firewall.enable = false;
   services.resolved = {
     enable = true;
-    dnssec = "false";
-    domains = [ "~." ];
-    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    fallbackDns = [ "1.1.1.1" "8.8.8.8" ];
   };
 
   environment.systemPackages = with pkgs; [
