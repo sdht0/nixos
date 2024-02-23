@@ -1,14 +1,20 @@
 # import all nix files in the current folder, and execute them with args as parameters
 # The return value is a list of all execution results, which is the list of overlays
 
-{ config, pkgs, ... }@args:
-
-(builtins.map
-  (f: (import (./. + "/${f}") args))
-  (builtins.filter
-    (f: f != "default.nix") # Don't include this file itself
-    (builtins.attrNames (builtins.readDir ./.)))
-) ++ [
+{ config, pkgs, ... }:
+[
+  (final: prev: {
+    yt-dlp-git = prev.yt-dlp.overrideAttrs (old: {
+      name = "overlay-yt-dlp-git";
+      src = pkgs.fetchFromGitHub {
+        owner  = "yt-dlp";
+        repo   = "yt-dlp";
+        rev    = "d63eae7e7ffb1f3e733e552b9e5e82355bfba214";
+        sha256 = "sha256-HncTDF+YbRBs8KyL76+fuH6iQuhV4PTNSGH7/fI/RN0=";
+      };
+      patches = [ ./files/yt-dlp-enhance.patch ];
+    });
+  })
   (final: prev: {
     rust-rover = prev.jetbrains.rust-rover.overrideAttrs (old: {
       name = "overlay-${old.pname}-${old.version}";
