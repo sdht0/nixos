@@ -63,9 +63,6 @@
     jetbrains-mono meslo-lgs-nf
     noto-fonts noto-fonts-cjk-sans noto-fonts-color-emoji
   ];
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
 
   system.stateVersion = "23.05";
 }

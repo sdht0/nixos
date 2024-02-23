@@ -29,4 +29,16 @@
       '';
     });
   })
+  (final: prev: {
+    obsidian = (prev.obsidian.override {
+        electron = pkgs.electron_28;
+      }).overrideAttrs (old: rec {
+        version = "1.5.8";
+        name = "overlay-${old.pname}-${version}";
+        src = pkgs.fetchurl {
+          url = "https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/obsidian-${version}.tar.gz";
+          hash = "sha256-oc2iA2E3ac/uUNv6unzfac5meHqQzmzDVl/M9jNpS/M=";
+        };
+    });
+  })
 ]
