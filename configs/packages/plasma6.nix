@@ -1,4 +1,4 @@
-{ config, pkgs, pkgsKde2nix, ... }:
+{ config, pkgs, ... }:
 
 {
   services.xserver = {
@@ -26,12 +26,10 @@
     jack.enable = true;
   };
 
-  environment.systemPackages = (with pkgs; [
+  environment.systemPackages = with pkgs; [
     libnotify xclip xdotool
     qt6.qtimageformats
-    kio-fuse
-  ]) ++ (with pkgsKde2nix; [
-    yakuake
-  ]);
+    yakuake kio-fuse
+  ];
   programs.kdeconnect.enable = true;
 }
