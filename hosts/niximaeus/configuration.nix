@@ -10,7 +10,6 @@
     ../../configs/system/fingerprintreader.nix
     ../../configs/system/canon-ts3420.nix
 
-    ../../configs/packages/systemd-boot-module/custom-systemd-boot.nix
     ../../configs/packages/systemd-boot.nix
     ../../configs/packages/common.nix
     ../../configs/packages/plasma5.nix
