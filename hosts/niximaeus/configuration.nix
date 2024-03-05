@@ -30,6 +30,8 @@
 
   hardware.bluetooth.enable = true;
 
+  services.dbus.implementation = "broker";
+
   services.xserver.displayManager.autoLogin = {
     enable = true;
     user = hostData.users.mainuser.username;
