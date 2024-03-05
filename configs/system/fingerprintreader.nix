@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  services.fprintd.enable = false;
+  services.fprintd.enable = true;
   security.pam.services.sudo.fprintAuth = false;
 }
