@@ -5,7 +5,7 @@
     enable = true;
     videoDrivers = [ "modesetting" ];
   };
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
   services.xserver.displayManager = {
     defaultSession = "plasmax11";
     sddm = {
@@ -25,10 +25,11 @@
     jack.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     libnotify xclip xdotool
     qt6.qtimageformats
-    yakuake kio-fuse
-  ];
+  ]) ++ (with pkgs.kdePackages; [
+    yakuake
+  ]);
   programs.kdeconnect.enable = true;
 }
