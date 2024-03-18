@@ -25,11 +25,13 @@
     jack.enable = true;
   };
 
+  services.colord.enable = true;
+
   environment.systemPackages = (with pkgs; [
     libnotify xclip xdotool
     qt6.qtimageformats
   ]) ++ (with pkgs.kdePackages; [
-    yakuake
+    yakuake plasma-disks kgamma
   ]);
   programs.kdeconnect.enable = true;
 }
