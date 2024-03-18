@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }@args:
 [
   (final: prev: {
     yt-dlp-git = prev.yt-dlp.overrideAttrs (old: {
@@ -22,3 +22,4 @@
     });
   })
 ]
+++ (import ./kde.nix args)
