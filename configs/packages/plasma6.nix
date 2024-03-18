@@ -28,7 +28,7 @@
   services.colord.enable = true;
 
   environment.systemPackages = (with pkgs; [
-    libnotify xclip xdotool
+    libnotify xclip xdotool vulkan-tools glxinfo
     qt6.qtimageformats
   ]) ++ (with pkgs.kdePackages; [
     yakuake plasma-disks kgamma
