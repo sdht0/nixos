@@ -8,20 +8,28 @@
     "version": "24.02-unstable-2024-03-18"
   },
   "attica": {
-    "fname": "kf-attica-6.0-unstable-2024-02-21-8b5cb3c7.tar.gz",
-    "id": "8b5cb3c72a046a895dcd8a025d4ee2a090cb0dd2",
+    "fname": "kf-attica-6.0-unstable-2024-03-18-291577fe.tar.gz",
+    "id": "291577fed179da98380db9e0188de2960de885f2",
     "pname": "kf-attica",
-    "sha256": "0rp5qsm4hk1nzw29fayp6nsyhh87azvsl5jkbwhz1dvp7f28kxsn",
-    "url": "https://invent.kde.org/frameworks/attica/-/archive/8b5cb3c72a046a895dcd8a025d4ee2a090cb0dd2/attica-8b5cb3c72a046a895dcd8a025d4ee2a090cb0dd2.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "0x9r1ahwkbh1g5k2iaj0ywdl7w5g2gnwkcnylg5n6yw4rwm02y2m",
+    "url": "https://invent.kde.org/frameworks/attica/-/archive/291577fed179da98380db9e0188de2960de885f2/attica-291577fed179da98380db9e0188de2960de885f2.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "baloo": {
-    "fname": "kf-baloo-6.0-unstable-2024-03-18-4ba305f4.tar.gz",
-    "id": "4ba305f46fd54dc215ad250a0dd9621ef1aeb5fc",
+    "fname": "kf-baloo-6.0-unstable-2024-03-18-ed0452f8.tar.gz",
+    "id": "ed0452f80a958c73a289f8d29355e5c9733f4188",
     "pname": "kf-baloo",
-    "sha256": "1iirpm0zl8rp7vr6ajjr5rva0g2aldr760zzr7qlyhgkx05jn5sr",
-    "url": "https://invent.kde.org/frameworks/baloo/-/archive/4ba305f46fd54dc215ad250a0dd9621ef1aeb5fc/baloo-4ba305f46fd54dc215ad250a0dd9621ef1aeb5fc.tar.gz",
+    "sha256": "1hm0m6hvvq2312lrp9idg5a6kvs04haab9gn67qh0r74msrzwz8k",
+    "url": "https://invent.kde.org/frameworks/baloo/-/archive/ed0452f80a958c73a289f8d29355e5c9733f4188/baloo-ed0452f80a958c73a289f8d29355e5c9733f4188.tar.gz",
     "version": "6.0-unstable-2024-03-18"
+  },
+  "baloo-widgets": {
+    "fname": "kg-baloo-widgets-24.02-unstable-2024-03-18-87158a45.tar.gz",
+    "id": "87158a45924840abde2428e6d79f28dd69b17518",
+    "pname": "kg-baloo-widgets",
+    "sha256": "0axh94402vf1dhynzgl85vc37911dvhsz5lgqgx3rxzv767ddq8a",
+    "url": "https://invent.kde.org/libraries/baloo-widgets/-/archive/87158a45924840abde2428e6d79f28dd69b17518/baloo-widgets-87158a45924840abde2428e6d79f28dd69b17518.tar.gz",
+    "version": "24.02-unstable-2024-03-18"
   },
   "bluedevil": {
     "fname": "kp-bluedevil-6.0-unstable-2024-03-18-9003fcd2.tar.gz",
@@ -32,12 +40,12 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "bluez-qt": {
-    "fname": "kf-bluez-qt-6.0-unstable-2024-02-21-ea5e7cea.tar.gz",
-    "id": "ea5e7cea707c53e813395fb75dd1815758a253a7",
+    "fname": "kf-bluez-qt-6.0-unstable-2024-03-18-25d93684.tar.gz",
+    "id": "25d936845ebe2adec5f865f3bb2836dea125db20",
     "pname": "kf-bluez-qt",
-    "sha256": "1i1gsxz1l8fp65br3rvxp9qd30yjmxg5jmcxhppcp6fkwcxl4svm",
-    "url": "https://invent.kde.org/frameworks/bluez-qt/-/archive/ea5e7cea707c53e813395fb75dd1815758a253a7/bluez-qt-ea5e7cea707c53e813395fb75dd1815758a253a7.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "0rvp6kx143jly4wkn264mlcvlmhp86kqv81ipar90w0crah2gi3g",
+    "url": "https://invent.kde.org/frameworks/bluez-qt/-/archive/25d936845ebe2adec5f865f3bb2836dea125db20/bluez-qt-25d936845ebe2adec5f865f3bb2836dea125db20.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "breeze": {
     "fname": "kp-breeze-6.0-unstable-2024-03-18-e71eb170.tar.gz",
@@ -56,12 +64,12 @@
     "version": "6.0-unstable-2024-02-13"
   },
   "breeze-icons": {
-    "fname": "kf-breeze-icons-6.0-unstable-2024-03-16-05542603.tar.gz",
-    "id": "055426035f0376398d12ef4a782a0675943d5a75",
+    "fname": "kf-breeze-icons-6.0-unstable-2024-03-18-98c00445.tar.gz",
+    "id": "98c004456cf3ba9aa46b201a916c9e6b0e31f1a2",
     "pname": "kf-breeze-icons",
-    "sha256": "1wx6z0l6h7l4f8z0jsf0nwfahiv6pv69y1lgldl7f7jdpc29r7yq",
-    "url": "https://invent.kde.org/frameworks/breeze-icons/-/archive/055426035f0376398d12ef4a782a0675943d5a75/breeze-icons-055426035f0376398d12ef4a782a0675943d5a75.tar.gz",
-    "version": "6.0-unstable-2024-03-16"
+    "sha256": "0l1y3fylm3s534d6kn4xsam2ay2whh249q2s1y4pw6scf83jyb9p",
+    "url": "https://invent.kde.org/frameworks/breeze-icons/-/archive/98c004456cf3ba9aa46b201a916c9e6b0e31f1a2/breeze-icons-98c004456cf3ba9aa46b201a916c9e6b0e31f1a2.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "colord-kde": {
     "fname": "kg-colord-kde-24.02-unstable-2024-03-18-73d43a40.tar.gz",
@@ -72,11 +80,11 @@
     "version": "24.02-unstable-2024-03-18"
   },
   "dolphin": {
-    "fname": "kg-dolphin-24.02-unstable-2024-03-18-731059d0.tar.gz",
-    "id": "731059d0cea029c12bc526d4ce15237f5b96f541",
+    "fname": "kg-dolphin-24.02-unstable-2024-03-18-f97c61ff.tar.gz",
+    "id": "f97c61ffac947582713dfef17f7e2194994c2da9",
     "pname": "kg-dolphin",
-    "sha256": "1rqs5vj60g9cyb91s3y6hywraa87rd4jyhcx9brm7mrbc4zcy3yc",
-    "url": "https://invent.kde.org/system/dolphin/-/archive/731059d0cea029c12bc526d4ce15237f5b96f541/dolphin-731059d0cea029c12bc526d4ce15237f5b96f541.tar.gz",
+    "sha256": "02nwgya1jgxgh32njjircvljp59nxas6fx89xxsckc7irmzazw4a",
+    "url": "https://invent.kde.org/system/dolphin/-/archive/f97c61ffac947582713dfef17f7e2194994c2da9/dolphin-f97c61ffac947582713dfef17f7e2194994c2da9.tar.gz",
     "version": "24.02-unstable-2024-03-18"
   },
   "dolphin-plugins": {
@@ -96,27 +104,43 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "extra-cmake-modules": {
-    "fname": "kf-extra-cmake-modules-6.0-unstable-2024-03-15-c4315518.tar.gz",
-    "id": "c43155187aac4448f0bafa67ba476927b92c6b4b",
+    "fname": "kf-extra-cmake-modules-6.0-unstable-2024-03-18-8ffe17ee.tar.gz",
+    "id": "8ffe17ee8ff57f1b7aaa31e77b735c58ef87b551",
     "pname": "kf-extra-cmake-modules",
-    "sha256": "09qqydiygn8jjvxchqvm6i6ligh98nbgl82y4xfzda57zg4b4dds",
-    "url": "https://invent.kde.org/frameworks/extra-cmake-modules/-/archive/c43155187aac4448f0bafa67ba476927b92c6b4b/extra-cmake-modules-c43155187aac4448f0bafa67ba476927b92c6b4b.tar.gz",
-    "version": "6.0-unstable-2024-03-15"
+    "sha256": "0m405f4xsvzjrn7b4bbxm9i83gfahiqkc03g043x3pazic2x0q02",
+    "url": "https://invent.kde.org/frameworks/extra-cmake-modules/-/archive/8ffe17ee8ff57f1b7aaa31e77b735c58ef87b551/extra-cmake-modules-8ffe17ee8ff57f1b7aaa31e77b735c58ef87b551.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
+  },
+  "ffmpegthumbs": {
+    "fname": "kg-ffmpegthumbs-24.02-unstable-2024-03-15-8790f2ed.tar.gz",
+    "id": "8790f2ed6ef11a507cad4a4d682fa73b876709ab",
+    "pname": "kg-ffmpegthumbs",
+    "sha256": "1vxcy1h54m2jkkh15nx837xb0dp1zjq9a4hvc4bls2f1wdilm7hi",
+    "url": "https://invent.kde.org/multimedia/ffmpegthumbs/-/archive/8790f2ed6ef11a507cad4a4d682fa73b876709ab/ffmpegthumbs-8790f2ed6ef11a507cad4a4d682fa73b876709ab.tar.gz",
+    "version": "24.02-unstable-2024-03-15"
   },
   "frameworkintegration": {
-    "fname": "kf-frameworkintegration-6.0-unstable-2024-03-01-f63d4760.tar.gz",
-    "id": "f63d47609e7f0a0e802d92f53c9bcb0ced6cb278",
+    "fname": "kf-frameworkintegration-6.0-unstable-2024-03-18-21e5d8c7.tar.gz",
+    "id": "21e5d8c708cb5a9fd108181714a6c6f3b58038cd",
     "pname": "kf-frameworkintegration",
-    "sha256": "0c5pz5147r2b6yknsh2hdvf2cabnqwxj6gybpkjwm9kmik6ag42v",
-    "url": "https://invent.kde.org/frameworks/frameworkintegration/-/archive/f63d47609e7f0a0e802d92f53c9bcb0ced6cb278/frameworkintegration-f63d47609e7f0a0e802d92f53c9bcb0ced6cb278.tar.gz",
-    "version": "6.0-unstable-2024-03-01"
+    "sha256": "0hq91rzsxld45xmv2xh0qinsq78g8kkanjy8lqrnjn7aikj8wfnh",
+    "url": "https://invent.kde.org/frameworks/frameworkintegration/-/archive/21e5d8c708cb5a9fd108181714a6c6f3b58038cd/frameworkintegration-21e5d8c708cb5a9fd108181714a6c6f3b58038cd.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "gwenview": {
-    "fname": "kg-gwenview-24.02-unstable-2024-03-18-bfbffb3d.tar.gz",
-    "id": "bfbffb3d950473e8733ec9634dfa0a84ded1ed8d",
+    "fname": "kg-gwenview-24.02-unstable-2024-03-18-3c867476.tar.gz",
+    "id": "3c867476843659035ca8585d372434163f846685",
     "pname": "kg-gwenview",
-    "sha256": "0sn8n9a2q03v4jfayqpah3ymyicxsfnsdb94pgsl8vhk5s8qp62b",
-    "url": "https://invent.kde.org/graphics/gwenview/-/archive/bfbffb3d950473e8733ec9634dfa0a84ded1ed8d/gwenview-bfbffb3d950473e8733ec9634dfa0a84ded1ed8d.tar.gz",
+    "sha256": "0p9llk65pkn9dmzmisa5lk5i4lakgjzqfx925jjq3vmbrf8lwmmm",
+    "url": "https://invent.kde.org/graphics/gwenview/-/archive/3c867476843659035ca8585d372434163f846685/gwenview-3c867476843659035ca8585d372434163f846685.tar.gz",
+    "version": "24.02-unstable-2024-03-18"
+  },
+  "kaccounts-integration": {
+    "fname": "kg-kaccounts-integration-24.02-unstable-2024-03-18-2c63dcde.tar.gz",
+    "id": "2c63dcdeec9fac69466986328796d49e29853d06",
+    "pname": "kg-kaccounts-integration",
+    "sha256": "1681jlz8fw2mlc32nflrxq9431w63kvk30b7b09gf0mpixw2jgjq",
+    "url": "https://invent.kde.org/network/kaccounts-integration/-/archive/2c63dcdeec9fac69466986328796d49e29853d06/kaccounts-integration-2c63dcdeec9fac69466986328796d49e29853d06.tar.gz",
     "version": "24.02-unstable-2024-03-18"
   },
   "kactivitymanagerd": {
@@ -128,139 +152,139 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "kapidox": {
-    "fname": "kf-kapidox-6.0-unstable-2024-02-19-d5266bd5.tar.gz",
-    "id": "d5266bd52794fc713f5d437169a230dea4621cdf",
+    "fname": "kf-kapidox-6.0-unstable-2024-03-18-0eb16b8a.tar.gz",
+    "id": "0eb16b8ab26a2d28cdbf10c6c9343f85a4415f27",
     "pname": "kf-kapidox",
-    "sha256": "1zdfr044m33mf8042pcia5dx494k32m5lprz1hdbdmygjaa848bi",
-    "url": "https://invent.kde.org/frameworks/kapidox/-/archive/d5266bd52794fc713f5d437169a230dea4621cdf/kapidox-d5266bd52794fc713f5d437169a230dea4621cdf.tar.gz",
-    "version": "6.0-unstable-2024-02-19"
+    "sha256": "1hnnmi043acl3xag5i5ciqdpdcdaqfdqh84i4x6cghlnicdbvm0l",
+    "url": "https://invent.kde.org/frameworks/kapidox/-/archive/0eb16b8ab26a2d28cdbf10c6c9343f85a4415f27/kapidox-0eb16b8ab26a2d28cdbf10c6c9343f85a4415f27.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "karchive": {
-    "fname": "kf-karchive-6.0-unstable-2024-03-18-c3af3c15.tar.gz",
-    "id": "c3af3c157bbae419427f76f092f2788517ac4b24",
+    "fname": "kf-karchive-6.0-unstable-2024-03-18-46b7b54a.tar.gz",
+    "id": "46b7b54a51812c3b0d4b757ec55936889de76259",
     "pname": "kf-karchive",
-    "sha256": "1v46rxj24z2sg6k2mpbisciqk445daf5zf2g7qkkashblzwbb632",
-    "url": "https://invent.kde.org/frameworks/karchive/-/archive/c3af3c157bbae419427f76f092f2788517ac4b24/karchive-c3af3c157bbae419427f76f092f2788517ac4b24.tar.gz",
+    "sha256": "1hjbb25r67l98wq4rmccjnlilad6bli5fd6790pkkzcywqrb577m",
+    "url": "https://invent.kde.org/frameworks/karchive/-/archive/46b7b54a51812c3b0d4b757ec55936889de76259/karchive-46b7b54a51812c3b0d4b757ec55936889de76259.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kate": {
-    "fname": "kg-kate-24.02-unstable-2024-03-18-c31c3a4b.tar.gz",
-    "id": "c31c3a4b8042d8627ce60f01130f83a13be6643d",
+    "fname": "kg-kate-24.02-unstable-2024-03-18-e39da183.tar.gz",
+    "id": "e39da1831db5d3792dc58de52205364982c84d57",
     "pname": "kg-kate",
-    "sha256": "1i5bhk66fiyiifyc835i4mr1mnhxyjhmlxi9f4w7nk5pq8q8d95k",
-    "url": "https://invent.kde.org/utilities/kate/-/archive/c31c3a4b8042d8627ce60f01130f83a13be6643d/kate-c31c3a4b8042d8627ce60f01130f83a13be6643d.tar.gz",
+    "sha256": "16vdyvl7jkmjfz2992rw6jqhs866mpqj595fg751w0v341a6kshd",
+    "url": "https://invent.kde.org/utilities/kate/-/archive/e39da1831db5d3792dc58de52205364982c84d57/kate-e39da1831db5d3792dc58de52205364982c84d57.tar.gz",
     "version": "24.02-unstable-2024-03-18"
   },
   "kauth": {
-    "fname": "kf-kauth-6.0-unstable-2024-03-18-ec8cb516.tar.gz",
-    "id": "ec8cb516707600ce4d21adcf7d33fcf63290410a",
+    "fname": "kf-kauth-6.0-unstable-2024-03-18-53d87f87.tar.gz",
+    "id": "53d87f87d72892a9e724b7214c48b11a81e6de7d",
     "pname": "kf-kauth",
-    "sha256": "16ammiak1ir82jvxcrx0ap8qyknwi763j8vkrw9b33d003sbxr20",
-    "url": "https://invent.kde.org/frameworks/kauth/-/archive/ec8cb516707600ce4d21adcf7d33fcf63290410a/kauth-ec8cb516707600ce4d21adcf7d33fcf63290410a.tar.gz",
+    "sha256": "0cps14qcdr9d14kvh9gqnm7pzr8s2hih4lpjkbviwsx2b98j0nal",
+    "url": "https://invent.kde.org/frameworks/kauth/-/archive/53d87f87d72892a9e724b7214c48b11a81e6de7d/kauth-53d87f87d72892a9e724b7214c48b11a81e6de7d.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kbookmarks": {
-    "fname": "kf-kbookmarks-6.0-unstable-2024-03-18-4d825fa2.tar.gz",
-    "id": "4d825fa2d8975e8f0d9dc2e03d70c4bed6aae641",
+    "fname": "kf-kbookmarks-6.0-unstable-2024-03-18-f66c21c3.tar.gz",
+    "id": "f66c21c3c704a944f8ed2fb2a2c7fc4b9192b58e",
     "pname": "kf-kbookmarks",
-    "sha256": "1i497mdy9qj86mvjn04nk02fyirvf652zkqj1p4hdm0025ncj30g",
-    "url": "https://invent.kde.org/frameworks/kbookmarks/-/archive/4d825fa2d8975e8f0d9dc2e03d70c4bed6aae641/kbookmarks-4d825fa2d8975e8f0d9dc2e03d70c4bed6aae641.tar.gz",
+    "sha256": "0h6mnrfs4yirjaydn0dk55c9x3sqi6k5pv0b7ls88j3iayvrfp9f",
+    "url": "https://invent.kde.org/frameworks/kbookmarks/-/archive/f66c21c3c704a944f8ed2fb2a2c7fc4b9192b58e/kbookmarks-f66c21c3c704a944f8ed2fb2a2c7fc4b9192b58e.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kcalendarcore": {
-    "fname": "kf-kcalendarcore-6.0-unstable-2024-02-21-590e2f17.tar.gz",
-    "id": "590e2f17f0bb93118be386282ca1c5e97c13115e",
+    "fname": "kf-kcalendarcore-6.0-unstable-2024-03-18-04bdca49.tar.gz",
+    "id": "04bdca4953082d43177f80d9af9ac124b78b46b3",
     "pname": "kf-kcalendarcore",
-    "sha256": "0aphlpzll749ip4a1q7zxd066q5jyaqy7g5l6ww8rm1p4bdxjjlb",
-    "url": "https://invent.kde.org/frameworks/kcalendarcore/-/archive/590e2f17f0bb93118be386282ca1c5e97c13115e/kcalendarcore-590e2f17f0bb93118be386282ca1c5e97c13115e.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "01jx342s5wfyvhz1sjj9g4qsc76ayghpcql2isw9hfjcmqhv1nza",
+    "url": "https://invent.kde.org/frameworks/kcalendarcore/-/archive/04bdca4953082d43177f80d9af9ac124b78b46b3/kcalendarcore-04bdca4953082d43177f80d9af9ac124b78b46b3.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "kcmutils": {
-    "fname": "kf-kcmutils-6.0-unstable-2024-03-18-b3353792.tar.gz",
-    "id": "b335379232672e5fd2b65ead15a2bbdd7228b6f2",
+    "fname": "kf-kcmutils-6.0-unstable-2024-03-18-51b87c5c.tar.gz",
+    "id": "51b87c5cc2706ab74661d90d3e4f881e5d81b01e",
     "pname": "kf-kcmutils",
-    "sha256": "0w3nmwjq9402qyvj4adpsl983nh3dxnlshgabffbxc9cgsc8l9r9",
-    "url": "https://invent.kde.org/frameworks/kcmutils/-/archive/b335379232672e5fd2b65ead15a2bbdd7228b6f2/kcmutils-b335379232672e5fd2b65ead15a2bbdd7228b6f2.tar.gz",
+    "sha256": "02ibi0791yfdvpydssdf80dw1nwkaw5590npjjbjcy4cvcnvsmnm",
+    "url": "https://invent.kde.org/frameworks/kcmutils/-/archive/51b87c5cc2706ab74661d90d3e4f881e5d81b01e/kcmutils-51b87c5cc2706ab74661d90d3e4f881e5d81b01e.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kcodecs": {
-    "fname": "kf-kcodecs-6.0-unstable-2024-03-18-259025a3.tar.gz",
-    "id": "259025a3b7f8e628cef81ae2bb8dc6f4ab62d32e",
+    "fname": "kf-kcodecs-6.0-unstable-2024-03-18-e9d1cc99.tar.gz",
+    "id": "e9d1cc997f5c792ba390126660c09301a22a2a3d",
     "pname": "kf-kcodecs",
-    "sha256": "1klajwg7sq03r7kyq9f44skyw04d07jl8y5a3s0wijpd1nsf59av",
-    "url": "https://invent.kde.org/frameworks/kcodecs/-/archive/259025a3b7f8e628cef81ae2bb8dc6f4ab62d32e/kcodecs-259025a3b7f8e628cef81ae2bb8dc6f4ab62d32e.tar.gz",
+    "sha256": "1z2637xs6jbm9kjhhkvai16dj8bw93jbl5rw8h8p33h1bg8064yc",
+    "url": "https://invent.kde.org/frameworks/kcodecs/-/archive/e9d1cc997f5c792ba390126660c09301a22a2a3d/kcodecs-e9d1cc997f5c792ba390126660c09301a22a2a3d.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kcolorscheme": {
-    "fname": "kf-kcolorscheme-6.0-unstable-2024-03-18-e8589900.tar.gz",
-    "id": "e8589900735247558e991a2192b4d5cac0f5414b",
+    "fname": "kf-kcolorscheme-6.0-unstable-2024-03-18-57cedc5f.tar.gz",
+    "id": "57cedc5f08a08160aa3c7098be4e56c853bdbcc1",
     "pname": "kf-kcolorscheme",
-    "sha256": "0g7kp45zqinalilhqzhrhgr7zqrmclq4g403h8pb8201cp5xr2l0",
-    "url": "https://invent.kde.org/frameworks/kcolorscheme/-/archive/e8589900735247558e991a2192b4d5cac0f5414b/kcolorscheme-e8589900735247558e991a2192b4d5cac0f5414b.tar.gz",
+    "sha256": "0xza6wv27lzs6w84fja9h9wjk05l579g2wa7irmbns60mhshicdh",
+    "url": "https://invent.kde.org/frameworks/kcolorscheme/-/archive/57cedc5f08a08160aa3c7098be4e56c853bdbcc1/kcolorscheme-57cedc5f08a08160aa3c7098be4e56c853bdbcc1.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kcompletion": {
-    "fname": "kf-kcompletion-6.0-unstable-2024-03-18-2d2b4415.tar.gz",
-    "id": "2d2b441572e280d834a17cb17f15e369afdfe8ee",
+    "fname": "kf-kcompletion-6.0-unstable-2024-03-18-10ce34c4.tar.gz",
+    "id": "10ce34c4769f7984b650106d1cb0c030b26ac5f2",
     "pname": "kf-kcompletion",
-    "sha256": "16w7833ld2jjknqvhms1zrdaxxln4949bnzxc6gzb2nx8bjyds8c",
-    "url": "https://invent.kde.org/frameworks/kcompletion/-/archive/2d2b441572e280d834a17cb17f15e369afdfe8ee/kcompletion-2d2b441572e280d834a17cb17f15e369afdfe8ee.tar.gz",
+    "sha256": "0a7p0gn770nvkhaxrykmjyl9vfwk56jb2whb2bw995am2v1mqxg6",
+    "url": "https://invent.kde.org/frameworks/kcompletion/-/archive/10ce34c4769f7984b650106d1cb0c030b26ac5f2/kcompletion-10ce34c4769f7984b650106d1cb0c030b26ac5f2.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kconfig": {
-    "fname": "kf-kconfig-6.0-unstable-2024-03-18-6c90cf25.tar.gz",
-    "id": "6c90cf2522dff453bb5cfe1d620cd32c3b409f0c",
+    "fname": "kf-kconfig-6.0-unstable-2024-03-18-85b785b3.tar.gz",
+    "id": "85b785b37f747e1c383127b2c2d82c400f3997b8",
     "pname": "kf-kconfig",
-    "sha256": "0fnk3rpkpmsy58pyb7r2sqix0axm32fzy9nc329qa097mr6ww6dw",
-    "url": "https://invent.kde.org/frameworks/kconfig/-/archive/6c90cf2522dff453bb5cfe1d620cd32c3b409f0c/kconfig-6c90cf2522dff453bb5cfe1d620cd32c3b409f0c.tar.gz",
+    "sha256": "01qcpa35la81mkmqak4dsz78xbaml9cx0h1llqyjik60c5zaw5ib",
+    "url": "https://invent.kde.org/frameworks/kconfig/-/archive/85b785b37f747e1c383127b2c2d82c400f3997b8/kconfig-85b785b37f747e1c383127b2c2d82c400f3997b8.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kconfigwidgets": {
-    "fname": "kf-kconfigwidgets-6.0-unstable-2024-03-18-5ad9605b.tar.gz",
-    "id": "5ad9605b36b872c7a94b9abfc527501c4d51db95",
+    "fname": "kf-kconfigwidgets-6.0-unstable-2024-03-18-feedd5f2.tar.gz",
+    "id": "feedd5f208c661a3cba7a946fb1cb849c8bee614",
     "pname": "kf-kconfigwidgets",
-    "sha256": "0f7az91q2ahf9x8qkk63qb6zi9jyjwb80mmppy7jfvimsfmg91c8",
-    "url": "https://invent.kde.org/frameworks/kconfigwidgets/-/archive/5ad9605b36b872c7a94b9abfc527501c4d51db95/kconfigwidgets-5ad9605b36b872c7a94b9abfc527501c4d51db95.tar.gz",
+    "sha256": "0q0w6rsf12dlqdhxk03jv0dcvn96l5d9k2m4bda06zl94lqchyk4",
+    "url": "https://invent.kde.org/frameworks/kconfigwidgets/-/archive/feedd5f208c661a3cba7a946fb1cb849c8bee614/kconfigwidgets-feedd5f208c661a3cba7a946fb1cb849c8bee614.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kcontacts": {
-    "fname": "kf-kcontacts-6.0-unstable-2024-03-18-986f7c1a.tar.gz",
-    "id": "986f7c1a52914cfdc7081e738d9d75724d0f13d4",
+    "fname": "kf-kcontacts-6.0-unstable-2024-03-18-4f1c8901.tar.gz",
+    "id": "4f1c8901a83d826f486285c987b8b3e3f733cda6",
     "pname": "kf-kcontacts",
-    "sha256": "17gy18ws2wxjykip40aqwqdc52r4w53iixxff5wyrjnvyy0skzz2",
-    "url": "https://invent.kde.org/frameworks/kcontacts/-/archive/986f7c1a52914cfdc7081e738d9d75724d0f13d4/kcontacts-986f7c1a52914cfdc7081e738d9d75724d0f13d4.tar.gz",
+    "sha256": "04d07b5lrkgk9zyr4gf1pmic7b8f62w6xy7v25mygij56z1bgjk6",
+    "url": "https://invent.kde.org/frameworks/kcontacts/-/archive/4f1c8901a83d826f486285c987b8b3e3f733cda6/kcontacts-4f1c8901a83d826f486285c987b8b3e3f733cda6.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kcoreaddons": {
-    "fname": "kf-kcoreaddons-6.0-unstable-2024-03-18-48c58b1c.tar.gz",
-    "id": "48c58b1c4bdb836418c7cb267603a56662ce0221",
+    "fname": "kf-kcoreaddons-6.0-unstable-2024-03-18-63f61aa0.tar.gz",
+    "id": "63f61aa0e3fc546013ebdf6e52418638bc1427c8",
     "pname": "kf-kcoreaddons",
-    "sha256": "0w182kjbmh833ya9fj8sy6m42lhn2qmrykgk1racp1hbb6z9xi4n",
-    "url": "https://invent.kde.org/frameworks/kcoreaddons/-/archive/48c58b1c4bdb836418c7cb267603a56662ce0221/kcoreaddons-48c58b1c4bdb836418c7cb267603a56662ce0221.tar.gz",
+    "sha256": "1b3bxsh2ad3vwrxy70sbklmzcg8dzkads0ifw1xk6v9mk2ph1sx8",
+    "url": "https://invent.kde.org/frameworks/kcoreaddons/-/archive/63f61aa0e3fc546013ebdf6e52418638bc1427c8/kcoreaddons-63f61aa0e3fc546013ebdf6e52418638bc1427c8.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kcrash": {
-    "fname": "kf-kcrash-6.0-unstable-2024-02-21-90f800f4.tar.gz",
-    "id": "90f800f42ea1d17486a7178869b3df485ba801e4",
+    "fname": "kf-kcrash-6.0-unstable-2024-03-18-7a5e5a96.tar.gz",
+    "id": "7a5e5a9685b720f7136ac9dc09ed747514445416",
     "pname": "kf-kcrash",
-    "sha256": "0xxbig1i2w2fpw7dnard6kqr0bqxz6iby6xjrkza32cmr9p1gq9i",
-    "url": "https://invent.kde.org/frameworks/kcrash/-/archive/90f800f42ea1d17486a7178869b3df485ba801e4/kcrash-90f800f42ea1d17486a7178869b3df485ba801e4.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "0zzb4k4k2kb39pg2iizww8c2yf2man1rwrkdcl8fzv6s2kxmizhj",
+    "url": "https://invent.kde.org/frameworks/kcrash/-/archive/7a5e5a9685b720f7136ac9dc09ed747514445416/kcrash-7a5e5a9685b720f7136ac9dc09ed747514445416.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "kdav": {
-    "fname": "kf-kdav-6.0-unstable-2024-03-18-3a7ddc9a.tar.gz",
-    "id": "3a7ddc9a7e967de401cdecdc47a49c5cf339ecca",
+    "fname": "kf-kdav-6.0-unstable-2024-03-18-0fa4ba32.tar.gz",
+    "id": "0fa4ba3208ed2eea530efdc418356edf0d10f752",
     "pname": "kf-kdav",
-    "sha256": "030h7z6aw5s9mh1wxw2fdizq3s1kc7mv3iirr7fl0m755gb5vrsi",
-    "url": "https://invent.kde.org/frameworks/kdav/-/archive/3a7ddc9a7e967de401cdecdc47a49c5cf339ecca/kdav-3a7ddc9a7e967de401cdecdc47a49c5cf339ecca.tar.gz",
+    "sha256": "19p8f23r7yh9hwpg40wg4nfzqyyvhl0ih9k5c02ll6jqfpairpbv",
+    "url": "https://invent.kde.org/frameworks/kdav/-/archive/0fa4ba3208ed2eea530efdc418356edf0d10f752/kdav-0fa4ba3208ed2eea530efdc418356edf0d10f752.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kdbusaddons": {
-    "fname": "kf-kdbusaddons-6.0-unstable-2024-03-18-111f2db0.tar.gz",
-    "id": "111f2db0c00a092239275531309c39b4a0c26d7d",
+    "fname": "kf-kdbusaddons-6.0-unstable-2024-03-18-c011bf6b.tar.gz",
+    "id": "c011bf6b49a1a51d46cbfd79c6d79d5828829fdb",
     "pname": "kf-kdbusaddons",
-    "sha256": "065hv8q35vphnjmv1d8027kx4vzsddyl36z1lwffb0c2f89w3wrz",
-    "url": "https://invent.kde.org/frameworks/kdbusaddons/-/archive/111f2db0c00a092239275531309c39b4a0c26d7d/kdbusaddons-111f2db0c00a092239275531309c39b4a0c26d7d.tar.gz",
+    "sha256": "09db04qmzp8a1w02jvlkqyh44y5nq868fybffycs332i9hzvl0cd",
+    "url": "https://invent.kde.org/frameworks/kdbusaddons/-/archive/c011bf6b49a1a51d46cbfd79c6d79d5828829fdb/kdbusaddons-c011bf6b49a1a51d46cbfd79c6d79d5828829fdb.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kde-cli-tools": {
@@ -272,19 +296,27 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "kde-gtk-config": {
-    "fname": "kp-kde-gtk-config-6.0-unstable-2024-03-13-5b832753.tar.gz",
-    "id": "5b8327530ee62a257f9f12d8b419b445beec345b",
+    "fname": "kp-kde-gtk-config-6.0-unstable-2024-03-18-c9478c55.tar.gz",
+    "id": "c9478c557e9b3432fb075eecc8fc77583f799c44",
     "pname": "kp-kde-gtk-config",
-    "sha256": "0lb4xfmhixwhzl3781ij87sj01bbw4i3gh9q3idycij3jzhx3ny4",
-    "url": "https://invent.kde.org/plasma/kde-gtk-config/-/archive/5b8327530ee62a257f9f12d8b419b445beec345b/kde-gtk-config-5b8327530ee62a257f9f12d8b419b445beec345b.tar.gz",
-    "version": "6.0-unstable-2024-03-13"
+    "sha256": "0h6rms6wihgmxdypd89lrmicrkvbdgsz2m0c924v3ks0wc68z51z",
+    "url": "https://invent.kde.org/plasma/kde-gtk-config/-/archive/c9478c557e9b3432fb075eecc8fc77583f799c44/kde-gtk-config-c9478c557e9b3432fb075eecc8fc77583f799c44.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
+  },
+  "kde-inotify-survey": {
+    "fname": "kg-kde-inotify-survey-24.02-unstable-2024-03-18-aa8f4142.tar.gz",
+    "id": "aa8f41424f22bc1f04bc1386532c4e236eb6fcc1",
+    "pname": "kg-kde-inotify-survey",
+    "sha256": "1l4sam9qa9ifcfqq70k129hxvi6c5bwq69j9zikm3g92drkm9iag",
+    "url": "https://invent.kde.org/system/kde-inotify-survey/-/archive/aa8f41424f22bc1f04bc1386532c4e236eb6fcc1/kde-inotify-survey-aa8f41424f22bc1f04bc1386532c4e236eb6fcc1.tar.gz",
+    "version": "24.02-unstable-2024-03-18"
   },
   "kdeclarative": {
-    "fname": "kf-kdeclarative-6.0-unstable-2024-03-18-269b258d.tar.gz",
-    "id": "269b258d81fb8c5c4aeb295f0a7e886d98632399",
+    "fname": "kf-kdeclarative-6.0-unstable-2024-03-18-f8a5696c.tar.gz",
+    "id": "f8a5696c015c4320ee772006056b62332bebaafa",
     "pname": "kf-kdeclarative",
-    "sha256": "07nr8i3ajqb0r2yd8m7nq9vp24cljar67mavr54p34d1vy56c8iw",
-    "url": "https://invent.kde.org/frameworks/kdeclarative/-/archive/269b258d81fb8c5c4aeb295f0a7e886d98632399/kdeclarative-269b258d81fb8c5c4aeb295f0a7e886d98632399.tar.gz",
+    "sha256": "1z4if2q1rsq013zrg2gav4f4zk1v4sp0bv3vdirjgpwmf4acmi6w",
+    "url": "https://invent.kde.org/frameworks/kdeclarative/-/archive/f8a5696c015c4320ee772006056b62332bebaafa/kdeclarative-f8a5696c015c4320ee772006056b62332bebaafa.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kdeconnect-kde": {
@@ -304,12 +336,20 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "kded": {
-    "fname": "kf-kded-6.0-unstable-2024-02-21-26b414e6.tar.gz",
-    "id": "26b414e6450051163d0ac9432589d5abdb8d5191",
+    "fname": "kf-kded-6.0-unstable-2024-03-18-20212904.tar.gz",
+    "id": "202129049ab8c15845cd521f1c32bda4f9f839e4",
     "pname": "kf-kded",
-    "sha256": "024cgrpyb26drrypsandn83dhxj2s7pkr9rsdcgyirbkdxg6vsgy",
-    "url": "https://invent.kde.org/frameworks/kded/-/archive/26b414e6450051163d0ac9432589d5abdb8d5191/kded-26b414e6450051163d0ac9432589d5abdb8d5191.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "0vx4imc2xrqby2dc6n3z5z5ais8cvz05pz439xqxba9lmyn48529",
+    "url": "https://invent.kde.org/frameworks/kded/-/archive/202129049ab8c15845cd521f1c32bda4f9f839e4/kded-202129049ab8c15845cd521f1c32bda4f9f839e4.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
+  },
+  "kdegraphics-mobipocket": {
+    "fname": "kg-kdegraphics-mobipocket-24.02-unstable-2024-03-09-3df331db.tar.gz",
+    "id": "3df331db9736eef46755a0b4bf80b21a8eeb042b",
+    "pname": "kg-kdegraphics-mobipocket",
+    "sha256": "1139182mrlnzjazzqfg78inms7v164ms10gk5pdk0pm5zjnpgfbg",
+    "url": "https://invent.kde.org/graphics/kdegraphics-mobipocket/-/archive/3df331db9736eef46755a0b4bf80b21a8eeb042b/kdegraphics-mobipocket-3df331db9736eef46755a0b4bf80b21a8eeb042b.tar.gz",
+    "version": "24.02-unstable-2024-03-09"
   },
   "kdegraphics-thumbnailers": {
     "fname": "kg-kdegraphics-thumbnailers-24.02-unstable-2024-02-25-54c064e4.tar.gz",
@@ -320,43 +360,43 @@
     "version": "24.02-unstable-2024-02-25"
   },
   "kdeplasma-addons": {
-    "fname": "kp-kdeplasma-addons-6.0-unstable-2024-03-18-e7d2e4b0.tar.gz",
-    "id": "e7d2e4b0ef15fd54a96078ad38a31f420b7ef98a",
+    "fname": "kp-kdeplasma-addons-6.0-unstable-2024-03-18-cdb77cbc.tar.gz",
+    "id": "cdb77cbcf6c6efd1af2c0056d4fa847e75d34325",
     "pname": "kp-kdeplasma-addons",
-    "sha256": "1wd6wnnq5h7q42zvk6njqxjjvih8nm3j3dgwg8i8l2bz67djnc2z",
-    "url": "https://invent.kde.org/plasma/kdeplasma-addons/-/archive/e7d2e4b0ef15fd54a96078ad38a31f420b7ef98a/kdeplasma-addons-e7d2e4b0ef15fd54a96078ad38a31f420b7ef98a.tar.gz",
+    "sha256": "098gj5qxb96nh3jclxf0y82k5qh4s24vf4hh9n9v5nhcqkiy65g0",
+    "url": "https://invent.kde.org/plasma/kdeplasma-addons/-/archive/cdb77cbcf6c6efd1af2c0056d4fa847e75d34325/kdeplasma-addons-cdb77cbcf6c6efd1af2c0056d4fa847e75d34325.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kdesu": {
-    "fname": "kf-kdesu-6.0-unstable-2024-03-18-a75917bf.tar.gz",
-    "id": "a75917bf61cea6d0294aaf0d0f6881be5672b496",
+    "fname": "kf-kdesu-6.0-unstable-2024-03-18-91ae3513.tar.gz",
+    "id": "91ae35137a13cb6ae405a587d43c581026789c92",
     "pname": "kf-kdesu",
-    "sha256": "03f6sa24xb0mbim9dcx780zgf2aq2kdxk1ypvzx7l8n1mga2g8aj",
-    "url": "https://invent.kde.org/frameworks/kdesu/-/archive/a75917bf61cea6d0294aaf0d0f6881be5672b496/kdesu-a75917bf61cea6d0294aaf0d0f6881be5672b496.tar.gz",
+    "sha256": "0kyj0r4a81f03wlj286xv9rjjw1nggi88s5g2dbayjx0q31ignpf",
+    "url": "https://invent.kde.org/frameworks/kdesu/-/archive/91ae35137a13cb6ae405a587d43c581026789c92/kdesu-91ae35137a13cb6ae405a587d43c581026789c92.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kdnssd": {
-    "fname": "kf-kdnssd-6.0-unstable-2024-03-18-f46a327c.tar.gz",
-    "id": "f46a327c6090832eb11a94b40ca5779ca03e012e",
+    "fname": "kf-kdnssd-6.0-unstable-2024-03-18-f0fe5392.tar.gz",
+    "id": "f0fe539255c3b2a39a0c81527035061e4b5ed81b",
     "pname": "kf-kdnssd",
-    "sha256": "1ydayb0qsgasp7zq6jsgif13r3psf8gssvn6gfl3zgqivcl6rraa",
-    "url": "https://invent.kde.org/frameworks/kdnssd/-/archive/f46a327c6090832eb11a94b40ca5779ca03e012e/kdnssd-f46a327c6090832eb11a94b40ca5779ca03e012e.tar.gz",
+    "sha256": "1pp82xqm95dgh3q68raaywk8dvs7hk0h3kc1gxc9qdv3h3844i1c",
+    "url": "https://invent.kde.org/frameworks/kdnssd/-/archive/f0fe539255c3b2a39a0c81527035061e4b5ed81b/kdnssd-f0fe539255c3b2a39a0c81527035061e4b5ed81b.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kdoctools": {
-    "fname": "kf-kdoctools-6.0-unstable-2024-03-18-7f1f15e8.tar.gz",
-    "id": "7f1f15e843b5a1dcdb2f66bfb8a4a829977d87d6",
+    "fname": "kf-kdoctools-6.0-unstable-2024-03-18-ea13792d.tar.gz",
+    "id": "ea13792d82797fc7e68c80145221b85ab27021e1",
     "pname": "kf-kdoctools",
-    "sha256": "0f7crnaj9aid13gd9fbg2rmcv8dkx2fnk2wrfwwf5bm7xv77xwgw",
-    "url": "https://invent.kde.org/frameworks/kdoctools/-/archive/7f1f15e843b5a1dcdb2f66bfb8a4a829977d87d6/kdoctools-7f1f15e843b5a1dcdb2f66bfb8a4a829977d87d6.tar.gz",
+    "sha256": "1zg6g9h02nrm769nfwsifc5s4vqkp3cbwfqs6vl3kjpzr1lm4p0q",
+    "url": "https://invent.kde.org/frameworks/kdoctools/-/archive/ea13792d82797fc7e68c80145221b85ab27021e1/kdoctools-ea13792d82797fc7e68c80145221b85ab27021e1.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kfilemetadata": {
-    "fname": "kf-kfilemetadata-6.0-unstable-2024-03-18-1fe0db9b.tar.gz",
-    "id": "1fe0db9b76407afe9492772887028d9229e305fa",
+    "fname": "kf-kfilemetadata-6.0-unstable-2024-03-18-198b3870.tar.gz",
+    "id": "198b38709439aa58ab745ee2c40579fb7ed52091",
     "pname": "kf-kfilemetadata",
-    "sha256": "08axs3zc16yq22r5chkwwsic1xyi0f0h5f9y67i6sqn2n8rxgv6b",
-    "url": "https://invent.kde.org/frameworks/kfilemetadata/-/archive/1fe0db9b76407afe9492772887028d9229e305fa/kfilemetadata-1fe0db9b76407afe9492772887028d9229e305fa.tar.gz",
+    "sha256": "19zbvmin9mpwfqkip8ybcf4ajwzghcad28lqwj9dbpvpz2mipinb",
+    "url": "https://invent.kde.org/frameworks/kfilemetadata/-/archive/198b38709439aa58ab745ee2c40579fb7ed52091/kfilemetadata-198b38709439aa58ab745ee2c40579fb7ed52091.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kgamma": {
@@ -368,11 +408,11 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "kglobalaccel": {
-    "fname": "kf-kglobalaccel-6.0-unstable-2024-03-18-83bfd0f9.tar.gz",
-    "id": "83bfd0f9fb2f1f3c2a52c62607a73cdea565124b",
+    "fname": "kf-kglobalaccel-6.0-unstable-2024-03-18-ba04d317.tar.gz",
+    "id": "ba04d31731aa33786b6312f76ae8f90b44be822f",
     "pname": "kf-kglobalaccel",
-    "sha256": "1a63m03z23f8f70hkh0dwfpjs644m0sp27qq6p74i4nvgfmwg6hn",
-    "url": "https://invent.kde.org/frameworks/kglobalaccel/-/archive/83bfd0f9fb2f1f3c2a52c62607a73cdea565124b/kglobalaccel-83bfd0f9fb2f1f3c2a52c62607a73cdea565124b.tar.gz",
+    "sha256": "03dsl92wmvinzax0mm724vf843dn0djrx60da31lkb0r6mb00zms",
+    "url": "https://invent.kde.org/frameworks/kglobalaccel/-/archive/ba04d31731aa33786b6312f76ae8f90b44be822f/kglobalaccel-ba04d31731aa33786b6312f76ae8f90b44be822f.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kglobalacceld": {
@@ -384,52 +424,60 @@
     "version": "6.0-unstable-2024-03-16"
   },
   "kguiaddons": {
-    "fname": "kf-kguiaddons-6.0-unstable-2024-02-21-b92d00d1.tar.gz",
-    "id": "b92d00d1742afdc4f54c5b3cb2922735de35366b",
+    "fname": "kf-kguiaddons-6.0-unstable-2024-03-18-f3e86650.tar.gz",
+    "id": "f3e866509474acf5ee043ec5a9c77149560f6cbf",
     "pname": "kf-kguiaddons",
-    "sha256": "0cfl6p358l16zykl516rmdldbh5z2x0yn6d812arpdb4s27x2i8s",
-    "url": "https://invent.kde.org/frameworks/kguiaddons/-/archive/b92d00d1742afdc4f54c5b3cb2922735de35366b/kguiaddons-b92d00d1742afdc4f54c5b3cb2922735de35366b.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "0sq67kcln06f60dvkkczpwniwwsd0k7z8mj7a603srxl20igb0gi",
+    "url": "https://invent.kde.org/frameworks/kguiaddons/-/archive/f3e866509474acf5ee043ec5a9c77149560f6cbf/kguiaddons-f3e866509474acf5ee043ec5a9c77149560f6cbf.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
+  },
+  "khelpcenter": {
+    "fname": "kg-khelpcenter-24.02-unstable-2024-03-18-61ddef38.tar.gz",
+    "id": "61ddef38bc3e5ce51ada39009c46aa07709628af",
+    "pname": "kg-khelpcenter",
+    "sha256": "15wandqmmnqqkl12ciwc2ncv7kgba3bzcwxzi5i5m8sh4xhsnc7i",
+    "url": "https://invent.kde.org/system/khelpcenter/-/archive/61ddef38bc3e5ce51ada39009c46aa07709628af/khelpcenter-61ddef38bc3e5ce51ada39009c46aa07709628af.tar.gz",
+    "version": "24.02-unstable-2024-03-18"
   },
   "kholidays": {
-    "fname": "kf-kholidays-6.0-unstable-2024-03-18-ee9305a4.tar.gz",
-    "id": "ee9305a4690c480b7eb3b8d085f8ac5a780bc07e",
+    "fname": "kf-kholidays-6.0-unstable-2024-03-18-0887bf18.tar.gz",
+    "id": "0887bf1876457ec00fd8c26c75b6468a441fe57d",
     "pname": "kf-kholidays",
-    "sha256": "0gaxy66gvkw6ih4ffhsrkvqk5a2q2gjvpmq77wlhav86jg1cypss",
-    "url": "https://invent.kde.org/frameworks/kholidays/-/archive/ee9305a4690c480b7eb3b8d085f8ac5a780bc07e/kholidays-ee9305a4690c480b7eb3b8d085f8ac5a780bc07e.tar.gz",
+    "sha256": "0f14izdr2flg48f9ar703lgn67dnck9vaw966hfzb494i01f1fw8",
+    "url": "https://invent.kde.org/frameworks/kholidays/-/archive/0887bf1876457ec00fd8c26c75b6468a441fe57d/kholidays-0887bf1876457ec00fd8c26c75b6468a441fe57d.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "ki18n": {
-    "fname": "kf-ki18n-6.0-unstable-2024-03-18-6c949518.tar.gz",
-    "id": "6c94951899ee3118ccefc1c1176629636d06c9c2",
+    "fname": "kf-ki18n-6.0-unstable-2024-03-18-5dbeb7c1.tar.gz",
+    "id": "5dbeb7c18739ea545b96c8e098f598b2bb4ebc31",
     "pname": "kf-ki18n",
-    "sha256": "1xvywx8i7pb7dy93h2x0r377yi9ycizj3bni7by4pnxih8rjc7kz",
-    "url": "https://invent.kde.org/frameworks/ki18n/-/archive/6c94951899ee3118ccefc1c1176629636d06c9c2/ki18n-6c94951899ee3118ccefc1c1176629636d06c9c2.tar.gz",
+    "sha256": "0xrzj3qv2yigl9zyklnckh2yjp5mk8i55q0xxr48shdb047iv96z",
+    "url": "https://invent.kde.org/frameworks/ki18n/-/archive/5dbeb7c18739ea545b96c8e098f598b2bb4ebc31/ki18n-5dbeb7c18739ea545b96c8e098f598b2bb4ebc31.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kiconthemes": {
-    "fname": "kf-kiconthemes-6.0-unstable-2024-03-18-745409e3.tar.gz",
-    "id": "745409e3fe8f5547e1d11795b8556fd465491ee6",
+    "fname": "kf-kiconthemes-6.0-unstable-2024-03-18-04da903b.tar.gz",
+    "id": "04da903b5529b0a593fee53e7fa89eaf9044c191",
     "pname": "kf-kiconthemes",
-    "sha256": "0f301nf7ylaw690j7m2vgxmh7gcwjyypxjjrbycv3pifqxq1paw7",
-    "url": "https://invent.kde.org/frameworks/kiconthemes/-/archive/745409e3fe8f5547e1d11795b8556fd465491ee6/kiconthemes-745409e3fe8f5547e1d11795b8556fd465491ee6.tar.gz",
+    "sha256": "0al4rw7qdxkwcmprc56k57hnm0xycyz6q9ca7cvm2k3z3831zwm0",
+    "url": "https://invent.kde.org/frameworks/kiconthemes/-/archive/04da903b5529b0a593fee53e7fa89eaf9044c191/kiconthemes-04da903b5529b0a593fee53e7fa89eaf9044c191.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kidletime": {
-    "fname": "kf-kidletime-6.0-unstable-2024-03-08-68a1e22b.tar.gz",
-    "id": "68a1e22b643e04cbe813108e4b1c5ec2460b097e",
+    "fname": "kf-kidletime-6.0-unstable-2024-03-18-2244ee94.tar.gz",
+    "id": "2244ee942d5abef02e1b76703fb5ab115eaa7104",
     "pname": "kf-kidletime",
-    "sha256": "1wg21amqizxl8xsxkxqlhjm4knsgx0gzzi366ns278hsvy9shnd7",
-    "url": "https://invent.kde.org/frameworks/kidletime/-/archive/68a1e22b643e04cbe813108e4b1c5ec2460b097e/kidletime-68a1e22b643e04cbe813108e4b1c5ec2460b097e.tar.gz",
-    "version": "6.0-unstable-2024-03-08"
+    "sha256": "1ccr2nr755i7zy86s1wci6wkzlzzszj4zyakk5pnz4z9gdr1xd4v",
+    "url": "https://invent.kde.org/frameworks/kidletime/-/archive/2244ee942d5abef02e1b76703fb5ab115eaa7104/kidletime-2244ee942d5abef02e1b76703fb5ab115eaa7104.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "kimageformats": {
-    "fname": "kf-kimageformats-6.0-unstable-2024-03-14-95ee3811.tar.gz",
-    "id": "95ee381195c3fd8832a94dde2a6a9ba765366cb7",
+    "fname": "kf-kimageformats-6.0-unstable-2024-03-18-29aec82e.tar.gz",
+    "id": "29aec82e675eed020148272aeca5db737cdb5868",
     "pname": "kf-kimageformats",
-    "sha256": "1knz5w636m17wsy54qx292s9j7r2q56sd398cs019y89sq77ag6p",
-    "url": "https://invent.kde.org/frameworks/kimageformats/-/archive/95ee381195c3fd8832a94dde2a6a9ba765366cb7/kimageformats-95ee381195c3fd8832a94dde2a6a9ba765366cb7.tar.gz",
-    "version": "6.0-unstable-2024-03-14"
+    "sha256": "16r430bps7is4fcamvdgwakwcl98kryjricyadd293pg1byrzjii",
+    "url": "https://invent.kde.org/frameworks/kimageformats/-/archive/29aec82e675eed020148272aeca5db737cdb5868/kimageformats-29aec82e675eed020148272aeca5db737cdb5868.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "kinfocenter": {
     "fname": "kp-kinfocenter-6.0-unstable-2024-03-18-96516cb9.tar.gz",
@@ -440,11 +488,11 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "kio": {
-    "fname": "kf-kio-6.0-unstable-2024-03-18-4f2c223e.tar.gz",
-    "id": "4f2c223e6809427277bd91e6ae43faaa367f23a1",
+    "fname": "kf-kio-6.0-unstable-2024-03-18-679021c2.tar.gz",
+    "id": "679021c2feace041c41cdbf8e3342eb2378a6550",
     "pname": "kf-kio",
-    "sha256": "0xlpn01w7w6nsn3lw683i1mrh4bnpd7kr0bp3763lrl733alb42x",
-    "url": "https://invent.kde.org/frameworks/kio/-/archive/4f2c223e6809427277bd91e6ae43faaa367f23a1/kio-4f2c223e6809427277bd91e6ae43faaa367f23a1.tar.gz",
+    "sha256": "1knr1amk2gg089xlywqcm785jkxj2p062djj8k111jgr3g1yn7mx",
+    "url": "https://invent.kde.org/frameworks/kio/-/archive/679021c2feace041c41cdbf8e3342eb2378a6550/kio-679021c2feace041c41cdbf8e3342eb2378a6550.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kio-admin": {
@@ -472,35 +520,35 @@
     "version": "24.02-unstable-2024-03-12"
   },
   "kirigami": {
-    "fname": "kf-kirigami-6.0-unstable-2024-03-18-a304ce75.tar.gz",
-    "id": "a304ce75b7e8aaa217e602804818b7b87128979d",
+    "fname": "kf-kirigami-6.0-unstable-2024-03-18-a3c68655.tar.gz",
+    "id": "a3c686551451a3e12556dff6db155484e27acde9",
     "pname": "kf-kirigami",
-    "sha256": "0mqpyk9pw0sijkl0pfgldmyqdx34z4x7hgg626f6x168aasiviac",
-    "url": "https://invent.kde.org/frameworks/kirigami/-/archive/a304ce75b7e8aaa217e602804818b7b87128979d/kirigami-a304ce75b7e8aaa217e602804818b7b87128979d.tar.gz",
+    "sha256": "0rw6nalg8rras8mynk3sihlwg92pafjpywb00lcj9dcbc2b81lh6",
+    "url": "https://invent.kde.org/frameworks/kirigami/-/archive/a3c686551451a3e12556dff6db155484e27acde9/kirigami-a3c686551451a3e12556dff6db155484e27acde9.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kitemmodels": {
-    "fname": "kf-kitemmodels-6.0-unstable-2024-03-04-f8fcf486.tar.gz",
-    "id": "f8fcf486df5aff8e91fee7790e5525279f067701",
+    "fname": "kf-kitemmodels-6.0-unstable-2024-03-18-258b9a9d.tar.gz",
+    "id": "258b9a9db02c3dac5c013bf2165d646bd8b57cc6",
     "pname": "kf-kitemmodels",
-    "sha256": "0j7dfc3s99f10db1hsmri4ii5wxqk6rfdwba6n4g1nzxyrxr393y",
-    "url": "https://invent.kde.org/frameworks/kitemmodels/-/archive/f8fcf486df5aff8e91fee7790e5525279f067701/kitemmodels-f8fcf486df5aff8e91fee7790e5525279f067701.tar.gz",
-    "version": "6.0-unstable-2024-03-04"
+    "sha256": "1lj9sxs53hc8kdc0bm9w6m81jbwm8a6byj4wri07j3640vk48rvb",
+    "url": "https://invent.kde.org/frameworks/kitemmodels/-/archive/258b9a9db02c3dac5c013bf2165d646bd8b57cc6/kitemmodels-258b9a9db02c3dac5c013bf2165d646bd8b57cc6.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "kitemviews": {
-    "fname": "kf-kitemviews-6.0-unstable-2024-03-18-ca21c9d7.tar.gz",
-    "id": "ca21c9d728b6ffbaf55c0d982fef9a951ace7d8e",
+    "fname": "kf-kitemviews-6.0-unstable-2024-03-18-3b640779.tar.gz",
+    "id": "3b6407791778f5b91c8450a9fb8e52c636ab6d04",
     "pname": "kf-kitemviews",
-    "sha256": "1ckkhj1fdbi6v2sgmnqz6cirsy299bpfn7i5ajcksvm9v9li51vm",
-    "url": "https://invent.kde.org/frameworks/kitemviews/-/archive/ca21c9d728b6ffbaf55c0d982fef9a951ace7d8e/kitemviews-ca21c9d728b6ffbaf55c0d982fef9a951ace7d8e.tar.gz",
+    "sha256": "1nlkd73qsppbhj66pls80vdkl7i3qrz73g00mp8pwh2s00k0napy",
+    "url": "https://invent.kde.org/frameworks/kitemviews/-/archive/3b6407791778f5b91c8450a9fb8e52c636ab6d04/kitemviews-3b6407791778f5b91c8450a9fb8e52c636ab6d04.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kjobwidgets": {
-    "fname": "kf-kjobwidgets-6.0-unstable-2024-03-18-f89d2b8d.tar.gz",
-    "id": "f89d2b8d3fbfcd8b687f4d546e26c17677fecfec",
+    "fname": "kf-kjobwidgets-6.0-unstable-2024-03-18-2d961b1b.tar.gz",
+    "id": "2d961b1b3d5924ba4e3defb89328097aef52ac81",
     "pname": "kf-kjobwidgets",
-    "sha256": "1n77snvhs6cknjpvyl31y1kvp86v2i8gj3yzmg33vhbrpxq6d4hj",
-    "url": "https://invent.kde.org/frameworks/kjobwidgets/-/archive/f89d2b8d3fbfcd8b687f4d546e26c17677fecfec/kjobwidgets-f89d2b8d3fbfcd8b687f4d546e26c17677fecfec.tar.gz",
+    "sha256": "0qcdxhmcfhagpv9g9k7q0bcxb5559m9cvh0rh943zw8ljj3il4v7",
+    "url": "https://invent.kde.org/frameworks/kjobwidgets/-/archive/2d961b1b3d5924ba4e3defb89328097aef52ac81/kjobwidgets-2d961b1b3d5924ba4e3defb89328097aef52ac81.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kmenuedit": {
@@ -512,27 +560,27 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "knewstuff": {
-    "fname": "kf-knewstuff-6.0-unstable-2024-03-18-4845f95d.tar.gz",
-    "id": "4845f95d6aa72ac97b17259cc02cf5812c2890d4",
+    "fname": "kf-knewstuff-6.0-unstable-2024-03-18-ed22a11e.tar.gz",
+    "id": "ed22a11e82f7be3d8d6b12d8fbf4612410558c09",
     "pname": "kf-knewstuff",
-    "sha256": "0zwc1h83k2y6jr8vn47z68i8r8jprfx63rhr3870bnf14gx91nx0",
-    "url": "https://invent.kde.org/frameworks/knewstuff/-/archive/4845f95d6aa72ac97b17259cc02cf5812c2890d4/knewstuff-4845f95d6aa72ac97b17259cc02cf5812c2890d4.tar.gz",
+    "sha256": "0ic2zb0gw2rhmab0rv18xb4df44m2p79iz1abwf33q4wdk41ik5l",
+    "url": "https://invent.kde.org/frameworks/knewstuff/-/archive/ed22a11e82f7be3d8d6b12d8fbf4612410558c09/knewstuff-ed22a11e82f7be3d8d6b12d8fbf4612410558c09.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "knotifications": {
-    "fname": "kf-knotifications-6.0-unstable-2024-03-18-cd3375b3.tar.gz",
-    "id": "cd3375b3118efe3a86af024ec2515e21295ced64",
+    "fname": "kf-knotifications-6.0-unstable-2024-03-18-2ca22dd3.tar.gz",
+    "id": "2ca22dd3538f35551b415e551f7eb12e7c89e6e2",
     "pname": "kf-knotifications",
-    "sha256": "146gg2by7fbk7ax935gw92c2z2nr43sc4120zp103vlqcpfcqqw2",
-    "url": "https://invent.kde.org/frameworks/knotifications/-/archive/cd3375b3118efe3a86af024ec2515e21295ced64/knotifications-cd3375b3118efe3a86af024ec2515e21295ced64.tar.gz",
+    "sha256": "1kfs2qybna1sx8616hqyd9zxj6gky19zi8d829ig6gn571khjlzj",
+    "url": "https://invent.kde.org/frameworks/knotifications/-/archive/2ca22dd3538f35551b415e551f7eb12e7c89e6e2/knotifications-2ca22dd3538f35551b415e551f7eb12e7c89e6e2.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "knotifyconfig": {
-    "fname": "kf-knotifyconfig-6.0-unstable-2024-03-18-6f9a78b3.tar.gz",
-    "id": "6f9a78b302b52d843fc8ff25e10fb8c880d40770",
+    "fname": "kf-knotifyconfig-6.0-unstable-2024-03-18-2dc02a3b.tar.gz",
+    "id": "2dc02a3b4cc14579d958001705570412ccab5407",
     "pname": "kf-knotifyconfig",
-    "sha256": "15fqr7aqyy1zq6aii4zf20a7m1pqkfz91158xg13k5gh1ld4k6kd",
-    "url": "https://invent.kde.org/frameworks/knotifyconfig/-/archive/6f9a78b302b52d843fc8ff25e10fb8c880d40770/knotifyconfig-6f9a78b302b52d843fc8ff25e10fb8c880d40770.tar.gz",
+    "sha256": "1rjp61466kqvzplpd7wcdvl5zw54f6dk0ns8asgplrqnfdfrvvwq",
+    "url": "https://invent.kde.org/frameworks/knotifyconfig/-/archive/2dc02a3b4cc14579d958001705570412ccab5407/knotifyconfig-2dc02a3b4cc14579d958001705570412ccab5407.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "konsole": {
@@ -544,27 +592,27 @@
     "version": "24.02-unstable-2024-03-18"
   },
   "kpackage": {
-    "fname": "kf-kpackage-6.0-unstable-2024-03-18-9951a727.tar.gz",
-    "id": "9951a7274c36ced1c3a7f969f601d532ff75d48b",
+    "fname": "kf-kpackage-6.0-unstable-2024-03-18-24ae7092.tar.gz",
+    "id": "24ae709248c5465d8af97ded98e9672d206de701",
     "pname": "kf-kpackage",
-    "sha256": "1dl73y5k77985pcc85j5jcq7j3pmm4wp9iqqi6p3iwp3dqcc96hj",
-    "url": "https://invent.kde.org/frameworks/kpackage/-/archive/9951a7274c36ced1c3a7f969f601d532ff75d48b/kpackage-9951a7274c36ced1c3a7f969f601d532ff75d48b.tar.gz",
+    "sha256": "0wgjjyhbml4wy1iv5aadzwgpd8s077m9l9l0h4040j1qs67br3z1",
+    "url": "https://invent.kde.org/frameworks/kpackage/-/archive/24ae709248c5465d8af97ded98e9672d206de701/kpackage-24ae709248c5465d8af97ded98e9672d206de701.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kparts": {
-    "fname": "kf-kparts-6.0-unstable-2024-03-18-7dfc3e01.tar.gz",
-    "id": "7dfc3e01d08673075e6bb8eff7012259ca05aec3",
+    "fname": "kf-kparts-6.0-unstable-2024-03-18-3b6af16b.tar.gz",
+    "id": "3b6af16bf2b540517513ba4c5f596bb32d5ed81a",
     "pname": "kf-kparts",
-    "sha256": "17lwzpdsc98g1anj5z5kwd4q31xdzxki4ghj26l8h6s0amac0nan",
-    "url": "https://invent.kde.org/frameworks/kparts/-/archive/7dfc3e01d08673075e6bb8eff7012259ca05aec3/kparts-7dfc3e01d08673075e6bb8eff7012259ca05aec3.tar.gz",
+    "sha256": "06pf9dnr3lh0dkf10zb4kg6xwy6y6q1nd8f1nay2951s2qz92rhn",
+    "url": "https://invent.kde.org/frameworks/kparts/-/archive/3b6af16bf2b540517513ba4c5f596bb32d5ed81a/kparts-3b6af16bf2b540517513ba4c5f596bb32d5ed81a.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kpeople": {
-    "fname": "kf-kpeople-6.0-unstable-2024-03-18-6e402a0f.tar.gz",
-    "id": "6e402a0f09f7f6f945c6dbebd0c8e98778d44f7d",
+    "fname": "kf-kpeople-6.0-unstable-2024-03-18-b7026be7.tar.gz",
+    "id": "b7026be715e18e5e30293930f31f293600e3ea5f",
     "pname": "kf-kpeople",
-    "sha256": "1jp7kkx2s2cqgzxvdzl0j5h9bzxhyy7nnvzc50sqzr9d7fw4pdm1",
-    "url": "https://invent.kde.org/frameworks/kpeople/-/archive/6e402a0f09f7f6f945c6dbebd0c8e98778d44f7d/kpeople-6e402a0f09f7f6f945c6dbebd0c8e98778d44f7d.tar.gz",
+    "sha256": "1jfgqi0d18nlp70kpns28mpm48by0j5xy6ic2ls1r96i2283cc6m",
+    "url": "https://invent.kde.org/frameworks/kpeople/-/archive/b7026be715e18e5e30293930f31f293600e3ea5f/kpeople-b7026be715e18e5e30293930f31f293600e3ea5f.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kpipewire": {
@@ -576,36 +624,36 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "kplotting": {
-    "fname": "kf-kplotting-6.0-unstable-2024-02-21-3dea5f2e.tar.gz",
-    "id": "3dea5f2e8433b5b9f4ba70b45661d13907d5135e",
+    "fname": "kf-kplotting-6.0-unstable-2024-03-18-5e379595.tar.gz",
+    "id": "5e379595d5d7ceb02a35a0bb1f246c27665c85d1",
     "pname": "kf-kplotting",
-    "sha256": "0hawa0s1qrb2ja3w6jh2xzvdkqnrdv2f8p60l1xxr04yl9i7zx7f",
-    "url": "https://invent.kde.org/frameworks/kplotting/-/archive/3dea5f2e8433b5b9f4ba70b45661d13907d5135e/kplotting-3dea5f2e8433b5b9f4ba70b45661d13907d5135e.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "00zi7s2fmfzsbgn7njl836dvcdl21kd7pcxkmvspxcp015cnib0w",
+    "url": "https://invent.kde.org/frameworks/kplotting/-/archive/5e379595d5d7ceb02a35a0bb1f246c27665c85d1/kplotting-5e379595d5d7ceb02a35a0bb1f246c27665c85d1.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "kpty": {
-    "fname": "kf-kpty-6.0-unstable-2024-03-18-c64ec8c6.tar.gz",
-    "id": "c64ec8c60fc5b66fef56071411a4004228b12fb5",
+    "fname": "kf-kpty-6.0-unstable-2024-03-18-9af10b62.tar.gz",
+    "id": "9af10b626fa2f211c0ef76c8f2781a104e05708b",
     "pname": "kf-kpty",
-    "sha256": "0dk67r5plz1syk58cljn0n8h3y2zmyy9idal4rlznl8sd8kizcad",
-    "url": "https://invent.kde.org/frameworks/kpty/-/archive/c64ec8c60fc5b66fef56071411a4004228b12fb5/kpty-c64ec8c60fc5b66fef56071411a4004228b12fb5.tar.gz",
+    "sha256": "189id7pgpk3pr86ji3l8bwrhi5606gin2iljmpq280liszv9047i",
+    "url": "https://invent.kde.org/frameworks/kpty/-/archive/9af10b626fa2f211c0ef76c8f2781a104e05708b/kpty-9af10b626fa2f211c0ef76c8f2781a104e05708b.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kquickcharts": {
-    "fname": "kf-kquickcharts-6.0-unstable-2024-03-13-f6c29f39.tar.gz",
-    "id": "f6c29f395ecfab908a3a1389cee524b5067ddb06",
+    "fname": "kf-kquickcharts-6.0-unstable-2024-03-18-4394af96.tar.gz",
+    "id": "4394af966b10c2a275ff0b17f07de2751647104f",
     "pname": "kf-kquickcharts",
-    "sha256": "08igf6iswkzpi28n00n7j4z3d9n1hz8w579ic2jhrs9ws6z42zkw",
-    "url": "https://invent.kde.org/frameworks/kquickcharts/-/archive/f6c29f395ecfab908a3a1389cee524b5067ddb06/kquickcharts-f6c29f395ecfab908a3a1389cee524b5067ddb06.tar.gz",
-    "version": "6.0-unstable-2024-03-13"
+    "sha256": "023q0vjr8xxyr2ag21y9f7x17wa8ij91rizlhcgbp7dih325xf8m",
+    "url": "https://invent.kde.org/frameworks/kquickcharts/-/archive/4394af966b10c2a275ff0b17f07de2751647104f/kquickcharts-4394af966b10c2a275ff0b17f07de2751647104f.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "krunner": {
-    "fname": "kf-krunner-6.0-unstable-2024-03-05-b5670365.tar.gz",
-    "id": "b5670365acc264d84b7e7c8e3f805f4079ab724e",
+    "fname": "kf-krunner-6.0-unstable-2024-03-18-9c4f1346.tar.gz",
+    "id": "9c4f134606dceeb4b2b3f0df726e0e3410d2e54f",
     "pname": "kf-krunner",
-    "sha256": "1pm1w40l9qsw3186x99dxzhackldfc4gq8wyh2vmypwrdfyc009a",
-    "url": "https://invent.kde.org/frameworks/krunner/-/archive/b5670365acc264d84b7e7c8e3f805f4079ab724e/krunner-b5670365acc264d84b7e7c8e3f805f4079ab724e.tar.gz",
-    "version": "6.0-unstable-2024-03-05"
+    "sha256": "1dviwdm5j2v40j5dnqxvf7n4adbv04nsj0i07j9if56sn5j7fk8v",
+    "url": "https://invent.kde.org/frameworks/krunner/-/archive/9c4f134606dceeb4b2b3f0df726e0e3410d2e54f/krunner-9c4f134606dceeb4b2b3f0df726e0e3410d2e54f.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "kscreen": {
     "fname": "kp-kscreen-6.0-unstable-2024-03-18-583d4716.tar.gz",
@@ -616,19 +664,19 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "kscreenlocker": {
-    "fname": "kp-kscreenlocker-6.0-unstable-2024-03-18-3b59c55a.tar.gz",
-    "id": "3b59c55aec0cc9fc827aa2d8e3118ad4a4fb3a54",
+    "fname": "kp-kscreenlocker-6.0-unstable-2024-03-18-8f262c77.tar.gz",
+    "id": "8f262c775d9143880b7646ab42f15487fd9bbd8d",
     "pname": "kp-kscreenlocker",
-    "sha256": "12239krxgxc4cdw037nna4gwgpzg83jsqlnbfmg6lgnlydqbv34p",
-    "url": "https://invent.kde.org/plasma/kscreenlocker/-/archive/3b59c55aec0cc9fc827aa2d8e3118ad4a4fb3a54/kscreenlocker-3b59c55aec0cc9fc827aa2d8e3118ad4a4fb3a54.tar.gz",
+    "sha256": "1xqfmpnhcp8gwcljig0w51j2g0jzzyhb0ya78vq9hisgcagwwlci",
+    "url": "https://invent.kde.org/plasma/kscreenlocker/-/archive/8f262c775d9143880b7646ab42f15487fd9bbd8d/kscreenlocker-8f262c775d9143880b7646ab42f15487fd9bbd8d.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kservice": {
-    "fname": "kf-kservice-6.0-unstable-2024-03-18-600f9f99.tar.gz",
-    "id": "600f9f9972bc15b28841bb273d332f07f05ce65b",
+    "fname": "kf-kservice-6.0-unstable-2024-03-18-310834b3.tar.gz",
+    "id": "310834b3802bc955427c918df606dbf9aca5fc51",
     "pname": "kf-kservice",
-    "sha256": "0v8nf3npaya6lw53rbwyxzap7x22hxlng4l0wg6h1i2acc64pgs9",
-    "url": "https://invent.kde.org/frameworks/kservice/-/archive/600f9f9972bc15b28841bb273d332f07f05ce65b/kservice-600f9f9972bc15b28841bb273d332f07f05ce65b.tar.gz",
+    "sha256": "1kkw8n4p30sl1nyz8wq6icq4sasja1ga19q65insycidjlysx1hj",
+    "url": "https://invent.kde.org/frameworks/kservice/-/archive/310834b3802bc955427c918df606dbf9aca5fc51/kservice-310834b3802bc955427c918df606dbf9aca5fc51.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "ksshaskpass": {
@@ -640,19 +688,19 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "kstatusnotifieritem": {
-    "fname": "kf-kstatusnotifieritem-6.0-unstable-2024-03-18-859e9a27.tar.gz",
-    "id": "859e9a27374ff27a209aca0c2ffb7a28c2c466e8",
+    "fname": "kf-kstatusnotifieritem-6.0-unstable-2024-03-18-fadbea71.tar.gz",
+    "id": "fadbea7196c020d5ee04e3c6c5aab93038a4066d",
     "pname": "kf-kstatusnotifieritem",
-    "sha256": "029x8bv0dng862ssqb6wngl0fhgjylfwk4f6yry0c3k55zliihxf",
-    "url": "https://invent.kde.org/frameworks/kstatusnotifieritem/-/archive/859e9a27374ff27a209aca0c2ffb7a28c2c466e8/kstatusnotifieritem-859e9a27374ff27a209aca0c2ffb7a28c2c466e8.tar.gz",
+    "sha256": "1s06wzimqc8ar007w12dwvk3xjr1ikyp4ndxxfyv4q7wvx8l7ssr",
+    "url": "https://invent.kde.org/frameworks/kstatusnotifieritem/-/archive/fadbea7196c020d5ee04e3c6c5aab93038a4066d/kstatusnotifieritem-fadbea7196c020d5ee04e3c6c5aab93038a4066d.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "ksvg": {
-    "fname": "kf-ksvg-6.0-unstable-2024-03-18-2ca36ce6.tar.gz",
-    "id": "2ca36ce632cd33f041d40049c98070e9808c2c0a",
+    "fname": "kf-ksvg-6.0-unstable-2024-03-18-d68e6b17.tar.gz",
+    "id": "d68e6b17b2b9febaa2381dd749b611c6ad32d222",
     "pname": "kf-ksvg",
-    "sha256": "0z9cp6xxav5lq0q7qd8y8g1jdmski5bkvq422f0pb8lb7wr3bi6l",
-    "url": "https://invent.kde.org/frameworks/ksvg/-/archive/2ca36ce632cd33f041d40049c98070e9808c2c0a/ksvg-2ca36ce632cd33f041d40049c98070e9808c2c0a.tar.gz",
+    "sha256": "0a2v3ax4paf722q2mwfh49prkpzwp1gmyvbgpnv32lq2gv1962ds",
+    "url": "https://invent.kde.org/frameworks/ksvg/-/archive/d68e6b17b2b9febaa2381dd749b611c6ad32d222/ksvg-d68e6b17b2b9febaa2381dd749b611c6ad32d222.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "ksystemstats": {
@@ -664,51 +712,51 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "ktexteditor": {
-    "fname": "kf-ktexteditor-6.0-unstable-2024-03-18-443a5200.tar.gz",
-    "id": "443a52009901cecd4e81dbb957d0938c0f0d619d",
+    "fname": "kf-ktexteditor-6.0-unstable-2024-03-18-2962785d.tar.gz",
+    "id": "2962785d64056e46d2b6a82b5b4e5aa076bee878",
     "pname": "kf-ktexteditor",
-    "sha256": "0bxxi6fgzxg71vwxn1d2chjzq2kcycp2wq82bg07dfbyxj8lnvw3",
-    "url": "https://invent.kde.org/frameworks/ktexteditor/-/archive/443a52009901cecd4e81dbb957d0938c0f0d619d/ktexteditor-443a52009901cecd4e81dbb957d0938c0f0d619d.tar.gz",
+    "sha256": "1024nk9qzhy53fhljn28rwx5x1qcrvsg14rlzh2d8lnm3xay1455",
+    "url": "https://invent.kde.org/frameworks/ktexteditor/-/archive/2962785d64056e46d2b6a82b5b4e5aa076bee878/ktexteditor-2962785d64056e46d2b6a82b5b4e5aa076bee878.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "ktexttemplate": {
-    "fname": "kf-ktexttemplate-6.0-unstable-2024-02-21-151a10a4.tar.gz",
-    "id": "151a10a49f21aa8c204c37d341654b138f98f36e",
+    "fname": "kf-ktexttemplate-6.0-unstable-2024-03-18-00f6735b.tar.gz",
+    "id": "00f6735b5b4e5949b7670ea5f882c4a587732b6b",
     "pname": "kf-ktexttemplate",
-    "sha256": "15mi2qxqyg9xg8q0lvi7h5w3i5hmzpwi13i4wibmqdyyix04gr85",
-    "url": "https://invent.kde.org/frameworks/ktexttemplate/-/archive/151a10a49f21aa8c204c37d341654b138f98f36e/ktexttemplate-151a10a49f21aa8c204c37d341654b138f98f36e.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "0vqnw3hgvdprdlb5svr3xzcpy85dvv8h70cvxsdf8r672jn8mc7j",
+    "url": "https://invent.kde.org/frameworks/ktexttemplate/-/archive/00f6735b5b4e5949b7670ea5f882c4a587732b6b/ktexttemplate-00f6735b5b4e5949b7670ea5f882c4a587732b6b.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "ktextwidgets": {
-    "fname": "kf-ktextwidgets-6.0-unstable-2024-03-18-eec9f8e9.tar.gz",
-    "id": "eec9f8e9891564cc8e8d50efb4c4eabf97a1f144",
+    "fname": "kf-ktextwidgets-6.0-unstable-2024-03-18-acb220a2.tar.gz",
+    "id": "acb220a2f8bf50d062af1cec4a813177ce57f36d",
     "pname": "kf-ktextwidgets",
-    "sha256": "1anpagy0vn5zlspkrmy3w8mhzzma66476wmac66pv8xr0626241k",
-    "url": "https://invent.kde.org/frameworks/ktextwidgets/-/archive/eec9f8e9891564cc8e8d50efb4c4eabf97a1f144/ktextwidgets-eec9f8e9891564cc8e8d50efb4c4eabf97a1f144.tar.gz",
+    "sha256": "1qh6d4gnln7264yljmqisbf0ksw9siqzhki85h03c7aflfnd90vz",
+    "url": "https://invent.kde.org/frameworks/ktextwidgets/-/archive/acb220a2f8bf50d062af1cec4a813177ce57f36d/ktextwidgets-acb220a2f8bf50d062af1cec4a813177ce57f36d.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kunitconversion": {
-    "fname": "kf-kunitconversion-6.0-unstable-2024-03-18-f476dd23.tar.gz",
-    "id": "f476dd231f4575cea8b664300afc10b4a898d067",
+    "fname": "kf-kunitconversion-6.0-unstable-2024-03-18-dc92f44f.tar.gz",
+    "id": "dc92f44f257d2be533eb1b441f1b18c6cde8ac46",
     "pname": "kf-kunitconversion",
-    "sha256": "1121alig83wjgasr7blzciz943y5qanwpl0mz0xvlfhknr280x8x",
-    "url": "https://invent.kde.org/frameworks/kunitconversion/-/archive/f476dd231f4575cea8b664300afc10b4a898d067/kunitconversion-f476dd231f4575cea8b664300afc10b4a898d067.tar.gz",
+    "sha256": "0r99csg32a2n2g1046x4r5iss27vyxkxlhxi8in5pxa2az4yajry",
+    "url": "https://invent.kde.org/frameworks/kunitconversion/-/archive/dc92f44f257d2be533eb1b441f1b18c6cde8ac46/kunitconversion-dc92f44f257d2be533eb1b441f1b18c6cde8ac46.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kuserfeedback": {
-    "fname": "kf-kuserfeedback-6.0-unstable-2024-03-18-2d29d304.tar.gz",
-    "id": "2d29d3042eb466abf48977eb2cbd41bc1165c535",
+    "fname": "kf-kuserfeedback-6.0-unstable-2024-03-18-7ee3a74b.tar.gz",
+    "id": "7ee3a74b5cd516e91c307f30eca36fa8babc633c",
     "pname": "kf-kuserfeedback",
-    "sha256": "0pxym90albqjmvwykr816g8iz5x48zsbnh8vk2w0y48xgwq84632",
-    "url": "https://invent.kde.org/frameworks/kuserfeedback/-/archive/2d29d3042eb466abf48977eb2cbd41bc1165c535/kuserfeedback-2d29d3042eb466abf48977eb2cbd41bc1165c535.tar.gz",
+    "sha256": "0877m9yy36am502zxsxkr1czkhb4x9rvzain28sfnqb224mg0lvp",
+    "url": "https://invent.kde.org/frameworks/kuserfeedback/-/archive/7ee3a74b5cd516e91c307f30eca36fa8babc633c/kuserfeedback-7ee3a74b5cd516e91c307f30eca36fa8babc633c.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kwallet": {
-    "fname": "kf-kwallet-6.0-unstable-2024-03-18-31ca6e7b.tar.gz",
-    "id": "31ca6e7b8034fa39bee31b06a90b59be36b11ece",
+    "fname": "kf-kwallet-6.0-unstable-2024-03-18-5c6e6cbd.tar.gz",
+    "id": "5c6e6cbd8979d928b112876b2d3e046cdf1a85f0",
     "pname": "kf-kwallet",
-    "sha256": "1ppjls2bmcl6ffciigf28bax5z1dd3r20vv8ky8ywcfbxp3wz5xq",
-    "url": "https://invent.kde.org/frameworks/kwallet/-/archive/31ca6e7b8034fa39bee31b06a90b59be36b11ece/kwallet-31ca6e7b8034fa39bee31b06a90b59be36b11ece.tar.gz",
+    "sha256": "1hm1y21hh8082x3gd5582qg2c2akvn30d9w7zrdglxbyjrwgjarm",
+    "url": "https://invent.kde.org/frameworks/kwallet/-/archive/5c6e6cbd8979d928b112876b2d3e046cdf1a85f0/kwallet-5c6e6cbd8979d928b112876b2d3e046cdf1a85f0.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kwallet-pam": {
@@ -736,27 +784,27 @@
     "version": "6.0-unstable-2024-02-21"
   },
   "kwidgetsaddons": {
-    "fname": "kf-kwidgetsaddons-6.0-unstable-2024-03-18-ca82e656.tar.gz",
-    "id": "ca82e656abe1c5a5bb6d1b1923a2c33b78927c31",
+    "fname": "kf-kwidgetsaddons-6.0-unstable-2024-03-18-3f799dc8.tar.gz",
+    "id": "3f799dc80443e358b9082eb27c47c4b6e18c1bb2",
     "pname": "kf-kwidgetsaddons",
-    "sha256": "15wpqnqfw7vcha8ajlp90a45abmckz99v3jph6liycnzfnwpxv7p",
-    "url": "https://invent.kde.org/frameworks/kwidgetsaddons/-/archive/ca82e656abe1c5a5bb6d1b1923a2c33b78927c31/kwidgetsaddons-ca82e656abe1c5a5bb6d1b1923a2c33b78927c31.tar.gz",
+    "sha256": "0m8iwdzz1i8dnhksjynivkbkabz5jdcm9i33xs5kfyabc3952h70",
+    "url": "https://invent.kde.org/frameworks/kwidgetsaddons/-/archive/3f799dc80443e358b9082eb27c47c4b6e18c1bb2/kwidgetsaddons-3f799dc80443e358b9082eb27c47c4b6e18c1bb2.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kwin": {
-    "fname": "kp-kwin-6.0-unstable-2024-03-18-0bc3fc18.tar.gz",
-    "id": "0bc3fc18aa412f463659afb1dc37db77b4bc677c",
+    "fname": "kp-kwin-6.0-unstable-2024-03-18-8892b166.tar.gz",
+    "id": "8892b16626f8f0852a1002d8d57bf1cf177f9007",
     "pname": "kp-kwin",
-    "sha256": "06dpikmd11sj0jpcyilcrysshdh9bx2r9x3jwvngpcjxclpn5xjv",
-    "url": "https://invent.kde.org/plasma/kwin/-/archive/0bc3fc18aa412f463659afb1dc37db77b4bc677c/kwin-0bc3fc18aa412f463659afb1dc37db77b4bc677c.tar.gz",
+    "sha256": "0341x1jkfrv0pqg9271jmxpcqlqa9kd11l8cs4nmnqlrjyakxplz",
+    "url": "https://invent.kde.org/plasma/kwin/-/archive/8892b16626f8f0852a1002d8d57bf1cf177f9007/kwin-8892b16626f8f0852a1002d8d57bf1cf177f9007.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kwindowsystem": {
-    "fname": "kf-kwindowsystem-6.0-unstable-2024-03-18-fb03107e.tar.gz",
-    "id": "fb03107eb32b55decfe24d2eecc297d6bdc2dba0",
+    "fname": "kf-kwindowsystem-6.0-unstable-2024-03-18-fbb9391a.tar.gz",
+    "id": "fbb9391af7111c80c4ffbb929e1554c81c0ec43d",
     "pname": "kf-kwindowsystem",
-    "sha256": "1yka4jwiryid1r9i611gzbybk0zlbkmd9sbw9yxb3h48027kar37",
-    "url": "https://invent.kde.org/frameworks/kwindowsystem/-/archive/fb03107eb32b55decfe24d2eecc297d6bdc2dba0/kwindowsystem-fb03107eb32b55decfe24d2eecc297d6bdc2dba0.tar.gz",
+    "sha256": "155fxjz4jyikjxpcsj28pg3v2lgjf7vvzzp605h44zrpkgxm1v1q",
+    "url": "https://invent.kde.org/frameworks/kwindowsystem/-/archive/fbb9391af7111c80c4ffbb929e1554c81c0ec43d/kwindowsystem-fbb9391af7111c80c4ffbb929e1554c81c0ec43d.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "kwrited": {
@@ -768,11 +816,11 @@
     "version": "6.0-unstable-2024-03-04"
   },
   "kxmlgui": {
-    "fname": "kf-kxmlgui-6.0-unstable-2024-03-18-894a7d79.tar.gz",
-    "id": "894a7d792b1e0091cf93cd261731303692305137",
+    "fname": "kf-kxmlgui-6.0-unstable-2024-03-18-16e38ea2.tar.gz",
+    "id": "16e38ea289c66165c9012f3a6d9e4d9d86d7cacf",
     "pname": "kf-kxmlgui",
-    "sha256": "1z2vkfc3bl7ga5wikgdcm81xp1s1g89y4ddwrqq2yj629d5kx8y9",
-    "url": "https://invent.kde.org/frameworks/kxmlgui/-/archive/894a7d792b1e0091cf93cd261731303692305137/kxmlgui-894a7d792b1e0091cf93cd261731303692305137.tar.gz",
+    "sha256": "00wkns2bvc29q6bjsl954p2bvd857risl0pxx3dxh8kfq8kqpvyd",
+    "url": "https://invent.kde.org/frameworks/kxmlgui/-/archive/16e38ea289c66165c9012f3a6d9e4d9d86d7cacf/kxmlgui-16e38ea289c66165c9012f3a6d9e4d9d86d7cacf.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "layer-shell-qt": {
@@ -783,6 +831,22 @@
     "url": "https://invent.kde.org/plasma/layer-shell-qt/-/archive/c407f9a8c4c2d5659fedb4e298d9f755666876ef/layer-shell-qt-c407f9a8c4c2d5659fedb4e298d9f755666876ef.tar.gz",
     "version": "6.0-unstable-2024-02-21"
   },
+  "libkdcraw": {
+    "fname": "kg-libkdcraw-24.02-unstable-2023-11-23-096520fd.tar.gz",
+    "id": "096520fd81d8068b8d6cc17beb085021826e0946",
+    "pname": "kg-libkdcraw",
+    "sha256": "1z5dfmxb1ys8jpsfh2ar72rrqg4jy3jbf9805xzwr5y72w7ig1xf",
+    "url": "https://invent.kde.org/graphics/libkdcraw/-/archive/096520fd81d8068b8d6cc17beb085021826e0946/libkdcraw-096520fd81d8068b8d6cc17beb085021826e0946.tar.gz",
+    "version": "24.02-unstable-2023-11-23"
+  },
+  "libkexiv2": {
+    "fname": "kg-libkexiv2-24.02-unstable-2023-11-30-d67018b7.tar.gz",
+    "id": "d67018b700968b2306f642db315ee968da3e9993",
+    "pname": "kg-libkexiv2",
+    "sha256": "1nbdvpsxhkvi0k4fqw7r1jqpiysgnwp41bgmgybfjnfms8a35xrc",
+    "url": "https://invent.kde.org/graphics/libkexiv2/-/archive/d67018b700968b2306f642db315ee968da3e9993/libkexiv2-d67018b700968b2306f642db315ee968da3e9993.tar.gz",
+    "version": "24.02-unstable-2023-11-30"
+  },
   "libkscreen": {
     "fname": "kp-libkscreen-6.0-unstable-2024-03-18-94184119.tar.gz",
     "id": "941841191e5b9985c97c087250ec9a649ac9f50d",
@@ -792,11 +856,11 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "libksysguard": {
-    "fname": "kp-libksysguard-6.0-unstable-2024-03-18-4f4a7b5f.tar.gz",
-    "id": "4f4a7b5f0d25a70c99c6dc7a78d7b48d9b7156e6",
+    "fname": "kp-libksysguard-6.0-unstable-2024-03-18-331a8180.tar.gz",
+    "id": "331a81803a83eeb983f4abdd8f9de687e783b125",
     "pname": "kp-libksysguard",
-    "sha256": "1jkzv6w8i9yhadr7s9ib0nfna5djhsjq7pmcl2qik495cj5l6v74",
-    "url": "https://invent.kde.org/plasma/libksysguard/-/archive/4f4a7b5f0d25a70c99c6dc7a78d7b48d9b7156e6/libksysguard-4f4a7b5f0d25a70c99c6dc7a78d7b48d9b7156e6.tar.gz",
+    "sha256": "0igwp96yqyr7kj1kbvyzc46s83jv3hl21i5hv3zlaijkj4szc7w1",
+    "url": "https://invent.kde.org/plasma/libksysguard/-/archive/331a81803a83eeb983f4abdd8f9de687e783b125/libksysguard-331a81803a83eeb983f4abdd8f9de687e783b125.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "libplasma": {
@@ -816,20 +880,20 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "modemmanager-qt": {
-    "fname": "kf-modemmanager-qt-6.0-unstable-2024-02-21-de46541b.tar.gz",
-    "id": "de46541b7c3a5dca2203461148b6e29d83058511",
+    "fname": "kf-modemmanager-qt-6.0-unstable-2024-03-18-3c2c0490.tar.gz",
+    "id": "3c2c04907bba22ffacf760239563d9f13fb6be40",
     "pname": "kf-modemmanager-qt",
-    "sha256": "0xxcy3zaq26zj8kpka55vp1bjp1xj0nimk1fb027h833dgz0xwy1",
-    "url": "https://invent.kde.org/frameworks/modemmanager-qt/-/archive/de46541b7c3a5dca2203461148b6e29d83058511/modemmanager-qt-de46541b7c3a5dca2203461148b6e29d83058511.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "1gp9pw1pil92vg0ghwsza5wf89vppcqmfrb0kl3bzyz8sjlfids2",
+    "url": "https://invent.kde.org/frameworks/modemmanager-qt/-/archive/3c2c04907bba22ffacf760239563d9f13fb6be40/modemmanager-qt-3c2c04907bba22ffacf760239563d9f13fb6be40.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "networkmanager-qt": {
-    "fname": "kf-networkmanager-qt-6.0-unstable-2024-02-21-02c98cb6.tar.gz",
-    "id": "02c98cb6ac4f513b4feedbba476117ff2704dc4a",
+    "fname": "kf-networkmanager-qt-6.0-unstable-2024-03-18-43edbfd3.tar.gz",
+    "id": "43edbfd3d975e6998f5e849378f3d493a9c043b5",
     "pname": "kf-networkmanager-qt",
-    "sha256": "16kfz9jipg6qd3sfpmjcgjc1h68lrxa7q4ssvblhm425ni41m7cd",
-    "url": "https://invent.kde.org/frameworks/networkmanager-qt/-/archive/02c98cb6ac4f513b4feedbba476117ff2704dc4a/networkmanager-qt-02c98cb6ac4f513b4feedbba476117ff2704dc4a.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "1ripc3sp7v0wr6313iib84yv9fvadm1vadyhw47p7k2zsrh3vbxd",
+    "url": "https://invent.kde.org/frameworks/networkmanager-qt/-/archive/43edbfd3d975e6998f5e849378f3d493a9c043b5/networkmanager-qt-43edbfd3d975e6998f5e849378f3d493a9c043b5.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "ocean-sound-theme": {
     "fname": "kp-ocean-sound-theme-6.0-unstable-2024-03-18-f6ad5d95.tar.gz",
@@ -872,11 +936,11 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "plasma-desktop": {
-    "fname": "kp-plasma-desktop-6.0-unstable-2024-03-18-3bb25125.tar.gz",
-    "id": "3bb251258cd216211a54f9925700ee32d4cdf4d2",
+    "fname": "kp-plasma-desktop-6.0-unstable-2024-03-18-13149610.tar.gz",
+    "id": "13149610afe4a14fbd1d67618e0df400e0a680ac",
     "pname": "kp-plasma-desktop",
-    "sha256": "0fky4fvvhbhvf5y6fa4s10dw6x2yk0acrhwka4jw8bkfnb00wyc6",
-    "url": "https://invent.kde.org/plasma/plasma-desktop/-/archive/3bb251258cd216211a54f9925700ee32d4cdf4d2/plasma-desktop-3bb251258cd216211a54f9925700ee32d4cdf4d2.tar.gz",
+    "sha256": "0qwzzx15nzzax470xs9ga2g8pilfajifzbycm6hrln93np894sl5",
+    "url": "https://invent.kde.org/plasma/plasma-desktop/-/archive/13149610afe4a14fbd1d67618e0df400e0a680ac/plasma-desktop-13149610afe4a14fbd1d67618e0df400e0a680ac.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "plasma-disks": {
@@ -920,19 +984,19 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "plasma-systemmonitor": {
-    "fname": "kp-plasma-systemmonitor-6.0-unstable-2024-03-18-204ab379.tar.gz",
-    "id": "204ab379d18cd57f420a19da890fba6b37cd90a9",
+    "fname": "kp-plasma-systemmonitor-6.0-unstable-2024-03-18-670e5aab.tar.gz",
+    "id": "670e5aab971fc25402f965a36ff8a7b3c1b78e83",
     "pname": "kp-plasma-systemmonitor",
-    "sha256": "0izn1yhy7z0jc0h4zlmcqjmbvnffqpqml59x0xz1fj6vni0l5jgk",
-    "url": "https://invent.kde.org/plasma/plasma-systemmonitor/-/archive/204ab379d18cd57f420a19da890fba6b37cd90a9/plasma-systemmonitor-204ab379d18cd57f420a19da890fba6b37cd90a9.tar.gz",
+    "sha256": "178d62rwcds3rnb99fkgcwxysjlx9x3b619iip0axmcpcqc6s1sy",
+    "url": "https://invent.kde.org/plasma/plasma-systemmonitor/-/archive/670e5aab971fc25402f965a36ff8a7b3c1b78e83/plasma-systemmonitor-670e5aab971fc25402f965a36ff8a7b3c1b78e83.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "plasma-workspace": {
-    "fname": "kp-plasma-workspace-6.0-unstable-2024-03-18-8c8ac8fb.tar.gz",
-    "id": "8c8ac8fba3b2106314708c7b2ee0d39001c01fd5",
+    "fname": "kp-plasma-workspace-6.0-unstable-2024-03-18-1273fa78.tar.gz",
+    "id": "1273fa78c36d8157f4b2d27dea2352ce8b5c674b",
     "pname": "kp-plasma-workspace",
-    "sha256": "0rjh0kdrvyrhws04pglp9z9g3j4bakjfnyavqrlwb5k3kj8bf70q",
-    "url": "https://invent.kde.org/plasma/plasma-workspace/-/archive/8c8ac8fba3b2106314708c7b2ee0d39001c01fd5/plasma-workspace-8c8ac8fba3b2106314708c7b2ee0d39001c01fd5.tar.gz",
+    "sha256": "0bccg3b9417wkv53cxgam079b75sqkf7avhnkzz8w2b9wzwl5shd",
+    "url": "https://invent.kde.org/plasma/plasma-workspace/-/archive/1273fa78c36d8157f4b2d27dea2352ce8b5c674b/plasma-workspace-1273fa78c36d8157f4b2d27dea2352ce8b5c674b.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "plasma-workspace-wallpapers": {
@@ -976,19 +1040,19 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "prison": {
-    "fname": "kf-prison-6.0-unstable-2024-02-21-f54b9f57.tar.gz",
-    "id": "f54b9f57a715af3f9ae0421239cc2848e2342c73",
+    "fname": "kf-prison-6.0-unstable-2024-03-18-da84a703.tar.gz",
+    "id": "da84a7033d6825a3f3d18c962a7fd6ea7e7791a5",
     "pname": "kf-prison",
-    "sha256": "1nff9cp3pxzwn0b6j3fjqswy4ymy7qdwwsk2686mllvllagmgrwp",
-    "url": "https://invent.kde.org/frameworks/prison/-/archive/f54b9f57a715af3f9ae0421239cc2848e2342c73/prison-f54b9f57a715af3f9ae0421239cc2848e2342c73.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "1lvmwnvk8ybnwvnhrqzx3sxsrchwg9jn5ha8npqs95qk660kjkbv",
+    "url": "https://invent.kde.org/frameworks/prison/-/archive/da84a7033d6825a3f3d18c962a7fd6ea7e7791a5/prison-da84a7033d6825a3f3d18c962a7fd6ea7e7791a5.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "purpose": {
-    "fname": "kf-purpose-6.0-unstable-2024-03-18-ae22463f.tar.gz",
-    "id": "ae22463f820ea2dc9eb79632926abf9d0e1e34c0",
+    "fname": "kf-purpose-6.0-unstable-2024-03-18-dffc8492.tar.gz",
+    "id": "dffc849264560881791bb4dadda8fa27d8d225a9",
     "pname": "kf-purpose",
-    "sha256": "010ndyl7f8cp4l9b0zc2gsnylp1s51ncvmbrwqckqivvkahsh0bc",
-    "url": "https://invent.kde.org/frameworks/purpose/-/archive/ae22463f820ea2dc9eb79632926abf9d0e1e34c0/purpose-ae22463f820ea2dc9eb79632926abf9d0e1e34c0.tar.gz",
+    "sha256": "0cchiiz22jll620m6j6xgz53nyaz15zhg9iyhaiywa51jvchb8vi",
+    "url": "https://invent.kde.org/frameworks/purpose/-/archive/dffc849264560881791bb4dadda8fa27d8d225a9/purpose-dffc849264560881791bb4dadda8fa27d8d225a9.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "qqc2-breeze-style": {
@@ -1000,27 +1064,27 @@
     "version": "6.0-unstable-2024-03-10"
   },
   "qqc2-desktop-style": {
-    "fname": "kf-qqc2-desktop-style-6.0-unstable-2024-03-18-f8387955.tar.gz",
-    "id": "f8387955e1d86bc02b26b2a8c26cc0f4c2c8dcea",
+    "fname": "kf-qqc2-desktop-style-6.0-unstable-2024-03-18-517c4778.tar.gz",
+    "id": "517c4778389bc57d4c5af1701d31cb06be4de3c1",
     "pname": "kf-qqc2-desktop-style",
-    "sha256": "0mgsg4pw9nxgll8lk47rlcn1428l5w9c6cfzfq7xmhd9p2l32s4z",
-    "url": "https://invent.kde.org/frameworks/qqc2-desktop-style/-/archive/f8387955e1d86bc02b26b2a8c26cc0f4c2c8dcea/qqc2-desktop-style-f8387955e1d86bc02b26b2a8c26cc0f4c2c8dcea.tar.gz",
+    "sha256": "1c0xvr1rmacbxaz7ia5l4pzi53jq9cl09mc8y7q0xkic0zm76j46",
+    "url": "https://invent.kde.org/frameworks/qqc2-desktop-style/-/archive/517c4778389bc57d4c5af1701d31cb06be4de3c1/qqc2-desktop-style-517c4778389bc57d4c5af1701d31cb06be4de3c1.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "solid": {
-    "fname": "kf-solid-6.0-unstable-2024-03-18-e60a8aa4.tar.gz",
-    "id": "e60a8aa406c4d603ea14c3e37d01069efab2324a",
+    "fname": "kf-solid-6.0-unstable-2024-03-18-45b1cc23.tar.gz",
+    "id": "45b1cc23dbd6685330ad9511081288b9f368f8c3",
     "pname": "kf-solid",
-    "sha256": "0nh6928dqj5l4z3n004gs3pk1s7jkq0dn9nx5ldypipmva46rw4h",
-    "url": "https://invent.kde.org/frameworks/solid/-/archive/e60a8aa406c4d603ea14c3e37d01069efab2324a/solid-e60a8aa406c4d603ea14c3e37d01069efab2324a.tar.gz",
+    "sha256": "1zhfmnwximb2d1yx9mnljaqhq3lq86l4kgjrqrlxr7x4p1db8zlx",
+    "url": "https://invent.kde.org/frameworks/solid/-/archive/45b1cc23dbd6685330ad9511081288b9f368f8c3/solid-45b1cc23dbd6685330ad9511081288b9f368f8c3.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "sonnet": {
-    "fname": "kf-sonnet-6.0-unstable-2024-03-18-8eae2763.tar.gz",
-    "id": "8eae27637a5a255bb9c152c9a846e413359fa469",
+    "fname": "kf-sonnet-6.0-unstable-2024-03-18-2ca9e4d9.tar.gz",
+    "id": "2ca9e4d93d8a3499df3008ab7db1136c70838498",
     "pname": "kf-sonnet",
-    "sha256": "17q77xshkr09g7jmajb1a285pn8mq1pqnw2krc48mba5clr7xbc9",
-    "url": "https://invent.kde.org/frameworks/sonnet/-/archive/8eae27637a5a255bb9c152c9a846e413359fa469/sonnet-8eae27637a5a255bb9c152c9a846e413359fa469.tar.gz",
+    "sha256": "1i4d519h12kzvqppxn4pd63d94a9bl014vck36qj8n2rc4dsybdz",
+    "url": "https://invent.kde.org/frameworks/sonnet/-/archive/2ca9e4d93d8a3499df3008ab7db1136c70838498/sonnet-2ca9e4d93d8a3499df3008ab7db1136c70838498.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "spectacle": {
@@ -1032,19 +1096,19 @@
     "version": "24.02-unstable-2024-03-18"
   },
   "syndication": {
-    "fname": "kf-syndication-6.0-unstable-2024-02-21-e98a7b8f.tar.gz",
-    "id": "e98a7b8f50195278cc383142a5bd647640928f2d",
+    "fname": "kf-syndication-6.0-unstable-2024-03-18-939dc6bc.tar.gz",
+    "id": "939dc6bc184decfe3c3c7af5de51a897cd2e5b7a",
     "pname": "kf-syndication",
-    "sha256": "18h6zngfvpa2kckaj39dzs0y7yq6f0ai4w32hqghs8mkkl2pks3s",
-    "url": "https://invent.kde.org/frameworks/syndication/-/archive/e98a7b8f50195278cc383142a5bd647640928f2d/syndication-e98a7b8f50195278cc383142a5bd647640928f2d.tar.gz",
-    "version": "6.0-unstable-2024-02-21"
+    "sha256": "00y09wrravmmyjdy2y297qzpkln9w4ccxylanna0pia9cn3zn7pb",
+    "url": "https://invent.kde.org/frameworks/syndication/-/archive/939dc6bc184decfe3c3c7af5de51a897cd2e5b7a/syndication-939dc6bc184decfe3c3c7af5de51a897cd2e5b7a.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "syntax-highlighting": {
-    "fname": "kf-syntax-highlighting-6.0-unstable-2024-03-18-33081c3c.tar.gz",
-    "id": "33081c3c73334b40529868af5b8e7ec11d4b6e76",
+    "fname": "kf-syntax-highlighting-6.0-unstable-2024-03-18-90bb0a80.tar.gz",
+    "id": "90bb0a805b1631d7a9137f2ceeab342fc2922a69",
     "pname": "kf-syntax-highlighting",
-    "sha256": "11fbk47nb8famwc14jmfmlrdfr7qlwy9lh8xi0vc98dy8d5fs5x7",
-    "url": "https://invent.kde.org/frameworks/syntax-highlighting/-/archive/33081c3c73334b40529868af5b8e7ec11d4b6e76/syntax-highlighting-33081c3c73334b40529868af5b8e7ec11d4b6e76.tar.gz",
+    "sha256": "1c19ikrcjr2ikjfrg84xzq0vnl38ij5gpfp08h1608j56wwr8f05",
+    "url": "https://invent.kde.org/frameworks/syntax-highlighting/-/archive/90bb0a805b1631d7a9137f2ceeab342fc2922a69/syntax-highlighting-90bb0a805b1631d7a9137f2ceeab342fc2922a69.tar.gz",
     "version": "6.0-unstable-2024-03-18"
   },
   "systemsettings": {
@@ -1056,12 +1120,12 @@
     "version": "6.0-unstable-2024-03-18"
   },
   "threadweaver": {
-    "fname": "kf-threadweaver-6.0-unstable-2024-03-10-e7ba11b9.tar.gz",
-    "id": "e7ba11b96c0d32a774c1638f50c44f7a1306bdd6",
+    "fname": "kf-threadweaver-6.0-unstable-2024-03-18-b37ba92e.tar.gz",
+    "id": "b37ba92e2fe2dd9dd482c36b905ad41931a62036",
     "pname": "kf-threadweaver",
-    "sha256": "16b5924xa786bx1ibrxzf1kja4j7whhq9gn52pqdnhk1br7fphr3",
-    "url": "https://invent.kde.org/frameworks/threadweaver/-/archive/e7ba11b96c0d32a774c1638f50c44f7a1306bdd6/threadweaver-e7ba11b96c0d32a774c1638f50c44f7a1306bdd6.tar.gz",
-    "version": "6.0-unstable-2024-03-10"
+    "sha256": "048vaf4w1dxn8940sjrh2y74k9bhln2bf3r9kgz02jb5n81dlm04",
+    "url": "https://invent.kde.org/frameworks/threadweaver/-/archive/b37ba92e2fe2dd9dd482c36b905ad41931a62036/threadweaver-b37ba92e2fe2dd9dd482c36b905ad41931a62036.tar.gz",
+    "version": "6.0-unstable-2024-03-18"
   },
   "xdg-desktop-portal-kde": {
     "fname": "kp-xdg-desktop-portal-kde-6.0-unstable-2024-03-18-467d4fb8.tar.gz",

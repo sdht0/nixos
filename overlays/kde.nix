@@ -944,6 +944,62 @@ in
           inherit (sources.kdegraphics-thumbnailers) url sha256;
         };
       });
+      baloo-widgets = kprev.baloo-widgets.overrideAttrs (oldAttrs: {
+        inherit (sources.baloo-widgets) pname version;
+        src = pkgs.fetchurl {
+          name = sources.baloo-widgets.fname;
+          inherit (sources.baloo-widgets) url sha256;
+        };
+      });
+      ffmpegthumbs = kprev.ffmpegthumbs.overrideAttrs (oldAttrs: {
+        inherit (sources.ffmpegthumbs) pname version;
+        src = pkgs.fetchurl {
+          name = sources.ffmpegthumbs.fname;
+          inherit (sources.ffmpegthumbs) url sha256;
+        };
+      });
+      libkexiv2 = kprev.libkexiv2.overrideAttrs (oldAttrs: {
+        inherit (sources.libkexiv2) pname version;
+        src = pkgs.fetchurl {
+          name = sources.libkexiv2.fname;
+          inherit (sources.libkexiv2) url sha256;
+        };
+      });
+      kdegraphics-mobipocket = kprev.kdegraphics-mobipocket.overrideAttrs (oldAttrs: {
+        inherit (sources.kdegraphics-mobipocket) pname version;
+        src = pkgs.fetchurl {
+          name = sources.kdegraphics-mobipocket.fname;
+          inherit (sources.kdegraphics-mobipocket) url sha256;
+        };
+      });
+      libkdcraw = kprev.libkdcraw.overrideAttrs (oldAttrs: {
+        inherit (sources.libkdcraw) pname version;
+        src = pkgs.fetchurl {
+          name = sources.libkdcraw.fname;
+          inherit (sources.libkdcraw) url sha256;
+        };
+      });
+      kaccounts-integration = kprev.kaccounts-integration.overrideAttrs (oldAttrs: {
+        inherit (sources.kaccounts-integration) pname version;
+        src = pkgs.fetchurl {
+          name = sources.kaccounts-integration.fname;
+          inherit (sources.kaccounts-integration) url sha256;
+        };
+      });
+      kde-inotify-survey = kprev.kde-inotify-survey.overrideAttrs (oldAttrs: {
+        inherit (sources.kde-inotify-survey) pname version;
+        src = pkgs.fetchurl {
+          name = sources.kde-inotify-survey.fname;
+          inherit (sources.kde-inotify-survey) url sha256;
+        };
+      });
+      khelpcenter = kprev.khelpcenter.overrideAttrs (oldAttrs: {
+        inherit (sources.khelpcenter) pname version;
+        src = pkgs.fetchurl {
+          name = sources.khelpcenter.fname;
+          inherit (sources.khelpcenter) url sha256;
+        };
+      });
       dolphin-plugins = kprev.dolphin-plugins.overrideAttrs (oldAttrs: {
         inherit (sources.dolphin-plugins) pname version;
         src = pkgs.fetchurl {
