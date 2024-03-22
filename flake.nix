@@ -9,9 +9,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixOlde = {
+      url = "github:trofi/nix-olde";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, homeManager }:
+  outputs = { self, nixpkgs, homeManager, nixOlde }:
   let
     system = "x86_64-linux";
 
@@ -50,7 +54,7 @@
 
     hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
       system = hostData.system;
-      specialArgs = { hostData = hostData // { inherit hostname; }; inherit nixpkgs; };
+      specialArgs = { hostData = hostData // { inherit hostname; }; inherit nixpkgs nixOlde; };
       modules = [
         ./hosts/${hostname}/configuration.nix
         homeManager.nixosModules.home-manager {
