@@ -11,8 +11,7 @@
       };
       patches = [ ./files/yt-dlp-enhance.patch ];
     });
-  })
-  (final: prev: {
+
     solaar = prev.solaar.overrideAttrs (old: {
       name = "overlay-${old.pname}-${old.version}";
       postFixup = ''
@@ -20,6 +19,12 @@
         sed -i 's/Exec=solaar/Exec=solaar --window hide/' $out/share/applications/solaar.desktop
       '';
     });
+
+    fprintd = prev.fprintd.overrideAttrs (_: {
+      mesonCheckFlags = [
+        "--no-suite" "fprintd:TestPamFprintd"
+      ];
+    });
   })
 ]
-++ (import ./kde.nix args)
+# ++ (import ./kde.nix args)

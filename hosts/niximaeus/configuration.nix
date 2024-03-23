@@ -43,7 +43,8 @@
     firefox
     thunderbird zotero libreoffice-qt
     ffmpeg vlc
-    mcomix foliate
+    #mcomix
+    foliate
     zoom-us slack
     obsidian fava
     activitywatch
