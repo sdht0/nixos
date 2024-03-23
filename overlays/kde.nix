@@ -200,6 +200,7 @@ in
           name = sources.kfilemetadata.fname;
           inherit (sources.kfilemetadata) url sha256;
         };
+        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.kdePackages.kcodecs];
       });
       kglobalaccel = kprev.kglobalaccel.overrideAttrs (oldAttrs: {
         inherit (sources.kglobalaccel) pname version;
