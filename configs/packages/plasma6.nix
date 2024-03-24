@@ -6,6 +6,7 @@
     videoDrivers = [ "modesetting" ];
   };
   services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enableQt5Integration = false;
   services.xserver.displayManager = {
     defaultSession = "plasmax11";
     sddm = {
