@@ -27,4 +27,4 @@
     });
   })
 ]
-# ++ (import ./kde.nix args)
+++ (import ./kde.nix args)
