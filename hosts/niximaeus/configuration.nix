@@ -1,4 +1,4 @@
-{ config, lib, pkgs, hostData, nixOlde, ... }:
+{ config, lib, pkgs, hostData, inputs, ... }:
 
 {
   imports = [
@@ -60,7 +60,8 @@
         #vincenty folium numba
     ]))
     chromedriver
-    nixOlde.packages.${pkgs.system}.nix-olde
+    inputs.nixOlde.packages.${pkgs.system}.nix-olde
+    inputs.nixpkgs2311.legacyPackages.${pkgs.system}.mcomix
   ]);
   fonts.packages = with pkgs; [
     jetbrains-mono meslo-lgs-nf

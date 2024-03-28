@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:nixos/nixpkgs/master";
     # nixpkgsMaster.url = "github:nixos/nixpkgs/master";
+    nixpkgs2311.url = "github:nixos/nixpkgs/release-23.11";
     homeManager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +16,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, homeManager, nixOlde }:
+  outputs = { self, nixpkgs, homeManager, ... }@inputs:
   let
     system = "x86_64-linux";
 
@@ -54,7 +55,7 @@
 
     hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
       system = hostData.system;
-      specialArgs = { hostData = hostData // { inherit hostname; }; inherit nixpkgs nixOlde; };
+      specialArgs = { hostData = hostData // { inherit hostname; }; inherit nixpkgs inputs; };
       modules = [
         ./hosts/${hostname}/configuration.nix
         homeManager.nixosModules.home-manager {
