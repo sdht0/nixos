@@ -23,6 +23,8 @@ in
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
+    use-xdg-base-directories = true;
+    warn-dirty = false;
   };
   documentation.doc.enable = false;
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
