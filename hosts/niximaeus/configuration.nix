@@ -44,11 +44,12 @@
     thunderbird zotero libreoffice-qt
     ffmpeg vlc
     #mcomix
+    inputs.nixpkgs2311.legacyPackages.${pkgs.system}.mcomix
     foliate
     zoom-us slack
     obsidian fava
     activitywatch
-    nil nixfmt nixpkgs-review
+    nil nixfmt nixpkgs-review inputs.nixOlde.packages.${pkgs.system}.nix-olde
     rustup cargo rustc jetbrains-toolbox
     vscode
     gcc lldb temurin-bin-21
@@ -60,8 +61,6 @@
         #vincenty folium numba
     ]))
     chromedriver
-    inputs.nixOlde.packages.${pkgs.system}.nix-olde
-    inputs.nixpkgs2311.legacyPackages.${pkgs.system}.mcomix
   ]);
   fonts.packages = with pkgs; [
     jetbrains-mono meslo-lgs-nf
