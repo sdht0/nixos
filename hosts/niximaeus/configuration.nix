@@ -48,7 +48,7 @@
     zoom-us slack
     obsidian fava
     activitywatch
-    nil nixfmt
+    nil nixfmt nixpkgs-review
     rustup cargo rustc jetbrains-toolbox
     vscode
     gcc lldb temurin-bin-21
