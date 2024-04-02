@@ -40,7 +40,7 @@
   programs.ssh.startAgent = true;
 
   environment.systemPackages = (with pkgs; [
-    firefox
+    firefox chromedriver
     thunderbird zotero libreoffice-qt
     ffmpeg vlc
     #mcomix
@@ -60,7 +60,6 @@
         titlecase selenium bibtexparser # publications
         #vincenty folium numba
     ]))
-    chromedriver
   ]);
   fonts.packages = with pkgs; [
     jetbrains-mono meslo-lgs-nf
