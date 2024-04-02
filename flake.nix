@@ -16,8 +16,10 @@
     };
   };
 
-  outputs = { self, nixpkgs, homeManager, ... }@inputs:
+  outputs = { self, ... }@inputs:
   let
+    lib = inputs.nixpkgs.lib;
+
     system = "x86_64-linux";
 
     mainuser = rec {
@@ -48,19 +50,19 @@
       };
     };
 
-    userMapAttrFn = hostname:
-      user: userData: nixpkgs.lib.nameValuePair
+    f_userMapAttr = hostname:
+      user: userData: lib.nameValuePair
         userData.username
         (import ./hosts/${hostname}/home-${user}.nix { inherit (userData) username; });
 
-    hostMapFn = hostname: hostData: nixpkgs.lib.nixosSystem {
+    f_hostMap = hostname: hostData: lib.nixosSystem {
       system = hostData.system;
-      specialArgs = { hostData = hostData // { inherit hostname; }; inherit nixpkgs inputs; };
+      specialArgs = { hostData = hostData // { inherit hostname; }; inherit inputs; };
       modules = [
         ./hosts/${hostname}/configuration.nix
-        homeManager.nixosModules.home-manager {
+        inputs.homeManager.nixosModules.home-manager {
           home-manager = {
-            users = nixpkgs.lib.mapAttrs' (userMapAttrFn hostname) hostData.users;
+            users = lib.mapAttrs' (f_userMapAttr hostname) hostData.users;
             extraSpecialArgs = { inherit (hostData) users; };
             useGlobalPkgs = true;
             useUserPackages = true;
@@ -71,6 +73,6 @@
     };
   in
   {
-    nixosConfigurations =  nixpkgs.lib.mapAttrs hostMapFn hosts;
+    nixosConfigurations =  lib.mapAttrs f_hostMap hosts;
   };
 }

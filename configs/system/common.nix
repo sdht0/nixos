@@ -1,10 +1,10 @@
-{ lib, config, nixpkgs, pkgs, hostData, ... }:
+{ lib, config, pkgs, hostData, inputs, ... }:
 let
   lib' = import ../../lib { inherit config lib; };
 
   nixpkgsLink = "/etc/nix/nixpkgs";
 
-  userMapFn = user: {
+  f_userMap = user: {
     users.${user.username} = {
       uid = user.uid or null;
       group = user.groupname or user.username;
@@ -14,8 +14,8 @@ let
     };
     groups.${user.username}.gid = user.gid or null;
   };
-  userFoldFn = list: builtins.foldl' (final: l: lib.attrsets.recursiveUpdate final l)  {} list;
-  users = userFoldFn (map userMapFn (lib.attrsets.attrValues hostData.users));
+  f_userFold = list: builtins.foldl' (final: l: lib.attrsets.recursiveUpdate final l)  {} list;
+  users = f_userFold (map f_userMap (lib.attrsets.attrValues hostData.users));
 in
 {
   hardware.enableRedistributableFirmware = true;
@@ -30,13 +30,13 @@ in
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 
   # Normalize nixpkgs version
-  nix.registry.nixpkgs.flake = nixpkgs;
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
   nix.nixPath = [
     "nixpkgs=${nixpkgsLink}"
     "nixos-config=/etc/nixos/configuration.nix"
     "/nix/var/nix/profiles/per-user/root/channels"
   ];
-  systemd.tmpfiles.rules = [ "L+ ${nixpkgsLink}     - - - - ${nixpkgs}" ];
+  systemd.tmpfiles.rules = [ "L+ ${nixpkgsLink}     - - - - ${inputs.nixpkgs}" ];
 
   networking.hostName = hostData.hostname;
   nixpkgs.hostPlatform = hostData.system;
@@ -68,7 +68,7 @@ in
 
   inherit users;
 
-  environment.etc = (lib'.extraScript "dotfilesClone" ''
+  environment.etc = (lib'.f_extraScript "dotfilesClone" ''
     [[ -d ~/.dotfiles ]] || git clone https://github.com/sdht0/dotfiles ~/.dotfiles
     cd ~/.dotfiles
     git submodule init

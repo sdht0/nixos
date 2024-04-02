@@ -20,7 +20,7 @@ in
 
   services.tailscale.enable = true;
   systemd.services.tailscaled.serviceConfig.Environment = [ "TS_NO_LOGS_NO_SUPPORT=true" ];
-  environment.etc = (lib'.extraScript "tailscaleLogin" ''
+  environment.etc = (lib'.f_extraScript "tailscaleLogin" ''
     sudo tailscale login
     echo "TODOs:"
     echo "sudo tailscale lock sign ."

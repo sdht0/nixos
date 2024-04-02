@@ -4,7 +4,7 @@ let
 in
 {
   manual.manpages.enable = false;
-  home.file = lib'.deepMerge [
+  home.file = lib'.f_deepMerge [
     {
       ".zshrc".text = ''
           . ~/.bashrc
@@ -16,7 +16,7 @@ in
         [[ -f ~/.dotfiles.safe/bashrc ]] && . ~/.dotfiles.safe/bashrc
         '';
     }
-    (lib'.linkFiles [
+    (lib'.f_linkFiles [
       { link = ".tmux.conf";  dest = ".dotfiles/tmux.conf"; }
       { link = ".vimrc";      dest = ".dotfiles/vimrc"; }
       { link = ".gitconfig";  dest = ".dotfiles/gitconfig"; }
