@@ -60,7 +60,9 @@
         titlecase selenium bibtexparser # publications
         #vincenty folium numba
     ]))
+    distrobox
   ]);
+  virtualisation.podman.enable = true;
   fonts.packages = with pkgs; [
     jetbrains-mono meslo-lgs-nf
     noto-fonts noto-fonts-cjk-sans noto-fonts-color-emoji
