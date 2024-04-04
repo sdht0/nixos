@@ -1,11 +1,11 @@
 {
   "ark": {
-    "fname": "kg-ark-9999.2024.03.28-2fcf3f56.tar.gz",
-    "id": "2fcf3f5633e9e57a6a15bda8c2f16c431b047ba9",
+    "fname": "kg-ark-9999.2024.04.04-344e8c24.tar.gz",
+    "id": "344e8c249d9a3266a14c589d886e3592b90b11d0",
     "pname": "kg-ark",
-    "sha256": "0k1dkv4r0v271x0ybqpv38zhys5x00vdmqkxvig8b30n4gapp5ci",
-    "url": "https://invent.kde.org/utilities/ark/-/archive/2fcf3f5633e9e57a6a15bda8c2f16c431b047ba9/ark-2fcf3f5633e9e57a6a15bda8c2f16c431b047ba9.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1s6yx3his4bmvdd4ybz342dx11cf34i6q8mm940fk59si9gmkdqn",
+    "url": "https://invent.kde.org/utilities/ark/-/archive/344e8c249d9a3266a14c589d886e3592b90b11d0/ark-344e8c249d9a3266a14c589d886e3592b90b11d0.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "attica": {
     "fname": "kf-attica-9999.2024.03.19-903663d.tar.gz",
@@ -32,12 +32,12 @@
     "version": "9999.2024.03.25"
   },
   "bluedevil": {
-    "fname": "kp-bluedevil-9999.2024.03.28-cf61d43b.tar.gz",
-    "id": "cf61d43b240d64dcb3ea810c7c7bfeaba93eb86d",
+    "fname": "kp-bluedevil-9999.2024.04.04-ccebe669.tar.gz",
+    "id": "ccebe6694e47f7e22529b3cd8fdbfc282ea8840d",
     "pname": "kp-bluedevil",
-    "sha256": "0ck5mdgqsqxp2d6476piazjl05wvkzlml9gx6401288y381xr4xf",
-    "url": "https://invent.kde.org/plasma/bluedevil/-/archive/cf61d43b240d64dcb3ea810c7c7bfeaba93eb86d/bluedevil-cf61d43b240d64dcb3ea810c7c7bfeaba93eb86d.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "00gagsl61fh88mi7is6havvkikbclj8zsxvh2fs5l1i060rb64a8",
+    "url": "https://invent.kde.org/plasma/bluedevil/-/archive/ccebe6694e47f7e22529b3cd8fdbfc282ea8840d/bluedevil-ccebe6694e47f7e22529b3cd8fdbfc282ea8840d.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "bluez-qt": {
     "fname": "kf-bluez-qt-9999.2024.03.28-f07b4d8.tar.gz",
@@ -48,28 +48,28 @@
     "version": "9999.2024.03.28"
   },
   "breeze": {
-    "fname": "kp-breeze-9999.2024.03.30-c51fd7be.tar.gz",
-    "id": "c51fd7bef15853ed8fb601dae0a47ebc80cefbdb",
+    "fname": "kp-breeze-9999.2024.04.04-88dc4b0e.tar.gz",
+    "id": "88dc4b0ebcc90f55d84d953749de7dcd01fbde81",
     "pname": "kp-breeze",
-    "sha256": "1ihsy0ij95lidbmq5200sfmq69p99ygyskk527b0vradzzpfn6ga",
-    "url": "https://invent.kde.org/plasma/breeze/-/archive/c51fd7bef15853ed8fb601dae0a47ebc80cefbdb/breeze-c51fd7bef15853ed8fb601dae0a47ebc80cefbdb.tar.gz",
-    "version": "9999.2024.03.30"
+    "sha256": "1ah12nvlvfm07pk9y0ahjb773ks4nyg57zbsdp02293cv1fn6ckv",
+    "url": "https://invent.kde.org/plasma/breeze/-/archive/88dc4b0ebcc90f55d84d953749de7dcd01fbde81/breeze-88dc4b0ebcc90f55d84d953749de7dcd01fbde81.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "breeze-gtk": {
-    "fname": "kp-breeze-gtk-9999.2024.03.26-6cf2f15.tar.gz",
-    "id": "6cf2f157dac71e25b3dce982d81c97676d9b6654",
+    "fname": "kp-breeze-gtk-9999.2024.04.04-0c2373a.tar.gz",
+    "id": "0c2373a214490446840a5f290bac529563e53702",
     "pname": "kp-breeze-gtk",
-    "sha256": "0h96r0m95341pc0ykilk15i36jx69ib3kjz549sf72r0gsy7zjqq",
-    "url": "https://invent.kde.org/plasma/breeze-gtk/-/archive/6cf2f157dac71e25b3dce982d81c97676d9b6654/breeze-gtk-6cf2f157dac71e25b3dce982d81c97676d9b6654.tar.gz",
-    "version": "9999.2024.03.26"
+    "sha256": "16ingsdkrypizsx4g75rbm6ds50dbg1zws3n7vx7k7j1c7qihpp9",
+    "url": "https://invent.kde.org/plasma/breeze-gtk/-/archive/0c2373a214490446840a5f290bac529563e53702/breeze-gtk-0c2373a214490446840a5f290bac529563e53702.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "breeze-icons": {
-    "fname": "kf-breeze-icons-9999.2024.03.27-a2532bdf.tar.gz",
-    "id": "a2532bdf59f2e6c2c9b113f17c090da994814d00",
+    "fname": "kf-breeze-icons-9999.2024.04.01-0b7045ee.tar.gz",
+    "id": "0b7045ee843a90d263f83f037adac5d6afeb3303",
     "pname": "kf-breeze-icons",
-    "sha256": "1z3jfd2cpqbg7zsx1fk33qmnp8z55b3fj09cg2yqlpy163k93ip0",
-    "url": "https://invent.kde.org/frameworks/breeze-icons/-/archive/a2532bdf59f2e6c2c9b113f17c090da994814d00/breeze-icons-a2532bdf59f2e6c2c9b113f17c090da994814d00.tar.gz",
-    "version": "9999.2024.03.27"
+    "sha256": "0h8wpzfc93a0l9a2zvcrnvvi6pgx1zj8knp4d4234kg26bh86mwq",
+    "url": "https://invent.kde.org/frameworks/breeze-icons/-/archive/0b7045ee843a90d263f83f037adac5d6afeb3303/breeze-icons-0b7045ee843a90d263f83f037adac5d6afeb3303.tar.gz",
+    "version": "9999.2024.04.01"
   },
   "colord-kde": {
     "fname": "kg-colord-kde-9999.2024.03.28-89d862b.tar.gz",
@@ -80,28 +80,28 @@
     "version": "9999.2024.03.28"
   },
   "dolphin": {
-    "fname": "kg-dolphin-9999.2024.03.30-efbae76af.tar.gz",
-    "id": "efbae76afebaf80f85edf61047e87644f3557a3a",
+    "fname": "kg-dolphin-9999.2024.04.04-b9024361f.tar.gz",
+    "id": "b9024361fa922d9cd423aa05721a337a59b98229",
     "pname": "kg-dolphin",
-    "sha256": "1ca8j89ywms2mgaksr8k43f3jg2ajxphwb2426ihj837wd045k1n",
-    "url": "https://invent.kde.org/system/dolphin/-/archive/efbae76afebaf80f85edf61047e87644f3557a3a/dolphin-efbae76afebaf80f85edf61047e87644f3557a3a.tar.gz",
-    "version": "9999.2024.03.30"
+    "sha256": "19q3bpvkfdf3w8k18k2x9isb60xik0s8bg7miq5yxbzmz54ni3x4",
+    "url": "https://invent.kde.org/system/dolphin/-/archive/b9024361fa922d9cd423aa05721a337a59b98229/dolphin-b9024361fa922d9cd423aa05721a337a59b98229.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "dolphin-plugins": {
-    "fname": "kg-dolphin-plugins-9999.2024.03.30-ee7cbc1.tar.gz",
-    "id": "ee7cbc1f75df67653c017cb697e28be74064f0dc",
+    "fname": "kg-dolphin-plugins-9999.2024.04.03-772f679.tar.gz",
+    "id": "772f679d7a019a9a75beb7124e5125770879ee50",
     "pname": "kg-dolphin-plugins",
-    "sha256": "0vx5d8irs0p2mybswz8c2kcg5nlyvng493id9gnphrixvd2mf9cy",
-    "url": "https://invent.kde.org/sdk/dolphin-plugins/-/archive/ee7cbc1f75df67653c017cb697e28be74064f0dc/dolphin-plugins-ee7cbc1f75df67653c017cb697e28be74064f0dc.tar.gz",
-    "version": "9999.2024.03.30"
+    "sha256": "0h3fb9chwh3xlv1v9f7960348agv3wvhhc0s2jpqjk3iz1s7g70f",
+    "url": "https://invent.kde.org/sdk/dolphin-plugins/-/archive/772f679d7a019a9a75beb7124e5125770879ee50/dolphin-plugins-772f679d7a019a9a75beb7124e5125770879ee50.tar.gz",
+    "version": "9999.2024.04.03"
   },
   "drkonqi": {
-    "fname": "kp-drkonqi-9999.2024.03.28-c9712839.tar.gz",
-    "id": "c971283902dc88c54ffed809ecdfa73e93fc9463",
+    "fname": "kp-drkonqi-9999.2024.04.04-fa098a5a.tar.gz",
+    "id": "fa098a5a1a62a8556647ac7f060cea5f6e6a1dca",
     "pname": "kp-drkonqi",
-    "sha256": "0v7h9lzh3nqgcvfn8pbikcam3cdhms3y7525qvpsww8518qhzgil",
-    "url": "https://invent.kde.org/plasma/drkonqi/-/archive/c971283902dc88c54ffed809ecdfa73e93fc9463/drkonqi-c971283902dc88c54ffed809ecdfa73e93fc9463.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "0b55ikz7fqcchilph1n6k7n7fff1bkpv5mkwq2xjkhr1h1z8p9f2",
+    "url": "https://invent.kde.org/plasma/drkonqi/-/archive/fa098a5a1a62a8556647ac7f060cea5f6e6a1dca/drkonqi-fa098a5a1a62a8556647ac7f060cea5f6e6a1dca.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "extra-cmake-modules": {
     "fname": "kf-extra-cmake-modules-9999.2024.03.28-07e04d24.tar.gz",
@@ -168,12 +168,12 @@
     "version": "9999.2024.03.28"
   },
   "kate": {
-    "fname": "kg-kate-9999.2024.03.31-f69d18e73.tar.gz",
-    "id": "f69d18e732ba29fbc9095f32647cdb3ca6805e37",
+    "fname": "kg-kate-9999.2024.04.04-ba195e1e9.tar.gz",
+    "id": "ba195e1e9a109ecc1fd6f4a62affb5d6e9a971b9",
     "pname": "kg-kate",
-    "sha256": "0g1z5y8mbcfavysjz3yy4phds2f3v6hc9pj2yxp6168dr55f6h6r",
-    "url": "https://invent.kde.org/utilities/kate/-/archive/f69d18e732ba29fbc9095f32647cdb3ca6805e37/kate-f69d18e732ba29fbc9095f32647cdb3ca6805e37.tar.gz",
-    "version": "9999.2024.03.31"
+    "sha256": "19p289q7ipwl9xphh2icmhwvcr96v095693kj3dgbkalmx9r1ar7",
+    "url": "https://invent.kde.org/utilities/kate/-/archive/ba195e1e9a109ecc1fd6f4a62affb5d6e9a971b9/kate-ba195e1e9a109ecc1fd6f4a62affb5d6e9a971b9.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kauth": {
     "fname": "kf-kauth-9999.2024.03.28-41a5fb3.tar.gz",
@@ -192,12 +192,12 @@
     "version": "9999.2024.03.28"
   },
   "kcalendarcore": {
-    "fname": "kf-kcalendarcore-9999.2024.03.22-9bf3506cd.tar.gz",
-    "id": "9bf3506cd0788d164ac3fe41a7510bb6143a2866",
+    "fname": "kf-kcalendarcore-9999.2024.04.02-223c63395.tar.gz",
+    "id": "223c63395da1ae6b7cffeed2691d7f3641536251",
     "pname": "kf-kcalendarcore",
-    "sha256": "1m2iq9jnimj43ddlw4rm72wp2s88yckzzp4ynvsjws3l59b9p2gn",
-    "url": "https://invent.kde.org/frameworks/kcalendarcore/-/archive/9bf3506cd0788d164ac3fe41a7510bb6143a2866/kcalendarcore-9bf3506cd0788d164ac3fe41a7510bb6143a2866.tar.gz",
-    "version": "9999.2024.03.22"
+    "sha256": "0vr2byxk6wmgxawpfrafag9x87i73j89zp1dvk6qx0p2vxxnp3lc",
+    "url": "https://invent.kde.org/frameworks/kcalendarcore/-/archive/223c63395da1ae6b7cffeed2691d7f3641536251/kcalendarcore-223c63395da1ae6b7cffeed2691d7f3641536251.tar.gz",
+    "version": "9999.2024.04.02"
   },
   "kcmutils": {
     "fname": "kf-kcmutils-9999.2024.03.29-375868d1.tar.gz",
@@ -232,12 +232,12 @@
     "version": "9999.2024.03.28"
   },
   "kconfig": {
-    "fname": "kf-kconfig-9999.2024.03.29-254e2446.tar.gz",
-    "id": "254e244676daa5e60064eb9f10d9fd929ab115dc",
+    "fname": "kf-kconfig-9999.2024.04.04-783bd118.tar.gz",
+    "id": "783bd118fc25b117986e6441d9fd993eca150873",
     "pname": "kf-kconfig",
-    "sha256": "1y2jhfd7a2wb3gkr1lp49z2r2kn4pgfr4i9claj9wamn3yz19jn6",
-    "url": "https://invent.kde.org/frameworks/kconfig/-/archive/254e244676daa5e60064eb9f10d9fd929ab115dc/kconfig-254e244676daa5e60064eb9f10d9fd929ab115dc.tar.gz",
-    "version": "9999.2024.03.29"
+    "sha256": "17j37lbfv2qn7mas6w52nprgp2vgbpdpzlmwg5r37905sgvm46sv",
+    "url": "https://invent.kde.org/frameworks/kconfig/-/archive/783bd118fc25b117986e6441d9fd993eca150873/kconfig-783bd118fc25b117986e6441d9fd993eca150873.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kconfigwidgets": {
     "fname": "kf-kconfigwidgets-9999.2024.03.28-49431446.tar.gz",
@@ -256,12 +256,12 @@
     "version": "9999.2024.03.28"
   },
   "kcoreaddons": {
-    "fname": "kf-kcoreaddons-9999.2024.03.28-873091d0.tar.gz",
-    "id": "873091d052c59a29d3587b7c5e1ddaece26d4877",
+    "fname": "kf-kcoreaddons-9999.2024.04.04-dd5a38c2.tar.gz",
+    "id": "dd5a38c2cad235d4f409ed0032afa1c9b33a7d96",
     "pname": "kf-kcoreaddons",
-    "sha256": "1vasgxgmlymqiywcawcwdsvcg6ap889im2mzy5kqnldrf363mzsd",
-    "url": "https://invent.kde.org/frameworks/kcoreaddons/-/archive/873091d052c59a29d3587b7c5e1ddaece26d4877/kcoreaddons-873091d052c59a29d3587b7c5e1ddaece26d4877.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1wlqnka9lz4mb5g610qwihdl47ncj44al3wmfx5j64ly3bg7ifk3",
+    "url": "https://invent.kde.org/frameworks/kcoreaddons/-/archive/dd5a38c2cad235d4f409ed0032afa1c9b33a7d96/kcoreaddons-dd5a38c2cad235d4f409ed0032afa1c9b33a7d96.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kcrash": {
     "fname": "kf-kcrash-9999.2024.03.19-390a1a5.tar.gz",
@@ -288,12 +288,12 @@
     "version": "9999.2024.03.28"
   },
   "kde-cli-tools": {
-    "fname": "kp-kde-cli-tools-9999.2024.03.29-fe56dcfa.tar.gz",
-    "id": "fe56dcfa2e6954b7691c01af79f880b04ce495cf",
+    "fname": "kp-kde-cli-tools-9999.2024.04.03-1e09e084.tar.gz",
+    "id": "1e09e084a8c8df25c3b1fbe2ace533d19c935d7c",
     "pname": "kp-kde-cli-tools",
-    "sha256": "0bwz1k89gqn9q96ssqg0qscjgz0yrq8v7ac4cxcry2f5z9jvpl6l",
-    "url": "https://invent.kde.org/plasma/kde-cli-tools/-/archive/fe56dcfa2e6954b7691c01af79f880b04ce495cf/kde-cli-tools-fe56dcfa2e6954b7691c01af79f880b04ce495cf.tar.gz",
-    "version": "9999.2024.03.29"
+    "sha256": "1bbyysxwdjnqnksbz6x7i8crv6shv7w1qry00nbajyjx17c36ggr",
+    "url": "https://invent.kde.org/plasma/kde-cli-tools/-/archive/1e09e084a8c8df25c3b1fbe2ace533d19c935d7c/kde-cli-tools-1e09e084a8c8df25c3b1fbe2ace533d19c935d7c.tar.gz",
+    "version": "9999.2024.04.03"
   },
   "kde-gtk-config": {
     "fname": "kp-kde-gtk-config-9999.2024.03.20-6814dab.tar.gz",
@@ -312,20 +312,20 @@
     "version": "9999.2024.03.28"
   },
   "kdeclarative": {
-    "fname": "kf-kdeclarative-9999.2024.03.29-12de6e94.tar.gz",
-    "id": "12de6e94e63085174bf6df7b67cd9e372488d2cb",
+    "fname": "kf-kdeclarative-9999.2024.04.04-b58af28a.tar.gz",
+    "id": "b58af28aa6fc790c48b8058bdff5b702348dd522",
     "pname": "kf-kdeclarative",
-    "sha256": "1i3062slf8d3f539r89pl7mispfnzblrcp4qq4mar65lbnvh4y9g",
-    "url": "https://invent.kde.org/frameworks/kdeclarative/-/archive/12de6e94e63085174bf6df7b67cd9e372488d2cb/kdeclarative-12de6e94e63085174bf6df7b67cd9e372488d2cb.tar.gz",
-    "version": "9999.2024.03.29"
+    "sha256": "08lcb5vxvc5ws2rxbfwf2xspkb7labmbmngq49b460zv52zbxj5m",
+    "url": "https://invent.kde.org/frameworks/kdeclarative/-/archive/b58af28aa6fc790c48b8058bdff5b702348dd522/kdeclarative-b58af28aa6fc790c48b8058bdff5b702348dd522.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kdeconnect-kde": {
-    "fname": "kg-kdeconnect-kde-9999.2024.03.28-bad5c8c4.tar.gz",
-    "id": "bad5c8c4fe26a92de91cfbaa1716b5e1d3db5c4e",
+    "fname": "kg-kdeconnect-kde-9999.2024.04.04-4c71be18.tar.gz",
+    "id": "4c71be184694a5c46e83f831a3701e8c7c005a9d",
     "pname": "kg-kdeconnect-kde",
-    "sha256": "1l0pvkfs0a42vi4hznypd75458mn89rhlwfi03p42zx6g2b6nzaw",
-    "url": "https://invent.kde.org/network/kdeconnect-kde/-/archive/bad5c8c4fe26a92de91cfbaa1716b5e1d3db5c4e/kdeconnect-kde-bad5c8c4fe26a92de91cfbaa1716b5e1d3db5c4e.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1vd3j7bz9zanpdizbldayi0ffiix9qil034yck3ajrdirmvlm40f",
+    "url": "https://invent.kde.org/network/kdeconnect-kde/-/archive/4c71be184694a5c46e83f831a3701e8c7c005a9d/kdeconnect-kde-4c71be184694a5c46e83f831a3701e8c7c005a9d.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kdecoration": {
     "fname": "kp-kdecoration-9999.2024.03.28-7669406.tar.gz",
@@ -360,12 +360,12 @@
     "version": "9999.2024.03.24"
   },
   "kdeplasma-addons": {
-    "fname": "kp-kdeplasma-addons-9999.2024.03.28-4bfb696c0.tar.gz",
-    "id": "4bfb696c0b4ebdac0322ba9367c7dea74e389451",
+    "fname": "kp-kdeplasma-addons-9999.2024.04.03-5697376cd.tar.gz",
+    "id": "5697376cd72ae4f0e43aba310afeb7c37829e3c2",
     "pname": "kp-kdeplasma-addons",
-    "sha256": "0gi7v3g7h7s8rjgqf29p2bdjmpp23g39yd8c0lijm5fxk5l9kb75",
-    "url": "https://invent.kde.org/plasma/kdeplasma-addons/-/archive/4bfb696c0b4ebdac0322ba9367c7dea74e389451/kdeplasma-addons-4bfb696c0b4ebdac0322ba9367c7dea74e389451.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1jqqn48jfg7pn4lb4zczcn1fx4fp6pw797ibmkx6khg7cd2ax624",
+    "url": "https://invent.kde.org/plasma/kdeplasma-addons/-/archive/5697376cd72ae4f0e43aba310afeb7c37829e3c2/kdeplasma-addons-5697376cd72ae4f0e43aba310afeb7c37829e3c2.tar.gz",
+    "version": "9999.2024.04.03"
   },
   "kdesu": {
     "fname": "kf-kdesu-9999.2024.03.28-87c8296.tar.gz",
@@ -432,12 +432,12 @@
     "version": "9999.2024.03.27"
   },
   "khelpcenter": {
-    "fname": "kg-khelpcenter-9999.2024.03.28-f6e8b246.tar.gz",
-    "id": "f6e8b2465cc71f4a98ba55d3a833adebe00dcda3",
+    "fname": "kg-khelpcenter-9999.2024.04.04-c232aee1.tar.gz",
+    "id": "c232aee1a0a9683cd8464ae6311bcd803b3ae038",
     "pname": "kg-khelpcenter",
-    "sha256": "0npb792d669kphbhy3q26rf2wld8fab643ggh2ddyg525djm2axj",
-    "url": "https://invent.kde.org/system/khelpcenter/-/archive/f6e8b2465cc71f4a98ba55d3a833adebe00dcda3/khelpcenter-f6e8b2465cc71f4a98ba55d3a833adebe00dcda3.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "0hxyjwh7nfzvpcjbpp3hykvfn9ymi2qnkh7xqj26vzwjhn9y3x8w",
+    "url": "https://invent.kde.org/system/khelpcenter/-/archive/c232aee1a0a9683cd8464ae6311bcd803b3ae038/khelpcenter-c232aee1a0a9683cd8464ae6311bcd803b3ae038.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kholidays": {
     "fname": "kf-kholidays-9999.2024.03.28-53ea858.tar.gz",
@@ -456,12 +456,12 @@
     "version": "9999.2024.03.28"
   },
   "kiconthemes": {
-    "fname": "kf-kiconthemes-9999.2024.03.29-2665299.tar.gz",
-    "id": "266529987ed76dbc776fb92ea2a86d958b4a3771",
+    "fname": "kf-kiconthemes-9999.2024.04.04-334a644.tar.gz",
+    "id": "334a6444c9020fe8dbe9ea1a0efa2c60a5e58535",
     "pname": "kf-kiconthemes",
-    "sha256": "0zlnmsvhsrkir3k3kjsmf38wha39zf9a5mbdq8jpywqz00zw8cfm",
-    "url": "https://invent.kde.org/frameworks/kiconthemes/-/archive/266529987ed76dbc776fb92ea2a86d958b4a3771/kiconthemes-266529987ed76dbc776fb92ea2a86d958b4a3771.tar.gz",
-    "version": "9999.2024.03.29"
+    "sha256": "0018djdxnwh19pb1w3y2pmy6j4nlhi8vyizkbbsla41imsj8syps",
+    "url": "https://invent.kde.org/frameworks/kiconthemes/-/archive/334a6444c9020fe8dbe9ea1a0efa2c60a5e58535/kiconthemes-334a6444c9020fe8dbe9ea1a0efa2c60a5e58535.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kidletime": {
     "fname": "kf-kidletime-9999.2024.03.18-2244ee9.tar.gz",
@@ -488,12 +488,12 @@
     "version": "9999.2024.03.28"
   },
   "kio": {
-    "fname": "kf-kio-9999.2024.03.30-442acf6c8.tar.gz",
-    "id": "442acf6c8ba01c7b267ab663e12203d22ea90d9a",
+    "fname": "kf-kio-9999.2024.04.04-170803e85.tar.gz",
+    "id": "170803e85841599e8ca331bd6a7945728ca1346a",
     "pname": "kf-kio",
-    "sha256": "0fcww3k8hivvvv2ycwmsg2kx28yr7sws6gdyyhcpsa8sxjk33v0f",
-    "url": "https://invent.kde.org/frameworks/kio/-/archive/442acf6c8ba01c7b267ab663e12203d22ea90d9a/kio-442acf6c8ba01c7b267ab663e12203d22ea90d9a.tar.gz",
-    "version": "9999.2024.03.30"
+    "sha256": "0c548y319y1cd92xa7zbhmcfpk00wvsilwqncnx4knnp79gn7bmf",
+    "url": "https://invent.kde.org/frameworks/kio/-/archive/170803e85841599e8ca331bd6a7945728ca1346a/kio-170803e85841599e8ca331bd6a7945728ca1346a.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kio-admin": {
     "fname": "kg-kio-admin-9999.2024.03.18-9f26e95.tar.gz",
@@ -504,12 +504,12 @@
     "version": "9999.2024.03.18"
   },
   "kio-extras": {
-    "fname": "kg-kio-extras-9999.2024.03.29-77b83190f.tar.gz",
-    "id": "77b83190f40aba6781a95b40a123fc58d0f42e9a",
+    "fname": "kg-kio-extras-9999.2024.04.05-98f9da995.tar.gz",
+    "id": "98f9da995165538ba3302bbf8b30c8ba0de4090a",
     "pname": "kg-kio-extras",
-    "sha256": "14c41y52p6mc1bfp2fn9a1pr0rch2nwvibqpar79mxkarr0azfqa",
-    "url": "https://invent.kde.org/network/kio-extras/-/archive/77b83190f40aba6781a95b40a123fc58d0f42e9a/kio-extras-77b83190f40aba6781a95b40a123fc58d0f42e9a.tar.gz",
-    "version": "9999.2024.03.29"
+    "sha256": "1qndla7n6smsvi3cjwhahwzx84hag4f3sssja8149rdkgqvln5fa",
+    "url": "https://invent.kde.org/network/kio-extras/-/archive/98f9da995165538ba3302bbf8b30c8ba0de4090a/kio-extras-98f9da995165538ba3302bbf8b30c8ba0de4090a.tar.gz",
+    "version": "9999.2024.04.05"
   },
   "kio-fuse": {
     "fname": "kg-kio-fuse-9999.2024.03.12-a39ac7d.tar.gz",
@@ -520,12 +520,12 @@
     "version": "9999.2024.03.12"
   },
   "kirigami": {
-    "fname": "kf-kirigami-9999.2024.03.30-768175a0.tar.gz",
-    "id": "768175a009129d83dc79fa365e94335ac052e3ff",
+    "fname": "kf-kirigami-9999.2024.04.04-afd3df5a.tar.gz",
+    "id": "afd3df5a0ea2fb30f23a2e4a861b264686ff4c3f",
     "pname": "kf-kirigami",
-    "sha256": "11p5bkfwy5a0pk5414paivk39mr1fm550fwx78lgj3n6yylkbp4n",
-    "url": "https://invent.kde.org/frameworks/kirigami/-/archive/768175a009129d83dc79fa365e94335ac052e3ff/kirigami-768175a009129d83dc79fa365e94335ac052e3ff.tar.gz",
-    "version": "9999.2024.03.30"
+    "sha256": "1hx0c5w0gm2303qlyvkri4g204pi8vfnb3ivwlw6l86d3fnbimj3",
+    "url": "https://invent.kde.org/frameworks/kirigami/-/archive/afd3df5a0ea2fb30f23a2e4a861b264686ff4c3f/kirigami-afd3df5a0ea2fb30f23a2e4a861b264686ff4c3f.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kitemmodels": {
     "fname": "kf-kitemmodels-9999.2024.03.18-258b9a9.tar.gz",
@@ -544,12 +544,12 @@
     "version": "9999.2024.03.28"
   },
   "kjobwidgets": {
-    "fname": "kf-kjobwidgets-9999.2024.03.29-7a16bd2.tar.gz",
-    "id": "7a16bd22527f58dcf909bffeb9be9a865075e660",
+    "fname": "kf-kjobwidgets-9999.2024.04.04-51412f8.tar.gz",
+    "id": "51412f8a16bfe190cab59ba2aedce50c128ab7b8",
     "pname": "kf-kjobwidgets",
-    "sha256": "1zvd5a9vdwrww669brgk0x520s4x6ymv88sfgkm2bip04hjaq2kh",
-    "url": "https://invent.kde.org/frameworks/kjobwidgets/-/archive/7a16bd22527f58dcf909bffeb9be9a865075e660/kjobwidgets-7a16bd22527f58dcf909bffeb9be9a865075e660.tar.gz",
-    "version": "9999.2024.03.29"
+    "sha256": "0i1qgfggard924k7zvnbmj7rai22yblbkxlfsa7f4065h0lqcrsw",
+    "url": "https://invent.kde.org/frameworks/kjobwidgets/-/archive/51412f8a16bfe190cab59ba2aedce50c128ab7b8/kjobwidgets-51412f8a16bfe190cab59ba2aedce50c128ab7b8.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kmenuedit": {
     "fname": "kp-kmenuedit-9999.2024.03.28-a5557a5.tar.gz",
@@ -560,20 +560,20 @@
     "version": "9999.2024.03.28"
   },
   "knewstuff": {
-    "fname": "kf-knewstuff-9999.2024.03.29-0abe5e4b.tar.gz",
-    "id": "0abe5e4bc402854ee34bc91d5b39afaa89400d78",
+    "fname": "kf-knewstuff-9999.2024.04.03-e4062905.tar.gz",
+    "id": "e4062905a3db7d9c6aa94f9fc94a2f6f88b15ba8",
     "pname": "kf-knewstuff",
-    "sha256": "11x95i0xj4ahh3fh84k4qi3gxfi3nr4l4irinrchi5w4k7a3c0fj",
-    "url": "https://invent.kde.org/frameworks/knewstuff/-/archive/0abe5e4bc402854ee34bc91d5b39afaa89400d78/knewstuff-0abe5e4bc402854ee34bc91d5b39afaa89400d78.tar.gz",
-    "version": "9999.2024.03.29"
+    "sha256": "160q9gy2wfag5f31f367s1s5lm1nzv4zbkx4bkiknq5p86800pcc",
+    "url": "https://invent.kde.org/frameworks/knewstuff/-/archive/e4062905a3db7d9c6aa94f9fc94a2f6f88b15ba8/knewstuff-e4062905a3db7d9c6aa94f9fc94a2f6f88b15ba8.tar.gz",
+    "version": "9999.2024.04.03"
   },
   "knotifications": {
-    "fname": "kf-knotifications-9999.2024.03.28-580cdb7.tar.gz",
-    "id": "580cdb7df244a3f930259ae5b8acc09ea5f34227",
+    "fname": "kf-knotifications-9999.2024.04.02-53a9b15.tar.gz",
+    "id": "53a9b159ab9068fec19a9fbeec28e123d40c2fb2",
     "pname": "kf-knotifications",
-    "sha256": "06mxxmjb1slvx7wyqla0sh6hc5f163l6phkszgyvz0fs0c2m35r1",
-    "url": "https://invent.kde.org/frameworks/knotifications/-/archive/580cdb7df244a3f930259ae5b8acc09ea5f34227/knotifications-580cdb7df244a3f930259ae5b8acc09ea5f34227.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1xk241hbm9kybx72f4qfx2qgbznl1q1k51zw8zbsgb9vls5gf0az",
+    "url": "https://invent.kde.org/frameworks/knotifications/-/archive/53a9b159ab9068fec19a9fbeec28e123d40c2fb2/knotifications-53a9b159ab9068fec19a9fbeec28e123d40c2fb2.tar.gz",
+    "version": "9999.2024.04.02"
   },
   "knotifyconfig": {
     "fname": "kf-knotifyconfig-9999.2024.03.28-0737a70.tar.gz",
@@ -584,20 +584,20 @@
     "version": "9999.2024.03.28"
   },
   "konsole": {
-    "fname": "kg-konsole-9999.2024.03.28-61a87d804.tar.gz",
-    "id": "61a87d804813b9f92cdb629bdcbb264870615eba",
+    "fname": "kg-konsole-9999.2024.04.04-bb9f9a0e0.tar.gz",
+    "id": "bb9f9a0e0b2652373433be7cdd2da3c1c52e717a",
     "pname": "kg-konsole",
-    "sha256": "0zbksfxzb2p1xsbzw8604v0gspd603c1wi6zwc0q99665ad805ai",
-    "url": "https://invent.kde.org/utilities/konsole/-/archive/61a87d804813b9f92cdb629bdcbb264870615eba/konsole-61a87d804813b9f92cdb629bdcbb264870615eba.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "0zv0jq9yji5dmni2zwy0x5l945mjybg33zspj49zys5rx6vcrns5",
+    "url": "https://invent.kde.org/utilities/konsole/-/archive/bb9f9a0e0b2652373433be7cdd2da3c1c52e717a/konsole-bb9f9a0e0b2652373433be7cdd2da3c1c52e717a.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kpackage": {
-    "fname": "kf-kpackage-9999.2024.03.28-395465a.tar.gz",
-    "id": "395465a19b89074693f2d09e05efca0b90725a29",
+    "fname": "kf-kpackage-9999.2024.04.02-a29e41d.tar.gz",
+    "id": "a29e41dfdc1d0acd1068518858eeaa6ae09a120c",
     "pname": "kf-kpackage",
-    "sha256": "1mri8gnn013hll7gsxgphg9v0wbxyshvsl67cvay236fhm0xfj0m",
-    "url": "https://invent.kde.org/frameworks/kpackage/-/archive/395465a19b89074693f2d09e05efca0b90725a29/kpackage-395465a19b89074693f2d09e05efca0b90725a29.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1n62dxfrxvfw33vbk9pfg9wa0n4l1kjhva44wa8dybkadvvh0nv4",
+    "url": "https://invent.kde.org/frameworks/kpackage/-/archive/a29e41dfdc1d0acd1068518858eeaa6ae09a120c/kpackage-a29e41dfdc1d0acd1068518858eeaa6ae09a120c.tar.gz",
+    "version": "9999.2024.04.02"
   },
   "kparts": {
     "fname": "kf-kparts-9999.2024.03.28-8f573ab.tar.gz",
@@ -616,12 +616,12 @@
     "version": "9999.2024.03.28"
   },
   "kpipewire": {
-    "fname": "kp-kpipewire-9999.2024.03.29-5624108.tar.gz",
-    "id": "562410867cdd75c5df21a423e274e0b2206c5e93",
+    "fname": "kp-kpipewire-9999.2024.03.31-7175e4b.tar.gz",
+    "id": "7175e4be697d1159eb3b4178aa516949edf4c88b",
     "pname": "kp-kpipewire",
-    "sha256": "07x16x7r5yydi7nij658yn4i2ayp1gvh0z5vq3mpv7hdrhncx7hc",
-    "url": "https://invent.kde.org/plasma/kpipewire/-/archive/562410867cdd75c5df21a423e274e0b2206c5e93/kpipewire-562410867cdd75c5df21a423e274e0b2206c5e93.tar.gz",
-    "version": "9999.2024.03.29"
+    "sha256": "18hqp0kj8aqsx8vdwgyi61yhq0h3w1gblimg2ki9i7ydxgn2ksva",
+    "url": "https://invent.kde.org/plasma/kpipewire/-/archive/7175e4be697d1159eb3b4178aa516949edf4c88b/kpipewire-7175e4be697d1159eb3b4178aa516949edf4c88b.tar.gz",
+    "version": "9999.2024.03.31"
   },
   "kplotting": {
     "fname": "kf-kplotting-9999.2024.03.18-5e37959.tar.gz",
@@ -664,12 +664,12 @@
     "version": "9999.2024.03.28"
   },
   "kscreenlocker": {
-    "fname": "kp-kscreenlocker-9999.2024.03.28-96c502d.tar.gz",
-    "id": "96c502d59805579d635686684f6cb0e94c9bc496",
+    "fname": "kp-kscreenlocker-9999.2024.04.04-58f3d50.tar.gz",
+    "id": "58f3d504073d83bd7d5e6247b4a2990c443ff03c",
     "pname": "kp-kscreenlocker",
-    "sha256": "0qdx2s05209q3mpyddy85iy973ghpypz6gncy3ww1sgawd71fwz7",
-    "url": "https://invent.kde.org/plasma/kscreenlocker/-/archive/96c502d59805579d635686684f6cb0e94c9bc496/kscreenlocker-96c502d59805579d635686684f6cb0e94c9bc496.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "05708fpjh2x6b9igxwk29m4dm7kv2gz1kwh22658icj4s5bzf6im",
+    "url": "https://invent.kde.org/plasma/kscreenlocker/-/archive/58f3d504073d83bd7d5e6247b4a2990c443ff03c/kscreenlocker-58f3d504073d83bd7d5e6247b4a2990c443ff03c.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kservice": {
     "fname": "kf-kservice-9999.2024.03.28-c2b69a6f.tar.gz",
@@ -712,12 +712,12 @@
     "version": "9999.2024.03.28"
   },
   "ktexteditor": {
-    "fname": "kf-ktexteditor-9999.2024.03.28-ae7e27eb4.tar.gz",
-    "id": "ae7e27eb4b8a80b9ef20ce760f61e3edfc90b5b4",
+    "fname": "kf-ktexteditor-9999.2024.04.04-e9a446664.tar.gz",
+    "id": "e9a446664fa955c89dd52e68b28972b1dca81991",
     "pname": "kf-ktexteditor",
-    "sha256": "121wdhg1xq2y5fwvk5hz9q6lidg37vhafal62bhv71gdsigq4hyh",
-    "url": "https://invent.kde.org/frameworks/ktexteditor/-/archive/ae7e27eb4b8a80b9ef20ce760f61e3edfc90b5b4/ktexteditor-ae7e27eb4b8a80b9ef20ce760f61e3edfc90b5b4.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1dnff69hh257caw5vhaxwrl33n193cl803z0d48y3cgc4rm61ikq",
+    "url": "https://invent.kde.org/frameworks/ktexteditor/-/archive/e9a446664fa955c89dd52e68b28972b1dca81991/ktexteditor-e9a446664fa955c89dd52e68b28972b1dca81991.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "ktexttemplate": {
     "fname": "kf-ktexttemplate-9999.2024.03.18-00f6735.tar.gz",
@@ -792,20 +792,20 @@
     "version": "9999.2024.03.28"
   },
   "kwin": {
-    "fname": "kp-kwin-9999.2024.03.28-9165ba3b20.tar.gz",
-    "id": "9165ba3b2060df1295fde2ce174b3953dd7ac937",
+    "fname": "kp-kwin-9999.2024.04.04-bd2728fac1.tar.gz",
+    "id": "bd2728fac17254b87c609b007a826f3b310f2e21",
     "pname": "kp-kwin",
-    "sha256": "0shvd4dd6q3anwy8v56sjra2qivl6qzbb3vkl73f7zdwx872pz78",
-    "url": "https://invent.kde.org/plasma/kwin/-/archive/9165ba3b2060df1295fde2ce174b3953dd7ac937/kwin-9165ba3b2060df1295fde2ce174b3953dd7ac937.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "0cws3wa4hnmgiqm78z0k4qyy8hrif511c6z20dkmz34dmimx7dpa",
+    "url": "https://invent.kde.org/plasma/kwin/-/archive/bd2728fac17254b87c609b007a826f3b310f2e21/kwin-bd2728fac17254b87c609b007a826f3b310f2e21.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kwindowsystem": {
-    "fname": "kf-kwindowsystem-9999.2024.03.28-2ad9577.tar.gz",
-    "id": "2ad957733e6396b8316ebe7aab21eb0175f0dfd4",
+    "fname": "kf-kwindowsystem-9999.2024.04.04-e886774.tar.gz",
+    "id": "e886774dbfd786657a3cdab019e95fec90b77a18",
     "pname": "kf-kwindowsystem",
-    "sha256": "0k0lrpxbzq5v9hiqcwsm6zarbv99qm3akg8isb5gnqr1g2a0dhcn",
-    "url": "https://invent.kde.org/frameworks/kwindowsystem/-/archive/2ad957733e6396b8316ebe7aab21eb0175f0dfd4/kwindowsystem-2ad957733e6396b8316ebe7aab21eb0175f0dfd4.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1h7z6ysd3iw9ngfli3wyd6bxwka8i3xp760c26vgakf347mbv62i",
+    "url": "https://invent.kde.org/frameworks/kwindowsystem/-/archive/e886774dbfd786657a3cdab019e95fec90b77a18/kwindowsystem-e886774dbfd786657a3cdab019e95fec90b77a18.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "kwrited": {
     "fname": "kp-kwrited-9999.2024.03.04-1959546.tar.gz",
@@ -824,12 +824,12 @@
     "version": "9999.2024.03.28"
   },
   "layer-shell-qt": {
-    "fname": "kp-layer-shell-qt-9999.2024.02.21-c407f9a.tar.gz",
-    "id": "c407f9a8c4c2d5659fedb4e298d9f755666876ef",
+    "fname": "kp-layer-shell-qt-9999.2024.04.03-127d817.tar.gz",
+    "id": "127d817aa1b2de7d8beec6d1eabae49e4e50140e",
     "pname": "kp-layer-shell-qt",
-    "sha256": "1zv45x1xj2q5j7xr9hamqrlzbrna6j6y056s13cbjicb7sqcgqkw",
-    "url": "https://invent.kde.org/plasma/layer-shell-qt/-/archive/c407f9a8c4c2d5659fedb4e298d9f755666876ef/layer-shell-qt-c407f9a8c4c2d5659fedb4e298d9f755666876ef.tar.gz",
-    "version": "9999.2024.02.21"
+    "sha256": "1whsqx1r11sdg4747wr0w1ka5k45r6x2zh5alx3pa7n8k6vb10kh",
+    "url": "https://invent.kde.org/plasma/layer-shell-qt/-/archive/127d817aa1b2de7d8beec6d1eabae49e4e50140e/layer-shell-qt-127d817aa1b2de7d8beec6d1eabae49e4e50140e.tar.gz",
+    "version": "9999.2024.04.03"
   },
   "libkdcraw": {
     "fname": "kg-libkdcraw-9999.2023.11.23-096520f.tar.gz",
@@ -848,28 +848,28 @@
     "version": "9999.2023.11.30"
   },
   "libkscreen": {
-    "fname": "kp-libkscreen-9999.2024.03.28-11b02a9.tar.gz",
-    "id": "11b02a9a995d031849cda3c6700b49d21c2d6d16",
+    "fname": "kp-libkscreen-9999.2024.04.04-630577d.tar.gz",
+    "id": "630577dc5c00949bbda7364e852f93a41fd3b8ac",
     "pname": "kp-libkscreen",
-    "sha256": "04775rl33s1ln2hhgnqn348fcaq25v1vhr6dma1kvrgpnkjqykw3",
-    "url": "https://invent.kde.org/plasma/libkscreen/-/archive/11b02a9a995d031849cda3c6700b49d21c2d6d16/libkscreen-11b02a9a995d031849cda3c6700b49d21c2d6d16.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "00y2y36bsm7djqv10dqwnhjbi4lw2wfgb1dkfa9yc1wj3cfn77q7",
+    "url": "https://invent.kde.org/plasma/libkscreen/-/archive/630577dc5c00949bbda7364e852f93a41fd3b8ac/libkscreen-630577dc5c00949bbda7364e852f93a41fd3b8ac.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "libksysguard": {
-    "fname": "kp-libksysguard-9999.2024.03.28-fdddf5ca.tar.gz",
-    "id": "fdddf5cad0b871a2361c46fedeaf42c30fd4adca",
+    "fname": "kp-libksysguard-9999.2024.04.04-ed560034.tar.gz",
+    "id": "ed560034c52da941cd6096a8f92a4aff77962489",
     "pname": "kp-libksysguard",
-    "sha256": "1608x6scxmq6wbvr6a7il1d7f82hls9fcscm9j4qdkjnca0r1wzp",
-    "url": "https://invent.kde.org/plasma/libksysguard/-/archive/fdddf5cad0b871a2361c46fedeaf42c30fd4adca/libksysguard-fdddf5cad0b871a2361c46fedeaf42c30fd4adca.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "05xzq0kyzna89fnkpkb289r1yaji2sd8g7h2471k8cf3cafi48qw",
+    "url": "https://invent.kde.org/plasma/libksysguard/-/archive/ed560034c52da941cd6096a8f92a4aff77962489/libksysguard-ed560034c52da941cd6096a8f92a4aff77962489.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "libplasma": {
-    "fname": "kp-libplasma-9999.2024.03.30-5a7c72712.tar.gz",
-    "id": "5a7c727123544f8593634bd2116f8999893a4630",
+    "fname": "kp-libplasma-9999.2024.04.04-8b95ad1c3.tar.gz",
+    "id": "8b95ad1c34453eb7a8e98906ade99080e3027cf6",
     "pname": "kp-libplasma",
-    "sha256": "0gjcvkr5766hs53jwq44rh50lbawn7jnsyc4lgl32hl0m4apkz9s",
-    "url": "https://invent.kde.org/plasma/libplasma/-/archive/5a7c727123544f8593634bd2116f8999893a4630/libplasma-5a7c727123544f8593634bd2116f8999893a4630.tar.gz",
-    "version": "9999.2024.03.30"
+    "sha256": "17pbkkk1glacxvs50hx774phvyimb23rjxjcsi2cc7v25z2nlm5g",
+    "url": "https://invent.kde.org/plasma/libplasma/-/archive/8b95ad1c34453eb7a8e98906ade99080e3027cf6/libplasma-8b95ad1c34453eb7a8e98906ade99080e3027cf6.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "milou": {
     "fname": "kp-milou-9999.2024.03.28-8c7ecc0.tar.gz",
@@ -904,12 +904,12 @@
     "version": "9999.2024.03.20"
   },
   "okular": {
-    "fname": "kg-okular-9999.2024.03.30-29e91d62a.tar.gz",
-    "id": "29e91d62a9a9347f3fcded1d777ed5e2196734ae",
+    "fname": "kg-okular-9999.2024.04.04-0f6826bb6.tar.gz",
+    "id": "0f6826bb6c97de992c6667ddb440ae6df7181c28",
     "pname": "kg-okular",
-    "sha256": "0bvx4b4343b5fpsyq50p8vjyi777zs2g0cs4dd0kc3kyzr58smb8",
-    "url": "https://invent.kde.org/graphics/okular/-/archive/29e91d62a9a9347f3fcded1d777ed5e2196734ae/okular-29e91d62a9a9347f3fcded1d777ed5e2196734ae.tar.gz",
-    "version": "9999.2024.03.30"
+    "sha256": "1hz5dvd67bwdafwapvhih9w56rqphnj4jjkfr28ym6zy6a0kbqh1",
+    "url": "https://invent.kde.org/graphics/okular/-/archive/0f6826bb6c97de992c6667ddb440ae6df7181c28/okular-0f6826bb6c97de992c6667ddb440ae6df7181c28.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "plasma-activities": {
     "fname": "kp-plasma-activities-9999.2024.03.29-6783393c.tar.gz",
@@ -936,12 +936,12 @@
     "version": "9999.2024.03.28"
   },
   "plasma-desktop": {
-    "fname": "kp-plasma-desktop-9999.2024.03.28-29ea9985d.tar.gz",
-    "id": "29ea9985dbc00dec957dfa2d50c48b44bd8694ab",
+    "fname": "kp-plasma-desktop-9999.2024.04.05-1c22c2dde.tar.gz",
+    "id": "1c22c2ddec1b7d4603fe1f8a08264e76e70797e4",
     "pname": "kp-plasma-desktop",
-    "sha256": "12x1rkyid312c5i6izvm546paf1g4w065vykwk5cgkwplbkcsk6l",
-    "url": "https://invent.kde.org/plasma/plasma-desktop/-/archive/29ea9985dbc00dec957dfa2d50c48b44bd8694ab/plasma-desktop-29ea9985dbc00dec957dfa2d50c48b44bd8694ab.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1lfpcf88zn2pilcy02xhak1rkk21ln0q72dybwlbrr5j87y5jbg8",
+    "url": "https://invent.kde.org/plasma/plasma-desktop/-/archive/1c22c2ddec1b7d4603fe1f8a08264e76e70797e4/plasma-desktop-1c22c2ddec1b7d4603fe1f8a08264e76e70797e4.tar.gz",
+    "version": "9999.2024.04.05"
   },
   "plasma-disks": {
     "fname": "kp-plasma-disks-9999.2024.03.28-6476a00.tar.gz",
@@ -976,28 +976,28 @@
     "version": "9999.2024.03.30"
   },
   "plasma-pa": {
-    "fname": "kp-plasma-pa-9999.2024.03.28-70043e75.tar.gz",
-    "id": "70043e756b3e657c44c590a946171ee0fd22a8b8",
+    "fname": "kp-plasma-pa-9999.2024.04.04-64d8bea6.tar.gz",
+    "id": "64d8bea66124a8be62ca775e8380d8ad1aa433e8",
     "pname": "kp-plasma-pa",
-    "sha256": "0sk0v68kxh0l3jgf3m5w0xdv23rzwkglvadixjr91i9xlrd1m05a",
-    "url": "https://invent.kde.org/plasma/plasma-pa/-/archive/70043e756b3e657c44c590a946171ee0fd22a8b8/plasma-pa-70043e756b3e657c44c590a946171ee0fd22a8b8.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "17vgn7v6f6mh45lq0bxp398pizxy97f7l1n8rs93d59q5gfp84qq",
+    "url": "https://invent.kde.org/plasma/plasma-pa/-/archive/64d8bea66124a8be62ca775e8380d8ad1aa433e8/plasma-pa-64d8bea66124a8be62ca775e8380d8ad1aa433e8.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "plasma-systemmonitor": {
-    "fname": "kp-plasma-systemmonitor-9999.2024.03.28-93a41d6.tar.gz",
-    "id": "93a41d6af77562fcd4f1341dc5f2d3d96b2c5d0c",
+    "fname": "kp-plasma-systemmonitor-9999.2024.04.04-cfcd3c4.tar.gz",
+    "id": "cfcd3c453c3a46b76dbf7ccbde5075d5f9108373",
     "pname": "kp-plasma-systemmonitor",
-    "sha256": "09w0gqz9kaah53d5ic9w38mzmdwfy76xg6qhxs93994qswr744n1",
-    "url": "https://invent.kde.org/plasma/plasma-systemmonitor/-/archive/93a41d6af77562fcd4f1341dc5f2d3d96b2c5d0c/plasma-systemmonitor-93a41d6af77562fcd4f1341dc5f2d3d96b2c5d0c.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "13zs6cggh55nzsd4s6gfh2chj1i9k8sr3rvn54kpb1yn0yj7yyqg",
+    "url": "https://invent.kde.org/plasma/plasma-systemmonitor/-/archive/cfcd3c453c3a46b76dbf7ccbde5075d5f9108373/plasma-systemmonitor-cfcd3c453c3a46b76dbf7ccbde5075d5f9108373.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "plasma-workspace": {
-    "fname": "kp-plasma-workspace-9999.2024.03.30-bb3cfdd688.tar.gz",
-    "id": "bb3cfdd688431a720385dd9dc4a713564bed7100",
+    "fname": "kp-plasma-workspace-9999.2024.04.04-368d7036f6.tar.gz",
+    "id": "368d7036f6c558c8d37e147b29cba59815b8c629",
     "pname": "kp-plasma-workspace",
-    "sha256": "01j5xxkjjlyl6p1v2w4xpxhllmvrsjavw4ikblvvs04g0ikkam4w",
-    "url": "https://invent.kde.org/plasma/plasma-workspace/-/archive/bb3cfdd688431a720385dd9dc4a713564bed7100/plasma-workspace-bb3cfdd688431a720385dd9dc4a713564bed7100.tar.gz",
-    "version": "9999.2024.03.30"
+    "sha256": "1x1pkkj7mw2l5ghzzi9mkqa2f0gq4jml30xh5agan680d56pmpb2",
+    "url": "https://invent.kde.org/plasma/plasma-workspace/-/archive/368d7036f6c558c8d37e147b29cba59815b8c629/plasma-workspace-368d7036f6c558c8d37e147b29cba59815b8c629.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "plasma-workspace-wallpapers": {
     "fname": "kp-plasma-workspace-wallpapers-9999.2024.03.12-d74b097.tar.gz",
@@ -1032,12 +1032,12 @@
     "version": "9999.2024.03.28"
   },
   "print-manager": {
-    "fname": "kp-print-manager-9999.2024.03.28-f37aa2f.tar.gz",
-    "id": "f37aa2f4e34438d595eded55b8303decf0935322",
+    "fname": "kp-print-manager-9999.2024.04.04-7c1e5e0d.tar.gz",
+    "id": "7c1e5e0dad93327188f3486b8e739499a464d83e",
     "pname": "kp-print-manager",
-    "sha256": "05xmhx5jd1wj0jbx2l393iyjf8vd9gpjqa0pks88fak0qwng579f",
-    "url": "https://invent.kde.org/plasma/print-manager/-/archive/f37aa2f4e34438d595eded55b8303decf0935322/print-manager-f37aa2f4e34438d595eded55b8303decf0935322.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "05aq4ah0c8xp2h2yyh0s71v3hnn68qij1gba3klrm326npmdc90j",
+    "url": "https://invent.kde.org/plasma/print-manager/-/archive/7c1e5e0dad93327188f3486b8e739499a464d83e/print-manager-7c1e5e0dad93327188f3486b8e739499a464d83e.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "prison": {
     "fname": "kf-prison-9999.2024.03.29-46e38e5.tar.gz",
@@ -1064,12 +1064,12 @@
     "version": "9999.2024.03.10"
   },
   "qqc2-desktop-style": {
-    "fname": "kf-qqc2-desktop-style-9999.2024.03.28-b986d3e.tar.gz",
-    "id": "b986d3eaa07c24bb19bc489b874ba6e27328b999",
+    "fname": "kf-qqc2-desktop-style-9999.2024.04.04-77ae5ed.tar.gz",
+    "id": "77ae5ed609f1099f57bafae07782a1146a736863",
     "pname": "kf-qqc2-desktop-style",
-    "sha256": "0x30wxdymm55f9nqf7xg3hnbgvc0yn0a29cgh31j1n2wb5lcyqls",
-    "url": "https://invent.kde.org/frameworks/qqc2-desktop-style/-/archive/b986d3eaa07c24bb19bc489b874ba6e27328b999/qqc2-desktop-style-b986d3eaa07c24bb19bc489b874ba6e27328b999.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1ry3kij4ykrkls0ab4k88rsyhgj5cv7srbcanh6vwv26jxj4dr1y",
+    "url": "https://invent.kde.org/frameworks/qqc2-desktop-style/-/archive/77ae5ed609f1099f57bafae07782a1146a736863/qqc2-desktop-style-77ae5ed609f1099f57bafae07782a1146a736863.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "solid": {
     "fname": "kf-solid-9999.2024.03.28-7b4da237.tar.gz",
@@ -1080,20 +1080,20 @@
     "version": "9999.2024.03.28"
   },
   "sonnet": {
-    "fname": "kf-sonnet-9999.2024.03.28-8cecc15.tar.gz",
-    "id": "8cecc15f67052f43a9ddcdbd18ee73b7351f8e9b",
+    "fname": "kf-sonnet-9999.2024.04.04-0940640.tar.gz",
+    "id": "0940640faa30903bb946852345c9974c8a115773",
     "pname": "kf-sonnet",
-    "sha256": "1klai5nqj9crigwga83cyf7xji2zigi6gg0nl15xj1xmw2dsxisp",
-    "url": "https://invent.kde.org/frameworks/sonnet/-/archive/8cecc15f67052f43a9ddcdbd18ee73b7351f8e9b/sonnet-8cecc15f67052f43a9ddcdbd18ee73b7351f8e9b.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "0n7cz2ayxzqcp17d1pyv9zl27vpcyamxh6dhyk1ds669xa0vh157",
+    "url": "https://invent.kde.org/frameworks/sonnet/-/archive/0940640faa30903bb946852345c9974c8a115773/sonnet-0940640faa30903bb946852345c9974c8a115773.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "spectacle": {
-    "fname": "kg-spectacle-9999.2024.03.28-b4c8502d.tar.gz",
-    "id": "b4c8502d713f44b26baebba1a110a971a6d902fb",
+    "fname": "kg-spectacle-9999.2024.04.04-9036b77e.tar.gz",
+    "id": "9036b77ee7b24e987dc2c6378dc7aae24dc0ae8f",
     "pname": "kg-spectacle",
-    "sha256": "0dczbsp78121l67j51rw3aw002bn6nw3a20w7an2k06cm6fbbc2k",
-    "url": "https://invent.kde.org/graphics/spectacle/-/archive/b4c8502d713f44b26baebba1a110a971a6d902fb/spectacle-b4c8502d713f44b26baebba1a110a971a6d902fb.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "1b9lrn76wqh0fpzy8bfv4pksycr84kbm0ayp6n72idgmlwvih1g8",
+    "url": "https://invent.kde.org/graphics/spectacle/-/archive/9036b77ee7b24e987dc2c6378dc7aae24dc0ae8f/spectacle-9036b77ee7b24e987dc2c6378dc7aae24dc0ae8f.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "syndication": {
     "fname": "kf-syndication-9999.2024.03.29-7e6caaa.tar.gz",
@@ -1104,12 +1104,12 @@
     "version": "9999.2024.03.29"
   },
   "syntax-highlighting": {
-    "fname": "kf-syntax-highlighting-9999.2024.03.28-d0bc069e.tar.gz",
-    "id": "d0bc069e7117473d4fcb2c9fb4af8b0a07125457",
+    "fname": "kf-syntax-highlighting-9999.2024.04.04-ae160128.tar.gz",
+    "id": "ae160128672918c6a234676ab91cbc81934fea94",
     "pname": "kf-syntax-highlighting",
-    "sha256": "0vhya5nbl0vx8zzs4387nmixhiyjxk6dsw519b8fpf5v3l6cxzjk",
-    "url": "https://invent.kde.org/frameworks/syntax-highlighting/-/archive/d0bc069e7117473d4fcb2c9fb4af8b0a07125457/syntax-highlighting-d0bc069e7117473d4fcb2c9fb4af8b0a07125457.tar.gz",
-    "version": "9999.2024.03.28"
+    "sha256": "18i7hbd613hs6kgpbj3dqns93j2ml8gbwpzap0y65yw5az5czs7w",
+    "url": "https://invent.kde.org/frameworks/syntax-highlighting/-/archive/ae160128672918c6a234676ab91cbc81934fea94/syntax-highlighting-ae160128672918c6a234676ab91cbc81934fea94.tar.gz",
+    "version": "9999.2024.04.04"
   },
   "systemsettings": {
     "fname": "kp-systemsettings-9999.2024.03.30-7e0405fd.tar.gz",
