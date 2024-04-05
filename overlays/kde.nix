@@ -783,6 +783,7 @@ in
           name = sources.plasma-pa.fname;
           inherit (sources.plasma-pa) url sha256;
         };
+        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.kdePackages.pulseaudio-qt];
       });
       plasma-systemmonitor = kprev.plasma-systemmonitor.overrideAttrs (oldAttrs: {
         inherit (sources.plasma-systemmonitor) pname version;
@@ -845,6 +846,13 @@ in
         src = pkgs.fetchurl {
           name = sources.xdg-desktop-portal-kde.fname;
           inherit (sources.xdg-desktop-portal-kde) url sha256;
+        };
+      });
+      pulseaudio-qt = kprev.pulseaudio-qt.overrideAttrs (oldAttrs: {
+        inherit (sources.pulseaudio-qt) pname version;
+        src = pkgs.fetchurl {
+          name = sources.pulseaudio-qt.fname;
+          inherit (sources.pulseaudio-qt) url sha256;
         };
       });
       gwenview = kprev.gwenview.overrideAttrs (oldAttrs: {

@@ -1047,6 +1047,14 @@
     "url": "https://invent.kde.org/frameworks/prison/-/archive/46e38e560c877e6b89f968302d161eb93b6095e0/prison-46e38e560c877e6b89f968302d161eb93b6095e0.tar.gz",
     "version": "9999.2024.03.29"
   },
+  "pulseaudio-qt": {
+    "fname": "kg-pulseaudio-qt-9999.2024.02.19-c4fc3d9.tar.gz",
+    "id": "c4fc3d98a9803e1ea8ed4084e35081ce62b2a9e8",
+    "pname": "kg-pulseaudio-qt",
+    "sha256": "0g2vw82h8arij7krr86rrn2xwc4gwmgy3z2x6xrvn1fpv68l504h",
+    "url": "https://invent.kde.org/libraries/pulseaudio-qt/-/archive/c4fc3d98a9803e1ea8ed4084e35081ce62b2a9e8/pulseaudio-qt-c4fc3d98a9803e1ea8ed4084e35081ce62b2a9e8.tar.gz",
+    "version": "9999.2024.02.19"
+  },
   "purpose": {
     "fname": "kf-purpose-9999.2024.03.28-05730a40.tar.gz",
     "id": "05730a40d614d7c32717fc61b4e1ec6e22d9270e",
