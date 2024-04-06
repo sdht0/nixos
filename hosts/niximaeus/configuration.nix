@@ -41,6 +41,13 @@
 
   environment.systemPackages = (with pkgs; [
     firefox chromedriver
+    (chromium.override {
+      commandLineArgs = [
+        "--enable-features=VaapiVideoDecodeLinuxGL"
+        "--ignore-gpu-blocklist"
+        "--enable-zero-copy"
+      ];
+    })
     thunderbird zotero libreoffice-qt
     ffmpeg vlc
     #mcomix
@@ -49,7 +56,7 @@
     zoom-us slack
     obsidian fava
     activitywatch
-    nil nixfmt nixpkgs-review inputs.nixOlde.packages.${pkgs.system}.nix-olde
+    nil nixpkgs-review inputs.nixOlde.packages.${pkgs.system}.nix-olde
     rustup cargo rustc jetbrains-toolbox
     vscode
     gcc lldb temurin-bin-21

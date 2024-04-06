@@ -9,7 +9,6 @@ in
   ];
 
   environment.systemPackages = with pkgs; [
-    chromium
     nftables killall gitFull wget curl rsync vim tmux htop
     ripgrep fzf eza peco sshfs ffmpeg dig bc aha difftastic
     pciutils
