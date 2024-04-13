@@ -28,11 +28,13 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  services.earlyoom.enable = true;
+
   hardware.bluetooth.enable = true;
 
   services.dbus.implementation = "broker";
 
-  services.xserver.displayManager.autoLogin = {
+  services.displayManager.autoLogin = {
     enable = true;
     user = hostData.users.mainuser.username;
   };
@@ -56,7 +58,7 @@
     zoom-us slack
     obsidian fava
     activitywatch
-    nil nixpkgs-review inputs.nixOlde.packages.${pkgs.system}.nix-olde
+    nil nixfmt-rfc-style nixpkgs-review inputs.nixOlde.packages.${pkgs.system}.nix-olde
     rustup cargo rustc jetbrains-toolbox
     vscode
     gcc lldb temurin-bin-21

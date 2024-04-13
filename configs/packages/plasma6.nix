@@ -7,7 +7,7 @@
   };
   services.desktopManager.plasma6.enable = true;
   services.desktopManager.plasma6.enableQt5Integration = false;
-  services.xserver.displayManager = {
+  services.displayManager = {
     defaultSession = "plasmax11";
     sddm = {
       enable = true;
