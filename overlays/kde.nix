@@ -848,13 +848,6 @@ in
           inherit (sources.xdg-desktop-portal-kde) url sha256;
         };
       });
-      pulseaudio-qt = kprev.pulseaudio-qt.overrideAttrs (oldAttrs: {
-        inherit (sources.pulseaudio-qt) pname version;
-        src = pkgs.fetchurl {
-          name = sources.pulseaudio-qt.fname;
-          inherit (sources.pulseaudio-qt) url sha256;
-        };
-      });
       gwenview = kprev.gwenview.overrideAttrs (oldAttrs: {
         inherit (sources.gwenview) pname version;
         src = pkgs.fetchurl {
@@ -930,13 +923,6 @@ in
         src = pkgs.fetchurl {
           name = sources.kio-extras.fname;
           inherit (sources.kio-extras) url sha256;
-        };
-      });
-      kio-fuse = kprev.kio-fuse.overrideAttrs (oldAttrs: {
-        inherit (sources.kio-fuse) pname version;
-        src = pkgs.fetchurl {
-          name = sources.kio-fuse.fname;
-          inherit (sources.kio-fuse) url sha256;
         };
       });
       kio-admin = kprev.kio-admin.overrideAttrs (oldAttrs: {
@@ -1021,6 +1007,20 @@ in
         src = pkgs.fetchurl {
           name = sources.colord-kde.fname;
           inherit (sources.colord-kde) url sha256;
+        };
+      });
+      pulseaudio-qt = kprev.pulseaudio-qt.overrideAttrs (oldAttrs: {
+        inherit (sources.pulseaudio-qt) pname version;
+        src = pkgs.fetchurl {
+          name = sources.pulseaudio-qt.fname;
+          inherit (sources.pulseaudio-qt) url sha256;
+        };
+      });
+      kio-fuse = kprev.kio-fuse.overrideAttrs (oldAttrs: {
+        inherit (sources.kio-fuse) pname version;
+        src = pkgs.fetchurl {
+          name = sources.kio-fuse.fname;
+          inherit (sources.kio-fuse) url sha256;
         };
       });
     });
