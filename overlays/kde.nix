@@ -720,6 +720,7 @@ in
           name = sources.plasma5support.fname;
           inherit (sources.plasma5support) url sha256;
         };
+        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.kdePackages.libksysguard];
       });
       plasma-activities = kprev.plasma-activities.overrideAttrs (oldAttrs: {
         inherit (sources.plasma-activities) pname version;
