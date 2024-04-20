@@ -25,6 +25,8 @@
         "--no-suite" "fprintd:TestPamFprintd"
       ];
     });
+
+    difftastic = pkgs.callPackage ./difft.nix { };
   })
 ]
 ++ (import ./kde.nix args)
