@@ -27,8 +27,10 @@
   boot.blacklistedKernelModules = [ "iTCO_wdt" "iTCO_vendor_support" ]; # Disable watchdog
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernel.sysctl."kernel.sysrq" = 1;
 
   services.earlyoom.enable = true;
+  zramSwap.enable = true;
 
   hardware.bluetooth.enable = true;
 
