@@ -748,6 +748,12 @@ in
           name = sources.plasma-desktop.fname;
           inherit (sources.plasma-desktop) url sha256;
         };
+        patches = [
+          (pkgs.substituteAll {
+            src = ./files/wallpaper-paths.patch;
+            wallpapers = "${lib.getBin pkgs.kdePackages.breeze}/share/wallpapers";
+          })
+        ];
       });
       plasma-disks = kprev.plasma-disks.overrideAttrs (oldAttrs: {
         inherit (sources.plasma-disks) pname version;
@@ -798,6 +804,7 @@ in
           name = sources.plasma-workspace.fname;
           inherit (sources.plasma-workspace) url sha256;
         };
+        patches = [(lib.elemAt oldAttrs.patches 0)];
       });
       plasma-workspace-wallpapers = kprev.plasma-workspace-wallpapers.overrideAttrs (oldAttrs: {
         inherit (sources.plasma-workspace-wallpapers) pname version;
@@ -868,6 +875,7 @@ in
           name = sources.spectacle.fname;
           inherit (sources.spectacle) url sha256;
         };
+        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.opencv];
       });
       okular = kprev.okular.overrideAttrs (oldAttrs: {
         inherit (sources.okular) pname version;
