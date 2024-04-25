@@ -10,7 +10,7 @@ in
 
   environment.systemPackages = with pkgs; [
     nftables killall gitFull wget curl rsync vim tmux htop
-    ripgrep fzf eza peco sshfs ffmpeg dig bc aha difftastic
+    ripgrep fzf eza peco sshfs ffmpeg dig bc aha difftastic jq
     pciutils
     nix-output-monitor nvd
   ];
