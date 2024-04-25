@@ -26,6 +26,8 @@ in
     use-xdg-base-directories = true;
     warn-dirty = false;
   };
+  nix.gc.automatic = false;
+  nix.gc.dates = "daily";
   documentation.doc.enable = false;
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 
@@ -79,7 +81,4 @@ in
   programs.zsh.enable = true;
   environment.shells = with pkgs; [ zsh ];
   environment.shellAliases = { ls = null; l = null; ll = null; }; # Remove defaults
-
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
 }
