@@ -54,8 +54,7 @@
     })
     thunderbird zotero libreoffice-qt
     ffmpeg vlc
-    #mcomix
-    inputs.nixpkgs2311.legacyPackages.${pkgs.system}.mcomix
+    mcomix
     foliate
     zoom-us slack
     obsidian fava
