@@ -482,6 +482,7 @@ in
           name = sources.solid.fname;
           inherit (sources.solid) url sha256;
         };
+        patches = [./files/fix-search-path.patch];
       });
       sonnet = kprev.sonnet.overrideAttrs (oldAttrs: {
         inherit (sources.sonnet) pname version;
