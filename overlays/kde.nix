@@ -835,6 +835,7 @@ in
           name = sources.print-manager.fname;
           inherit (sources.print-manager) url sha256;
         };
+        nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [pkgs.system-config-printer];
       });
       qqc2-breeze-style = kprev.qqc2-breeze-style.overrideAttrs (oldAttrs: {
         inherit (sources.qqc2-breeze-style) pname version;
