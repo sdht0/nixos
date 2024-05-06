@@ -29,6 +29,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernel.sysctl."kernel.sysrq" = 1;
 
+  nix.package = pkgs.nixVersions.latest;
+
   services.earlyoom.enable = true;
   zramSwap.enable = true;
 
