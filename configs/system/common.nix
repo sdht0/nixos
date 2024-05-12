@@ -20,6 +20,9 @@ in
 {
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
+  documentation.doc.enable = false;
+
+  nix.package = pkgs.nixVersions.latest;
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
@@ -28,7 +31,6 @@ in
   };
   nix.gc.automatic = false;
   nix.gc.dates = "daily";
-  documentation.doc.enable = false;
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 
   # Normalize nixpkgs version
