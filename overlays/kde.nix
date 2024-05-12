@@ -236,6 +236,7 @@ in
           name = sources.kiconthemes.fname;
           inherit (sources.kiconthemes) url sha256;
         };
+        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.kdePackages.breeze-icons];
       });
       kidletime = kprev.kidletime.overrideAttrs (oldAttrs: {
         inherit (sources.kidletime) pname version;
@@ -835,7 +836,6 @@ in
           name = sources.print-manager.fname;
           inherit (sources.print-manager) url sha256;
         };
-        nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [pkgs.system-config-printer];
       });
       qqc2-breeze-style = kprev.qqc2-breeze-style.overrideAttrs (oldAttrs: {
         inherit (sources.qqc2-breeze-style) pname version;
@@ -878,7 +878,7 @@ in
           name = sources.spectacle.fname;
           inherit (sources.spectacle) url sha256;
         };
-        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.opencv];
+        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.opencv pkgs.kdePackages.kstatusnotifieritem];
       });
       okular = kprev.okular.overrideAttrs (oldAttrs: {
         inherit (sources.okular) pname version;
@@ -1025,6 +1025,13 @@ in
         src = pkgs.fetchurl {
           name = sources.pulseaudio-qt.fname;
           inherit (sources.pulseaudio-qt) url sha256;
+        };
+      });
+      plasma-wayland-protocols = kprev.plasma-wayland-protocols.overrideAttrs (oldAttrs: {
+        inherit (sources.plasma-wayland-protocols) pname version;
+        src = pkgs.fetchurl {
+          name = sources.plasma-wayland-protocols.fname;
+          inherit (sources.plasma-wayland-protocols) url sha256;
         };
       });
       kio-fuse = kprev.kio-fuse.overrideAttrs (oldAttrs: {
