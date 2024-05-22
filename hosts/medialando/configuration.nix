@@ -12,6 +12,7 @@
     ../../configs/packages/letsencrypt.nix
     ../../configs/packages/sshd.nix
     ../../configs/packages/syncthing.nix
+    ../../configs/packages/podman.nix
 
     ./partitions.nix
   ];
@@ -30,11 +31,6 @@
     chromium yt-dlp-git nodejs (pkgs.python3.withPackages (ps: with ps; [ pip beautifulsoup4 dateutil lxml ])) # download.sh
   ];
   programs.npm.enable = true;
-  virtualisation.docker = {
-    enable = true;
-    autoPrune.enable = true;
-    autoPrune.dates = "daily";
-  };
 
   system.stateVersion = "23.05";
 }

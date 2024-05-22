@@ -14,6 +14,7 @@
     ../../configs/packages/common.nix
     ../../configs/packages/plasma6.nix
     ../../configs/packages/syncthing.nix
+    ../../configs/packages/podman.nix
 
     ./partitions.nix
   ];
@@ -72,14 +73,13 @@
         #vincenty folium numba
     ]))
     distrobox
+    podman-compose
   ]);
-  virtualisation.podman.enable = true;
   services.nixseparatedebuginfod.enable = true;
   fonts.packages = with pkgs; [
     jetbrains-mono meslo-lgs-nf
     noto-fonts noto-fonts-cjk-sans noto-fonts-color-emoji
   ];
-  virtualisation.docker.enable = true;
 
   system.stateVersion = "23.05";
 }
