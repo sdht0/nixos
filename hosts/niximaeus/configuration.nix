@@ -31,6 +31,7 @@
 
   services.earlyoom.enable = true;
   zramSwap.enable = true;
+  zramSwap.memoryPercent = 25;
 
   hardware.bluetooth.enable = true;
 
@@ -78,6 +79,7 @@
     jetbrains-mono meslo-lgs-nf
     noto-fonts noto-fonts-cjk-sans noto-fonts-color-emoji
   ];
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "23.05";
 }
