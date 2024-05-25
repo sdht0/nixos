@@ -12,7 +12,7 @@
     ../../configs/packages/letsencrypt.nix
     ../../configs/packages/sshd.nix
     ../../configs/packages/syncthing.nix
-    ../../configs/packages/podman.nix
+    ../../configs/packages/docker.nix
 
     ./partitions.nix
   ];
