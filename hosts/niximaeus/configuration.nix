@@ -48,6 +48,7 @@
   environment.systemPackages = (with pkgs; [
     firefox chromedriver
     (chromium.override {
+      enableWideVine = true;
       commandLineArgs = [
         "--enable-features=VaapiVideoDecodeLinuxGL"
         "--ignore-gpu-blocklist"
@@ -61,7 +62,7 @@
     zoom-us slack
     obsidian fava
     activitywatch
-    nil nixfmt-rfc-style nixpkgs-review inputs.nixOlde.packages.${pkgs.system}.nix-olde
+    nixd nixfmt-rfc-style nixpkgs-review inputs.nixOlde.packages.${pkgs.system}.nix-olde
     rustup cargo rustc jetbrains-toolbox
     vscode
     gcc lldb temurin-bin-21
@@ -73,7 +74,6 @@
         #vincenty folium numba
     ]))
     distrobox
-    podman-compose
   ]);
   services.nixseparatedebuginfod.enable = true;
   fonts.packages = with pkgs; [
