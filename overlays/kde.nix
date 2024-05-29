@@ -555,18 +555,18 @@ in
           inherit (sources.kde-cli-tools) url sha256;
         };
       });
-      kdecoration = kprev.kdecoration.overrideAttrs (oldAttrs: {
-        inherit (sources.kdecoration) pname version;
-        src = pkgs.fetchurl {
-          name = sources.kdecoration.fname;
-          inherit (sources.kdecoration) url sha256;
-        };
-      });
       kde-gtk-config = kprev.kde-gtk-config.overrideAttrs (oldAttrs: {
         inherit (sources.kde-gtk-config) pname version;
         src = pkgs.fetchurl {
           name = sources.kde-gtk-config.fname;
           inherit (sources.kde-gtk-config) url sha256;
+        };
+      });
+      kdecoration = kprev.kdecoration.overrideAttrs (oldAttrs: {
+        inherit (sources.kdecoration) pname version;
+        src = pkgs.fetchurl {
+          name = sources.kdecoration.fname;
+          inherit (sources.kdecoration) url sha256;
         };
       });
       kdeplasma-addons = kprev.kdeplasma-addons.overrideAttrs (oldAttrs: {
@@ -716,14 +716,6 @@ in
           inherit (sources.ocean-sound-theme) url sha256;
         };
       });
-      plasma5support = kprev.plasma5support.overrideAttrs (oldAttrs: {
-        inherit (sources.plasma5support) pname version;
-        src = pkgs.fetchurl {
-          name = sources.plasma5support.fname;
-          inherit (sources.plasma5support) url sha256;
-        };
-        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.kdePackages.libksysguard];
-      });
       plasma-activities = kprev.plasma-activities.overrideAttrs (oldAttrs: {
         inherit (sources.plasma-activities) pname version;
         src = pkgs.fetchurl {
@@ -815,6 +807,14 @@ in
           name = sources.plasma-workspace-wallpapers.fname;
           inherit (sources.plasma-workspace-wallpapers) url sha256;
         };
+      });
+      plasma5support = kprev.plasma5support.overrideAttrs (oldAttrs: {
+        inherit (sources.plasma5support) pname version;
+        src = pkgs.fetchurl {
+          name = sources.plasma5support.fname;
+          inherit (sources.plasma5support) url sha256;
+        };
+        buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.kdePackages.libksysguard];
       });
       polkit-kde-agent-1 = kprev.polkit-kde-agent-1.overrideAttrs (oldAttrs: {
         inherit (sources.polkit-kde-agent-1) pname version;
