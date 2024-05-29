@@ -2,7 +2,7 @@
 [
   (final: prev: {
     yt-dlp-git = prev.yt-dlp.overrideAttrs (old: {
-      name = "overlay-yt-dlp-git";
+      name = "yt-dlp_git";
       src = pkgs.fetchFromGitHub {
         owner  = "yt-dlp";
         repo   = "yt-dlp";
@@ -13,20 +13,11 @@
     });
 
     solaar = prev.solaar.overrideAttrs (old: {
-      name = "overlay-${old.pname}-${old.version}";
       postFixup = ''
         ${old.postFixup}
         sed -i 's/Exec=solaar/Exec=solaar --window hide/' $out/share/applications/solaar.desktop
       '';
     });
-
-    fprintd = prev.fprintd.overrideAttrs (_: {
-      mesonCheckFlags = [
-        "--no-suite" "fprintd:TestPamFprintd"
-      ];
-    });
-
-    difftastic = pkgs.callPackage ./difft.nix { };
   })
 ]
 ++ (import ./kde.nix args)
