@@ -11,6 +11,7 @@
     ../../configs/system/canon-ts3420.nix
 
     ../../configs/packages/systemd-boot.nix
+    ../../configs/packages/plymouth.nix
     ../../configs/packages/common.nix
     ../../configs/packages/plasma6.nix
     ../../configs/packages/syncthing.nix
@@ -55,7 +56,7 @@
         "--enable-zero-copy"
       ];
     })
-    thunderbird zotero libreoffice-qt
+    thunderbird zotero libreoffice-qt-fresh
     ffmpeg vlc
     mcomix
     foliate
