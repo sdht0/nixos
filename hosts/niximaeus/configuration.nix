@@ -51,7 +51,7 @@
     (chromium.override {
       enableWideVine = true;
       commandLineArgs = [
-        "--enable-features=VaapiVideoDecodeLinuxGL"
+        "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
         "--ignore-gpu-blocklist"
         "--enable-zero-copy"
       ];
@@ -69,7 +69,7 @@
     gcc lldb temurin-bin-21
     gnumake
     bibtool drawio texliveFull
-    (pkgs.python3.withPackages (ps: with ps; [
+    (pkgs.python312.withPackages (ps: with ps; [
         beancount notebook pandas
         titlecase selenium bibtexparser # publications
         #vincenty folium numba
