@@ -33,15 +33,6 @@ in
   nix.gc.dates = "daily";
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 
-  # Normalize nixpkgs version
-  nix.registry.nixpkgs.flake = inputs.nixpkgs;
-  nix.nixPath = [
-    "nixpkgs=${nixpkgsLink}"
-    "nixos-config=/etc/nixos/configuration.nix"
-    "/nix/var/nix/profiles/per-user/root/channels"
-  ];
-  systemd.tmpfiles.rules = [ "L+ ${nixpkgsLink}     - - - - ${inputs.nixpkgs}" ];
-
   networking.hostName = hostData.hostname;
   nixpkgs.hostPlatform = hostData.system;
   time.timeZone = hostData.timezone;
