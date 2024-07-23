@@ -1,8 +1,6 @@
-{ lib, config, pkgs, hostData, inputs, ... }:
+{ lib, config, pkgs, hostData, ... }:
 let
   lib' = import ../../lib { inherit config lib; };
-
-  nixpkgsLink = "/etc/nix/nixpkgs";
 
   f_userMap = user: {
     users.${user.username} = {
