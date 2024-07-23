@@ -3,7 +3,8 @@
 {
   boot.kernelModules = [ "kvm-intel" ];
   hardware.cpu.intel.updateMicrocode = true;
-  hardware.opengl.extraPackages = with pkgs; [ intel-media-driver ];
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [ intel-media-driver ];
   powerManagement.cpuFreqGovernor = "powersave";
 
   environment.systemPackages = with pkgs; [

@@ -38,7 +38,6 @@ in
   time.timeZone = hostData.timezone;
   i18n.defaultLocale = hostData.locale;
   services.fwupd.enable = true;
-  hardware.opengl.enable = true;
 
   networking.networkmanager = {
     enable = true;
