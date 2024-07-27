@@ -8,12 +8,12 @@ in
     {
       ".zshrc".text = ''
           . ~/.bashrc
-          [[ -f ~/.dotfiles/zshrc ]] && . ~/.dotfiles/zshrc
-          [[ -f ~/.dotfiles.safe/zshrc ]] && . ~/.dotfiles.safe/zshrc
+          [[ -f ~/.dotfiles/zshrc ]] && . ~/.dotfiles/zshrc || true
+          [[ -f ~/.dotfiles.safe/zshrc ]] && . ~/.dotfiles.safe/zshrc || true
           '';
       ".bashrc".text = ''
-        [[ -f ~/.dotfiles/bashrc ]] && . ~/.dotfiles/bashrc
-        [[ -f ~/.dotfiles.safe/bashrc ]] && . ~/.dotfiles.safe/bashrc
+        [[ -f ~/.dotfiles/bashrc ]] && . ~/.dotfiles/bashrc || true
+        [[ -f ~/.dotfiles.safe/bashrc ]] && . ~/.dotfiles.safe/bashrc || true
         '';
     }
     (lib'.f_linkFiles [
