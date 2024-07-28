@@ -20,7 +20,7 @@
   let
     lib = inputs.nixpkgs.lib;
 
-    mainuser = {
+    mainuser = rec {
       username = "artimaeus";
       uid = 1000;
       gid = uid;
