@@ -38,8 +38,6 @@
     ../../modules/pkgs-nixdev.nix
     ../../modules/pkgs-debuginfod.nix
     ../../modules/pkgs-script-publications.nix
-
-    ./partitions.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

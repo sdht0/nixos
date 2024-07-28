@@ -5,5 +5,5 @@
     (pkgs.python312.withPackages (ps: with ps; [
         notebook titlecase selenium bibtexparser
     ]))
-  ]
+  ]);
 }

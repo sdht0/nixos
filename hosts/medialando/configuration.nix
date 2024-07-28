@@ -28,8 +28,6 @@ in
     ../../modules/pkgs-docker.nix
     ../../modules/pkgs-syncthing.nix
     ../../modules/pkgs-script-download.nix
-
-    ./partitions.nix
   ];
 
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;

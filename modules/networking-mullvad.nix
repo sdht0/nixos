@@ -1,6 +1,6 @@
 { lib, config, pkgs, ... }:
 let
-  lib' = import ../../../lib { inherit config lib; };
+  lib' = import ../lib { inherit config lib; };
   nftExe = "${pkgs.nftables}/bin/nft";
 in
 {

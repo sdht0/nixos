@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, hostData, ... }:
 {
   nix.package = pkgs.nixVersions.latest;
   nix.settings = {
