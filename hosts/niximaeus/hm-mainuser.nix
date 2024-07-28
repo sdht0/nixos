@@ -7,8 +7,6 @@ in
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
-  imports = [ ../../configs/home/common.nix ];
-
   home.file = (lib'.f_linkFiles ([
     { link = ".config/autostart/ssh-add.sh.desktop";      dest = ".dotfiles/scripts/ssh-agent/ssh-add.sh.desktop"; }
 

@@ -15,10 +15,10 @@ in
   # Make mullvad play well with tailscale
   systemd.services.mullvad-daemon = {
     preStart = ''
-      ${nftExe} -f '${./mullvad-ts.nft}'
+      ${nftExe} -f '${./files/mullvad-ts.nft}'
     '';
     postStop = ''
-      ${nftExe} -f '${./mullvad-ts-cleanup.nft}'
+      ${nftExe} -f '${./files/mullvad-ts-cleanup.nft}'
     '';
   };
 
