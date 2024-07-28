@@ -4,23 +4,15 @@
     ../../modules/system-nix.nix
 
     ../../modules/hardware-firmware.nix
-    ../../modules/hardware-intel.nix
-    ../../modules/hardware-nvidia-disable.nix
-    ../../modules/hardware-ssd.nix
-    ../../modules/hardware-fingerprintreader.nix
-    ../../modules/hardware-canon-ts3420.nix
-    ../../modules/hardware-logitech.nix
 
+    ../../modules/system-qemu.nix
     ../../modules/system-basic.nix
     ../../modules/system-users.nix
     ../../modules/system-users-autologin.nix
     ../../modules/system-btrfs-home-snapshots.nix
     ../../modules/system-audio.nix
-    ../../modules/system-bluetooth.nix
     ../../modules/system-plasma6.nix
-    ../../modules/system-plymouth.nix
     ../../modules/system-systemd-boot.nix
-    ../../modules/system-systemd-boot-xbootldr.nix
     ../../modules/system-initrd-systemd.nix
     ../../modules/system-watchdog-disable.nix
     ../../modules/system-oom.nix
@@ -34,34 +26,33 @@
     ../../modules/pkgs-syncthing.nix
     ../../modules/pkgs-sshagent.nix
     ../../modules/pkgs-fonts.nix
-    ../../modules/pkgs-latex.nix
+    # ../../modules/pkgs-latex.nix
     ../../modules/pkgs-nixdev.nix
     ../../modules/pkgs-debuginfod.nix
     ../../modules/pkgs-script-publications.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "sdhci_pci" ];
-
   environment.systemPackages = (with pkgs; [
     firefox
     (chromium.override {
-      enableWideVine = true;
+      enableWideVine = false;
       commandLineArgs = [
         "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
         "--ignore-gpu-blocklist"
         "--enable-zero-copy"
       ];
     })
-    thunderbird zotero libreoffice-qt-fresh
+    thunderbird libreoffice-qt-fresh
+    # zotero
     ffmpeg vlc
     mcomix
     foliate
-    zoom-us slack
-    obsidian fava
+    # zoom-us slack
+    obsidian
+    # fava
     activitywatch
     inputs.nixOlde.packages.${pkgs.system}.nix-olde
-    jetbrains-toolbox
+    # jetbrains-toolbox
     vscode
     gcc lldb temurin-bin-21
     gnumake
@@ -72,27 +63,28 @@
     ]))
   ]);
 
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/9efed530-afe0-4ef8-aee4-24910d168a34";
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.availableKernelModules = [ "xhci_pci" "uhci_hcd" "virtio_pci" "usbhid" "usb_storage" "sr_mod" ];
+
   ### Commented out to allow systemd automount ###
   # fileSystems."/boot" =
-  #   { device = "/dev/disk/by-uuid/57D4-A2B2";
+  #   { device = "/dev/disk/by-uuid/629E-D60C";
   #     fsType = "vfat";
-  #   };
-  # fileSystems."/efi" =
-  #   { device = "/dev/disk/by-uuid/3280-5418";
-  #     fsType = "vfat";
+  #     options = [ "fmask=0022" "dmask=0022" ];
   #   };
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/06b5ee16-a040-465d-9e58-df9bc6c7329c";
+    { device = "/dev/disk/by-uuid/0f9accb2-f745-4e25-ab70-8d4dc8dfa2d4";
       fsType = "btrfs";
       options = [ "subvol=@nixos" "compress=zstd" "noatime" ];
     };
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/06b5ee16-a040-465d-9e58-df9bc6c7329c";
+    { device = "/dev/disk/by-uuid/0f9accb2-f745-4e25-ab70-8d4dc8dfa2d4";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" "noatime" ];
     };
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/51b9363a-8b31-4a33-ac50-58db909f4ecb"; }
+    ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.05";
 }

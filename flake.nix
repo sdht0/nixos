@@ -33,6 +33,12 @@
         locale = "en_CA.UTF-8";
         users = { inherit mainuser; };
       };
+      macimaeus-vm = {
+        system = "aarch64-linux";
+        timezone = "America/Toronto";
+        locale = "en_CA.UTF-8";
+        users = { inherit mainuser; };
+      };
       medialando =  {
         system = "x86_64-linux";
         timezone = "America/Toronto";

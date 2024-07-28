@@ -55,7 +55,6 @@ in
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" "noatime" ];
     };
-  boot.tmp.useTmpfs =  true;
   swapDevices = [ ];
 
   system.stateVersion = "23.05";
