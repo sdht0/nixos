@@ -14,6 +14,12 @@
       url = "github:trofi/nix-olde";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
   };
 
   outputs = { self, ... }@inputs:
@@ -47,6 +53,12 @@
       };
     };
 
+    hostsDarwin = {
+      macimaeus = {
+        system = "aarch64-darwin";
+      };
+    };
+
     f_hmUserConfigs =
       hostname:
         user: userData:
@@ -72,8 +84,20 @@
             ({ lib, config, pkgs, ... }@args: { nixpkgs.overlays = import ./overlays args; })
           ];
         };
+
+    f_darwinConfigs =
+      hostname: hostData:
+        inputs.nix-darwin.lib.darwinSystem {
+          system = hostData.system;
+          specialArgs = { hostData = hostData // { inherit hostname; }; inherit inputs; };
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+          ];
+        };
   in
   {
     nixosConfigurations =  lib.mapAttrs f_nixosConfigs hosts;
+
+    darwinConfigurations =  lib.mapAttrs f_darwinConfigs hostsDarwin;
   };
 }

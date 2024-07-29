@@ -1,7 +1,5 @@
 { lib, config, pkgs, hostData, ... }:
 let
-  lib' = import ../../lib { inherit config lib; };
-
   f_userMap = user: {
     users.${user.username} = {
       uid = user.uid or null;
