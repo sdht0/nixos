@@ -10,7 +10,6 @@
     bc aha difftastic jq peco
     ffmpeg
     htop pciutils killall
-    nix-output-monitor nvd
   ];
   programs.gnupg.agent.enable = true;
   programs.nano.enable = false;

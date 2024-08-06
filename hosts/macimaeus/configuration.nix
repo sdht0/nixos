@@ -4,14 +4,19 @@
     ../../modules/pkgs-nixdev.nix
   ];
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   environment.systemPackages = with pkgs; [
-    tmux gitFull
+    tmux
+    gitFull
     python3
+    cmake
+    awscli2
   ];
   programs.zsh.enable = true;
   homebrew = {
     enable = true;
- 
+
     casks = [
       "visual-studio-code"
       "slack"
@@ -22,6 +27,7 @@
       "rustrover"
       "docker"
       "iterm2"
+      "activitywatch"
     ];
   };
 
