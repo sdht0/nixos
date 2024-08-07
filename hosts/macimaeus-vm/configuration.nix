@@ -45,7 +45,7 @@
     thunderbird libreoffice-qt-fresh
     # zotero
     ffmpeg vlc
-    mcomix
+    # mcomix
     foliate
     # zoom-us slack
     obsidian
@@ -62,6 +62,8 @@
         #vincenty folium numba
     ]))
   ]);
+
+  users.users.${hostData.users.mainuser.username}.extraGroups = [ "podman" ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "xhci_pci" "uhci_hcd" "virtio_pci" "usbhid" "usb_storage" "sr_mod" ];
