@@ -2,6 +2,7 @@
   imports = [
     ../../modules/darwin/system-nix.nix
     ../../modules/pkgs-nixdev.nix
+    ./work.nix
   ];
 
   security.pam.enableSudoTouchIdAuth = true;
@@ -9,9 +10,9 @@
   environment.systemPackages = with pkgs; [
     tmux
     gitFull
-    python3
-    cmake
-    awscli2
+    (pkgs.python3.withPackages (ps: with ps; [
+        notebook pandas
+    ]))
   ];
   programs.zsh.enable = true;
   homebrew = {
