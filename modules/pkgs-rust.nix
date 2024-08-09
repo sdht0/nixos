@@ -2,5 +2,5 @@
 {
   environment.systemPackages = (with pkgs; [
     rustup cargo rustc
-  ]
+  ]);
 }
