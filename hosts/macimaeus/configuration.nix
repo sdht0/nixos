@@ -17,16 +17,16 @@
   programs.zsh.enable = true;
   homebrew = {
     enable = true;
+    onActivation = {
+      upgrade = true;
+      cleanup = "uninstall";
+    };
 
     casks = [
       "visual-studio-code"
-      "slack"
       "firefox"
       "google-chrome"
       "utm"
-      "zoom"
-      "rustrover"
-      "docker"
       "iterm2"
       "activitywatch"
     ];
