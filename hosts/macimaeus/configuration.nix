@@ -6,10 +6,12 @@
   ];
 
   security.pam.enableSudoTouchIdAuth = true;
+  system.defaults.NSGlobalDomain.AppleShowAllFiles = true;
 
   environment.systemPackages = with pkgs; [
     tmux
     gitFull
+    ripgrep fzf eza aha jq peco
     (pkgs.python3.withPackages (ps: with ps; [
         notebook pandas
     ]))

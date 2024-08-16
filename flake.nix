@@ -92,6 +92,7 @@
           specialArgs = { hostData = hostData // { inherit hostname; }; inherit inputs; };
           modules = [
             ./hosts/${hostname}/configuration.nix
+            ({ lib, config, pkgs, ... }@args: { nixpkgs.overlays = import ./overlays args; })
           ];
         };
   in

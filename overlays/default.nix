@@ -18,6 +18,10 @@
         sed -i 's/Exec=solaar/Exec=solaar --window hide/' $out/share/applications/solaar.desktop
       '';
     });
+
+    awscli2 = prev.awscli2.overridePythonAttrs (old: {
+      doCheck = false;
+    });
   })
 ]
 # ++ (import ./kde.nix args)
