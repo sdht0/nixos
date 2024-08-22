@@ -29,7 +29,6 @@
     # ../../modules/pkgs-latex.nix
     ../../modules/pkgs-nixdev.nix
     ../../modules/pkgs-debuginfod.nix
-    ../../modules/pkgs-script-publications.nix
   ];
 
   environment.systemPackages = (with pkgs; [
@@ -57,8 +56,10 @@
     gcc lldb temurin-bin-21
     gnumake
     drawio
+    chromedriver
     (pkgs.python312.withPackages (ps: with ps; [
         beancount notebook pandas
+        notebook titlecase selenium bibtexparser
         #vincenty folium numba
     ]))
   ]);
