@@ -14,5 +14,10 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = hostData.system;
 
+  system.switch = {
+    enable = false;
+    enableNg = true;
+  };
+
   documentation.doc.enable = false;
 }

@@ -48,7 +48,7 @@
     foliate
     # zoom-us slack
     obsidian
-    # fava
+    fava
     activitywatch
     inputs.nixOlde.packages.${pkgs.system}.nix-olde
     # jetbrains-toolbox

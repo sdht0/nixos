@@ -6,4 +6,5 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  security.rtkit.enable = true;
 }

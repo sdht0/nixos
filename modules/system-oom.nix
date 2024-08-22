@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
   services.earlyoom.enable = true;
-  zramSwap.enable = true;
-  zramSwap.memoryPercent = 25;
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 25;
+  };
 }

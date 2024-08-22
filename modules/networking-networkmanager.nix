@@ -2,6 +2,7 @@
 {
   networking.networkmanager = {
     enable = true;
+    wifi.backend = "iwd";
     wifi.macAddress = "stable";
     ethernet.macAddress = "stable";
     insertNameservers = [ "1.1.1.1" "8.8.8.8" ];
