@@ -20,4 +20,8 @@
   };
 
   documentation.doc.enable = false;
+
+  environment.systemPackages = (with pkgs; [
+    nix-output-monitor nvd
+  ]);
 }
