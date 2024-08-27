@@ -5,6 +5,7 @@
     awscli2
     teleport
     k9s
+    postgresql
   ];
 
   homebrew = {
