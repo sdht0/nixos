@@ -8,15 +8,9 @@
     warn-dirty = false;
   };
   nix.gc.automatic = true;
-  nix.gc.dates = "daily";
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = hostData.system;
-
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
 
   documentation.doc.enable = false;
 
