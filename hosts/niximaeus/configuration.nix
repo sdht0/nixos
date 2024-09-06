@@ -1,7 +1,8 @@
 { config, lib, pkgs, hostData, inputs, ... }:
 {
   imports = [
-    ../../modules/system-nix.nix
+    ../../modules/system-nix-common.nix
+    ../../modules/system-nix-linux.nix
 
     ../../modules/hardware-firmware.nix
     ../../modules/hardware-intel.nix

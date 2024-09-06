@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }: {
   imports = [
-    ../../modules/darwin/system-nix.nix
+    ../../modules/system-nix-common.nix
+    ../../modules/system-nix-darwin.nix
     ../../modules/pkgs-nixdev.nix
     ./work.nix
   ];
