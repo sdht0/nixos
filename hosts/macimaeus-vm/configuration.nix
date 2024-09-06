@@ -41,7 +41,8 @@
         "--enable-zero-copy"
       ];
     })
-    thunderbird libreoffice-qt-fresh
+    thunderbird
+    # libreoffice-qt-fresh
     # zotero
     ffmpeg vlc
     # mcomix

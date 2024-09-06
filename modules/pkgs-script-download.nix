@@ -1,10 +1,9 @@
 { lib, config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    chromium yt-dlp nodejs
+    chromium yt-dlp deno
     (pkgs.python3.withPackages (ps: with ps;
-      [ pip beautifulsoup4 dateutil lxml ]) # download.sh
+      [ pip beautifulsoup4 dateutil lxml ])
     )
   ];
-  programs.npm.enable = true;
 }
