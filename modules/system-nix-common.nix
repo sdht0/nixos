@@ -7,7 +7,6 @@
     use-xdg-base-directories = true;
     warn-dirty = false;
   };
-  nix.gc.automatic = true;
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = hostData.system;
