@@ -28,7 +28,14 @@ in
     ../../modules/pkgs-common.nix
     ../../modules/pkgs-docker.nix
     ../../modules/pkgs-syncthing.nix
-    ../../modules/pkgs-script-download.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    chromium yt-dlp deno
+    rclone
+    (pkgs.python3.withPackages (ps: with ps;
+      [ pip beautifulsoup4 dateutil lxml ])
+    )
   ];
 
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
