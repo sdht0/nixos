@@ -32,7 +32,7 @@ in
 
   environment.systemPackages = with pkgs; [
     chromium yt-dlp deno
-    rclone
+    rclone getmail6
     (pkgs.python3.withPackages (ps: with ps;
       [ pip beautifulsoup4 dateutil lxml ])
     )
