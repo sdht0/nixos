@@ -59,6 +59,7 @@
     gnumake
     drawio
     chromedriver
+    sqlite
     (pkgs.python312.withPackages (ps: with ps; [
         beancount notebook pandas
         notebook titlecase selenium bibtexparser
