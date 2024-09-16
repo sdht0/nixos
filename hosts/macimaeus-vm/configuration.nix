@@ -43,7 +43,7 @@
       ];
     })
     thunderbird
-    # libreoffice-qt-fresh
+    libreoffice-qt
     # zotero
     ffmpeg vlc
     # mcomix
