@@ -36,11 +36,11 @@
     firefox
     (chromium.override {
       enableWideVine = false;
-      commandLineArgs = [
-        "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
-        "--ignore-gpu-blocklist"
-        "--enable-zero-copy"
-      ];
+      # commandLineArgs = [
+      #   "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
+      #   "--ignore-gpu-blocklist"
+      #   "--enable-zero-copy"
+      # ];
     })
     thunderbird
     libreoffice-qt
