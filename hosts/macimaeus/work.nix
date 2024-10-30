@@ -8,12 +8,12 @@
   homebrew = {
     taps = [
       "materializeinc/cockroach"
-      "materializeinc/crosstools"
+      # "materializeinc/crosstools"
     ];
 
     brews = [
       "materializeinc/cockroach/cockroach"
-      "materializeinc/crosstools/aarch64-unknown-linux-gnu"
+      # "materializeinc/crosstools/aarch64-unknown-linux-gnu"
     ];
   };
 }
