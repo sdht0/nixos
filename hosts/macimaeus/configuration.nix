@@ -7,7 +7,7 @@
   ];
 
   security.pam.enableSudoTouchIdAuth = true;
-  system.defaults.NSGlobalDomain.AppleShowAllFiles = true;
+  system.defaults.finder.AppleShowAllFiles = true;
 
   environment.systemPackages = with pkgs; [
     tmux
@@ -26,12 +26,13 @@
     };
 
     casks = [
+      "rustrover"
+      "zoom"
       "visual-studio-code"
       "firefox"
       "google-chrome"
       "utm"
       "iterm2"
-      "activitywatch"
     ];
   };
 

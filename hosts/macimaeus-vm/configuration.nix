@@ -57,7 +57,7 @@
     vscode
     gcc lldb temurin-bin-21
     gnumake
-    drawio
+    #drawio
     chromedriver
     sqlite
     (pkgs.python312.withPackages (ps: with ps; [
@@ -74,23 +74,20 @@
 
   ### Commented out to allow systemd automount ###
   # fileSystems."/boot" =
-  #   { device = "/dev/disk/by-uuid/629E-D60C";
+  #   { device = "/dev/disk/by-label/BOOT";
   #     fsType = "vfat";
   #     options = [ "fmask=0022" "dmask=0022" ];
   #   };
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/0f9accb2-f745-4e25-ab70-8d4dc8dfa2d4";
+    { device = "/dev/disk/by-label/LINUX";
       fsType = "btrfs";
       options = [ "subvol=@nixos" "compress=zstd" "noatime" ];
     };
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/0f9accb2-f745-4e25-ab70-8d4dc8dfa2d4";
+    { device = "/dev/disk/by-label/LINUX";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" "noatime" ];
     };
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/51b9363a-8b31-4a33-ac50-58db909f4ecb"; }
-    ];
 
   system.stateVersion = "24.05";
 }
