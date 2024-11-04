@@ -38,7 +38,41 @@ in
     )
   ];
 
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  systemd.timers."mullvad-reset" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "30m";
+      OnUnitActiveSec = "30m";
+      Unit = "mullvad-reset.service";
+    };
+  };
+
+  systemd.services."mullvad-reset" = {
+    path = with pkgs; [ mullvad-vpn systemd coreutils gnugrep ];
+    script = ''
+      set -eu
+
+      mullvad status | grep -qi connected && exit 0;
+
+      echo "Reconnecting mullvad"
+      mullvad reconnect;
+      sleep 10
+      mullvad status | grep -qi connected && { echo "OK"; exit 0; }
+
+      echo "Restarting network"
+      systemctl restart NetworkManager
+      sleep 10
+      systemctl restart mullvad-daemon
+      sleep 10
+      mullvad status | grep -qi connected && { echo "OKK"; exit 0; } || echo "Oops"
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+  };
+
+  # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
 
   services.logind.lidSwitch = "ignore";
