@@ -26,13 +26,11 @@
     };
 
     casks = [
-      "rustrover"
       "zoom"
-      "visual-studio-code"
-      "firefox"
-      "google-chrome"
       "utm"
-      "iterm2"
+      "rustrover" "visual-studio-code"
+      "firefox" "google-chrome"
+      "iterm2" "font-hack-nerd-font"
     ];
   };
 
