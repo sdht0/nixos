@@ -48,7 +48,7 @@ in
   };
 
   systemd.services."mullvad-reset" = {
-    path = with pkgs; [ mullvad-vpn systemd coreutils gnugrep ];
+    path = with pkgs; [ mullvad systemd coreutils gnugrep ];
     script = ''
       set -eu
 

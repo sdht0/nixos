@@ -41,7 +41,8 @@
       };
       macimaeus-vm = {
         system = "aarch64-linux";
-        timezone = "America/Toronto";
+        # timezone = "America/Toronto";
+        timezone = "Asia/Kolkata";
         locale = "en_CA.UTF-8";
         users = { inherit mainuser; };
       };
