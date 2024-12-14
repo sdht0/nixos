@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostData, ... }:
 
 {
   virtualisation.podman = {
@@ -10,4 +10,5 @@
   environment.systemPackages = (with pkgs; [
     docker-compose
   ]);
+  users.users.${hostData.users.mainuser.username}.extraGroups = [ "podman" ];
 }
