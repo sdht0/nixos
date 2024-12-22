@@ -57,6 +57,7 @@
     vscode
     gcc lldb temurin-bin-21
     gnumake
+    rustup
     #drawio
     chromedriver
     sqlite
