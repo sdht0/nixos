@@ -23,7 +23,7 @@
 
   environment.systemPackages = (with pkgs; [
     libnotify xclip xdotool
-    vulkan-tools vulkan-validation-layers glxinfo
+    libva-utils vulkan-tools vulkan-validation-layers glxinfo
     qt6.qtimageformats
   ]) ++ (with pkgs.kdePackages; [
     yakuake plasma-disks kgamma
