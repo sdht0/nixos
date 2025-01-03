@@ -1,6 +1,8 @@
 { config, lib, pkgs, hostData, inputs, ... }:
 {
   imports = [
+    ../../modules/option-python.nix
+
     ../../modules/system-nix-common.nix
     ../../modules/system-nix-linux.nix
 
@@ -27,9 +29,17 @@
     ../../modules/pkgs-syncthing.nix
     ../../modules/pkgs-sshagent.nix
     ../../modules/pkgs-fonts.nix
-    # ../../modules/pkgs-latex.nix
     ../../modules/pkgs-nixdev.nix
     ../../modules/pkgs-debuginfod.nix
+
+    ../../modules/pkgs-beancount.nix
+    ../../modules/pkgs-publications.nix
+    # ../../modules/pkgs-latex.nix
+  ];
+
+  myPythonPkgs = [
+      "pandas"
+      #vincenty folium numba
   ];
 
   environment.systemPackages = (with pkgs; [
@@ -42,30 +52,21 @@
       #   "--enable-zero-copy"
       # ];
     })
-    thunderbird
     libreoffice-qt
-    # zotero
-    ffmpeg vlc
-    # mcomix
-    foliate
-    # zoom-us slack
     obsidian
-    fava
+    ffmpeg vlc
+    mcomix foliate
     activitywatch
     inputs.nixOlde.packages.${pkgs.system}.nix-olde
-    # jetbrains-toolbox
-    vscode
-    gcc lldb temurin-bin-21
-    gnumake
-    rustup
-    #drawio
-    chromedriver
+    vscode rustup gnumake
+    gcc temurin-bin-21
     sqlite
-    (pkgs.python312.withPackages (ps: with ps; [
-        beancount notebook pandas
-        notebook titlecase selenium bibtexparser
-        #vincenty folium numba
-    ]))
+    # thunderbird
+    # zoom-us slack
+    # jetbrains-toolbox
+    # drawio
+    # zotero # no aarch64
+    (pkgs.python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps))
   ]);
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
