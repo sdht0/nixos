@@ -6,10 +6,11 @@
 
   environment.systemPackages = with pkgs; [
     nftables dig wget curl rsync sshfs
-    vim tmux gitFull delta ripgrep fzf eza
-    bc aha difftastic jq peco
+    vim tmux gitFull ripgrep fzf eza
+    bc aha jq peco
     ffmpeg
     htop pciutils killall
+    sqlite
   ];
   programs.gnupg.agent.enable = true;
   programs.nano.enable = false;

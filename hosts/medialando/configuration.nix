@@ -88,8 +88,8 @@ in
       cd /home/artimaeus/.config/dotfiles.safe && git add . && git commit -m "update"
 
       cd /opt/mnt/xScripts
-      git add download.sh system *.sh *.ipynb *py singlefilejs Music single-file-cli && git commit -m "Code"
-      git add . && git commit -m "Archive"
+      git add download.sh system *.sh *.ipynb *py singlefilejs Music single-file-cli && git commit -m "Code" || true
+      git add . && git commit -m "Archive" || true
 
       if [[ -d /opt/mnt/backups/takeouts/ ]];then
         getmail \

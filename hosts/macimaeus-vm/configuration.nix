@@ -60,7 +60,6 @@
     inputs.nixOlde.packages.${pkgs.system}.nix-olde
     vscode rustup gnumake
     gcc temurin-bin-21
-    sqlite
     # thunderbird
     # zoom-us slack
     # jetbrains-toolbox
@@ -82,7 +81,9 @@
     script = ''
       set -eu
 
-      cd /home/artimaeus/.config/dotfiles.safe && git add . && git commit -m "update" && git push
+      cd /home/artimaeus/.config/dotfiles.safe
+      git add . && git commit -m "update"  || true
+      git push
 
       ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in 'git -C /home/artimaeus/.config/dotfiles.safe push && git -C /opt/mnt/xScripts push'
     '';
