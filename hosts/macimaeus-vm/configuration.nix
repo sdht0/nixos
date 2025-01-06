@@ -69,6 +69,32 @@
     (pkgs.python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps))
   ]);
 
+  systemd.timers."backup" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "11:00";
+      Unit = "backup.service";
+    };
+  };
+
+  systemd.services."backup" = {
+    path = with pkgs; [ coreutils gitFull openssh ];
+    script = ''
+      set -eu
+
+      cd /home/artimaeus/.config/dotfiles.safe && git add . && git commit -m "update" && git push
+
+      ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in 'git -C /home/artimaeus/.config/dotfiles.safe push && git -C /opt/mnt/xScripts push'
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = hostData.users.mainuser.username;
+    };
+    environment =  {
+      SSH_AUTH_SOCK = "/run/user/1000/ssh-agent";
+    };
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "xhci_pci" "uhci_hcd" "virtio_pci" "usbhid" "usb_storage" "sr_mod" ];
 

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, hostData, ... }:
 let
   keyFile = "root.luks.bin";
 in
@@ -69,6 +69,45 @@ in
     serviceConfig = {
       Type = "oneshot";
       User = "root";
+    };
+  };
+
+  systemd.timers."backup" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "10:00";
+      Unit = "backup.service";
+    };
+  };
+
+  systemd.services."backup" = {
+    path = with pkgs; [ coreutils gitFull rclone getmail6 ];
+    script = ''
+      set -eu
+
+      cd /home/artimaeus/.config/dotfiles.safe && git add . && git commit -m "update"
+
+      cd /opt/mnt/xScripts
+      git add download.sh system *.sh *.ipynb *py singlefilejs Music single-file-cli && git commit -m "Code"
+      git add . && git commit -m "Archive"
+
+      if [[ -d /opt/mnt/backups/takeouts/ ]];then
+        getmail \
+          --getmaildir /opt/mnt/backups/takeouts/email/fastmail/getmail \
+          --rcfile /opt/mnt/backups/takeouts/email/fastmail/getmailrc
+
+        getmail \
+          --getmaildir /opt/mnt/backups/takeouts/email/gmail/getmail \
+          --rcfile /opt/mnt/backups/takeouts/email/gmail/getmailrc
+
+        rclone sync --progress --fast-list \
+          --config /opt/mnt/backups/takeouts/myfiles/Saved-Files/logins-2fa-backup/rclone.conf \
+          gdrive: /opt/mnt/backups/takeouts/google/drive/
+      fi
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = hostData.users.mainuser.username;
     };
   };
 
