@@ -1,4 +1,8 @@
 { config, lib, pkgs, hostData, inputs, ... }:
+let
+  mainUser = hostData.users.mainuser.username;
+  home = "/home/${hostData.users.mainuser.username}";
+in
 {
   imports = [
     ../../modules/option-python.nix
@@ -57,7 +61,7 @@
     ffmpeg vlc
     mcomix foliate
     activitywatch
-    inputs.nixOlde.packages.${pkgs.system}.nix-olde
+    inputs.nixOlde.packages.${system}.nix-olde
     vscode rustup gnumake
     gcc temurin-bin-21
     # thunderbird
@@ -65,7 +69,7 @@
     # jetbrains-toolbox
     # drawio
     # zotero # no aarch64
-    (pkgs.python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps))
+    (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps))
   ]);
 
   systemd.timers."backup" = {
@@ -77,19 +81,31 @@
   };
 
   systemd.services."backup" = {
-    path = with pkgs; [ coreutils gitFull openssh ];
+    path = with pkgs; [ coreutils gitFull openssh python312 ];
     script = ''
       set -eu
 
-      cd /home/artimaeus/.config/dotfiles.safe
-      git add . && git commit -m "update"  || true
-      git push
+      exit=0
 
-      ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in 'git -C /home/artimaeus/.config/dotfiles.safe push && git -C /opt/mnt/xScripts push'
+      cp ${home}/.mozilla/firefox/xkbrcpl0.default/places.sqlite ${home}/Downloads/Media/ff-places.sqlite && \
+      python ${home}/Downloads/projects/notes/notes/+personal/scripts/ff-history.py ${home}/Downloads/Media/ff-places.sqlite && \
+      cd ${home}/Downloads/projects/ff-history && \
+      git add . && git commit -m "Update" || true
+
+      cd ${home}/.config/dotfiles.safe &&
+      git add . && git commit -m "update" || true
+
+      # Network operations
+      git -C ${home}/.config/dotfiles.safe push || exit=1
+      git -C ${home}/Downloads/projects/ff-history push || exit=1
+      ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in \
+        'git -C ${home}/.config/dotfiles.safe push && git -C /opt/mnt/xScripts push' || exit=1
+
+      exit $exit
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = hostData.users.mainuser.username;
+      User = mainUser;
     };
     environment =  {
       SSH_AUTH_SOCK = "/run/user/1000/ssh-agent";
