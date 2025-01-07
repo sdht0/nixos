@@ -75,7 +75,7 @@ in
   systemd.timers."backup" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "10:00";
+      OnCalendar = "10,7:00";
       Unit = "backup.service";
     };
   };
@@ -92,15 +92,15 @@ in
       git add . && git commit -m "Archive" || true
 
       if [[ -d /opt/mnt/backups/takeouts/ ]];then
-        getmail \
+        getmail --quiet \
           --getmaildir /opt/mnt/backups/takeouts/email/fastmail/getmail \
           --rcfile /opt/mnt/backups/takeouts/email/fastmail/getmailrc
 
-        getmail \
+        getmail --quiet \
           --getmaildir /opt/mnt/backups/takeouts/email/gmail/getmail \
           --rcfile /opt/mnt/backups/takeouts/email/gmail/getmailrc
 
-        rclone sync --progress --fast-list \
+        rclone sync --fast-list \
           --config /opt/mnt/backups/takeouts/myfiles/Saved-Files/logins-2fa-backup/rclone.conf \
           gdrive: /opt/mnt/backups/takeouts/google/drive/
       fi

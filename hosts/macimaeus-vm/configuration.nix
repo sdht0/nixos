@@ -1,5 +1,6 @@
 { config, lib, pkgs, hostData, inputs, ... }:
 let
+  hostname = hostData.hostname;
   mainUser = hostData.users.mainuser.username;
   home = "/home/${hostData.users.mainuser.username}";
 in
@@ -87,16 +88,29 @@ in
 
       exit=0
 
-      cp \
-        ${home}/.mozilla/firefox/xkbrcpl0.default/places.sqlite \
-        ${home}/Downloads/Media/ff-places.sqlite && \
+      ff_db_path=${home}/Downloads/Media/ff-places.sqlite
+      aw_db_path=${home}/Downloads/Media/aw-db.sqlite
+      outdir=${home}/Downloads/projects/ff-data
+
+      cd "$outdir" && \
+      cp ${home}/.mozilla/firefox/xkbrcpl0.default/places.sqlite "$ff_db_path" && \
       python \
         ${home}/Downloads/projects/notes/notes/+personal/scripts/ff-history.py \
-        ${home}/Downloads/Media/ff-places.sqlite && \
-      cd ${home}/Downloads/projects/ff-history && \
+        "$ff_db_path" "$outdir/history" && \
+      python \
+        ${home}/Downloads/projects/notes/notes/+personal/scripts/ff-bookmarks.py \
+        "$ff_db_path" "$outdir/bookmarks" || exit=1
+
+      cd "$outdir" && \
+      cp ${home}/.local/share/activitywatch/aw-server-rust/sqlite.db "$aw_db_path" && \
+      python \
+        ${home}/Downloads/projects/notes/notes/+personal/scripts/activitywatch.py \
+        "${hostname}" "$outdir/activitywatch" || exit=1
+
+      cd "$outdir" && \
         { git add . && git commit -m "Update" || true; } && git push || exit=1
 
-      cd ${home}/.config/dotfiles.safe && \
+      cd "${home}/.config/dotfiles.safe" && \
         { git add . && git commit -m "update" || true; } && git push || exit=1
 
       ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in \
