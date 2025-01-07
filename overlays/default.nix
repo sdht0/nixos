@@ -19,8 +19,8 @@
       '';
     });
 
-    awscli2 = prev.awscli2.overridePythonAttrs (old: {
-      doCheck = false;
+    obsidian = prev.obsidian.override (old: {
+      electron = pkgs.electron-bin;
     });
   })
 ]
