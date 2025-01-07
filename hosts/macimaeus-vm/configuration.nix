@@ -75,7 +75,7 @@ in
   systemd.timers."backup" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "11:00";
+      OnCalendar = "11,15,20:00";
       Unit = "backup.service";
     };
   };
@@ -87,17 +87,18 @@ in
 
       exit=0
 
-      cp ${home}/.mozilla/firefox/xkbrcpl0.default/places.sqlite ${home}/Downloads/Media/ff-places.sqlite && \
-      python ${home}/Downloads/projects/notes/notes/+personal/scripts/ff-history.py ${home}/Downloads/Media/ff-places.sqlite && \
+      cp \
+        ${home}/.mozilla/firefox/xkbrcpl0.default/places.sqlite \
+        ${home}/Downloads/Media/ff-places.sqlite && \
+      python \
+        ${home}/Downloads/projects/notes/notes/+personal/scripts/ff-history.py \
+        ${home}/Downloads/Media/ff-places.sqlite && \
       cd ${home}/Downloads/projects/ff-history && \
-      git add . && git commit -m "Update" || true
+        { git add . && git commit -m "Update" || true; } && git push || exit=1
 
-      cd ${home}/.config/dotfiles.safe &&
-      git add . && git commit -m "update" || true
+      cd ${home}/.config/dotfiles.safe && \
+        { git add . && git commit -m "update" || true; } && git push || exit=1
 
-      # Network operations
-      git -C ${home}/.config/dotfiles.safe push || exit=1
-      git -C ${home}/Downloads/projects/ff-history push || exit=1
       ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in \
         'git -C ${home}/.config/dotfiles.safe push && git -C /opt/mnt/xScripts push' || exit=1
 
