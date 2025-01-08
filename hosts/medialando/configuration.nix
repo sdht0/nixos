@@ -87,22 +87,23 @@ in
 
       exit=0
 
+      echo "git..."
       cd /home/artimaeus/.config/dotfiles.safe && \
         { git add . && git commit --quiet -m "update" || true; } || exit=1
-
       cd /opt/mnt/xScripts && \
       { git add download.sh system *.sh *.ipynb *py singlefilejs Music single-file-cli && git commit --quiet -m "Code" || true; } && \
       { git add . && git commit --quiet -m "Archive" || true; } || exit=1
 
       if [[ -d /opt/mnt/backups/takeouts/ ]];then
+        echo "getmail..."
         getmail --quiet \
           --getmaildir /opt/mnt/backups/takeouts/email/fastmail/getmail \
           --rcfile /opt/mnt/backups/takeouts/email/fastmail/getmailrc || exit=1
-
         getmail --quiet \
           --getmaildir /opt/mnt/backups/takeouts/email/gmail/getmail \
           --rcfile /opt/mnt/backups/takeouts/email/gmail/getmailrc || exit=1
 
+        echo "rclone..."
         rclone sync --fast-list \
           --config /opt/mnt/backups/takeouts/myfiles/Saved-Files/logins-2fa-backup/rclone.conf \
           gdrive: /opt/mnt/backups/takeouts/google/drive/ || exit=1
