@@ -94,6 +94,16 @@ in
       { git add download.sh system *.sh *.ipynb *py singlefilejs Music single-file-cli && git commit --quiet -m "Code" || true; } && \
       { git add . && git commit --quiet -m "Archive" || true; } || exit=1
 
+      echo "filelist..."
+      out_dir="/opt/mnt/backups/takeouts/myfiles/Disk-Filelists/$(date +"%Y")"
+      f="$out_dir/medialand-$(date +"%Y.%m").txt"
+      if [[ ! -d "$out_dir" ]];then
+        mkdir "$out_dir" || exit=1
+      fi
+      if [[ -d "$out_dir" && ! -f "$f" ]];then
+          cd /opt/mnt/medialand && du --apparent-size --all -h --time > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
+      fi
+
       if [[ -d /opt/mnt/backups/takeouts/ ]];then
         echo "getmail..."
         getmail --quiet \

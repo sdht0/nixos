@@ -114,9 +114,12 @@ in
         "${hostname}" "$out_dir/activitywatch/history" || exit=1
 
       echo "export..."
-      python $scripts_dir/aw-bucket.py "$out_dir/activitywatch/${hostname}.buckets.json" || exit=1
-      sqlite3 "$aw_tmp_path" ".dump" > "$out_dir/activitywatch/server-db.sql" || exit=1
-      sqlite3 "$ff_tmp_path" ".dump" > "$out_dir/firefox/places.sql" || exit=1
+      f="$out_dir/activitywatch/${hostname}.buckets.json"
+        python $scripts_dir/aw-bucket.py "$f.tmp" && mv "$f.tmp" "$f" || exit=1
+      f="$out_dir/activitywatch/server-db.sql"
+        sqlite3 "$aw_tmp_path" ".dump" > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
+      f="$out_dir/firefox/places.sql"
+        sqlite3 "$ff_tmp_path" ".dump" > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
 
       echo "rsync..."
       rsync -a --delete \
