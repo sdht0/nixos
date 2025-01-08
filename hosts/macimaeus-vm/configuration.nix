@@ -82,7 +82,7 @@ in
   };
 
   systemd.services."backup" = {
-    path = with pkgs; [ coreutils gitFull openssh python312 ];
+    path = with pkgs; [ coreutils gitFull openssh (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps)) ];
     script = ''
       set -eu
 
@@ -90,7 +90,7 @@ in
 
       ff_db_path=${home}/Downloads/Media/ff-places.sqlite
       aw_db_path=${home}/Downloads/Media/aw-db.sqlite
-      outdir=${home}/Downloads/projects/ff-data
+      outdir=${home}/Downloads/projects/personal-data
 
       cd "$outdir" && \
       cp ${home}/.mozilla/firefox/xkbrcpl0.default/places.sqlite "$ff_db_path" && \
