@@ -82,41 +82,54 @@ in
   };
 
   systemd.services."backup" = {
-    path = with pkgs; [ coreutils gitFull openssh curl (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps)) ];
+    path = with pkgs; [
+      coreutils sqlite gitFull openssh curl rsync
+      (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps))
+    ];
     script = ''
       set -eu
 
       exit=0
 
       scripts_dir="${home}/Downloads/projects/notes/notes/+personal/scripts"
-      media_dir="${home}/Downloads/Media"
-      ff_db_path="$media_dir/ff-places.sqlite"
-      aw_db_path="$media_dir/aw-db.sqlite"
-      out_dir=${home}/Downloads/projects/personal-data
+      ff_tmp_path="/tmp/ff.db"
+      aw_tmp_path="/tmp/aw.db"
+      out_dir=${home}/.local/share/personal-data
 
+      echo "ff..."
       cd "$out_dir" && \
-      cp ${home}/.mozilla/firefox/*.default/places.sqlite "$ff_db_path" && \
+      cp ${home}/.mozilla/firefox/*.default/places.sqlite "$ff_tmp_path" && \
       python \
         $scripts_dir/ff-history.py \
-        "$ff_db_path" "$out_dir/history" && \
+        "$ff_tmp_path" "$out_dir/firefox/history" && \
       python \
         $scripts_dir/ff-bookmarks.py \
-        "$ff_db_path" "$out_dir/bookmarks" || exit=1
+        "$ff_tmp_path" "$out_dir/firefox/bookmarks.txt" || exit=1
 
+      echo "aw..."
       cd "$out_dir" && \
-      cp ${home}/.local/share/activitywatch/aw-server-rust/sqlite.db "$aw_db_path" && \
+      cp ${home}/.local/share/activitywatch/aw-server-rust/sqlite.db "$aw_tmp_path" && \
       python \
-        $scripts_dir/activitywatch.py \
-        "${hostname}" "$out_dir/activitywatch" || exit=1
+        $scripts_dir/aw-db.py \
+        "${hostname}" "$out_dir/activitywatch/history" || exit=1
 
-      curl --silent http://localhost:5600/api/0/export > "$media_dir"/"aw.${hostname}".json || exit=1
+      echo "export..."
+      python $scripts_dir/aw-bucket.py "$out_dir/activitywatch/${hostname}.buckets.json" || exit=1
+      sqlite3 "$aw_tmp_path" ".dump" > "$out_dir/activitywatch/server-db.sql" || exit=1
+      sqlite3 "$ff_tmp_path" ".dump" > "$out_dir/firefox/places.sql" || exit=1
 
+      echo "rsync..."
+      rsync -a --delete \
+        artimaeus@medialando.sdht.in:/opt/mnt/syncs/Devices/samimaeus/Collected/{gps,periodical} \
+        "$out_dir"/ || exit=1
+
+      echo "git..."
       cd "$out_dir" && \
         { git add . && git commit --quiet -m "update" || true; } && git push --quiet || exit=1
-
       cd "${home}/.config/dotfiles.safe" && \
         { git add . && git commit --quiet -m "update" || true; } && git push --quiet || exit=1
 
+      echo "ssh..."
       ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in \
         'git -C ${home}/.config/dotfiles.safe push && git -C /opt/mnt/xScripts push' || exit=1
 
