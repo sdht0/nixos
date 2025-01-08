@@ -76,42 +76,46 @@ in
   systemd.timers."backup" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "11,15,20:00";
+      OnCalendar = "15,22:00";
       Unit = "backup.service";
     };
   };
 
   systemd.services."backup" = {
-    path = with pkgs; [ coreutils gitFull openssh (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps)) ];
+    path = with pkgs; [ coreutils gitFull openssh curl (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps)) ];
     script = ''
       set -eu
 
       exit=0
 
-      ff_db_path=${home}/Downloads/Media/ff-places.sqlite
-      aw_db_path=${home}/Downloads/Media/aw-db.sqlite
-      outdir=${home}/Downloads/projects/personal-data
+      scripts_dir="${home}/Downloads/projects/notes/notes/+personal/scripts"
+      media_dir="${home}/Downloads/Media"
+      ff_db_path="$media_dir/ff-places.sqlite"
+      aw_db_path="$media_dir/aw-db.sqlite"
+      out_dir=${home}/Downloads/projects/personal-data
 
-      cd "$outdir" && \
-      cp ${home}/.mozilla/firefox/xkbrcpl0.default/places.sqlite "$ff_db_path" && \
+      cd "$out_dir" && \
+      cp ${home}/.mozilla/firefox/*.default/places.sqlite "$ff_db_path" && \
       python \
-        ${home}/Downloads/projects/notes/notes/+personal/scripts/ff-history.py \
-        "$ff_db_path" "$outdir/history" && \
+        $scripts_dir/ff-history.py \
+        "$ff_db_path" "$out_dir/history" && \
       python \
-        ${home}/Downloads/projects/notes/notes/+personal/scripts/ff-bookmarks.py \
-        "$ff_db_path" "$outdir/bookmarks" || exit=1
+        $scripts_dir/ff-bookmarks.py \
+        "$ff_db_path" "$out_dir/bookmarks" || exit=1
 
-      cd "$outdir" && \
+      cd "$out_dir" && \
       cp ${home}/.local/share/activitywatch/aw-server-rust/sqlite.db "$aw_db_path" && \
       python \
-        ${home}/Downloads/projects/notes/notes/+personal/scripts/activitywatch.py \
-        "${hostname}" "$outdir/activitywatch" || exit=1
+        $scripts_dir/activitywatch.py \
+        "${hostname}" "$out_dir/activitywatch" || exit=1
 
-      cd "$outdir" && \
-        { git add . && git commit -m "Update" || true; } && git push || exit=1
+      curl --silent http://localhost:5600/api/0/export > "$media_dir"/"aw.${hostname}".json || exit=1
+
+      cd "$out_dir" && \
+        { git add . && git commit --quiet -m "update" || true; } && git push --quiet || exit=1
 
       cd "${home}/.config/dotfiles.safe" && \
-        { git add . && git commit -m "update" || true; } && git push || exit=1
+        { git add . && git commit --quiet -m "update" || true; } && git push --quiet || exit=1
 
       ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in \
         'git -C ${home}/.config/dotfiles.safe push && git -C /opt/mnt/xScripts push' || exit=1
