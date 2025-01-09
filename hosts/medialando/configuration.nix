@@ -72,10 +72,42 @@ in
     };
   };
 
-  systemd.timers."backup" = {
+  systemd.timers."backup-root" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "10:00";
+      Unit = "backup-root.service";
+    };
+  };
+
+  systemd.services."backup-root" = {
+    path = with pkgs; [ coreutils gitFull rclone getmail6 ];
+    script = ''
+      set -eu
+
+      exit=0
+
+      if [[ -d "/opt/mnt/docker/gitea" && -d "/opt/mnt/backups/takeouts" ]];then
+        echo "gitea..."
+        cd /opt/mnt/backups/takeouts/myfiles/Data-Dumps/ && \
+        cp -r /opt/mnt/docker/gitea/data/git/repositories/artimaeus . && \
+        chown -R artimaeus: artimaeus && \
+        rm -rf gitea/ && \
+        mv artimaeus gitea || exit=1
+      fi
+
+      exit $exit
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+  };
+
+  systemd.timers."backup" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "11:00";
       Unit = "backup.service";
     };
   };
@@ -94,13 +126,13 @@ in
       { git add download.sh system *.sh *.ipynb *py singlefilejs Music single-file-cli && git commit --quiet -m "Code" || true; } && \
       { git add . && git commit --quiet -m "Archive" || true; } || exit=1
 
-      echo "filelist..."
       out_dir="/opt/mnt/backups/takeouts/myfiles/Disk-Filelists/$(date +"%Y")"
       f="$out_dir/medialand-$(date +"%Y.%m").txt"
       if [[ ! -d "$out_dir" ]];then
         mkdir "$out_dir" || exit=1
       fi
       if [[ -d "$out_dir" && ! -f "$f" ]];then
+          echo "filelist..."
           cd /opt/mnt/medialand && du --apparent-size --all -h --time > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
       fi
 
