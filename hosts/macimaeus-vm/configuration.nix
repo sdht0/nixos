@@ -105,6 +105,8 @@ in
       python \
         $scripts_dir/ff-bookmarks.py \
         "$ff_tmp_path" "$out_dir/firefox/bookmarks.txt" || exit=1
+      f="$out_dir/firefox/places.sql"
+        sqlite3 "$ff_tmp_path" ".dump" > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
 
       echo "aw..."
       cd "$out_dir" && \
@@ -112,19 +114,18 @@ in
       python \
         $scripts_dir/aw-db.py \
         "${hostname}" "$out_dir/activitywatch/history" || exit=1
-
-      echo "export..."
       f="$out_dir/activitywatch/${hostname}.buckets.json"
         python $scripts_dir/aw-bucket.py "$f.tmp" && mv "$f.tmp" "$f" || exit=1
       f="$out_dir/activitywatch/server-db.sql"
         sqlite3 "$aw_tmp_path" ".dump" > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
-      f="$out_dir/firefox/places.sql"
-        sqlite3 "$ff_tmp_path" ".dump" > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
 
       echo "rsync..."
-      rsync -a --delete \
-        artimaeus@medialando.sdht.in:/opt/mnt/syncs/Devices/samimaeus/Collected/{gps,periodical} \
-        "$out_dir"/ || exit=1
+      rsync -a --delete --exclude '*.tmp' \
+        artimaeus@medialando.sdht.in:/opt/mnt/syncs/Devices/samimaeus/Collected/gps/ \
+        "$out_dir/gps/" || exit=1
+      rsync -a --delete --exclude '*.tmp' \
+        artimaeus@medialando.sdht.in:/opt/mnt/syncs/Devices/samimaeus/Collected/periodical/ \
+        "$out_dir/periodical/" || exit=1
 
       echo "git..."
       cd "$out_dir" && \
