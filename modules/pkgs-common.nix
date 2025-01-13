@@ -6,7 +6,8 @@
 
   environment.systemPackages = with pkgs; [
     nftables dig wget curl rsync sshfs
-    vim tmux gitFull ripgrep fzf eza
+    vim tmux ripgrep fzf eza
+    gitFull lazygit
     bc aha jq peco
     ffmpeg
     htop pciutils killall dmidecode
