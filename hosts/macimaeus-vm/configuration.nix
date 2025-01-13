@@ -83,64 +83,12 @@ in
 
   systemd.services."backup" = {
     path = with pkgs; [
-      coreutils sqlite gitFull openssh curl rsync
+      coreutils sqlite gitFull openssh curl rsync nettools
       (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps))
     ];
-    script = ''
-      set -eu
-
-      exit=0
-
-      scripts_dir="${home}/Downloads/projects/notes/notes/+personal/scripts"
-      ff_tmp_path="/tmp/ff.db"
-      aw_tmp_path="/tmp/aw.db"
-      out_dir=${home}/.local/share/personal-data
-
-      echo "ff..."
-      cd "$out_dir" && \
-      cp ${home}/.mozilla/firefox/*.default/places.sqlite "$ff_tmp_path" && \
-      python \
-        $scripts_dir/ff-history.py \
-        "$ff_tmp_path" "$out_dir/firefox/history" && \
-      python \
-        $scripts_dir/ff-bookmarks.py \
-        "$ff_tmp_path" "$out_dir/firefox/bookmarks.txt" || exit=1
-      f="$out_dir/firefox/places.sql"
-        sqlite3 "$ff_tmp_path" ".dump" > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
-
-      echo "aw..."
-      cd "$out_dir" && \
-      cp ${home}/.local/share/activitywatch/aw-server-rust/sqlite.db "$aw_tmp_path" && \
-      python \
-        $scripts_dir/aw-db.py \
-        "${hostname}" "$out_dir/activitywatch/history" || exit=1
-      f="$out_dir/activitywatch/${hostname}.buckets.json"
-        python $scripts_dir/aw-bucket.py "$f.tmp" && mv "$f.tmp" "$f" || exit=1
-      f="$out_dir/activitywatch/server-db.sql"
-        sqlite3 "$aw_tmp_path" ".dump" > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
-
-      echo "rsync..."
-      rsync -a --delete --exclude '*.tmp' \
-        artimaeus@medialando.sdht.in:/opt/mnt/syncs/Devices/samimaeus/Collected/gps/ \
-        "$out_dir/gps/" || exit=1
-      rsync -a --delete --exclude '*.tmp' \
-        artimaeus@medialando.sdht.in:/opt/mnt/syncs/Devices/samimaeus/Collected/periodical/ \
-        "$out_dir/periodical/" || exit=1
-
-      echo "git..."
-      cd "$out_dir" && \
-        { git add . && git commit --quiet -m "update" || true; } && git push --quiet || exit=1
-      cd "${home}/.config/dotfiles.safe" && \
-        { git add . && git commit --quiet -m "update" || true; } && git push --quiet || exit=1
-
-      echo "ssh..."
-      ssh -o ForwardAgent=yes artimaeus@medialando.sdht.in \
-        'git -C ${home}/.config/dotfiles.safe push && git -C /opt/mnt/xScripts push' || exit=1
-
-      exit $exit
-    '';
     serviceConfig = {
       Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash ${home}/.config/dotfiles.safe/scripts/backup.sh";
       User = mainUser;
     };
     environment =  {

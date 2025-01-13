@@ -34,7 +34,7 @@ in
     chromium yt-dlp deno
     rclone getmail6
     (pkgs.python3.withPackages (ps: with ps;
-      [ pip beautifulsoup4 dateutil lxml ])
+      [ pip beautifulsoup4 dateutil lxml requests ])
     )
   ];
 
@@ -49,25 +49,9 @@ in
 
   systemd.services."mullvad-reset" = {
     path = with pkgs; [ mullvad systemd coreutils gnugrep ];
-    script = ''
-      set -eu
-
-      mullvad status | grep -qi connected && exit 0;
-
-      echo "Reconnecting mullvad"
-      mullvad reconnect;
-      sleep 10
-      mullvad status | grep -qi connected && { echo "OK"; exit 0; }
-
-      echo "Restarting network"
-      systemctl restart NetworkManager
-      sleep 10
-      systemctl restart mullvad-daemon
-      sleep 10
-      mullvad status | grep -qi connected && { echo "OKK"; exit 0; } || echo "Oops"
-    '';
     serviceConfig = {
       Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/mullvad-reset.sh";
       User = "root";
     };
   };
@@ -82,24 +66,9 @@ in
 
   systemd.services."backup-root" = {
     path = with pkgs; [ coreutils gitFull rclone getmail6 ];
-    script = ''
-      set -eu
-
-      exit=0
-
-      if [[ -d "/opt/mnt/docker/gitea" && -d "/opt/mnt/backups/takeouts" ]];then
-        echo "gitea..."
-        cd /opt/mnt/backups/takeouts/myfiles/Data-Dumps/ && \
-        cp -r /opt/mnt/docker/gitea/data/git/repositories/artimaeus . && \
-        chown -R artimaeus: artimaeus && \
-        rm -rf gitea/ && \
-        mv artimaeus gitea || exit=1
-      fi
-
-      exit $exit
-    '';
     serviceConfig = {
       Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-gitea.sh";
       User = "root";
     };
   };
@@ -114,47 +83,9 @@ in
 
   systemd.services."backup" = {
     path = with pkgs; [ coreutils gitFull rclone getmail6 ];
-    script = ''
-      set -eu
-
-      exit=0
-
-      echo "git..."
-      cd /home/artimaeus/.config/dotfiles.safe && \
-        { git add . && git commit --quiet -m "update" || true; } || exit=1
-      cd /opt/mnt/xScripts && \
-      { git add download.sh system *.sh *.ipynb *py singlefilejs Music single-file-cli && git commit --quiet -m "Code" || true; } && \
-      { git add . && git commit --quiet -m "Archive" || true; } || exit=1
-
-      out_dir="/opt/mnt/backups/takeouts/myfiles/Disk-Filelists/$(date +"%Y")"
-      f="$out_dir/medialand-$(date +"%Y.%m").txt"
-      if [[ ! -d "$out_dir" ]];then
-        mkdir "$out_dir" || exit=1
-      fi
-      if [[ -d "$out_dir" && ! -f "$f" ]];then
-          echo "filelist..."
-          cd /opt/mnt/medialand && du --apparent-size --all -h --time > "$f.tmp" && mv "$f.tmp" "$f" || exit=1
-      fi
-
-      if [[ -d /opt/mnt/backups/takeouts/ ]];then
-        echo "getmail..."
-        getmail --quiet \
-          --getmaildir /opt/mnt/backups/takeouts/email/fastmail/getmail \
-          --rcfile /opt/mnt/backups/takeouts/email/fastmail/getmailrc || exit=1
-        getmail --quiet \
-          --getmaildir /opt/mnt/backups/takeouts/email/gmail/getmail \
-          --rcfile /opt/mnt/backups/takeouts/email/gmail/getmailrc || exit=1
-
-        echo "rclone..."
-        rclone sync --fast-list \
-          --config /opt/mnt/backups/takeouts/myfiles/Saved-Files/logins-2fa-backup/rclone.conf \
-          gdrive: /opt/mnt/backups/takeouts/google/drive/ || exit=1
-      fi
-
-      exit $exit
-    '';
     serviceConfig = {
       Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup.sh";
       User = hostData.users.mainuser.username;
     };
   };

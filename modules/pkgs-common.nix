@@ -9,7 +9,7 @@
     vim tmux gitFull ripgrep fzf eza
     bc aha jq peco
     ffmpeg
-    htop pciutils killall
+    htop pciutils killall dmidecode
     sqlite
   ];
   programs.gnupg.agent.enable = true;
