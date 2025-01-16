@@ -82,7 +82,6 @@ in
       # jetbrains-toolbox
       # drawio
       # zotero # no aarch64
-      config.myPythonSet
     ]
   );
 

@@ -26,5 +26,8 @@
       "pandas"
       "requests"
     ];
+    environment.systemPackages = [
+      config.myPythonSet
+    ];
   };
 }

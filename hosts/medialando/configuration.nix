@@ -10,6 +10,8 @@ let
 in
 {
   imports = [
+    ../../modules/option-python.nix
+
     ../../modules/system-nix-common.nix
     ../../modules/system-nix-linux.nix
 
@@ -36,19 +38,9 @@ in
     ../../modules/pkgs-syncthing.nix
   ];
 
-  myPythonPkgs = [
-    "beautifulsoup4"
-    "dateutil"
-    "lxml"
-  ];
-
   environment.systemPackages = with pkgs; [
-    chromium
-    yt-dlp
-    deno
     rclone
     getmail6
-    config.myPythonSet
   ];
 
   systemd.timers."mullvad-reset" = {
