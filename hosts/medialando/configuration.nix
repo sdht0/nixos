@@ -36,13 +36,10 @@ in
     ../../modules/pkgs-syncthing.nix
   ];
 
-  myPythonVer = pkgs.python312;
   myPythonPkgs = [
-    "pip"
     "beautifulsoup4"
     "dateutil"
     "lxml"
-    "requests"
   ];
 
   environment.systemPackages = with pkgs; [

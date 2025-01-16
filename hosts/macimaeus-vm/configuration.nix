@@ -48,9 +48,7 @@ in
     # ../../modules/pkgs-latex.nix
   ];
 
-  myPythonVer = pkgs.python312;
   myPythonPkgs = [
-    "pandas"
     #vincenty folium numba
   ];
 

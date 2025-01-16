@@ -7,7 +7,10 @@
 
 {
   options = {
-    myPythonVer = lib.mkOption { type = lib.types.package; };
+    myPythonVer = lib.mkOption {
+      type = lib.types.package;
+      default = pkgs.python3;
+    };
     myPythonPkgs = lib.mkOption {
       type = lib.types.listOf lib.types.str;
       default = [ ];
@@ -16,5 +19,12 @@
       type = lib.types.package;
       default = config.myPythonVer.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps);
     };
+  };
+
+  config = {
+    myPythonPkgs = [
+      "pandas"
+      "requests"
+    ];
   };
 }
