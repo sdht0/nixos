@@ -8,7 +8,7 @@
     nftables dig wget curl rsync sshfs
     vim tmux ripgrep fzf eza
     gitFull lazygit
-    bc aha jq peco
+    bc aha jq peco difftastic
     ffmpeg
     htop pciutils killall dmidecode
     sqlite
