@@ -1,6 +1,12 @@
-{ config, lib, pkgs, hostData, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  hostData,
+  inputs,
+  ...
+}:
 let
-  hostname = hostData.hostname;
   mainUser = hostData.users.mainuser.username;
   home = "/home/${hostData.users.mainuser.username}";
 in
@@ -44,35 +50,43 @@ in
 
   myPythonVer = pkgs.python312;
   myPythonPkgs = [
-      "pandas"
-      #vincenty folium numba
+    "pandas"
+    #vincenty folium numba
   ];
 
-  environment.systemPackages = (with pkgs; [
-    firefox
-    (chromium.override {
-      enableWideVine = false;
-      # commandLineArgs = [
-      #   "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
-      #   "--ignore-gpu-blocklist"
-      #   "--enable-zero-copy"
-      # ];
-    })
-    libreoffice-qt
-    obsidian
-    ffmpeg vlc
-    mcomix foliate
-    activitywatch
-    inputs.nixOlde.packages.${system}.nix-olde
-    vscode rustup gnumake
-    gcc temurin-bin-21
-    # thunderbird
-    # zoom-us slack
-    # jetbrains-toolbox
-    # drawio
-    # zotero # no aarch64
-    config.myPythonSet
-  ]);
+  environment.systemPackages = (
+    with pkgs;
+    [
+      firefox
+      (chromium.override {
+        enableWideVine = false;
+        # commandLineArgs = [
+        #   "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
+        #   "--ignore-gpu-blocklist"
+        #   "--enable-zero-copy"
+        # ];
+      })
+      libreoffice-qt
+      obsidian
+      ffmpeg
+      vlc
+      mcomix
+      foliate
+      activitywatch
+      inputs.nixOlde.packages.${system}.nix-olde
+      vscode
+      rustup
+      gnumake
+      gcc
+      temurin-bin-21
+      # thunderbird
+      # zoom-us slack
+      # jetbrains-toolbox
+      # drawio
+      # zotero # no aarch64
+      config.myPythonSet
+    ]
+  );
 
   systemd.timers."backup" = {
     wantedBy = [ "timers.target" ];
@@ -84,7 +98,13 @@ in
 
   systemd.services."backup" = {
     path = with pkgs; [
-      coreutils sqlite gitFull openssh curl rsync nettools
+      coreutils
+      sqlite
+      gitFull
+      openssh
+      curl
+      rsync
+      nettools
       config.myPythonSet
     ];
     serviceConfig = {
@@ -92,13 +112,20 @@ in
       ExecStart = "${pkgs.bash}/bin/bash ${home}/.config/dotfiles.safe/scripts/backup.sh";
       User = mainUser;
     };
-    environment =  {
+    environment = {
       SSH_AUTH_SOCK = "/run/user/1000/ssh-agent";
     };
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.availableKernelModules = [ "xhci_pci" "uhci_hcd" "virtio_pci" "usbhid" "usb_storage" "sr_mod" ];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "uhci_hcd"
+    "virtio_pci"
+    "usbhid"
+    "usb_storage"
+    "sr_mod"
+  ];
 
   ### Commented out to allow systemd automount ###
   # fileSystems."/boot" =
@@ -106,16 +133,24 @@ in
   #     fsType = "vfat";
   #     options = [ "fmask=0022" "dmask=0022" ];
   #   };
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/LINUX";
-      fsType = "btrfs";
-      options = [ "subvol=@nixos" "compress=zstd" "noatime" ];
-    };
-  fileSystems."/home" =
-    { device = "/dev/disk/by-label/LINUX";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" ];
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/LINUX";
+    fsType = "btrfs";
+    options = [
+      "subvol=@nixos"
+      "compress=zstd"
+      "noatime"
+    ];
+  };
+  fileSystems."/home" = {
+    device = "/dev/disk/by-label/LINUX";
+    fsType = "btrfs";
+    options = [
+      "subvol=@home"
+      "compress=zstd"
+      "noatime"
+    ];
+  };
 
   system.stateVersion = "24.05";
 }

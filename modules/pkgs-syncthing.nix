@@ -1,4 +1,9 @@
-{ config, pkgs, hostData, ... }:
+{
+  config,
+  pkgs,
+  hostData,
+  ...
+}:
 let
   inherit (hostData.users.mainuser) username;
 in

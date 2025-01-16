@@ -1,4 +1,11 @@
-{ config, lib, pkgs, hostData, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  hostData,
+  inputs,
+  ...
+}:
 {
   imports = [
     ../../modules/system-nix-common.nix
@@ -42,36 +49,56 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "thunderbolt"
+    "nvme"
+    "usbhid"
+    "sdhci_pci"
+  ];
 
-  environment.systemPackages = (with pkgs; [
-    firefox
-    (chromium.override {
-      enableWideVine = true;
-      commandLineArgs = [
-        "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
-        "--ignore-gpu-blocklist"
-        "--enable-zero-copy"
-      ];
-    })
-    thunderbird zotero libreoffice-qt-fresh
-    ffmpeg vlc
-    mcomix
-    foliate
-    zoom-us slack
-    obsidian fava
-    activitywatch
-    inputs.nixOlde.packages.${pkgs.system}.nix-olde
-    jetbrains-toolbox
-    vscode
-    gcc lldb temurin-bin-21
-    gnumake
-    drawio
-    (pkgs.python312.withPackages (ps: with ps; [
-        beancount notebook pandas
-        #vincenty folium numba
-    ]))
-  ]);
+  environment.systemPackages = (
+    with pkgs;
+    [
+      firefox
+      (chromium.override {
+        enableWideVine = true;
+        commandLineArgs = [
+          "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
+          "--ignore-gpu-blocklist"
+          "--enable-zero-copy"
+        ];
+      })
+      thunderbird
+      zotero
+      libreoffice-qt-fresh
+      ffmpeg
+      vlc
+      mcomix
+      foliate
+      zoom-us
+      slack
+      obsidian
+      fava
+      activitywatch
+      inputs.nixOlde.packages.${pkgs.system}.nix-olde
+      jetbrains-toolbox
+      vscode
+      gcc
+      lldb
+      temurin-bin-21
+      gnumake
+      drawio
+      (pkgs.python312.withPackages (
+        ps: with ps; [
+          beancount
+          notebook
+          pandas
+          #vincenty folium numba
+        ]
+      ))
+    ]
+  );
 
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/9efed530-afe0-4ef8-aee4-24910d168a34";
   ### Commented out to allow systemd automount ###
@@ -83,16 +110,24 @@
   #   { device = "/dev/disk/by-uuid/3280-5418";
   #     fsType = "vfat";
   #   };
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/06b5ee16-a040-465d-9e58-df9bc6c7329c";
-      fsType = "btrfs";
-      options = [ "subvol=@nixos" "compress=zstd" "noatime" ];
-    };
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/06b5ee16-a040-465d-9e58-df9bc6c7329c";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" ];
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/06b5ee16-a040-465d-9e58-df9bc6c7329c";
+    fsType = "btrfs";
+    options = [
+      "subvol=@nixos"
+      "compress=zstd"
+      "noatime"
+    ];
+  };
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/06b5ee16-a040-465d-9e58-df9bc6c7329c";
+    fsType = "btrfs";
+    options = [
+      "subvol=@home"
+      "compress=zstd"
+      "noatime"
+    ];
+  };
   swapDevices = [ ];
 
   system.stateVersion = "23.05";

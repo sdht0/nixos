@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     ../../modules/system-nix-common.nix
     ../../modules/system-nix-darwin.nix
@@ -12,10 +13,18 @@
   environment.systemPackages = with pkgs; [
     tmux
     gitFull
-    ripgrep fzf eza aha jq peco
-    (pkgs.python3.withPackages (ps: with ps; [
-        notebook pandas
-    ]))
+    ripgrep
+    fzf
+    eza
+    aha
+    jq
+    peco
+    (pkgs.python3.withPackages (
+      ps: with ps; [
+        notebook
+        pandas
+      ]
+    ))
   ];
   programs.zsh.enable = true;
   homebrew = {
@@ -28,9 +37,12 @@
     casks = [
       "zoom"
       "utm"
-      "rustrover" "visual-studio-code"
-      "firefox" "google-chrome"
-      "iterm2" "font-hack-nerd-font"
+      "rustrover"
+      "visual-studio-code"
+      "firefox"
+      "google-chrome"
+      "iterm2"
+      "font-hack-nerd-font"
     ];
   };
 

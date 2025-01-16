@@ -1,6 +1,12 @@
-{ config, lib, pkgs, modulesPath, ... }:
 {
-  imports = [ (modulesPath + "/profiles/qemu-guest.nix")];
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
+{
+  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
 }

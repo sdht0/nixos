@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.efiSysMountPoint = lib.mkDefault "/boot";

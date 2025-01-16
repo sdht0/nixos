@@ -21,12 +21,21 @@
 
   services.colord.enable = true;
 
-  environment.systemPackages = (with pkgs; [
-    libnotify xclip xdotool
-    libva-utils vulkan-tools vulkan-validation-layers glxinfo
-    qt6.qtimageformats
-  ]) ++ (with pkgs.kdePackages; [
-    yakuake plasma-disks kgamma
-  ]);
+  environment.systemPackages =
+    (with pkgs; [
+      libnotify
+      xclip
+      xdotool
+      libva-utils
+      vulkan-tools
+      vulkan-validation-layers
+      glxinfo
+      qt6.qtimageformats
+    ])
+    ++ (with pkgs.kdePackages; [
+      yakuake
+      plasma-disks
+      kgamma
+    ]);
   programs.kdeconnect.enable = true;
 }

@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = (with pkgs; [
-    bibtool texliveFull
-  ]);
+  environment.systemPackages = (
+    with pkgs;
+    [
+      bibtool
+      texliveFull
+    ]
+  );
 }

@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = (with pkgs; [
-    rustup cargo rustc
-  ]);
+  environment.systemPackages = (
+    with pkgs;
+    [
+      rustup
+      cargo
+      rustc
+    ]
+  );
 }

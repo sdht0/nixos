@@ -8,6 +8,7 @@
   powerManagement.cpuFreqGovernor = "powersave";
 
   environment.systemPackages = with pkgs; [
-    intel-gpu-tools libva-utils
+    intel-gpu-tools
+    libva-utils
   ];
 }

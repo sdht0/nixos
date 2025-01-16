@@ -30,5 +30,8 @@ let
   '';
 in
 {
-  environment.systemPackages = [ script script2 ];
+  environment.systemPackages = [
+    script
+    script2
+  ];
 }

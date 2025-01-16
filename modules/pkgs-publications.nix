@@ -1,10 +1,11 @@
 { config, pkgs, ... }:
 {
   myPythonPkgs = [
-      "notebook" "titlecase" "selenium" "bibtexparser"
+    "notebook"
+    "titlecase"
+    "selenium"
+    "bibtexparser"
   ];
 
-  environment.systemPackages = (with pkgs; [
-    chromedriver
-  ]);
+  environment.systemPackages = (with pkgs; [ chromedriver ]);
 }

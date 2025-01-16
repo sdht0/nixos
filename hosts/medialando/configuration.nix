@@ -1,4 +1,10 @@
-{ config, lib, pkgs, hostData, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  hostData,
+  ...
+}:
 let
   keyFile = "root.luks.bin";
 in
@@ -32,12 +38,19 @@ in
 
   myPythonVer = pkgs.python312;
   myPythonPkgs = [
-      "pip" "beautifulsoup4" "dateutil" "lxml" "requests"
+    "pip"
+    "beautifulsoup4"
+    "dateutil"
+    "lxml"
+    "requests"
   ];
 
   environment.systemPackages = with pkgs; [
-    chromium yt-dlp deno
-    rclone getmail6
+    chromium
+    yt-dlp
+    deno
+    rclone
+    getmail6
     config.myPythonSet
   ];
 
@@ -51,7 +64,12 @@ in
   };
 
   systemd.services."mullvad-reset" = {
-    path = with pkgs; [ mullvad systemd coreutils gnugrep ];
+    path = with pkgs; [
+      mullvad
+      systemd
+      coreutils
+      gnugrep
+    ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/mullvad-reset.sh";
@@ -68,7 +86,16 @@ in
   };
 
   systemd.services."backup-root" = {
-    path = with pkgs; [ bash coreutils gnutar gnupg zstd  gitFull rclone getmail6 ];
+    path = with pkgs; [
+      bash
+      coreutils
+      gnutar
+      gnupg
+      zstd
+      gitFull
+      rclone
+      getmail6
+    ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-gitea.sh";
@@ -85,7 +112,13 @@ in
   };
 
   systemd.services."backup" = {
-    path = with pkgs; [ coreutils gawk gitFull rclone getmail6 ];
+    path = with pkgs; [
+      coreutils
+      gawk
+      gitFull
+      rclone
+      getmail6
+    ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup.sh";
@@ -94,7 +127,12 @@ in
   };
 
   # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "nvme"
+    "usb_storage"
+    "sd_mod"
+  ];
 
   services.logind.lidSwitch = "ignore";
 
@@ -102,22 +140,32 @@ in
     device = "/dev/disk/by-uuid/579f8166-d13f-4128-abf7-a19d845bc82a";
     keyFile = "/${keyFile}";
   };
-  boot.initrd.secrets = { "/${keyFile}" = /var/lib/secrets/${keyFile}; };
+  boot.initrd.secrets = {
+    "/${keyFile}" = /var/lib/secrets/${keyFile};
+  };
   ### Commented out to allow systemd automount ###
   # fileSystems."/boot" =
   #   { device = "/dev/disk/by-uuid/D935-10CE";
   #     fsType = "vfat";
   #   };
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6773e347-eee3-4078-980d-542ef28b9c4e";
-      fsType = "btrfs";
-      options = [ "subvol=@nixos" "compress=zstd" "noatime" ];
-    };
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/6773e347-eee3-4078-980d-542ef28b9c4e";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" ];
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/6773e347-eee3-4078-980d-542ef28b9c4e";
+    fsType = "btrfs";
+    options = [
+      "subvol=@nixos"
+      "compress=zstd"
+      "noatime"
+    ];
+  };
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/6773e347-eee3-4078-980d-542ef28b9c4e";
+    fsType = "btrfs";
+    options = [
+      "subvol=@home"
+      "compress=zstd"
+      "noatime"
+    ];
+  };
   swapDevices = [ ];
 
   system.stateVersion = "23.05";

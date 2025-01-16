@@ -1,13 +1,16 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options = {
-    myPythonVer = lib.mkOption {
-      type = lib.types.package;
-    };
+    myPythonVer = lib.mkOption { type = lib.types.package; };
     myPythonPkgs = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [];
+      default = [ ];
     };
     myPythonSet = lib.mkOption {
       type = lib.types.package;

@@ -1,4 +1,9 @@
-{ config, pkgs, hostData, ... }:
+{
+  config,
+  pkgs,
+  hostData,
+  ...
+}:
 
 {
   services.sshd.enable = true;

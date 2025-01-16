@@ -22,58 +22,64 @@
     };
   };
 
-  outputs = { self, ... }@inputs:
-  let
-    lib = inputs.nixpkgs.lib;
+  outputs =
+    { self, ... }@inputs:
+    let
+      lib = inputs.nixpkgs.lib;
 
-    mainuser = rec {
-      username = "artimaeus";
-      uid = 1000;
-      gid = uid;
-    };
-
-    hosts = {
-      niximaeus = {
-        system = "x86_64-linux";
-        timezone = "America/Toronto";
-        locale = "en_CA.UTF-8";
-        users = { inherit mainuser; };
+      mainuser = rec {
+        username = "artimaeus";
+        uid = 1000;
+        gid = uid;
       };
-      macimaeus-vm = {
-        system = "aarch64-linux";
-        timezone = "America/Toronto";
-        locale = "en_CA.UTF-8";
-        users = { inherit mainuser; };
-      };
-      medialando =  {
-        system = "x86_64-linux";
-        timezone = "America/Toronto";
-        locale = "en_US.UTF-8";
-        users = { inherit mainuser; };
-      };
-    };
 
-    hostsDarwin = {
-      macimaeus = {
-        system = "aarch64-darwin";
+      hosts = {
+        niximaeus = {
+          system = "x86_64-linux";
+          timezone = "America/Toronto";
+          locale = "en_CA.UTF-8";
+          users = { inherit mainuser; };
+        };
+        macimaeus-vm = {
+          system = "aarch64-linux";
+          timezone = "America/Toronto";
+          locale = "en_CA.UTF-8";
+          users = { inherit mainuser; };
+        };
+        medialando = {
+          system = "x86_64-linux";
+          timezone = "America/Toronto";
+          locale = "en_US.UTF-8";
+          users = { inherit mainuser; };
+        };
       };
-    };
 
-    f_hmUserConfigs =
-      hostname:
-        user: userData:
-          lib.nameValuePair
-          userData.username
-          (import ./hosts/${hostname}/hm-${user}.nix { inherit (userData) username; });
+      hostsDarwin = {
+        macimaeus = {
+          system = "aarch64-darwin";
+        };
+      };
 
-    f_nixosConfigs =
-      hostname: hostData:
+      f_hmUserConfigs =
+        hostname: user: userData:
+        lib.nameValuePair userData.username (
+          import ./hosts/${hostname}/hm-${user}.nix { inherit (userData) username; }
+        );
+
+      f_nixosConfigs =
+        hostname: hostData:
         lib.nixosSystem {
           system = hostData.system;
-          specialArgs = { hostData = hostData // { inherit hostname; }; inherit inputs; };
+          specialArgs = {
+            hostData = hostData // {
+              inherit hostname;
+            };
+            inherit inputs;
+          };
           modules = [
             ./hosts/${hostname}/configuration.nix
-            inputs.homeManager.nixosModules.home-manager {
+            inputs.homeManager.nixosModules.home-manager
+            {
               home-manager = {
                 users = lib.mapAttrs' (f_hmUserConfigs hostname) hostData.users;
                 extraSpecialArgs = { inherit (hostData) users; };
@@ -81,24 +87,29 @@
                 useUserPackages = true;
               };
             }
-            ({ lib, config, pkgs, ... }@args: { nixpkgs.overlays = import ./overlays args; })
+            ./overlays
           ];
         };
 
-    f_darwinConfigs =
-      hostname: hostData:
+      f_darwinConfigs =
+        hostname: hostData:
         inputs.nix-darwin.lib.darwinSystem {
           system = hostData.system;
-          specialArgs = { hostData = hostData // { inherit hostname; }; inherit inputs; };
+          specialArgs = {
+            hostData = hostData // {
+              inherit hostname;
+            };
+            inherit inputs;
+          };
           modules = [
             ./hosts/${hostname}/configuration.nix
-            ({ lib, config, pkgs, ... }@args: { nixpkgs.overlays = import ./overlays args; })
+            ./overlays
           ];
         };
-  in
-  {
-    nixosConfigurations =  lib.mapAttrs f_nixosConfigs hosts;
+    in
+    {
+      nixosConfigurations = lib.mapAttrs f_nixosConfigs hosts;
 
-    darwinConfigurations =  lib.mapAttrs f_darwinConfigs hostsDarwin;
-  };
+      darwinConfigurations = lib.mapAttrs f_darwinConfigs hostsDarwin;
+    };
 }
