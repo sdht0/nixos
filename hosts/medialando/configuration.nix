@@ -30,12 +30,15 @@ in
     ../../modules/pkgs-syncthing.nix
   ];
 
+  myPythonVer = pkgs.python312;
+  myPythonPkgs = [
+      "pip" "beautifulsoup4" "dateutil" "lxml" "requests"
+  ];
+
   environment.systemPackages = with pkgs; [
     chromium yt-dlp deno
     rclone getmail6
-    (pkgs.python3.withPackages (ps: with ps;
-      [ pip beautifulsoup4 dateutil lxml requests ])
-    )
+    config.myPythonSet
   ];
 
   systemd.timers."mullvad-reset" = {
@@ -59,13 +62,13 @@ in
   systemd.timers."backup-root" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "10:00";
+      OnCalendar = "16:00";
       Unit = "backup-root.service";
     };
   };
 
   systemd.services."backup-root" = {
-    path = with pkgs; [ coreutils gitFull rclone getmail6 ];
+    path = with pkgs; [ bash coreutils gnutar gnupg zstd  gitFull rclone getmail6 ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-gitea.sh";
@@ -82,7 +85,7 @@ in
   };
 
   systemd.services."backup" = {
-    path = with pkgs; [ coreutils gitFull rclone getmail6 ];
+    path = with pkgs; [ coreutils gawk gitFull rclone getmail6 ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup.sh";

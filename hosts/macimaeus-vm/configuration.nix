@@ -42,6 +42,7 @@ in
     # ../../modules/pkgs-latex.nix
   ];
 
+  myPythonVer = pkgs.python312;
   myPythonPkgs = [
       "pandas"
       #vincenty folium numba
@@ -70,13 +71,13 @@ in
     # jetbrains-toolbox
     # drawio
     # zotero # no aarch64
-    (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps))
+    config.myPythonSet
   ]);
 
   systemd.timers."backup" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "15,22:00";
+      OnCalendar = "11,15,22:00";
       Unit = "backup.service";
     };
   };
@@ -84,7 +85,7 @@ in
   systemd.services."backup" = {
     path = with pkgs; [
       coreutils sqlite gitFull openssh curl rsync nettools
-      (python312.withPackages (ps: lib.attrsets.attrVals config.myPythonPkgs ps))
+      config.myPythonSet
     ];
     serviceConfig = {
       Type = "oneshot";
