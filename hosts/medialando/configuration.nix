@@ -36,6 +36,7 @@ in
     ../../modules/pkgs-common.nix
     ../../modules/pkgs-docker.nix
     ../../modules/pkgs-syncthing.nix
+    ../../modules/pkgs-xscripts.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -83,11 +84,10 @@ in
       zstd
       gitFull
       rclone
-      getmail6
     ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-gitea.sh";
+      ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-forejo.sh";
       User = "root";
     };
   };

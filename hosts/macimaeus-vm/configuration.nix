@@ -48,10 +48,6 @@ in
     # ../../modules/pkgs-latex.nix
   ];
 
-  myPythonPkgs = [
-    #vincenty folium numba
-  ];
-
   environment.systemPackages = (
     with pkgs;
     [
