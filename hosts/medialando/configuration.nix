@@ -70,7 +70,7 @@ in
   systemd.timers."backup-root" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "16:00";
+      OnCalendar = "23:00";
       Unit = "backup-root.service";
     };
   };
@@ -95,7 +95,7 @@ in
   systemd.timers."backup" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "11:00";
+      OnCalendar = "06:00";
       Unit = "backup.service";
     };
   };

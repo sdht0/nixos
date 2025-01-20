@@ -84,7 +84,7 @@ in
   systemd.timers."backup" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "11,15,22:00";
+      OnCalendar = "11,15,19,22:00";
       Unit = "backup.service";
     };
   };
