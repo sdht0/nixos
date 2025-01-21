@@ -13,5 +13,6 @@ in
     enable = true;
     user = username;
     dataDir = "/home/${username}";
+    configDir = "/home/${username}/.config/dotfiles.safe/syncthing";
   };
 }
