@@ -55,6 +55,6 @@
 
   environment.systemPackages = with pkgs; [
     rclone
-    getmail6
+    isync
   ];
 }

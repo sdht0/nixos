@@ -45,7 +45,7 @@
       gawk
       gitFull
       rclone
-      getmail6
+      isync
     ];
     serviceConfig = {
       Type = "oneshot";
