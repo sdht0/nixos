@@ -6,6 +6,7 @@
 }:
 let
   inherit (hostData.users.mainuser) username;
+  configDir = "/home/${username}/.config/dotfiles.safe/syncthing";
 in
 {
   environment.systemPackages = with pkgs; [ syncthing ];
@@ -13,6 +14,11 @@ in
     enable = true;
     user = username;
     dataDir = "/home/${username}";
-    configDir = "/home/${username}/.config/dotfiles.safe/syncthing";
+    inherit configDir;
+  };
+  systemd.services.syncthing = {
+    unitConfig = {
+      ConditionPathExists = configDir;
+    };
   };
 }
