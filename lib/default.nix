@@ -31,8 +31,10 @@ rec {
     '';
   };
 
-  f_allPathsInDir = dir:
-    lib.attrsets.mapAttrsToList
-      (name: _: dir + "/${name}")
-      (builtins.readDir dir);
+  f_filesInDir = dir:
+    lib.optionals
+      (builtins.pathExists dir)
+      (lib.attrsets.mapAttrsToList
+        (name: _: dir + "/${name}")
+        (builtins.readDir dir));
 }

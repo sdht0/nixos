@@ -77,27 +77,23 @@
             };
             inherit lib' inputs;
           };
-          modules =
-            [
-              ./hosts/${hostname}/configuration.nix
-              ./hosts/${hostname}/hardware.nix
-              ./overlays
-              inputs.homeManager.nixosModules.home-manager
-              {
-                home-manager = {
-                  users = lib.mapAttrs' (f_hmUserConfigs hostname) hostData.users;
-                  extraSpecialArgs = {
-                    inherit (hostData) users;
-                    inherit lib';
-                  };
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+            ./hosts/${hostname}/hardware.nix
+            ./overlays
+            inputs.homeManager.nixosModules.home-manager
+            {
+              home-manager = {
+                users = lib.mapAttrs' (f_hmUserConfigs hostname) hostData.users;
+                extraSpecialArgs = {
+                  inherit (hostData) users;
+                  inherit lib';
                 };
-              }
-            ]
-            ++ lib.optionals (builtins.pathExists ./hosts/${hostname}/modules) (
-              lib'.f_allPathsInDir ./hosts/${hostname}/modules
-            );
+                useGlobalPkgs = true;
+                useUserPackages = true;
+              };
+            }
+          ] ++ lib'.f_filesInDir ./hosts/${hostname}/modules;
         };
 
       f_darwinConfigs =
