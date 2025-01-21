@@ -34,12 +34,6 @@
       };
 
       hosts = {
-        niximaeus = {
-          system = "x86_64-linux";
-          timezone = "America/Toronto";
-          locale = "en_CA.UTF-8";
-          users = { inherit mainuser; };
-        };
         macimaeus-vm = {
           system = "aarch64-linux";
           timezone = "America/Toronto";
@@ -50,6 +44,12 @@
           system = "x86_64-linux";
           timezone = "America/Toronto";
           locale = "en_US.UTF-8";
+          users = { inherit mainuser; };
+        };
+        medialandoo = {
+          system = "x86_64-linux";
+          timezone = "America/Toronto";
+          locale = "en_CA.UTF-8";
           users = { inherit mainuser; };
         };
       };

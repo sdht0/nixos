@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  #services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.videoDrivers = [ "modesetting" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
   hardware.nvidia.prime = {
     offload.enable = true;
