@@ -23,9 +23,10 @@
   };
 
   outputs =
-    { self, ... }@inputs:
+    { ... }@inputs:
     let
       lib = inputs.nixpkgs.lib;
+      lib' = import ./lib { inherit (inputs.nixpkgs) lib; };
 
       mainuser = rec {
         username = "artimaeus";
@@ -74,21 +75,29 @@
             hostData = hostData // {
               inherit hostname;
             };
-            inherit inputs;
+            inherit lib' inputs;
           };
-          modules = [
-            ./hosts/${hostname}/configuration.nix
-            inputs.homeManager.nixosModules.home-manager
-            {
-              home-manager = {
-                users = lib.mapAttrs' (f_hmUserConfigs hostname) hostData.users;
-                extraSpecialArgs = { inherit (hostData) users; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-              };
-            }
-            ./overlays
-          ];
+          modules =
+            [
+              ./hosts/${hostname}/configuration.nix
+              ./hosts/${hostname}/hardware.nix
+              ./overlays
+              inputs.homeManager.nixosModules.home-manager
+              {
+                home-manager = {
+                  users = lib.mapAttrs' (f_hmUserConfigs hostname) hostData.users;
+                  extraSpecialArgs = {
+                    inherit (hostData) users;
+                    inherit lib';
+                  };
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                };
+              }
+            ]
+            ++ lib.optionals (builtins.pathExists ./hosts/${hostname}/modules) (
+              lib'.f_allPathsInDir ./hosts/${hostname}/modules
+            );
         };
 
       f_darwinConfigs =

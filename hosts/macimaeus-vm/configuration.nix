@@ -41,9 +41,6 @@
     ../../modules/pkgs-beancount.nix
     ../../modules/pkgs-publications.nix
     # ../../modules/pkgs-latex.nix
-
-    ./hardware.nix
-    ./backups-timer.nix
   ];
 
   environment.systemPackages = (

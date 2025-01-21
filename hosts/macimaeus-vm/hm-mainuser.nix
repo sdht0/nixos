@@ -2,11 +2,11 @@
 {
   config,
   lib,
+  lib',
   pkgs,
   ...
 }:
 let
-  lib' = import ../../lib { inherit config lib; };
   dotfiles = ".config/dotfiles";
 in
 {
@@ -14,7 +14,7 @@ in
   home.homeDirectory = "/home/${username}";
 
   home.file = (
-    lib'.f_linkFiles (
+    lib'.f_linkFiles config.lib.file "/home/${username}" (
       [
         {
           link = ".config/autostart/ssh-add.sh.desktop";
