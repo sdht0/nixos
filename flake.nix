@@ -73,7 +73,7 @@
             home.homeDirectory = "/home/${username}";
 
             programs.home-manager.enable = true;
-            home.stateVersion = "23.05";
+            home.stateVersion = "24.11";
 
             imports = lib'.f_filesInDir ./hosts/${hostname}/hm-${userId};
           }

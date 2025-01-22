@@ -4,7 +4,7 @@ rec {
 
   # Creates links from a list [{ link = ...; dest = ...; } ...]
   f_linkFiles =
-    file: homeDirectory: list:
+    fileModule: homeDirectory: list:
     let
       f_map =
         { link, dest }:
@@ -13,7 +13,7 @@ rec {
           prefix = if (lib.hasPrefix "/" dest) then "" else "${homeDirectory}/";
         in
         {
-          ${link}.source = file.mkOutOfStoreSymlink "${prefix}${dest}";
+          ${link}.source = fileModule.mkOutOfStoreSymlink "${prefix}${dest}";
         };
     in
     f_deepMerge (map f_map list);
