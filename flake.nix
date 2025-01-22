@@ -62,9 +62,21 @@
       };
 
       f_hmUserConfigs =
-        hostname: user: userData:
-        lib.nameValuePair userData.username (
-          import ./hosts/${hostname}/hm-${user}.nix { inherit (userData) username; }
+        hostname: userId: userData:
+        let
+          username = userData.username;
+        in
+        lib.nameValuePair username (
+          { ... }:
+          {
+            home.username = username;
+            home.homeDirectory = "/home/${username}";
+
+            programs.home-manager.enable = true;
+            home.stateVersion = "23.05";
+
+            imports = lib'.f_filesInDir ./hosts/${hostname}/hm-${userId};
+          }
         );
 
       f_nixosConfigs =

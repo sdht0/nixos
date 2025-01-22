@@ -1,18 +1,15 @@
-{ username }:
 {
   config,
   lib,
   lib',
-  pkgs,
+  users,
   ...
 }:
 let
+  username = users.mainuser.username;
   dotfiles = ".config/dotfiles";
 in
 {
-  home.username = username;
-  home.homeDirectory = "/home/${username}";
-
   home.file = (
     lib'.f_linkFiles config.lib.file "/home/${username}" (
       [
@@ -47,7 +44,4 @@ in
       ])
     )
   );
-
-  programs.home-manager.enable = true;
-  home.stateVersion = "23.05";
 }
