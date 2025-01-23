@@ -2,11 +2,10 @@
   config,
   lib,
   lib',
-  users,
   ...
 }:
 let
-  username = users.mainuser.username;
+  username = config.home.username;
   dotfiles = ".config/dotfiles";
 in
 {
@@ -38,7 +37,6 @@ in
       ]
       ++ (map lib'.f_autostartApplication [
         "org.kde.yakuake.desktop"
-        "solaar.desktop"
         "aw-qt.desktop"
         "mullvad-vpn.desktop"
       ])

@@ -36,5 +36,7 @@ rec {
       (builtins.pathExists dir)
       (lib.attrsets.mapAttrsToList
         (name: _: dir + "/${name}")
-        (builtins.readDir dir));
+        (lib.filterAttrs
+          (n: _: lib.hasSuffix ".nix" n)
+          (builtins.readDir dir)));
 }

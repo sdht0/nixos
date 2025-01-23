@@ -10,6 +10,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasmaManager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "homeManager";
+    };
     nixOlde = {
       url = "github:trofi/nix-olde";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -70,12 +75,9 @@
           { ... }:
           {
             home.username = username;
-            home.homeDirectory = "/home/${username}";
-
-            programs.home-manager.enable = true;
-            home.stateVersion = "24.11";
-
-            imports = lib'.f_filesInDir ./hosts/${hostname}/hm-${userId};
+            imports = [
+              ./hosts/${hostname}/hm-configuration.nix
+            ] ++ lib'.f_filesInDir ./hosts/${hostname}/hm-${userId};
           }
         );
 
@@ -103,6 +105,7 @@
                 };
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                sharedModules = [ inputs.plasmaManager.homeManagerModules.plasma-manager ];
               };
             }
           ] ++ lib'.f_filesInDir ./hosts/${hostname}/modules;
