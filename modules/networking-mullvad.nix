@@ -27,14 +27,14 @@ in
     '';
   };
 
-  environment.etc = lib'.f_deepMerge [
-    (lib'.f_extraScript "mullvadLogin" ''
+  environment.etc = lib'.deepMerge_f [
+    (lib'.extraScript_f "mullvadLogin" ''
       mullvad account login
     '')
-    (lib'.f_extraScript "mullvadSetupRelay" ''
+    (lib'.extraScript_f "mullvadSetupRelay" ''
       mullvad relay set location "$@"
     '')
-    (lib'.f_extraScript "mullvadSetup" ''
+    (lib'.extraScript_f "mullvadSetup" ''
       mullvad relay set tunnel-protocol wireguard
       mullvad auto-connect set on
       mullvad lan set allow

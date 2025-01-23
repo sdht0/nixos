@@ -33,7 +33,7 @@
       lib = inputs.nixpkgs.lib;
       lib' = import ./lib { inherit (inputs.nixpkgs) lib; };
 
-      f_hmUserConfigs =
+      hmUserConfigs_f =
         hostname: userId: userData:
         let
           username = userData.username;
@@ -44,11 +44,11 @@
             home.username = username;
             imports = [
               ./hosts/${hostname}/hm-configuration.nix
-            ] ++ lib'.f_filesInDir ./hosts/${hostname}/hm-${userId};
+            ] ++ lib'.filesInDir_f ./hosts/${hostname}/hm-${userId};
           }
         );
 
-      f_nixosConfigs =
+      nixosConfigs_f =
         hostname: hostData:
         lib.nixosSystem {
           system = hostData.system;
@@ -65,7 +65,7 @@
             inputs.homeManager.nixosModules.home-manager
             {
               home-manager = {
-                users = lib.mapAttrs' (f_hmUserConfigs hostname) hostData.users;
+                users = lib.mapAttrs' (hmUserConfigs_f hostname) hostData.users;
                 extraSpecialArgs = {
                   inherit (hostData) users;
                   inherit lib';
@@ -75,10 +75,10 @@
                 sharedModules = [ inputs.plasmaManager.homeManagerModules.plasma-manager ];
               };
             }
-          ] ++ lib'.f_filesInDir ./hosts/${hostname}/modules;
+          ] ++ lib'.filesInDir_f ./hosts/${hostname}/modules;
         };
 
-      f_darwinConfigs =
+      darwinConfigs_f =
         hostname: hostData:
         inputs.nix-darwin.lib.darwinSystem {
           system = hostData.system;
@@ -94,12 +94,12 @@
           ];
         };
 
-      hosts = lib'.f_hostsData false;
-      hostsDarwin = lib'.f_hostsData true;
+      hosts = lib'.hostsData_f false;
+      hostsDarwin = lib'.hostsData_f true;
     in
     {
-      nixosConfigurations = lib.mapAttrs f_nixosConfigs hosts;
+      nixosConfigurations = lib.mapAttrs nixosConfigs_f hosts;
 
-      darwinConfigurations = lib.mapAttrs f_darwinConfigs hostsDarwin;
+      darwinConfigurations = lib.mapAttrs darwinConfigs_f hostsDarwin;
     };
 }

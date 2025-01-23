@@ -11,7 +11,7 @@ let
 in
 {
   home.file = (
-    lib'.f_linkFiles config.lib.file "/home/${username}" [
+    lib'.linkFiles_f config.lib.file "/home/${username}" [
       {
         link = ".ssh/authorized_hosts";
         dest = "${dotfiles}.safe/ssh/authorized_hosts";

@@ -10,7 +10,7 @@ let
 in
 {
   home.file = (
-    lib'.f_linkFiles config.lib.file "/home/${username}" (
+    lib'.linkFiles_f config.lib.file "/home/${username}" (
       [
         {
           link = ".config/autostart/ssh-add.sh.desktop";
@@ -35,7 +35,7 @@ in
           dest = "${dotfiles}.safe/apps/ff2nix.desktop";
         }
       ]
-      ++ (map lib'.f_autostartApplication [
+      ++ (map lib'.autostartApplication_f [
         "org.kde.yakuake.desktop"
         "aw-qt.desktop"
         "mullvad-vpn.desktop"

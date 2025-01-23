@@ -1,9 +1,9 @@
 { lib }:
 rec {
-  f_deepMerge = list: builtins.foldl' (merged: new: lib.recursiveUpdate merged new) { } list;
+  deepMerge_f = list: builtins.foldl' (merged: new: lib.recursiveUpdate merged new) { } list;
 
   # Creates links from a list [{ link = ...; dest = ...; } ...]
-  f_linkFiles =
+  linkFiles_f =
     fileModule: homeDirectory: list:
     let
       f_map =
@@ -16,14 +16,14 @@ rec {
           ${link}.source = fileModule.mkOutOfStoreSymlink "${prefix}${dest}";
         };
     in
-    f_deepMerge (map f_map list);
+    deepMerge_f (map f_map list);
 
-  f_autostartApplication = app: {
+  autostartApplication_f = app: {
     link = ".config/autostart/${app}";
     dest = "/run/current-system/sw/share/applications/${app}";
   };
 
-  f_extraScript = name: text: {
+  extraScript_f = name: text: {
     "extra-setup/${name}".text = ''
       toRun() {
         ${text}
@@ -31,7 +31,7 @@ rec {
     '';
   };
 
-  f_filesInDir =
+  filesInDir_f =
     dir:
     lib.optionals (builtins.pathExists dir) (
       lib.attrsets.mapAttrsToList (name: _: dir + "/${name}") (
@@ -39,7 +39,7 @@ rec {
       )
     );
 
-  f_hostsData =
+  hostsData_f =
     isDarwin:
     lib.filterAttrs (_: hostData: (hostData.isDarwin or false) == isDarwin) (
       lib.mapAttrs (hostname: _: import ../hosts/${hostname}/host-data.nix) (builtins.readDir ../hosts)
