@@ -31,12 +31,17 @@ rec {
     '';
   };
 
-  f_filesInDir = dir:
-    lib.optionals
-      (builtins.pathExists dir)
-      (lib.attrsets.mapAttrsToList
-        (name: _: dir + "/${name}")
-        (lib.filterAttrs
-          (n: _: lib.hasSuffix ".nix" n)
-          (builtins.readDir dir)));
+  f_filesInDir =
+    dir:
+    lib.optionals (builtins.pathExists dir) (
+      lib.attrsets.mapAttrsToList (name: _: dir + "/${name}") (
+        lib.filterAttrs (n: _: lib.hasSuffix ".nix" n) (builtins.readDir dir)
+      )
+    );
+
+  f_hostsData =
+    isDarwin:
+    lib.filterAttrs (_: hostData: (hostData.isDarwin or false) == isDarwin) (
+      lib.mapAttrs (hostname: _: import ../hosts/${hostname}/host-data.nix) (builtins.readDir ../hosts)
+    );
 }

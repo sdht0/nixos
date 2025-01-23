@@ -94,12 +94,8 @@
           ];
         };
 
-      hosts = lib.filterAttrs (_: hostData: !(hostData.isDarwin or false)) (
-        lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (builtins.readDir ./hosts)
-      );
-      hostsDarwin = lib.filterAttrs (_: hostData: hostData.isDarwin or false) (
-        lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (builtins.readDir ./hosts)
-      );
+      hosts = lib'.f_hostsData false;
+      hostsDarwin = lib'.f_hostsData true;
     in
     {
       nixosConfigurations = lib.mapAttrs f_nixosConfigs hosts;
