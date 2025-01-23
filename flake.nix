@@ -91,7 +91,7 @@
           modules = [
             ./hosts/${hostname}/configuration.nix
             ./overlays
-          ];
+          ] ++ lib'.filesInDir_f ./hosts/${hostname}/modules;
         };
 
       hosts = lib'.hostsData_f false;
