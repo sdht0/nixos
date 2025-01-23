@@ -4,7 +4,6 @@
     ../../modules/system-nix-common.nix
     ../../modules/system-nix-darwin.nix
     ../../modules/pkgs-nixdev.nix
-    ./work.nix
   ];
 
   security.pam.enableSudoTouchIdAuth = true;

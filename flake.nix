@@ -33,39 +33,6 @@
       lib = inputs.nixpkgs.lib;
       lib' = import ./lib { inherit (inputs.nixpkgs) lib; };
 
-      mainuser = rec {
-        username = "artimaeus";
-        uid = 1000;
-        gid = uid;
-      };
-
-      hosts = {
-        macimaeus-vm = {
-          system = "aarch64-linux";
-          timezone = "America/Toronto";
-          locale = "en_CA.UTF-8";
-          users = { inherit mainuser; };
-        };
-        medialando = {
-          system = "x86_64-linux";
-          timezone = "America/Toronto";
-          locale = "en_US.UTF-8";
-          users = { inherit mainuser; };
-        };
-        medialandoo = {
-          system = "x86_64-linux";
-          timezone = "America/Toronto";
-          locale = "en_CA.UTF-8";
-          users = { inherit mainuser; };
-        };
-      };
-
-      hostsDarwin = {
-        macimaeus = {
-          system = "aarch64-darwin";
-        };
-      };
-
       f_hmUserConfigs =
         hostname: userId: userData:
         let
@@ -126,6 +93,13 @@
             ./overlays
           ];
         };
+
+      hosts = lib.filterAttrs (_: hostData: !(hostData.isDarwin or false)) (
+        lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (builtins.readDir ./hosts)
+      );
+      hostsDarwin = lib.filterAttrs (_: hostData: hostData.isDarwin or false) (
+        lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (builtins.readDir ./hosts)
+      );
     in
     {
       nixosConfigurations = lib.mapAttrs f_nixosConfigs hosts;
