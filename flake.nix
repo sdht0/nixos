@@ -42,9 +42,9 @@
           { ... }:
           {
             home.username = username;
-            imports = [
-              ./hosts/${hostname}/hm-configuration.nix
-            ] ++ lib'.filesInDir_f ./hosts/${hostname}/hm-${userId};
+            imports =
+              (lib'.filesInDir_f ./hosts/${hostname}/hm-common)
+              ++ (lib'.filesInDir_f ./hosts/${hostname}/hm-${userId});
           }
         );
 
@@ -58,9 +58,7 @@
             };
             inherit lib' inputs;
           };
-          modules = [
-            ./hosts/${hostname}/configuration.nix
-            ./hosts/${hostname}/hardware.nix
+          modules = (lib'.filesInDir_f ./hosts/${hostname}/modules) ++ [
             ./overlays
             inputs.homeManager.nixosModules.home-manager
             {
@@ -75,7 +73,7 @@
                 sharedModules = [ inputs.plasmaManager.homeManagerModules.plasma-manager ];
               };
             }
-          ] ++ lib'.filesInDir_f ./hosts/${hostname}/modules;
+          ];
         };
 
       darwinConfigs_f =
