@@ -28,6 +28,7 @@
     gitFull
     lazygit
     bc
+    gptfdisk
     aha
     jq
     peco
