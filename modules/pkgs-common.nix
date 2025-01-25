@@ -38,6 +38,7 @@
     killall
     dmidecode
     sqlite
+    unzip
   ];
   programs.gnupg.agent.enable = true;
   programs.nano.enable = false;

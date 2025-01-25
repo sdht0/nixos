@@ -46,6 +46,7 @@
       gitFull
       rclone
       isync
+      curl
     ];
     serviceConfig = {
       Type = "oneshot";
