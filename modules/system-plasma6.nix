@@ -36,6 +36,7 @@
       yakuake
       plasma-disks
       kgamma
+      kconfig
     ]);
   programs.kdeconnect.enable = true;
 }

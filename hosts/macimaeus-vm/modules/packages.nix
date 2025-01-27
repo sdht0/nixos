@@ -18,19 +18,23 @@
         #   "--enable-zero-copy"
         # ];
       })
+
       libreoffice-qt
       obsidian
+      activitywatch
+
       ffmpeg
       vlc
+
       mcomix
       foliate
-      activitywatch
+
       inputs.nixOlde.packages.${system}.nix-olde
+
       vscode
       rustup
-      gnumake
-      gcc
       temurin-bin-21
+
       # thunderbird
       # zoom-us slack
       # jetbrains-toolbox

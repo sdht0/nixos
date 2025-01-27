@@ -10,49 +10,23 @@
     enable = true;
     shortcuts = {
       "ksmserver"."Log Out" = "Ctrl+Alt+Del";
-      "kwin"."Grid View" = "Meta+G";
-      "kwin"."Show Desktop" = "Meta+D";
-      "kwin"."Switch One Desktop Down" = "Meta+Ctrl+Down";
-      "kwin"."Switch One Desktop Up" = "Meta+Ctrl+Up";
-      "kwin"."Switch One Desktop to the Left" = "Meta+Ctrl+Left";
-      "kwin"."Switch One Desktop to the Right" = "Meta+Ctrl+Right";
-      "kwin"."Switch Window Down" = "Meta+Alt+Down";
-      "kwin"."Switch Window Left" = "Meta+Alt+Left";
-      "kwin"."Switch Window Right" = "Meta+Alt+Right";
       "kwin"."Switch Window Up" = "Meta+Alt+Up";
-      "kwin"."Switch to Desktop 1" = [
-        "Ctrl+F1"
-        "Meta+1,Ctrl+F1,Switch to Desktop 1"
-      ];
-      "kwin"."Switch to Desktop 2" = [
-        "Ctrl+F2"
-        "Meta+2,Ctrl+F2,Switch to Desktop 2"
-      ];
-      "kwin"."Switch to Desktop 3" = [
-        "Ctrl+F3"
-        "Meta+3,Ctrl+F3,Switch to Desktop 3"
-      ];
-      "kwin"."Switch to Desktop 4" = [
-        "Ctrl+F4"
-        "Meta+4,Ctrl+F4,Switch to Desktop 4"
-      ];
-      "kwin"."Switch to Next Desktop" = "Meta+`,,Switch to Next Desktop";
-      "kwin"."Switch to Previous Desktop" = "Meta+~,,Switch to Previous Desktop";
-      "kwin"."Walk Through Windows" = "Alt+Tab";
-      "kwin"."Walk Through Windows (Reverse)" = "Alt+Shift+Tab";
-      "kwin"."Walk Through Windows of Current Application" = "Alt+`";
-      "kwin"."Walk Through Windows of Current Application (Reverse)" = "Alt+~";
-      "kwin"."Window Maximize" = "Meta+PgUp";
-      "kwin"."Window Minimize" = "Meta+PgDown";
-      "kwin"."Window Quick Tile Bottom" = "Meta+Down";
-      "kwin"."Window Quick Tile Left" = "Meta+Left";
-      "kwin"."Window Quick Tile Right" = "Meta+Right";
-      "kwin"."Window Quick Tile Top" = "Meta+Up";
-      "kwin"."Window to Desktop 1" = "Meta+!,,Window to Desktop 1";
-      "kwin"."Window to Desktop 2" = "Meta+@,,Window to Desktop 2";
-      "kwin"."Window to Desktop 3" = "Meta+#,,Window to Desktop 3";
-      "kwin"."Window to Desktop 4" = "Meta+$,,Window to Desktop 4";
-      "yakuake"."toggle-window-state" = "Meta+E,F12,Open/Retract Yakuake";
+      "kwin"."Switch to Desktop 1" = "Meta+1";
+      "kwin"."Switch to Desktop 2" = "Meta+2";
+      "kwin"."Switch to Desktop 3" = "Meta+3";
+      "kwin"."Switch to Desktop 4" = "Meta+4";
+      "kwin"."Switch to Next Desktop" = "Meta+`";
+      "kwin"."Switch to Previous Desktop" = "Meta+~";
+      "kwin"."Window to Desktop 1" = "Meta+!";
+      "kwin"."Window to Desktop 2" = "Meta+@";
+      "kwin"."Window to Desktop 3" = "Meta+#";
+      "kwin"."Window to Desktop 4" = "Meta+$";
+      "plasmashell"."activate task manager entry 1" = "";
+      "plasmashell"."activate task manager entry 2" = "";
+      "plasmashell"."activate task manager entry 3" = "";
+      "plasmashell"."activate task manager entry 4" = "";
+      "yakuake"."toggle-window-state" = "Meta+E";
+      "services/org.kde.krunner.desktop" = "";
     };
     configFile = {
       "dolphinrc"."CompactMode"."PreviewSize" = 22;
@@ -127,8 +101,10 @@
       "kwinrc"."org.kde.kdecoration2"."ButtonsOnLeft" = "M";
       "kwinrc"."org.kde.kdecoration2"."ButtonsOnRight" = "HSFAIX";
       "plasmanotifyrc"."Notifications"."PopupPosition" = "BottomRight";
+      "plasmashellrc"."Notifications"."floating" = "0";
       "spectaclerc"."General"."clipboardGroup" = "PostScreenshotCopyImage";
       "spectaclerc"."General"."launchAction" = "UseLastUsedCapturemode";
+      "yakuakerc"."Dialogs"."FirstRun" = false;
     };
   };
 }
