@@ -19,16 +19,7 @@ in
   };
 
   systemd.services."backup" = {
-    path = with pkgs; [
-      coreutils
-      sqlite
-      gitFull
-      openssh
-      curl
-      rsync
-      nettools
-      config.myPythonSet
-    ];
+    path = config.environment.systemPackages;
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash ${home}/.config/dotfiles.safe/scripts/backup.sh";

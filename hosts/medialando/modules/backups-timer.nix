@@ -15,15 +15,7 @@
   };
 
   systemd.services."backup-root" = {
-    path = with pkgs; [
-      bash
-      coreutils
-      gnutar
-      gnupg
-      zstd
-      gitFull
-      rclone
-    ];
+    path = config.environment.systemPackages;
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-root.sh";
@@ -40,15 +32,7 @@
   };
 
   systemd.services."backup" = {
-    path = with pkgs; [
-      coreutils
-      gawk
-      gitFull
-      rclone
-      isync
-      curl
-      zfs
-    ];
+    path = config.environment.systemPackages;
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup.sh";
