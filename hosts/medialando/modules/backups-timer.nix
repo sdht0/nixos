@@ -26,7 +26,7 @@
     ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-forejo.sh";
+      ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-root.sh";
       User = "root";
     };
   };
@@ -47,6 +47,7 @@
       rclone
       isync
       curl
+      zfs
     ];
     serviceConfig = {
       Type = "oneshot";
