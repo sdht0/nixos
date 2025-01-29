@@ -5,12 +5,11 @@
   ...
 }:
 let
-  username = config.home.username;
   dotfiles = ".config/dotfiles";
 in
 {
   home.file = (
-    lib'.linkFiles_f config.lib.file "/home/${username}" (
+    lib'.linkFiles_f config.lib.file "/home/${config.home.username}" (
       [
         {
           link = ".config/autostart/ssh-add.sh.desktop";
