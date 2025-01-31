@@ -16,8 +16,6 @@
   environment.systemPackages = with pkgs; [
     vim
     tmux
-    htop
-    killall
     ripgrep # grep
     fzf # fuzzy search
     eza # ls
@@ -29,23 +27,36 @@
     difftastic # semantic diffs
     bat # cat
     dua # du
+    ncdu # du
+    duf # df
     fd # find
     zoxide # cd
     tldr # --help
+    choose # cut
+    broot # tree
 
     gitFull
     lazygit # git tui
+
+    htop
+    killall
+    bottom # top
+    glances # top
+    gtop # top
+    procs # ps
 
     sqlite
     unzip
     ffmpeg
 
     nftables
-    dig
     wget
     curl
     rsync
     sshfs
+    dig
+    gping # ping
+    doggo # dig
 
     gptfdisk
     pciutils

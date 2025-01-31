@@ -33,7 +33,7 @@
     ../../../modules/pkgs-fonts.nix
     ../../../modules/pkgs-dev-nix.nix
     ../../../modules/pkgs-debuginfod.nix
-
+    ../../../modules/pkgs-dev-python.nix
     ../../../modules/pkgs-beancount.nix
   ];
 }
