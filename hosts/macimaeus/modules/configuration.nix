@@ -1,9 +1,9 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    ../../modules/system-nix-common.nix
-    ../../modules/system-nix-darwin.nix
-    ../../modules/pkgs-nixdev.nix
+    ../../../module-lib/system-nix-common.nix
+    ../../../module-lib/system-nix-darwin.nix
+    ../../../module-lib/pkgs-nixdev.nix
   ];
 
   security.pam.enableSudoTouchIdAuth = true;

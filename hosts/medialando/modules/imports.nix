@@ -6,49 +6,49 @@
 }:
 {
   imports = [
-    ../../../modules/option-python.nix
+    ../../../module-lib/option-python.nix
 
-    ../../../modules/system-nix-common.nix
-    ../../../modules/system-nix-linux.nix
+    ../../../module-lib/system-nix-common.nix
+    ../../../module-lib/system-nix-linux.nix
 
-    ../../../modules/hardware-firmware.nix
-    ../../../modules/hardware-intel.nix
-    ../../../modules/hardware-nvidia-disable.nix
-    ../../../modules/hardware-ssd.nix
-    ../../../modules/hardware-lid-ignore.nix
+    ../../../module-lib/hardware-firmware.nix
+    ../../../module-lib/hardware-intel.nix
+    ../../../module-lib/hardware-nvidia-disable.nix
+    ../../../module-lib/hardware-ssd.nix
+    ../../../module-lib/hardware-lid-ignore.nix
 
-    ../../../modules/system-basic.nix
-    ../../../modules/system-users.nix
-    ../../../modules/system-zfs.nix
-    ../../../modules/system-systemd-boot.nix
-    ../../../modules/system-systemd-boot-xbootldr.nix
-    ../../../modules/system-initrd-systemd.nix
-    ../../../modules/system-watchdog-disable.nix
-    ../../../modules/system-oom.nix
-    ../../../modules/system-btrfs-home-snapshots.nix
+    ../../../module-lib/system-basic.nix
+    ../../../module-lib/system-users.nix
+    ../../../module-lib/system-zfs.nix
+    ../../../module-lib/system-systemd-boot.nix
+    ../../../module-lib/system-systemd-boot-xbootldr.nix
+    ../../../module-lib/system-initrd-systemd.nix
+    ../../../module-lib/system-watchdog-disable.nix
+    ../../../module-lib/system-oom.nix
+    ../../../module-lib/system-btrfs-home-snapshots.nix
 
-    ../../../modules/networking-networkmanager.nix
-    ../../../modules/networking-mullvad.nix
-    ../../../modules/networking-sshd.nix
-    ../../../modules/networking-tailscale.nix
-    ../../../modules/networking-letsencrypt.nix
+    ../../../module-lib/networking-networkmanager.nix
+    ../../../module-lib/networking-mullvad.nix
+    ../../../module-lib/networking-sshd.nix
+    ../../../module-lib/networking-tailscale.nix
+    ../../../module-lib/networking-letsencrypt.nix
 
-    ../../../modules/pkgs-common.nix
-    ../../../modules/pkgs-docker.nix
-    ../../../modules/pkgs-syncthing.nix
+    ../../../module-lib/pkgs-common.nix
+    ../../../module-lib/pkgs-docker.nix
+    ../../../module-lib/pkgs-syncthing.nix
 
-    # ../../../modules/hardware-fingerprintreader.nix
-    # ../../../modules/hardware-canon-ts3420.nix
-    # ../../../modules/hardware-logitech.nix
-    # ../../../modules/system-bluetooth.nix
-    # ../../../modules/system-users-autologin.nix
-    # ../../../modules/system-audio.nix
-    # ../../../modules/pkgs-sshagent.nix
-    # ../../../modules/pkgs-fonts.nix
-    # ../../../modules/pkgs-latex.nix
-    # ../../../modules/pkgs-nixdev.nix
-    # ../../../modules/pkgs-debuginfod.nix
-    #../../../modules/system-plymouth.nix
-    #../../../modules/system-plasma6.nix
+    # ../../../module-lib/hardware-fingerprintreader.nix
+    # ../../../module-lib/hardware-canon-ts3420.nix
+    # ../../../module-lib/hardware-logitech.nix
+    # ../../../module-lib/system-bluetooth.nix
+    # ../../../module-lib/system-users-autologin.nix
+    # ../../../module-lib/system-audio.nix
+    # ../../../module-lib/pkgs-sshagent.nix
+    # ../../../module-lib/pkgs-fonts.nix
+    # ../../../module-lib/pkgs-latex.nix
+    # ../../../module-lib/pkgs-nixdev.nix
+    # ../../../module-lib/pkgs-debuginfod.nix
+    #../../../module-lib/system-plymouth.nix
+    #../../../module-lib/system-plasma6.nix
   ];
 }
