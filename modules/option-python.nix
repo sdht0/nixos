@@ -26,8 +26,10 @@
       "pandas"
       "requests"
     ];
-    environment.systemPackages = [
+    environment.systemPackages = with pkgs; [
       config.myPythonSet
+      ruff
+      uv
     ];
   };
 }
