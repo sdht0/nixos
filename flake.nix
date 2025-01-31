@@ -25,6 +25,8 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+
+    utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
@@ -32,6 +34,12 @@
     let
       lib = inputs.nixpkgs.lib;
       lib' = import ./lib { inherit (inputs.nixpkgs) lib; };
+
+      devShells_f =
+        system:
+        lib.mapAttrs (
+          name: _: import ./shells/${name}/shell.nix { pkgs = import inputs.nixpkgs { inherit system; }; }
+        ) (builtins.readDir ./shells);
 
       hmUserConfigs_f =
         hostname: userId: userData:
@@ -99,5 +107,8 @@
       nixosConfigurations = lib.mapAttrs nixosConfigs_f hosts;
 
       darwinConfigurations = lib.mapAttrs darwinConfigs_f hostsDarwin;
-    };
+    }
+    // inputs.utils.lib.eachDefaultSystem (system: {
+      devShells = devShells_f system;
+    });
 }
