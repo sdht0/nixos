@@ -33,7 +33,6 @@
     ../../../modules-lib/pkgs-common.nix
     ../../../modules-lib/pkgs-docker.nix
     ../../../modules-lib/pkgs-syncthing.nix
-    ../../../modules-lib/pkgs-xscripts.nix
   ];
 
   environment.systemPackages = with pkgs; [

@@ -38,10 +38,4 @@ rec {
         lib.filterAttrs (n: _: lib.hasSuffix ".nix" n) (builtins.readDir dir)
       )
     );
-
-  hostsData_f =
-    isDarwin:
-    lib.filterAttrs (_: hostData: (hostData.isDarwin or false) == isDarwin) (
-      lib.mapAttrs (hostname: _: import ../hosts/${hostname}/host-data.nix) (builtins.readDir ../hosts)
-    );
 }

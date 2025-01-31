@@ -100,8 +100,14 @@
           ] ++ lib'.filesInDir_f ./hosts/${hostname}/modules;
         };
 
-      hosts = lib'.hostsData_f false;
-      hostsDarwin = lib'.hostsData_f true;
+      hostsData_f =
+        isDarwin:
+        lib.filterAttrs (_: hostData: (hostData.isDarwin or false) == isDarwin) (
+          lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (builtins.readDir ./hosts)
+        );
+
+      hosts = hostsData_f false;
+      hostsDarwin = hostsData_f true;
     in
     {
       nixosConfigurations = lib.mapAttrs nixosConfigs_f hosts;
