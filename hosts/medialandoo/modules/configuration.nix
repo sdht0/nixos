@@ -6,34 +6,34 @@
 }:
 {
   imports = [
-    ../../../module-lib/option-python.nix
+    ../../../modules-lib/option-python.nix
 
-    ../../../module-lib/system-nix-common.nix
-    ../../../module-lib/system-nix-linux.nix
+    ../../../modules-lib/system-nix-common.nix
+    ../../../modules-lib/system-nix-linux.nix
 
-    ../../../module-lib/hardware-firmware.nix
-    ../../../module-lib/hardware-intel.nix
-    ../../../module-lib/hardware-ssd.nix
-    ../../../module-lib/hardware-lid-ignore.nix
+    ../../../modules-lib/hardware-firmware.nix
+    ../../../modules-lib/hardware-intel.nix
+    ../../../modules-lib/hardware-ssd.nix
+    ../../../modules-lib/hardware-lid-ignore.nix
 
-    ../../../module-lib/system-basic.nix
-    ../../../module-lib/system-users.nix
-    ../../../module-lib/system-audio.nix
-    ../../../module-lib/system-zfs.nix
-    ../../../module-lib/system-systemd-boot.nix
-    ../../../module-lib/system-initrd-systemd.nix
-    ../../../module-lib/system-watchdog-disable.nix
+    ../../../modules-lib/system-basic.nix
+    ../../../modules-lib/system-users.nix
+    ../../../modules-lib/system-audio.nix
+    ../../../modules-lib/system-zfs.nix
+    ../../../modules-lib/system-systemd-boot.nix
+    ../../../modules-lib/system-initrd-systemd.nix
+    ../../../modules-lib/system-watchdog-disable.nix
 
-    ../../../module-lib/networking-networkmanager.nix
-    ../../../module-lib/networking-mullvad.nix
-    ../../../module-lib/networking-sshd.nix
-    ../../../module-lib/networking-tailscale.nix
-    ../../../module-lib/networking-letsencrypt.nix
+    ../../../modules-lib/networking-networkmanager.nix
+    ../../../modules-lib/networking-mullvad.nix
+    ../../../modules-lib/networking-sshd.nix
+    ../../../modules-lib/networking-tailscale.nix
+    ../../../modules-lib/networking-letsencrypt.nix
 
-    ../../../module-lib/pkgs-common.nix
-    ../../../module-lib/pkgs-docker.nix
-    ../../../module-lib/pkgs-syncthing.nix
-    ../../../module-lib/pkgs-xscripts.nix
+    ../../../modules-lib/pkgs-common.nix
+    ../../../modules-lib/pkgs-docker.nix
+    ../../../modules-lib/pkgs-syncthing.nix
+    ../../../modules-lib/pkgs-xscripts.nix
   ];
 
   environment.systemPackages = with pkgs; [
