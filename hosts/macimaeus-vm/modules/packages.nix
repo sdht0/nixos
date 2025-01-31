@@ -19,7 +19,7 @@
         # ];
       })
 
-      libreoffice-qt
+      libreoffice-qt-fresh
       obsidian
       activitywatch
 
