@@ -14,32 +14,42 @@
   }; # Remove defaults
 
   environment.systemPackages = with pkgs; [
+    vim
+    tmux
+    htop
+    killall
+    ripgrep # grep
+    fzf # fuzzy search
+    eza # ls
+    jq # json
+    bc # calculator
+    aha # html
+    starship # prompt
+    peco # interactive filtering
+    difftastic # semantic diffs
+    bat # cat
+    dua # du
+    fd # find
+    zoxide # cd
+    tldr # --help
+
+    gitFull
+    lazygit # git tui
+
+    sqlite
+    unzip
+    ffmpeg
+
     nftables
     dig
     wget
     curl
     rsync
     sshfs
-    vim
-    tmux
-    ripgrep
-    fzf
-    eza
-    gitFull
-    lazygit
-    bc
+
     gptfdisk
-    aha
-    jq
-    peco
-    difftastic
-    ffmpeg
-    htop
     pciutils
-    killall
     dmidecode
-    sqlite
-    unzip
   ];
   programs.gnupg.agent.enable = true;
   programs.nano.enable = false;

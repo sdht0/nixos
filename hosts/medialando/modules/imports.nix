@@ -36,7 +36,6 @@
     ../../../modules/pkgs-common.nix
     ../../../modules/pkgs-docker.nix
     ../../../modules/pkgs-syncthing.nix
-    ../../../modules/pkgs-xscripts.nix
 
     # ../../../modules/hardware-fingerprintreader.nix
     # ../../../modules/hardware-canon-ts3420.nix

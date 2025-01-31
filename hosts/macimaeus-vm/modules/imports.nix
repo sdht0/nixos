@@ -31,11 +31,9 @@
     ../../../modules/pkgs-syncthing.nix
     ../../../modules/pkgs-sshagent.nix
     ../../../modules/pkgs-fonts.nix
-    ../../../modules/pkgs-nixdev.nix
+    ../../../modules/pkgs-dev-nix.nix
     ../../../modules/pkgs-debuginfod.nix
 
     ../../../modules/pkgs-beancount.nix
-    ../../../modules/pkgs-publications.nix
-    # ../../../modules/pkgs-latex.nix
   ];
 }
