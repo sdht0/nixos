@@ -7,20 +7,20 @@
 }:
 {
   nix.package = pkgs.nixVersions.latest;
+  documentation.doc.enable = false;
+
   nix.settings = {
     experimental-features = [
       "nix-command"
       "flakes"
     ];
-    auto-optimise-store = true;
     use-xdg-base-directories = true;
     warn-dirty = false;
   };
-
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.hostPlatform = hostData.system;
+  nix.optimise.automatic = true;
 
-  documentation.doc.enable = false;
+  nixpkgs.hostPlatform = hostData.system;
 
   environment.systemPackages = (
     with pkgs;
