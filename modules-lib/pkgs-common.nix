@@ -29,7 +29,6 @@
     broot # tree
 
     gnupg
-    oath-toolkit # totp
 
     gitFull
     lazygit # git tui
@@ -42,5 +41,8 @@
     glances # top
     gtop # top
     procs # ps
+
+    gping # ping
+    doggo # dig
   ];
 }

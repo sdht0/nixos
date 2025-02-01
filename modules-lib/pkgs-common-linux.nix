@@ -24,8 +24,6 @@
     rsync
     sshfs
     dig
-    gping # ping
-    doggo # dig
 
     sqlite
     ffmpeg
