@@ -7,11 +7,6 @@
 {
   programs.zsh.enable = true;
   environment.shells = with pkgs; [ zsh ];
-  environment.shellAliases = {
-    ls = null;
-    l = null;
-    ll = null;
-  }; # Remove defaults
 
   environment.systemPackages = with pkgs; [
     vim
@@ -30,37 +25,22 @@
     ncdu # du
     duf # df
     fd # find
-    tldr # --help
     choose # cut
     broot # tree
+
+    gnupg
+    oath-toolkit # totp
 
     gitFull
     lazygit # git tui
 
+    zstd
+    unzip
+
     htop
-    killall
     bottom # top
     glances # top
     gtop # top
     procs # ps
-
-    sqlite
-    unzip
-    ffmpeg
-
-    nftables
-    wget
-    curl
-    rsync
-    sshfs
-    dig
-    gping # ping
-    doggo # dig
-
-    gptfdisk
-    pciutils
-    dmidecode
   ];
-  programs.gnupg.agent.enable = true;
-  programs.nano.enable = false;
 }

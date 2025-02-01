@@ -5,13 +5,12 @@
   imports = [
     ../../../modules-lib/option-python.nix
 
-    ../../../modules-lib/system-nix-common.nix
     ../../../modules-lib/system-nix-linux.nix
 
     ../../../modules-lib/hardware-firmware.nix
 
     ../../../modules-lib/system-qemu.nix
-    ../../../modules-lib/system-basic.nix
+    ../../../modules-lib/system-basic-linux.nix
     ../../../modules-lib/system-users.nix
     ../../../modules-lib/system-users-autologin.nix
     ../../../modules-lib/system-btrfs-home-snapshots.nix
@@ -26,7 +25,7 @@
     ../../../modules-lib/networking-mullvad.nix
     ../../../modules-lib/networking-tailscale.nix
 
-    ../../../modules-lib/pkgs-common.nix
+    ../../../modules-lib/pkgs-common-linux.nix
     ../../../modules-lib/pkgs-podman.nix
     ../../../modules-lib/pkgs-syncthing.nix
     ../../../modules-lib/pkgs-sshagent.nix

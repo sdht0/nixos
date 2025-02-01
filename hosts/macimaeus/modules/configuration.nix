@@ -7,51 +7,24 @@
   imports = [
     ../../../modules-lib/option-python.nix
 
-    ../../../modules-lib/system-basic-darwin.nix
-    ../../../modules-lib/system-nix-common.nix
     ../../../modules-lib/system-nix-darwin.nix
+    ../../../modules-lib/system-basic-darwin.nix
+    ../../../modules-lib/pkgs-common-darwin.nix
     ../../../modules-lib/pkgs-dev-nix.nix
   ];
 
-  environment.systemPackages = with pkgs; [
-    vim
-    tmux
-    ripgrep
-    fzf
-    eza
-    jq
-    aha
-    starship
-    peco
-    bat
-    dua
-    ncdu
-    duf
-    fd
-    gitFull
-    htop
-    bottom
-    glances
-    procs
-    gnupg
-    oath-toolkit
-    coreutils
-    zstd
-    unzip
-  ];
-  programs.zsh.enable = true;
   programs.nix-index.enable = true;
 
   homebrew = {
     enable = true;
     onActivation = {
-      autoUpdate = true; # Update on system activation
+      autoUpdate = true;
       upgrade = true;
       cleanup = "zap";
     };
 
     brews = [
-      "curl" # avoid nixpkgs' version
+      "curl" # avoid nixpkgs' version?
     ];
 
     casks = [
@@ -84,7 +57,6 @@
         ShowPathbar = true;
         ShowStatusBar = true;
         QuitMenuItem = true;
-        _FXShowPosixPathInTitle = true;
         _FXSortFoldersFirst = true;
       };
 
@@ -93,7 +65,7 @@
       };
 
       dock = {
-        tilesize = 40;
+        tilesize = 42;
         minimize-to-application = true;
       };
 

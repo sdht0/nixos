@@ -8,7 +8,6 @@
   imports = [
     ../../../modules-lib/option-python.nix
 
-    ../../../modules-lib/system-nix-common.nix
     ../../../modules-lib/system-nix-linux.nix
 
     ../../../modules-lib/hardware-firmware.nix
@@ -17,7 +16,7 @@
     ../../../modules-lib/hardware-ssd.nix
     ../../../modules-lib/hardware-lid-ignore.nix
 
-    ../../../modules-lib/system-basic.nix
+    ../../../modules-lib/system-basic-linux.nix
     ../../../modules-lib/system-users.nix
     ../../../modules-lib/system-zfs.nix
     ../../../modules-lib/system-systemd-boot.nix
@@ -33,7 +32,7 @@
     ../../../modules-lib/networking-tailscale.nix
     ../../../modules-lib/networking-letsencrypt.nix
 
-    ../../../modules-lib/pkgs-common.nix
+    ../../../modules-lib/pkgs-common-linux.nix
     ../../../modules-lib/pkgs-docker.nix
     ../../../modules-lib/pkgs-syncthing.nix
 

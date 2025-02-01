@@ -6,6 +6,8 @@
   ...
 }:
 {
+  imports = [ ./system-nix-common.nix ];
+
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
