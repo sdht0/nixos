@@ -1,29 +1,34 @@
 { pkgs, inputs, ... }:
 {
   imports = [
+    ../../../modules-lib/option-python.nix
+
     ../../../modules-lib/system-nix-common.nix
     ../../../modules-lib/system-nix-darwin.nix
-    ../../../modules-lib/pkgs-nixdev.nix
   ];
 
-  security.pam.enableSudoTouchIdAuth = true;
   system.defaults.finder.AppleShowAllFiles = true;
 
   environment.systemPackages = with pkgs; [
+    vim
     tmux
-    gitFull
     ripgrep
     fzf
     eza
-    aha
     jq
+    aha
+    starship
     peco
-    (pkgs.python3.withPackages (
-      ps: with ps; [
-        notebook
-        pandas
-      ]
-    ))
+    bat
+    dua
+    ncdu
+    duf
+    fd
+    gitFull
+    htop
+    bottom
+    glances
+    procs
   ];
   programs.zsh.enable = true;
   homebrew = {
@@ -34,13 +39,12 @@
     };
 
     casks = [
-      "zoom"
       "utm"
-      "rustrover"
-      "visual-studio-code"
+      "iterm2"
+      "zoom"
       "firefox"
       "google-chrome"
-      "iterm2"
+      "tor-browser"
       "font-hack-nerd-font"
     ];
   };

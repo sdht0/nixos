@@ -30,7 +30,6 @@
     ncdu # du
     duf # df
     fd # find
-    zoxide # cd
     tldr # --help
     choose # cut
     broot # tree
