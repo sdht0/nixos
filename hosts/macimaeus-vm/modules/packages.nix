@@ -42,4 +42,5 @@
       # zotero # no aarch64
     ]
   );
+  programs.gnupg.agent.enable = true;
 }
