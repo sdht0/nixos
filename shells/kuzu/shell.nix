@@ -1,18 +1,21 @@
 #!/usr/bin/env nix-shell
 
-{ pkgs ? import <nixpkgs> { } }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
-    pkg-config
     nodejs
     cmake
     gcc
     emscripten
+    pkg-config
   ];
 
-  buildInputs = with pkgs;[
-    openssl
+  buildInputs = with pkgs; [
+    pkgsStatic.openssl
+    duckdb
   ];
 
   shellHook = ''
