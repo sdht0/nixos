@@ -31,7 +31,7 @@
     gnupg
 
     gitFull
-    lazygit # git tui
+    gitui # git tui
 
     zstd
     unzip
