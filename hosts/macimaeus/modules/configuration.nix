@@ -74,6 +74,7 @@
       SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
       hitoolbox.AppleFnUsageType = "Do Nothing";
       loginwindow.GuestEnabled = false;
+      WindowManager.EnableTiledWindowMargins = false;
     };
   };
   security.pam.enableSudoTouchIdAuth = true;
