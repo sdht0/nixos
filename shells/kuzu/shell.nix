@@ -11,6 +11,7 @@ pkgs.mkShell {
     gcc
     emscripten
     pkg-config
+    clang
   ];
 
   buildInputs = with pkgs; [
