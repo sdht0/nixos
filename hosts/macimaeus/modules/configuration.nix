@@ -34,7 +34,7 @@
       "firefox"
       "google-chrome"
       "tor-browser"
-      "font-hack-nerd-font"
+      "font-jetbrains-mono-nerd-font"
       "visual-studio-code"
       "stats"
     ];
