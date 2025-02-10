@@ -6,6 +6,7 @@
     ../../../modules-lib/option-python.nix
 
     ../../../modules-lib/system-nix-linux.nix
+    ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/hardware-firmware.nix
 
