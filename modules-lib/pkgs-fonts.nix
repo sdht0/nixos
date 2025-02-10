@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 {
   fonts.packages = with pkgs; [
-    jetbrains-mono
-    meslo-lgs-nf
+    nerd-fonts.jetbrains-mono
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
