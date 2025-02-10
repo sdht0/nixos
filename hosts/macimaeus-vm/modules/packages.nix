@@ -43,4 +43,5 @@
     ]
   );
   programs.gnupg.agent.enable = true;
+  home-manager.backupFileExtension = "backup";
 }

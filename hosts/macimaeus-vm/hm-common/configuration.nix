@@ -5,5 +5,6 @@
 {
   home.homeDirectory = "/home/${config.home.username}";
   programs.home-manager.enable = true;
+  fonts.fontconfig.enable = false;
   home.stateVersion = "24.11";
 }
