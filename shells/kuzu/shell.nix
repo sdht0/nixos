@@ -7,6 +7,7 @@
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     nodejs
+    gnumake
     cmake
     gcc
     emscripten
@@ -17,6 +18,8 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     pkgsStatic.openssl
     duckdb
+    gdb
+    valgrind
     gdb
   ];
 
