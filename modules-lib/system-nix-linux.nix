@@ -12,9 +12,6 @@
 
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 
-  # Purely flake-based system
-  nix.channel.enable = false;
-
   system.switch.enable = false;
   system.switch.enableNg = true;
   system.rebuild.enableNg = true;

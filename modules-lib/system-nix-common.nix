@@ -9,6 +9,9 @@
   nix.package = pkgs.nixVersions.latest;
   documentation.doc.enable = false;
 
+  # Use a purely flake-based system
+  nix.channel.enable = false;
+
   nix.settings = {
     experimental-features = [
       "nix-command"
