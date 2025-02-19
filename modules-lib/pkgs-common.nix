@@ -27,6 +27,7 @@
     fd # find
     choose # cut
     broot # tree
+    tokei # cloc
 
     gnupg
 
