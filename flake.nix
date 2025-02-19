@@ -18,6 +18,7 @@
     nixOlde = {
       url = "github:trofi/nix-olde";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.utils.follows = "utils";
     };
 
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
