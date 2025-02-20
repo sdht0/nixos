@@ -25,8 +25,4 @@ pkgs.mkShell {
     webkitgtk_4_1
     openssl
   ];
-
-  shellHook = ''
-    exec zsh
-  '';
 }
