@@ -35,6 +35,8 @@
       rustup
       temurin-bin-21
 
+      jetbrains.clion
+
       # thunderbird
       # zoom-us slack
       # jetbrains-toolbox

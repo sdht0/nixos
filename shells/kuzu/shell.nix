@@ -21,5 +21,6 @@ pkgs.mkShell {
     valgrind
     gdb
     clang-tools
+    cppcheck
   ];
 }
