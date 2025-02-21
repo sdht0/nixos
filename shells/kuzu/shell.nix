@@ -19,8 +19,7 @@ pkgs.mkShell {
     duckdb
     gdb
     valgrind
-    gdb
-    clang-tools
-    cppcheck
+    # clang-tools
+    # cppcheck
   ];
 }
