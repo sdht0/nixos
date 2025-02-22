@@ -12,12 +12,7 @@
       rustup
       temurin-bin-21
 
-      jetbrains.clion
-
-      clang-tools
-      cppcheck
-      cpplint
-      codechecker
+      duckdb
     ]
   );
 }

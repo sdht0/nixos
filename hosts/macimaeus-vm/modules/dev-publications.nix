@@ -7,5 +7,5 @@
     "bibtexparser"
   ];
 
-  environment.systemPackages = (with pkgs; [ chromedriver ]);
+  # environment.systemPackages = (with pkgs; [ chromedriver ]);
 }
