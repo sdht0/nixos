@@ -2,8 +2,8 @@
   description = "Artimaeus NixOS";
 
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/master";
     # nixpkgs.url = "github:nixos/nixpkgs/32fb99ba93fea2798be0e997ea331dd78167f814";
     # nixpkgs.url = "git+file:///home/artimaeus/Downloads/installations/osnixpkgs";
     # nixpkgs2311.url = "github:nixos/nixpkgs/release-23.11";
