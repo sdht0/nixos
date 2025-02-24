@@ -12,6 +12,8 @@
       rustup
       temurin-bin-21
 
+      nodejs
+
       duckdb
     ]
   );

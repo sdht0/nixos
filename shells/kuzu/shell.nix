@@ -6,9 +6,8 @@
 
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
-    # nodejs
-    # emscripten
     pkg-config
+    # emscripten
   ];
 
   buildInputs = with pkgs; [

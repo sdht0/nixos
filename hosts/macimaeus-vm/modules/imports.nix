@@ -34,6 +34,6 @@
     ../../../modules-lib/pkgs-dev-nix.nix
     ../../../modules-lib/pkgs-debuginfod.nix
     ../../../modules-lib/pkgs-dev-python.nix
-    #../../../modules-lib/pkgs-beancount.nix
+    ../../../modules-lib/pkgs-beancount.nix
   ];
 }
