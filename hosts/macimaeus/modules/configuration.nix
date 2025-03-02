@@ -77,5 +77,4 @@
       WindowManager.EnableTiledWindowMargins = false;
     };
   };
-  security.pam.enableSudoTouchIdAuth = true;
 }
