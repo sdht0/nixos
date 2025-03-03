@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   inputs,
   ...
@@ -27,7 +28,7 @@
       "curl" # avoid nixpkgs' version?
     ];
 
-    casks = [
+    casks = lib.map (n: { name = n; greedy = true; }) [
       "utm"
       "iterm2"
       "zoom"
