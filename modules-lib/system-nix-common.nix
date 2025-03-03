@@ -25,11 +25,8 @@
 
   nixpkgs.hostPlatform = hostData.system;
 
-  environment.systemPackages = (
-    with pkgs;
-    [
-      nix-output-monitor
-      nvd
-    ]
-  );
+  environment.systemPackages = with pkgs; [
+    nix-output-monitor
+    nvd
+  ];
 }
