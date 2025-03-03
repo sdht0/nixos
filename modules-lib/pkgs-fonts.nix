@@ -2,8 +2,8 @@
 {
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    noto-fonts
-    noto-fonts-color-emoji
     noto-fonts-cjk-sans
+    # noto-fonts # Default in plasma 6
+    # noto-fonts-color-emoji # Included in fonts.enableDefaultPackages
   ];
 }
