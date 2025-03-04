@@ -45,6 +45,15 @@
           name: _: import ./shells/${name}/shell.nix { pkgs = import inputs.nixpkgs { inherit system; }; }
         ) (builtins.readDir ./shells);
 
+      packages_f =
+        system:
+        let
+          pkgs = import inputs.nixpkgs { inherit system; };
+        in
+          lib.mapAttrs (
+            name: _: pkgs.callPackage ./packages/${name}/package.nix {  }
+          ) (builtins.readDir ./packages);
+
       hmUserConfigs_f =
         hostname: userId: userData:
         let
@@ -119,5 +128,6 @@
     }
     // inputs.utils.lib.eachDefaultSystem (system: {
       devShells = devShells_f system;
+      packages = packages_f system;
     });
 }
