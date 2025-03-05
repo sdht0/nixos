@@ -29,6 +29,8 @@
     broot # tree
     tokei # cloc
 
+    shellcheck
+
     gnupg
 
     gitFull
