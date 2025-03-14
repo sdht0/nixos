@@ -23,6 +23,10 @@
       obsidian = prev.obsidian.override (old: {
         electron = pkgs.electron-bin;
       });
+
+      eza = prev.eza.overrideAttrs (old: {
+        patches = old.patches ++ [ ./files/eza.patch ];
+      });
     })
   ];
   # ++ (import ./kde.nix args)
