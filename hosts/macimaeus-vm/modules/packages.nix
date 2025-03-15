@@ -39,4 +39,5 @@
   );
   programs.gnupg.agent.enable = true;
   home-manager.backupFileExtension = "backup";
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
 }

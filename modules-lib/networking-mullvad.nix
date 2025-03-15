@@ -11,7 +11,7 @@ in
 {
   services.mullvad-vpn = {
     enable = true;
-    package = pkgs.mullvad-vpn;
+    package = lib.mkDefault pkgs.mullvad;
   };
   systemd.services.mullvad-daemon.environment = {
     TALPID_NET_CLS_MOUNT_DIR = "/run/net_cls";

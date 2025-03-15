@@ -26,7 +26,6 @@
     dig
 
     sqlite
-    ffmpeg
 
     gptfdisk
     pciutils
