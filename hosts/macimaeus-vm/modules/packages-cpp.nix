@@ -17,7 +17,7 @@
 
       gnumake
       cmake
-      clang
+      gcc
 
       config.boot.kernelPackages.perf
       valgrind

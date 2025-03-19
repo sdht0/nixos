@@ -14,7 +14,7 @@
     ripgrep # grep
     fzf # fuzzy search
     eza # ls
-    jq # json
+    jaq # jq
     bc # calculator
     aha # html
     starship # prompt
