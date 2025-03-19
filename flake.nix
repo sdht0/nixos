@@ -81,6 +81,7 @@
           };
           modules = (lib'.filesInDir_f ./hosts/${hostname}/modules) ++ [
             ./overlays
+          ] ++ lib.optionals (!hostData.noHm or false) [
             inputs.homeManager.nixosModules.home-manager
             {
               home-manager = {
