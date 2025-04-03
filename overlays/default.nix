@@ -27,6 +27,19 @@
       eza = prev.eza.overrideAttrs (old: {
         patches = old.patches ++ [ ./files/eza.patch ];
       });
+
+      pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
+        xlib = pyprev.xlib.overridePythonAttrs (oldAttrs: {
+          patches = [
+            # https://github.com/NixOS/nixpkgs/issues/395872
+            (pkgs.fetchpatch {
+              name = "xlib-fix-randr-error";
+              url = "https://github.com/python-xlib/python-xlib/pull/242/commits/52800b1925c0e15a6d97487750db490f064376d8.patch";
+              hash = "sha256-uAaVEOX8227BV+qeYG0tf0sByg4LN2BvfapKkogY4UY=";
+            })
+          ];
+        });
+      })];
     })
   ];
   # ++ (import ./kde.nix args)
