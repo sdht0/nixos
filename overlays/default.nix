@@ -28,6 +28,8 @@
         patches = old.patches ++ [ ./files/eza.patch ];
       });
 
+      checksec = pkgs.callPackage ./checksec.nix {};
+
       pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
         xlib = pyprev.xlib.overridePythonAttrs (oldAttrs: {
           patches = [

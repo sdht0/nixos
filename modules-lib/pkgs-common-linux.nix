@@ -17,6 +17,7 @@
   environment.systemPackages = with pkgs; [
     tldr # --help
     killall
+    checksec
 
     nftables
     wget
