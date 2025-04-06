@@ -13,7 +13,7 @@
       "1.1.1.1"
       "8.8.8.8"
     ];
-    plugins = lib.mkForce [ ]; # Disable plugins by default.
+    plugins = lib.mkForce [ ]; # Disable default plugins
   };
   systemd.services.NetworkManager-wait-online = {
     serviceConfig = {

@@ -19,6 +19,10 @@
     killall
     checksec
 
+    perf-tools
+    bcc
+    bpftrace
+
     nftables
     wget
     curl
