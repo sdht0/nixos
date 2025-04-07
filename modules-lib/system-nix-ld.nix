@@ -8,11 +8,6 @@
 {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc.lib
-    SDL2
-    SDL2_image
-    SDL2_mixer
-    SDL2_ttf
     alsa-lib
     at-spi2-atk
     at-spi2-core
@@ -44,8 +39,6 @@
     harfbuzz
     icu
     keyutils.lib
-    libGL
-    libGLU
     libappindicator-gtk2
     libcaca
     libcanberra
@@ -54,6 +47,8 @@
     libdbusmenu
     libdrm
     libgcrypt
+    libGL
+    libGLU
     libgpg-error
     libidn
     libjack2
@@ -84,16 +79,22 @@
     pango
     pixman
     python3
+    SDL2
+    SDL2_image
+    SDL2_mixer
+    SDL2_ttf
     speex
     stdenv.cc.cc
+    stdenv.cc.cc.lib
     tbb
     udev
     vulkan-loader
     wayland
     xorg.libICE
+    xorg.libpciaccess
     xorg.libSM
     xorg.libX11
-    xorg.libXScrnSaver
+    xorg.libxcb
     xorg.libXcomposite
     xorg.libXcursor
     xorg.libXdamage
@@ -105,11 +106,10 @@
     xorg.libXmu
     xorg.libXrandr
     xorg.libXrender
+    xorg.libXScrnSaver
     xorg.libXt
     xorg.libXtst
     xorg.libXxf86vm
-    xorg.libpciaccess
-    xorg.libxcb
     xorg.xcbutil
     xorg.xcbutilimage
     xorg.xcbutilkeysyms
