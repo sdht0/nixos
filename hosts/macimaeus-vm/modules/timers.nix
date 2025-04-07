@@ -29,4 +29,17 @@ in
       SSH_AUTH_SOCK = "/run/user/1000/ssh-agent";
     };
   };
+
+  systemd.services."selfwatch" = {
+    path = config.environment.systemPackages;
+    after = [ "display-manager.service" ];
+    wantedBy = [ "display-manager.service" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${config.myPythonSet}/bin/python ${home}/.config/dotfiles.safe/scripts/selfwatch.py";
+      User = mainUser;
+      Restart = "always";
+      RestartSec = 10;
+    };
+  };
 }

@@ -37,6 +37,12 @@
       # zotero # no aarch64
     ]
   );
+
+  myPythonPkgs = [
+    "pynput"
+    "xlib"
+  ];
+
   programs.gnupg.agent.enable = true;
   home-manager.backupFileExtension = "backup";
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
