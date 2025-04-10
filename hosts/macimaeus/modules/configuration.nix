@@ -14,6 +14,16 @@
     ../../../modules-lib/pkgs-dev-nix.nix
   ];
 
+  launchd.user.agents.selfwatcher = {
+    command = "/Users/artimaeus/.config/dotfiles.safe/scripts/selfwatch";
+    serviceConfig = {
+      RunAtLoad = true;
+      KeepAlive = true;
+      StandardOutPath = "/Users/artimaeus/.cache/selfwatch.log";
+      StandardErrorPath = "/Users/artimaeus/.cache/selfwatch.err";
+    };
+  };
+
   programs.nix-index.enable = true;
 
   homebrew = {
