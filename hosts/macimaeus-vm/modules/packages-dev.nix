@@ -14,6 +14,8 @@
       nodejs
 
       duckdb
+
+      cloudflared
     ]
   );
 }
