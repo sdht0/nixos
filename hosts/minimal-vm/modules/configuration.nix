@@ -24,5 +24,12 @@
   time.timeZone = hostData.timezone;
   i18n.defaultLocale = hostData.locale;
 
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/LINUX";
+    fsType = "ext4";
+  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.efiSysMountPoint = lib.mkDefault "/boot";
+
   system.stateVersion = "24.05";
 }
