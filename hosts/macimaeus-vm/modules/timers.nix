@@ -30,13 +30,13 @@ in
     };
   };
 
-  systemd.services."selfwatch" = {
+  systemd.services."selfwatcher" = {
     path = config.environment.systemPackages;
     after = [ "display-manager.service" ];
     wantedBy = [ "display-manager.service" ];
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${config.myPythonSet}/bin/python ${home}/.config/dotfiles.safe/scripts/selfwatch.py";
+      ExecStart = "${config.myPythonSet}/bin/python ${home}/.config/dotfiles.safe/scripts/selfwatcher.py";
       User = mainUser;
       Restart = "always";
       RestartSec = 10;
