@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   myPythonPkgs = [
-    "notebook"
     "titlecase"
     "selenium"
     "bibtexparser"
