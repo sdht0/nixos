@@ -1,6 +1,6 @@
 {
   lib,
-  pkgs,
+  hostData,
   inputs,
   ...
 }:
@@ -14,13 +14,15 @@
     ../../../modules-lib/pkgs-dev-nix.nix
   ];
 
+  system.primaryUser = hostData.mainuser;
+
   launchd.user.agents.selfwatcher = {
-    command = "/Users/artimaeus/.config/dotfiles.safe/scripts/selfwatch";
+    command = "/Users/artimaeus/.config/dotfiles.safe/scripts/selfwatcher";
     serviceConfig = {
       RunAtLoad = true;
       KeepAlive = true;
-      StandardOutPath = "/Users/artimaeus/.cache/selfwatch.log";
-      StandardErrorPath = "/Users/artimaeus/.cache/selfwatch.err";
+      StandardOutPath = "/Users/artimaeus/.cache/selfwatcher.log";
+      StandardErrorPath = "/Users/artimaeus/.cache/selfwatcher.err";
     };
   };
 
@@ -33,10 +35,6 @@
       upgrade = true;
       cleanup = "zap";
     };
-
-    brews = [
-      "curl" # avoid nixpkgs' version?
-    ];
 
     casks = lib.map (n: { name = n; greedy = true; }) [
       "utm"
@@ -54,11 +52,6 @@
   system = {
     stateVersion = 5;
     configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
-    activationScripts.postUserActivation.text = ''
-      # activateSettings -u will reload the settings from the database and apply them to the current session,
-      # so we do not need to logout and login again to make the changes take effect.
-      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-    '';
 
     defaults = {
       finder = {
