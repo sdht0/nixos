@@ -28,6 +28,7 @@
     fribidi
     fuse
     fuse3
+    gcc.cc
     gdk-pixbuf
     glew110
     glib
