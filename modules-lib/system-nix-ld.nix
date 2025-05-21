@@ -15,7 +15,7 @@
     bzip2
     cairo
     cups
-    curlWithGnuTls
+    curl
     dbus
     dbus-glib
     desktop-file-utils
@@ -28,7 +28,6 @@
     fribidi
     fuse
     fuse3
-    gcc.cc
     gdk-pixbuf
     glew110
     glib
