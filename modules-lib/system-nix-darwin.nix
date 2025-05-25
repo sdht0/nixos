@@ -15,5 +15,5 @@
       Minute = 15;
     }
   ];
-  nix.gc.options = "--delete-older-than 7d";
+  nix.gc.options = "--delete-older-than 15d";
 }
