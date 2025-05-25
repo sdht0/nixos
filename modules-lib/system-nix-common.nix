@@ -7,7 +7,10 @@
 }:
 {
   nix.package = pkgs.nixVersions.latest;
-  documentation.doc.enable = false;
+  environment.systemPackages = with pkgs; [
+    nix-output-monitor
+    nvd
+  ];
 
   # Use a purely flake-based system
   nix.channel.enable = false;
@@ -21,12 +24,9 @@
     warn-dirty = false;
   };
   nixpkgs.config.allowUnfree = true;
+  documentation.doc.enable = false;
+
   nix.optimise.automatic = true;
 
   nixpkgs.hostPlatform = hostData.system;
-
-  environment.systemPackages = with pkgs; [
-    nix-output-monitor
-    nvd
-  ];
 }
