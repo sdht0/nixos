@@ -39,4 +39,21 @@
       User = hostData.users.mainuser.username;
     };
   };
+
+  systemd.timers."zfs-status-check" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "*:0/5";
+      Unit = "zfs-status-check.service";
+    };
+  };
+
+  systemd.services."zfs-status-check" = {
+    path = config.environment.systemPackages;
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/zfs-status-check.sh";
+      User = hostData.users.mainuser.username;
+    };
+  };
 }
