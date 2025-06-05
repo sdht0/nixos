@@ -46,6 +46,7 @@
       "font-jetbrains-mono-nerd-font"
       "visual-studio-code"
       "stats"
+      "ollama"
     ];
   };
 
