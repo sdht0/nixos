@@ -15,11 +15,13 @@
   };
 
   systemd.services."backup-root" = {
-    path = config.environment.systemPackages;
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup-root.sh";
       User = "root";
+    };
+    environment = {
+      PATH = lib.mkForce "/run/current-system/sw/bin";
     };
   };
 
@@ -32,11 +34,13 @@
   };
 
   systemd.services."backup" = {
-    path = config.environment.systemPackages;
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/backup.sh";
       User = hostData.users.mainuser.username;
+    };
+    environment = {
+      PATH = lib.mkForce "/run/current-system/sw/bin";
     };
   };
 
@@ -49,11 +53,13 @@
   };
 
   systemd.services."zfs-status-check" = {
-    path = config.environment.systemPackages;
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /opt/mnt/xScripts/system/zfs-status-check.sh";
       User = hostData.users.mainuser.username;
+    };
+    environment = {
+      PATH = lib.mkForce "/run/current-system/sw/bin";
     };
   };
 }

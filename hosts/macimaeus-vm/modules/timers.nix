@@ -19,7 +19,6 @@ in
   };
 
   systemd.services."backup" = {
-    path = config.environment.systemPackages;
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash ${home}/.config/dotfiles.safe/scripts/backup.sh";
@@ -27,11 +26,11 @@ in
     };
     environment = {
       SSH_AUTH_SOCK = "/run/user/1000/ssh-agent";
+      PATH = lib.mkForce "/run/current-system/sw/bin";
     };
   };
 
   systemd.services."selfwatcher" = {
-    path = config.environment.systemPackages;
     after = [ "display-manager.service" ];
     wantedBy = [ "display-manager.service" ];
     serviceConfig = {
@@ -40,6 +39,9 @@ in
       User = mainUser;
       Restart = "always";
       RestartSec = 10;
+    };
+    environment = {
+      PATH = lib.mkForce "/run/current-system/sw/bin";
     };
   };
 }
