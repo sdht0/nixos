@@ -9,7 +9,7 @@
   nix.package = pkgs.nixVersions.latest;
   environment.systemPackages = with pkgs; [
     nix-output-monitor
-    nvd
+    dix
   ];
 
   # Use a purely flake-based system
