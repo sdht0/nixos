@@ -12,13 +12,9 @@
       jetbrains.pycharm-community-bin
       temurin-bin-21
 
-      poetry
+      claude-code
 
       nodejs
-
-      duckdb
-
-      cloudflared
     ]
   );
 }
