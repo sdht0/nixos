@@ -5,6 +5,10 @@
   ...
 }:
 {
+  imports = [
+    ../../../modules-lib/option-nix-ld-include.nix
+  ];
+
   environment.systemPackages = (
     with pkgs;
     [
@@ -33,6 +37,14 @@
   programs.nix-ld.libraries = with pkgs; [
     pkgsStatic.openssl
   ];
+
+  programs.nix-ld-includes = {
+    enable = true;
+    packages = with pkgs; [
+      pkgsStatic.openssl
+      duckdb
+    ];
+  };
 
   environment.variables = {
     NUM_THREADS = "10";
