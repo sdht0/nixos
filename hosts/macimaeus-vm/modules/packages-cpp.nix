@@ -31,6 +31,8 @@
       gdb
 
       duckdb
+      meilisearch
+      qdrant
     ]
   );
 
