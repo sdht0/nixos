@@ -10,10 +10,11 @@
     [
       vscode
       jetbrains.pycharm-community-bin
-      temurin-bin-21
 
       claude-code
+      code-cursor
 
+      temurin-bin-21
       nodejs
     ]
   );

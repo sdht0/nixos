@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs2505,
+  ...
+}:
 {
   myPythonPkgs = [
     "beautifulsoup4"
@@ -7,11 +12,12 @@
   ];
 
   environment.systemPackages = (
-    with pkgs;
-    [
+    (with pkgs; [
       chromium
       yt-dlp
+    ])
+    ++ (with pkgs2505; [
       deno
-    ]
+    ])
   );
 }
