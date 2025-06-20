@@ -12,7 +12,12 @@
   environment.systemPackages = (
     with pkgs;
     [
-      jetbrains.clion
+      (jetbrains.clion.overrideAttrs  (old: {
+        postFixup = ''
+          ${old.postFixup}
+          patchelf --replace-needed libxml2.so.2 libxml2.so $out/clion/bin/lldb/linux/*/lib/liblldb.so
+        '';
+      }))
 
       gnumake
       cmake
