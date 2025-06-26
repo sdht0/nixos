@@ -30,6 +30,33 @@
 
       checksec = pkgs.callPackage ./checksec.nix {};
 
+      code-cursor = prev.code-cursor.overrideAttrs (oldAttrs: rec {
+        pname = "code-cursor";
+        version = "1.1.6";
+        src = pkgs.appimageTools.extract {
+          inherit pname version;
+          src = pkgs.fetchurl {
+            url = "https://downloads.cursor.com/production/5b19bac7a947f54e4caa3eb7e4c5fbf832389853/linux/arm64/Cursor-1.1.6-aarch64.AppImage";
+            hash = "sha256-HKr87IOzSNYWIYBxVOef1758f+id/t44YM5+SNunkTs=";
+          };
+        };
+        sourceRoot = "${pname}-${version}-extracted/usr/share/cursor";
+      });
+
+      jetbrains-clion = prev.jetbrains.clion.overrideAttrs (old: {
+        postFixup = ''
+          ${old.postFixup}
+          patchelf --replace-needed libxml2.so.2 libxml2.so $out/clion/bin/lldb/linux/*/lib/liblldb.so
+        '';
+      });
+
+      jetbrains-rust-rover = prev.jetbrains.rust-rover.overrideAttrs (old: {
+        postFixup = ''
+          ${old.postFixup}
+          patchelf --replace-needed libxml2.so.2 libxml2.so $out/rust-rover/bin/lldb/linux/*/lib/liblldb.so
+        '';
+      });
+
       pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
         xlib = pyprev.xlib.overridePythonAttrs (oldAttrs: {
           patches = [
