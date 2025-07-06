@@ -3,13 +3,6 @@
   nixpkgs.overlays = [
     (final: prev: {
       yt-dlp = prev.yt-dlp.overrideAttrs (old: {
-        # name = "yt-dlp_git";
-        # src = pkgs.fetchFromGitHub {
-        #   owner  = "yt-dlp";
-        #   repo   = "yt-dlp";
-        #   rev    = "f849d77ab54788446b995d256e1ee0894c4fb927";
-        #   hash = "sha256-tfRQUbZYzknDqprYfTEAJrMAdhIeFysEuQnjZyX/QAU=";
-        # };
         patches = [ ./files/yt-dlp-enhance.patch ];
       });
 
@@ -29,19 +22,6 @@
       });
 
       checksec = pkgs.callPackage ./checksec.nix {};
-
-      code-cursor = prev.code-cursor.overrideAttrs (oldAttrs: rec {
-        pname = "code-cursor";
-        version = "1.1.6";
-        src = pkgs.appimageTools.extract {
-          inherit pname version;
-          src = pkgs.fetchurl {
-            url = "https://downloads.cursor.com/production/5b19bac7a947f54e4caa3eb7e4c5fbf832389853/linux/arm64/Cursor-1.1.6-aarch64.AppImage";
-            hash = "sha256-HKr87IOzSNYWIYBxVOef1758f+id/t44YM5+SNunkTs=";
-          };
-        };
-        sourceRoot = "${pname}-${version}-extracted/usr/share/cursor";
-      });
 
       jetbrains-clion = prev.jetbrains.clion.overrideAttrs (old: {
         postFixup = ''
