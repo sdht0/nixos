@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  opensslStatic = pkgs.openssl.override { static = true; };
+in
 {
   imports = [
     ../../../modules-lib/option-nix-ld-include.nix
@@ -37,13 +40,13 @@
   );
 
   programs.nix-ld.libraries = with pkgs; [
-    pkgsStatic.openssl
+    opensslStatic
   ];
 
   programs.nix-ld-includes = {
     enable = true;
     packages = with pkgs; [
-      pkgsStatic.openssl
+      opensslStatic
       duckdb
     ];
   };
