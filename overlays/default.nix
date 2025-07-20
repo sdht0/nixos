@@ -37,6 +37,12 @@
         '';
       });
 
+      jetbrains = prev.jetbrains // {
+        jdk = pkgs.callPackage ./jcef.nix {
+          jdk = prev.jdk21;
+        };
+      };
+
       pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
         xlib = pyprev.xlib.overridePythonAttrs (oldAttrs: {
           patches = [
