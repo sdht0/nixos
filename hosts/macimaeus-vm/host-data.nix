@@ -1,6 +1,6 @@
 {
   system = "aarch64-linux";
-  timezone = "America/Toronto";
+  timezone = "America/Regina";
   locale = "en_CA.UTF-8";
   users = {
     mainuser = rec {
