@@ -26,15 +26,10 @@
       ffmpeg
       vlc
 
-      mcomix
+      # mcomix
       foliate
 
       inputs.nixOlde.packages.${system}.nix-olde
-
-      # thunderbird
-      # zoom-us slack
-      # drawio
-      # zotero # no aarch64
     ]
   );
 
