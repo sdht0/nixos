@@ -13,29 +13,11 @@
         '';
       });
 
-      obsidian = prev.obsidian.override (old: {
-        electron = pkgs.electron-bin;
-      });
-
       eza = prev.eza.overrideAttrs (old: {
         patches = old.patches ++ [ ./files/eza.patch ];
       });
 
       checksec = pkgs.callPackage ./checksec.nix {};
-
-      jetbrains-clion = prev.jetbrains.clion.overrideAttrs (old: {
-        postFixup = ''
-          ${old.postFixup}
-          patchelf --replace-needed libxml2.so.2 libxml2.so $out/clion/bin/lldb/linux/*/lib/liblldb.so
-        '';
-      });
-
-      jetbrains-rust-rover = prev.jetbrains.rust-rover.overrideAttrs (old: {
-        postFixup = ''
-          ${old.postFixup}
-          patchelf --replace-needed libxml2.so.2 libxml2.so $out/rust-rover/bin/lldb/linux/*/lib/liblldb.so
-        '';
-      });
 
       pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
         xlib = pyprev.xlib.overridePythonAttrs (oldAttrs: {
