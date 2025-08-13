@@ -37,4 +37,6 @@
     dmidecode
   ];
   programs.nano.enable = false;
+  services.orca.enable = false;
+  services.speechd.enable = false;
 }
