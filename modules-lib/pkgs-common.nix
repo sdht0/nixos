@@ -34,7 +34,7 @@
     gnupg
 
     gitFull
-    gitui # git tui
+    # gitui # git tui
 
     zstd
     unzip
