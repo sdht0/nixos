@@ -92,7 +92,7 @@
                 };
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                sharedModules = [ inputs.plasmaManager.homeManagerModules.plasma-manager ];
+                sharedModules = [ inputs.plasmaManager.homeModules.plasma-manager ];
               };
             }
           ];
