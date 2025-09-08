@@ -9,6 +9,6 @@
   security.acme.certs."sdht.in" = {
     domain = "*.sdht.in";
     dnsProvider = "cloudflare";
-    credentialsFile = "/var/lib/secrets/cloudflare.secret";
+    environmentFile = "/var/lib/secrets/cloudflare.secret";
   };
 }
