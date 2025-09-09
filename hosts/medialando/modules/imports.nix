@@ -9,7 +9,6 @@
     ../../../modules-lib/option-python.nix
 
     ../../../modules-lib/system-nix-linux.nix
-    ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/hardware-firmware.nix
     ../../../modules-lib/hardware-fwupd.nix
@@ -23,8 +22,8 @@
     ../../../modules-lib/system-btrfs-home-snapshots.nix
     ../../../modules-lib/system-initrd-systemd.nix
     ../../../modules-lib/system-oom.nix
-    ../../../modules-lib/system-systemd-boot-xbootldr.nix
     ../../../modules-lib/system-systemd-boot.nix
+    ../../../modules-lib/system-systemd-boot-xbootldr.nix
     ../../../modules-lib/system-users.nix
     ../../../modules-lib/system-watchdog-disable.nix
     ../../../modules-lib/system-zfs.nix

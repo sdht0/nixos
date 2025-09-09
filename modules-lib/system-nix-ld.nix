@@ -14,19 +14,14 @@
     atk
     bzip2
     cairo
-    cups
     curl
     dbus
-    dbus-glib
     desktop-file-utils
-    e2fsprogs
     expat
-    flac
     fontconfig
     freeglut
     freetype
     fribidi
-    fuse
     fuse3
     gdk-pixbuf
     glew110
@@ -43,7 +38,6 @@
     libcaca
     libcanberra
     libcap
-    libclang.lib
     libdbusmenu
     libdrm
     libgcrypt
@@ -51,24 +45,18 @@
     libGLU
     libgpg-error
     libidn
-    libjack2
     libjpeg
-    libmikmod
     libogg
     libpng12
-    libpulseaudio
     librsvg
     libsamplerate
-    libthai
     libtheora
     libtiff
-    libudev0-shim
     libusb1
     libuuid
     libvdpau
     libvorbis
     libvpx
-    libxcrypt-legacy
     libxkbcommon
     libxml2
     mesa
@@ -89,7 +77,6 @@
     tbb
     udev
     vulkan-loader
-    wayland
     xorg.libICE
     xorg.libpciaccess
     xorg.libSM
