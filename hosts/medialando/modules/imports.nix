@@ -12,6 +12,7 @@
     ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/hardware-firmware.nix
+    ../../../modules-lib/hardware-fwupd.nix
     ../../../modules-lib/hardware-intel.nix
     ../../../modules-lib/hardware-nvidia-disable.nix
     ../../../modules-lib/hardware-ssd.nix

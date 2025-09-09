@@ -29,7 +29,7 @@ in
       cpplint
       codechecker
 
-      config.boot.kernelPackages.perf
+      perf
       valgrind
       gdb
 
