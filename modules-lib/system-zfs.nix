@@ -2,7 +2,6 @@
 
 {
   boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.forceImportRoot = false;
   networking.hostId = "3eb4f87f";
 
   services.sanoid.enable = true;

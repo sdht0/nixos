@@ -9,40 +9,28 @@ let
 in
 {
   boot.initrd.availableKernelModules = [
+    "nvme"
     "xhci_pci"
     "thunderbolt"
-    "nvme"
     "usbhid"
-    "sdhci_pci"
+    "uas"
+    "sd_mod"
   ];
-
-  boot.initrd.luks.devices."root" = {
-    device = "/dev/disk/by-partlabel/LUKS";
-    keyFile = "/${keyFile}";
-  };
-  boot.initrd.secrets = {
-    "/${keyFile}" = /var/lib/secrets/${keyFile};
-  };
+  boot.initrd.kernelModules = [ ];
+  boot.extraModulePackages = [ ];
+  boot.zfs.forceImportRoot = true;
 
   fileSystems."/" = {
-    device = "/dev/disk/by-label/LINUX";
-    fsType = "btrfs";
-    options = [
-      "subvol=@nixos"
-      "compress=zstd"
-      "noatime"
-    ];
+    device = "zroot/nixos";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
   };
   fileSystems."/home" = {
-    device = "/dev/disk/by-label/LINUX";
-    fsType = "btrfs";
-    options = [
-      "subvol=@home"
-      "compress=zstd"
-      "noatime"
-    ];
+    device = "zroot/home";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
   };
   swapDevices = [ ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.05";
 }
