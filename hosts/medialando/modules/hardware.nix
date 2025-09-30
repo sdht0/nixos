@@ -5,7 +5,7 @@
   ...
 }:
 let
-  keyFile = "root.luks.bin";
+  keyFile = "/var/lib/secrets/zroot.key";
 in
 {
   boot.initrd.availableKernelModules = [
@@ -18,7 +18,14 @@ in
   ];
   boot.initrd.kernelModules = [ ];
   boot.extraModulePackages = [ ];
+
+  boot.zfs.enable = true;
   boot.zfs.forceImportRoot = true;
+
+  boot.initrd.secrets."/root/zroot.key" = keyFile;
+  systemd.tmpfiles.rules = [
+    "f ${keyFile} 0400 root root -"
+  ];
 
   fileSystems."/" = {
     device = "zroot/nixos";
