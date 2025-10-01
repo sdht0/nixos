@@ -13,10 +13,10 @@ in
             BOOT = {
               size = "2G";
               type = "EF00";
+              label = "BOOT";
               content = {
                 type = "filesystem";
                 format = "vfat";
-                label = "BOOT";
                 mountpoint = "/boot";
                 mountOptions = [ "umask=0077" ];
               };
@@ -24,10 +24,10 @@ in
             ZFS = {
               size = "925G";
               type = "8300";
+              label = "ZFS";
               content = {
                 type = "zfs";
                 pool = "zroot";
-                label = "ZFS";
               };
             };
           };
@@ -42,19 +42,19 @@ in
             BOOTMIRROR = {
               size = "2G";
               type = "8300";
+              label = "BOOTMIRROR";
               content = {
                 type = "filesystem";
                 format = "vfat";
-                label = "BOOTMIRROR";
               };
             };
             ZFSMIRROR = {
               size = "925G";
               type = "8300";
+              label = "ZFSMIRROR";
               content = {
                 type = "zfs";
                 pool = "zroot";
-                label = "ZFSMIRROR";
               };
             };
           };
