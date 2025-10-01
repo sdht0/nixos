@@ -19,7 +19,7 @@ in
                 format = "vfat";
                 mountpoint = "/boot";
                 mountOptions = [ "umask=0077" ];
-                extraArgs = "-n BOOT";
+                extraArgs = ["-n BOOT"];
               };
             };
             ZFS = {
@@ -47,7 +47,7 @@ in
               content = {
                 type = "filesystem";
                 format = "vfat";
-                extraArgs = "-n BOOTMIRROR";
+                extraArgs = ["-n BOOTMIRROR"];
               };
             };
             ZFSMIRROR = {
