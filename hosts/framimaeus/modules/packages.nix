@@ -6,12 +6,37 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
-    rclone
-    isync
+  environment.systemPackages = (
+    with pkgs;
+    [
+      firefox
+      (chromium.override {
+        enableWideVine = false;
+        # commandLineArgs = [
+        #   "--enable-features=VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
+        #   "--ignore-gpu-blocklist"
+        #   "--enable-zero-copy"
+        # ];
+      })
 
-    gnumake
-    cmake
-    gcc
+      libreoffice-qt6-fresh
+      obsidian
+      activitywatch
+
+      ffmpeg
+      vlc
+
+      mcomix
+      foliate
+
+      inputs.nixOlde.packages.${system}.nix-olde
+    ]
+  );
+
+  myPythonPkgs = [
+    "pynput"
+    "xlib"
   ];
+
+  programs.gnupg.agent.enable = true;
 }

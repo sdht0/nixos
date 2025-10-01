@@ -1,7 +1,7 @@
 rec {
   system = "x86_64-linux";
   timezone = "America/Toronto";
-  locale = "en_US.UTF-8";
+  locale = "en_CA.UTF-8";
   users = {
     mainuser = rec {
       username = "artimaeus";
