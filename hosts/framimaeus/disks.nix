@@ -16,15 +16,18 @@ in
               content = {
                 type = "filesystem";
                 format = "vfat";
+                label = "BOOT";
                 mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
               };
             };
-            LINUX = {
+            ZFS = {
               size = "925G";
               type = "8300";
               content = {
                 type = "zfs";
                 pool = "zroot";
+                label = "ZFS";
               };
             };
           };
@@ -42,14 +45,16 @@ in
               content = {
                 type = "filesystem";
                 format = "vfat";
+                label = "BOOTMIRROR";
               };
             };
-            LINUX = {
+            ZFSMIRROR = {
               size = "925G";
               type = "8300";
               content = {
                 type = "zfs";
                 pool = "zroot";
+                label = "ZFSMIRROR";
               };
             };
           };
@@ -74,10 +79,12 @@ in
           "nixos" = {
             type = "zfs_fs";
             options.mountpoint = "/";
+            mountpoint = "/";
           };
           "home" = {
             type = "zfs_fs";
             options.mountpoint = "/home";
+            mountpoint = "/home";
           };
         };
       };
