@@ -34,19 +34,19 @@
     ../../../modules-lib/pkgs-common-linux.nix
     ../../../modules-lib/pkgs-docker.nix
     ../../../modules-lib/pkgs-syncthing.nix
+    ../../../modules-lib/system-audio.nix
+    ../../../modules-lib/system-plasma6.nix
+    # ../../../modules-lib/pkgs-fonts.nix
 
     # ../../../modules-lib/hardware-fingerprintreader.nix
     # ../../../modules-lib/hardware-canon-ts3420.nix
     # ../../../modules-lib/hardware-logitech.nix
     # ../../../modules-lib/system-bluetooth.nix
     # ../../../modules-lib/system-users-autologin.nix
-    # ../../../modules-lib/system-audio.nix
     # ../../../modules-lib/pkgs-sshagent.nix
-    # ../../../modules-lib/pkgs-fonts.nix
     # ../../../modules-lib/pkgs-latex.nix
     # ../../../modules-lib/pkgs-nixdev.nix
     # ../../../modules-lib/pkgs-debuginfod.nix
     #../../../modules-lib/system-plymouth.nix
-    #../../../modules-lib/system-plasma6.nix
   ];
 }
