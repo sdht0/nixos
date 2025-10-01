@@ -2,11 +2,9 @@
   config,
   lib,
   pkgs,
+  hostData,
   ...
 }:
-let
-  keyFile = "/var/lib/secrets/zroot.key";
-in
 {
   boot.initrd.availableKernelModules = [
     "nvme"
@@ -19,9 +17,10 @@ in
   boot.initrd.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  boot.initrd.secrets."/root/zroot.key" = keyFile;
+  boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
   systemd.tmpfiles.rules = [
-    "f ${keyFile} 0400 root root -"
+    "d ${hostData.zfsKeyDir} 0700 root root -"
+    "f ${hostData.zfsKeyFile} 0400 root root -"
   ];
 
   fileSystems."/boot" = {
