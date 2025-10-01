@@ -32,14 +32,10 @@ in
       perf
       valgrind
       gdb
-
-      duckdb
-      meilisearch
-      qdrant
     ]
   );
 
-  programs.nix-ld.libraries = with pkgs; [
+  programs.nix-ld.libraries = [
     opensslStatic
   ];
 

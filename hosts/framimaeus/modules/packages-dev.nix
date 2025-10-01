@@ -16,6 +16,8 @@
       codex
       opencode
 
+      duckdb
+
       temurin-bin-21
       nodejs
     ]
