@@ -69,12 +69,16 @@ in
         mode = "mirror";
         rootFsOptions = {
           mountpoint = "none";
+          canmount = "off";
+          devices = "off";
           compression = "zstd";
           acltype = "posixacl";
           xattr = "sa";
-            encryption = "aes-256-gcm";
-            keyformat = "passphrase";
-            keylocation = "file://${config.zfsKeyFile}";
+          dnodesize = "auto";
+          encryption = "aes-256-gcm";
+          keyformat = "passphrase";
+          keylocation = "file://${config.zfsKeyFile}";
+          atime = "off";
         };
         options.ashift = "12";
         datasets = {
