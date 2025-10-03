@@ -6,6 +6,11 @@
   ...
 }:
 {
+  environment.systemPackages = with pkgs; [
+    rclone # gdrive sync
+    isync # mail sync
+  ];
+
   systemd.timers."backup-root" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
