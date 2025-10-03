@@ -18,10 +18,6 @@
   boot.extraModulePackages = [ ];
 
   boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
-  systemd.tmpfiles.rules = [
-    "d ${hostData.zfsKeyDir} 0700 root root -"
-    "f ${hostData.zfsKeyFile} 0400 root root -"
-  ];
 
   ### Commented out to allow systemd automount ###
   # fileSystems."/boot" = {
@@ -44,5 +40,5 @@
   };
   swapDevices = [ ];
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.05";
 }

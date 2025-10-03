@@ -9,7 +9,6 @@
     ../../../modules-lib/option-python.nix
 
     ../../../modules-lib/system-nix-linux.nix
-    ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/hardware-firmware.nix
     ../../../modules-lib/hardware-fwupd.nix
@@ -26,16 +25,12 @@
     ../../../modules-lib/system-zfs.nix
 
     ../../../modules-lib/networking-networkmanager.nix
+    ../../../modules-lib/networking-sshd.nix
+    ../../../modules-lib/networking-mullvad.nix
     ../../../modules-lib/networking-tailscale.nix
-    # ../../../modules-lib/networking-mullvad.nix
 
     ../../../modules-lib/pkgs-common-linux.nix
-    ../../../modules-lib/pkgs-podman.nix
+    ../../../modules-lib/pkgs-docker.nix
     ../../../modules-lib/pkgs-syncthing.nix
-    ../../../modules-lib/pkgs-sshagent.nix
-    ../../../modules-lib/pkgs-fonts.nix
-    ../../../modules-lib/pkgs-dev-nix.nix
-    ../../../modules-lib/pkgs-debuginfod.nix
-    ../../../modules-lib/pkgs-dev-python.nix
   ];
 }

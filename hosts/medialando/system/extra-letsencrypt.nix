@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostData, ... }:
 
 {
   security.acme.acceptTerms = true;
@@ -9,6 +9,6 @@
   security.acme.certs."sdht.in" = {
     domain = "*.sdht.in";
     dnsProvider = "cloudflare";
-    environmentFile = "/var/lib/secrets/cloudflare.secret";
+    environmentFile = hostData.cloudflareKeyFile;
   };
 }

@@ -17,8 +17,8 @@
     ../../../modules-lib/hardware-ssd.nix
     ../../../modules-lib/hardware-lid-ignore.nix
 
-    ../../../modules-lib/system-basic-linux-sysctl.nix
     ../../../modules-lib/system-basic-linux.nix
+    ../../../modules-lib/system-basic-linux-sysctl.nix
     ../../../modules-lib/system-btrfs-home-snapshots.nix
     ../../../modules-lib/system-initrd-systemd.nix
     ../../../modules-lib/system-oom.nix
@@ -32,7 +32,6 @@
     ../../../modules-lib/networking-mullvad.nix
     ../../../modules-lib/networking-sshd.nix
     ../../../modules-lib/networking-tailscale.nix
-    ../../../modules-lib/networking-letsencrypt.nix
 
     ../../../modules-lib/pkgs-common-linux.nix
     ../../../modules-lib/pkgs-docker.nix

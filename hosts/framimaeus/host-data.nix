@@ -12,6 +12,7 @@ rec {
   };
   disk1 = "/dev/nvme0n1";
   disk2 = "/dev/nvme1n1";
-  zfsKeyDir = "/var/lib/secrets";
-  zfsKeyFile = "${zfsKeyDir}/zroot.key";
+  secretsDir = "/var/lib/secrets";
+  zfsKeyFile = "${secretsDir}/zroot.key";
+  cloudflareKeyFile = "${secretsDir}/cloudflare.key";
 }
