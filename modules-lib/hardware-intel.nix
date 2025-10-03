@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     intel-gpu-tools
+    nvtopPackages.intel
     libva-utils
   ];
 }
