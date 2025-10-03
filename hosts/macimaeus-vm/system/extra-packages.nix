@@ -6,6 +6,10 @@
   ...
 }:
 {
+  imports = [
+    ../../../modules-lib/pkgs-dev-python.nix
+  ];
+
   environment.systemPackages = (
     with pkgs;
     [
@@ -32,11 +36,6 @@
       inputs.nixOlde.packages.${system}.nix-olde
     ]
   );
-
-  myPythonPkgs = [
-    "pynput"
-    "xlib"
-  ];
 
   programs.gnupg.agent.enable = true;
   home-manager.backupFileExtension = "backup";

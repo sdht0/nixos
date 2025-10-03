@@ -9,7 +9,7 @@
     ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/system-qemu.nix
-
+    ../../../modules-lib/system-zfs.nix
     ../../../modules-lib/system-audio.nix
     ../../../modules-lib/system-basic-linux.nix
     ../../../modules-lib/system-basic-linux-sysctl.nix
@@ -32,6 +32,5 @@
     ../../../modules-lib/pkgs-fonts.nix
     ../../../modules-lib/pkgs-dev-nix.nix
     ../../../modules-lib/pkgs-debuginfod.nix
-    ../../../modules-lib/pkgs-dev-python.nix
   ];
 }

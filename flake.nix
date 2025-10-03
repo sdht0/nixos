@@ -64,8 +64,8 @@
           {
             home.username = username;
             imports =
-              (lib'.filesInDir_f ./hosts/${hostname}/hm-common)
-              ++ (lib'.filesInDir_f ./hosts/${hostname}/hm-${userId});
+              (lib'.filesInDir_f ./hosts/${hostname}/home/common)
+              ++ (lib'.filesInDir_f ./hosts/${hostname}/home/${userId});
           }
         );
 
@@ -79,7 +79,7 @@
             };
             inherit lib' inputs;
           };
-          modules = (lib'.filesInDir_f ./hosts/${hostname}/modules) ++ [
+          modules = (lib'.filesInDir_f ./hosts/${hostname}/system) ++ [
             ./overlays
           ] ++ lib.optionals (!hostData.noHm or false) [
             inputs.homeManager.nixosModules.home-manager
