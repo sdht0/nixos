@@ -20,7 +20,7 @@
   boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-label/BOOT";
+    device = "/dev/disk/by-partlabel/BOOT";
     fsType = "vfat";
     options = [
       "fmask=0022"
