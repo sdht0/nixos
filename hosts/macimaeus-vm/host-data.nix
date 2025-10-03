@@ -1,4 +1,4 @@
-{
+rec {
   system = "aarch64-linux";
   timezone = "America/Toronto";
   locale = "en_CA.UTF-8";
@@ -9,4 +9,7 @@
       gid = uid;
     };
   };
+  disk = "/dev/vda";
+  zfsKeyDir = "/var/lib/secrets";
+  zfsKeyFile = "${zfsKeyDir}/zroot.key";
 }
