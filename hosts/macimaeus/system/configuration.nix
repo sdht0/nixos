@@ -11,7 +11,7 @@
     ../../../modules-lib/system-nix-darwin.nix
     ../../../modules-lib/system-basic-darwin.nix
     ../../../modules-lib/pkgs-common-darwin.nix
-    ../../../modules-lib/pkgs-dev-nix.nix
+    # ../../../modules-lib/pkgs-dev-nix.nix
   ];
 
   system.primaryUser = hostData.mainuser;
@@ -41,10 +41,8 @@
       "iterm2"
       "zoom"
       "firefox"
-      "google-chrome"
       "tor-browser"
       "font-jetbrains-mono-nerd-font"
-      "visual-studio-code"
       "stats"
       "ollama-app"
     ];
