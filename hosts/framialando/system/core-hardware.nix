@@ -19,15 +19,14 @@
 
   boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
 
-  ### Commented out to allow systemd automount ###
-  # fileSystems."/boot" = {
-  #   device = "/dev/disk/by-label/BOOT";
-  #   fsType = "vfat";
-  #   options = [
-  #     "fmask=0022"
-  #     "dmask=0022"
-  #   ];
-  # };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/BOOT";
+    fsType = "vfat";
+    options = [
+      "fmask=0022"
+      "dmask=0022"
+    ];
+  };
   fileSystems."/" = {
     device = "zroot/nixos";
     fsType = "zfs";
