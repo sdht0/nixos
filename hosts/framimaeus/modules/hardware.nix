@@ -23,11 +23,15 @@
     "f ${hostData.zfsKeyFile} 0400 root root -"
   ];
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-label/BOOT";
-    fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
-  };
+  ### Commented out to allow systemd automount ###
+  # fileSystems."/boot" = {
+  #   device = "/dev/disk/by-label/BOOT";
+  #   fsType = "vfat";
+  #   options = [
+  #     "fmask=0022"
+  #     "dmask=0022"
+  #   ];
+  # };
   fileSystems."/" = {
     device = "zroot/nixos";
     fsType = "zfs";

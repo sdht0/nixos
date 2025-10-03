@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   services.earlyoom.enable = true;
   zramSwap = {
-    enable = lib.mkDefault true;
+    enable = lib.mkDefault false;
     algorithm = "zstd";
     memoryPercent = 25;
   };

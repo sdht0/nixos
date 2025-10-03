@@ -15,15 +15,10 @@
     ../../../modules-lib/hardware-fwupd.nix
     ../../../modules-lib/hardware-amd.nix
     ../../../modules-lib/hardware-ssd.nix
-    ../../../modules-lib/hardware-logitech.nix
-    ../../../modules-lib/hardware-canon-ts3420.nix
 
     ../../../modules-lib/system-basic-linux.nix
     ../../../modules-lib/system-basic-linux-sysctl.nix
     ../../../modules-lib/system-initrd-systemd.nix
-    ../../../modules-lib/system-plasma6.nix
-    ../../../modules-lib/system-audio.nix
-    ../../../modules-lib/system-bluetooth.nix
     ../../../modules-lib/system-oom.nix
     ../../../modules-lib/system-systemd-boot.nix
     ../../../modules-lib/system-users.nix

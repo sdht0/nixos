@@ -22,24 +22,16 @@
   #     options = [ "fmask=0022" "dmask=0022" ];
   #   };
   fileSystems."/" = {
-    device = "/dev/disk/by-label/LINUX";
-    fsType = "btrfs";
-    options = [
-      "subvol=@nixos"
-      "compress=zstd"
-      "noatime"
-    ];
+    device = "zroot/nixos";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
   };
   fileSystems."/home" = {
-    device = "/dev/disk/by-label/LINUX";
-    fsType = "btrfs";
-    options = [
-      "subvol=@home"
-      "compress=zstd"
-      "noatime"
-    ];
+    device = "zroot/home";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
   };
-  zramSwap.enable = false;
+  swapDevices = [ ];
 
   system.stateVersion = "24.05";
 }
