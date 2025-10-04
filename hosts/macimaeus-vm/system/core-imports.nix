@@ -9,11 +9,11 @@
     ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/system-qemu.nix
+
     ../../../modules-lib/system-zfs.nix
     ../../../modules-lib/system-audio.nix
     ../../../modules-lib/system-basic-linux.nix
     ../../../modules-lib/system-basic-linux-sysctl.nix
-    ../../../modules-lib/system-btrfs-home-snapshots.nix
     ../../../modules-lib/system-initrd-systemd.nix
     ../../../modules-lib/system-oom.nix
     ../../../modules-lib/system-plasma6.nix

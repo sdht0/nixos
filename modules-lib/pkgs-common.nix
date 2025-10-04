@@ -9,6 +9,11 @@
   environment.shells = with pkgs; [ zsh ];
 
   environment.systemPackages = with pkgs; [
+    starship # prompt
+
+    gitFull
+    # gitui # git tui
+
     vim
     tmux
     ripgrep # grep
@@ -16,7 +21,6 @@
     eza # ls
     jaq # jq
     bc # calculator
-    starship # prompt
     peco # interactive filtering
     difftastic # semantic diffs
     bat # cat
@@ -31,9 +35,6 @@
     shellcheck
 
     gnupg
-
-    gitFull
-    # gitui # git tui
 
     zstd
     unzip

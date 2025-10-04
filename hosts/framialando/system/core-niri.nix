@@ -7,18 +7,29 @@
 {
   programs.niri.enable = true;
   programs.xwayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   programs.waybar.enable = true; # top bar
   environment.systemPackages = with pkgs; [
     alacritty # terminal
-    fuzzel # application launcher
-    mako # notifications
-    swaylock # screen locker
-    swayidle # idle management
-    swaybg # wallpaper
     xwayland-satellite
+    brightnessctl
+    cliphist
+    dunst
+    fuzzel # application launcher
+    niriswitcher
+    pamixer
+    pwvucontrol
+    swaybg # wallpaper
+    swayidle # idle management
+    swaylock-effects
+    swww
+    wlogout
+    swaylock # screen locker
+    udiskie
+    nautilus
   ];
 
   services.libinput.enable = true;
-  services.pipewire.enable = true;
 }
