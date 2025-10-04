@@ -10,11 +10,13 @@
 
   programs.waybar.enable = true; # top bar
   environment.systemPackages = with pkgs; [
-    alacritty
-    fuzzel
-    swaylock
-    mako
-    swayidle
+    alacritty # terminal
+    fuzzel # application launcher
+    mako # notifications
+    swaylock # screen locker
+    swayidle # idle management
+    swaybg # wallpaper
+    xwayland-satellite
   ];
 
   services.libinput.enable = true;
