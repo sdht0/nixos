@@ -28,5 +28,9 @@
 
   nix.optimise.automatic = true;
 
+  systemd.tmpfiles.rules = [
+    "d /var/log/nixos 0700 ${hostData.users.mainuser.username} ${hostData.users.mainuser.username} -"
+  ];
+
   nixpkgs.hostPlatform = hostData.system;
 }
