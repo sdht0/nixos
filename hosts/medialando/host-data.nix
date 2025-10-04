@@ -10,7 +10,7 @@ rec {
       gid = uid;
     };
   };
-  disk = "/dev/vda";
+  disk = "/dev/nvme0n1";
   secretsDir = "/var/lib/secrets";
   zfsKeyFile = "${secretsDir}/zroot.key";
   cloudflareKeyFile = "${secretsDir}/cloudflare.key";
