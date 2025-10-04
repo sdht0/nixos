@@ -2,11 +2,9 @@
   config,
   lib,
   pkgs,
+  hostData,
   ...
 }:
-let
-  keyFile = "root.luks.bin";
-in
 {
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -16,31 +14,25 @@ in
     "sdhci_pci"
   ];
 
-  boot.initrd.luks.devices."root" = {
-    device = "/dev/disk/by-partlabel/LUKS";
-    keyFile = "/${keyFile}";
-  };
-  boot.initrd.secrets = {
-    "/${keyFile}" = /var/lib/secrets/${keyFile};
-  };
+  boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/LINUX";
-    fsType = "btrfs";
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-partlabel/BOOT";
+    fsType = "vfat";
     options = [
-      "subvol=@nixos"
-      "compress=zstd"
-      "noatime"
+      "fmask=0022"
+      "dmask=0022"
     ];
+  };
+  fileSystems."/" = {
+    device = "zroot/nixos";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
   };
   fileSystems."/home" = {
-    device = "/dev/disk/by-label/LINUX";
-    fsType = "btrfs";
-    options = [
-      "subvol=@home"
-      "compress=zstd"
-      "noatime"
-    ];
+    device = "zroot/home";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
   };
   swapDevices = [ ];
 

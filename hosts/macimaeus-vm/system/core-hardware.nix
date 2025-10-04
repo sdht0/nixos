@@ -2,10 +2,10 @@
   config,
   lib,
   pkgs,
+  hostData,
   ...
 }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "uhci_hcd"
@@ -15,12 +15,16 @@
     "sr_mod"
   ];
 
-  ### Commented out to allow systemd automount ###
-  # fileSystems."/boot" =
-  #   { device = "/dev/disk/by-label/BOOT";
-  #     fsType = "vfat";
-  #     options = [ "fmask=0022" "dmask=0022" ];
-  #   };
+  boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-partlabel/BOOT";
+    fsType = "vfat";
+    options = [
+      "fmask=0022"
+      "dmask=0022"
+    ];
+  };
   fileSystems."/" = {
     device = "zroot/nixos";
     fsType = "zfs";

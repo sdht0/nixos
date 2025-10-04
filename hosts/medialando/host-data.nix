@@ -1,4 +1,4 @@
-{
+rec {
   system = "x86_64-linux";
   timezone = "America/Toronto";
   locale = "en_US.UTF-8";
@@ -10,4 +10,8 @@
       gid = uid;
     };
   };
+  disk = "/dev/vda";
+  secretsDir = "/var/lib/secrets";
+  zfsKeyFile = "${secretsDir}/zroot.key";
+  cloudflareKeyFile = "${secretsDir}/cloudflare.key";
 }
