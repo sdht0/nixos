@@ -6,7 +6,10 @@
 }:
 {
   programs.command-not-found.enable = false; # Does not work on flake-based systems
-  programs.zsh.interactiveShellInit = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  '';
+  programs.nix-index = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = false;
+    enableFishIntegration = false;
+  };
 }
