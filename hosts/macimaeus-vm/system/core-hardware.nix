@@ -21,8 +21,8 @@
     device = "/dev/disk/by-partlabel/BOOT";
     fsType = "vfat";
     options = [
-      "fmask=0022"
-      "dmask=0022"
+      "fmask=0177"
+      "dmask=0077"
     ];
   };
   fileSystems."/" = {
@@ -37,5 +37,5 @@
   };
   swapDevices = [ ];
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.05";
 }
