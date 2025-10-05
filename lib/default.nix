@@ -31,11 +31,11 @@ rec {
     '';
   };
 
-  filesInDir_f =
+  filesInDir_f = dir: lib.optionalAttrs (builtins.pathExists dir) (builtins.readDir dir);
+
+  nixFilesInDir_f =
     dir:
-    lib.optionals (builtins.pathExists dir) (
-      lib.attrsets.mapAttrsToList (name: _: dir + "/${name}") (
-        lib.filterAttrs (n: _: lib.hasSuffix ".nix" n) (builtins.readDir dir)
-      )
+    lib.attrsets.mapAttrsToList (name: _: dir + "/${name}") (
+      lib.filterAttrs (n: _: lib.hasSuffix ".nix" n) (filesInDir_f dir)
     );
 }

@@ -43,29 +43,26 @@
         system:
         lib.mapAttrs (
           name: _: import ./shells/${name}/shell.nix { pkgs = import inputs.nixpkgs { inherit system; }; }
-        ) (builtins.readDir ./shells);
+        ) (lib'.filesInDir_f ./shells);
 
       packages_f =
         system:
         let
           pkgs = import inputs.nixpkgs { inherit system; };
         in
-          lib.mapAttrs (
-            name: _: pkgs.callPackage ./packages/${name}/package.nix {  }
-          ) (builtins.readDir ./packages);
+        lib.mapAttrs (name: _: pkgs.callPackage ./packages/${name}/package.nix { }) (
+          lib'.filesInDir_f ./packages
+        );
 
       hmUserConfigs_f =
         hostname: userId: userData:
-        let
-          username = userData.username;
-        in
-        lib.nameValuePair username (
+        lib.nameValuePair userData.username (
           { ... }:
           {
-            home.username = username;
+            home.username = userData.username;
             imports =
-              (lib'.filesInDir_f ./hosts/${hostname}/home/common)
-              ++ (lib'.filesInDir_f ./hosts/${hostname}/home/${userId});
+              (lib'.nixFilesInDir_f ./hosts/${hostname}/home/common)
+              ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/home/${userId});
           }
         );
 
@@ -79,23 +76,26 @@
             };
             inherit lib' inputs;
           };
-          modules = (lib'.filesInDir_f ./hosts/${hostname}/system) ++ [
-            ./overlays
-          ] ++ lib.optionals (!(hostData.noHm or false)) [
-            inputs.homeManager.nixosModules.home-manager
-            {
-              home-manager = {
-                users = lib.mapAttrs' (hmUserConfigs_f hostname) hostData.users;
-                extraSpecialArgs = {
-                  inherit (hostData) users;
-                  inherit lib';
+          modules =
+            (lib'.nixFilesInDir_f ./hosts/${hostname}/system)
+            ++ [
+              ./overlays
+            ]
+            ++ lib.optionals (!(hostData.noHm or false)) [
+              inputs.homeManager.nixosModules.home-manager
+              {
+                home-manager = {
+                  users = lib.mapAttrs' (hmUserConfigs_f hostname) hostData.users;
+                  extraSpecialArgs = {
+                    inherit (hostData) users;
+                    inherit lib';
+                  };
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  sharedModules = [ inputs.plasmaManager.homeModules.plasma-manager ];
                 };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                sharedModules = [ inputs.plasmaManager.homeModules.plasma-manager ];
-              };
-            }
-          ];
+              }
+            ];
         };
 
       darwinConfigs_f =
@@ -110,13 +110,14 @@
           };
           modules = [
             ./overlays
-          ] ++ lib'.filesInDir_f ./hosts/${hostname}/modules;
+          ]
+          ++ lib'.nixFilesInDir_f ./hosts/${hostname}/modules;
         };
 
       hostsData_f =
         isDarwin:
         lib.filterAttrs (_: hostData: (hostData.isDarwin or false) == isDarwin) (
-          lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (builtins.readDir ./hosts)
+          lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (lib'.filesInDir_f ./hosts)
         );
 
       hosts = hostsData_f false;
