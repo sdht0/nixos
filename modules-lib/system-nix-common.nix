@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     nix-output-monitor
     dix
+    nh
   ];
 
   # Use a purely flake-based system
