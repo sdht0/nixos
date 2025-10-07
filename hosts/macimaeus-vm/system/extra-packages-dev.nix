@@ -8,11 +8,9 @@
   environment.systemPackages = (
     with pkgs;
     [
-      vscode
-      jetbrains.pycharm-community-bin
-
-      claude-code
       code-cursor
+      claude-code
+      codex
 
       temurin-bin-21
       nodejs

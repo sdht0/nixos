@@ -21,7 +21,7 @@
 
     perf-tools
     bcc
-    bpftrace
+    # bpftrace
 
     nftables
     wget

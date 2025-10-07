@@ -9,7 +9,7 @@
     with pkgs;
     [
       rustup
-      jetbrains.rust-rover
+      # jetbrains.rust-rover
     ]
   );
 }

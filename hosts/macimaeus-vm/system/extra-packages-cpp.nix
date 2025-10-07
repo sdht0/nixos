@@ -15,7 +15,7 @@ in
   environment.systemPackages = (
     with pkgs;
     [
-      jetbrains.clion
+      # jetbrains.clion
 
       gnumake
       cmake
