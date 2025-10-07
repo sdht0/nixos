@@ -111,7 +111,7 @@
           modules = [
             ./overlays
           ]
-          ++ lib'.nixFilesInDir_f ./hosts/${hostname}/modules;
+          ++ lib'.nixFilesInDir_f ./hosts/${hostname}/system;
         };
 
       hostsData_f =
