@@ -16,6 +16,15 @@
 
   system.primaryUser = hostData.mainuser;
 
+  services.openssh.enable = true;
+  services.openssh.extraConfig = "
+  PasswordAuthentication no
+  PermitRootLogin no
+  ";
+  users.users.${hostData.users.mainuser.username}.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBKEvNaKu4pI+juLT91YpbON3ell6lQ8A+2rItGP2mUE artimaeus"
+  ];
+
   launchd.user.agents.selfwatcher = {
     command = "/Users/artimaeus/.config/dotfiles.safe/scripts/selfwatcher";
     serviceConfig = {
@@ -49,7 +58,7 @@
   };
 
   system = {
-    stateVersion = 5;
+    stateVersion = 6;
     configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
     defaults = {
