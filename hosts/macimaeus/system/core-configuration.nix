@@ -40,6 +40,7 @@
       hitoolbox.AppleFnUsageType = "Do Nothing";
       loginwindow.GuestEnabled = false;
       WindowManager.EnableTiledWindowMargins = false;
+      NSGlobalDomain.AppleShowScrollBars = "Always";
     };
   };
 }
