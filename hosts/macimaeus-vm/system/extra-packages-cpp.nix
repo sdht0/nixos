@@ -39,7 +39,7 @@ in
     ]
   );
 
-  programs.nix-ld.libraries = with pkgs; [
+  programs.nix-ld.libraries = [
     opensslStatic
   ];
 
