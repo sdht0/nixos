@@ -1,8 +1,4 @@
 {
-  lib,
-  config,
-  pkgs,
-  hostData,
   ...
 }:
 {

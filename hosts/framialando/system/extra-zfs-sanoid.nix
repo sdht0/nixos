@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   services.sanoid.enable = true;
   services.sanoid.interval = "hourly";
