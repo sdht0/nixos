@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   boot.kernelModules = [ "kvm-amd" ];
@@ -8,8 +8,8 @@
   hardware.amdgpu.initrd.enable = true;
 
   environment.systemPackages = with pkgs; [
-    libva-utils
     nvtopPackages.amd
     radeontop
   ];
+  imports = [ ./pkgs-graphics.nix ];
 }

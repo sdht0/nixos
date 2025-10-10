@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   boot.kernelModules = [ "kvm-intel" ];
@@ -10,6 +10,6 @@
   environment.systemPackages = with pkgs; [
     intel-gpu-tools
     nvtopPackages.intel
-    libva-utils
   ];
+  imports = [ ./pkgs-graphics.nix ];
 }

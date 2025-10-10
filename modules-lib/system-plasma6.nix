@@ -26,10 +26,6 @@
       libnotify
       xclip
       xdotool
-      libva-utils
-      vulkan-tools
-      vulkan-validation-layers
-      glxinfo
       qt6.qtimageformats
     ])
     ++ (with pkgs.kdePackages; [
@@ -38,5 +34,6 @@
       kgamma
       kconfig
     ]);
+  imports = [ ./pkgs-graphics.nix ];
   programs.kdeconnect.enable = true;
 }
