@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -12,8 +13,15 @@
     [
       firefox
 
+      obsidian
+      activitywatch
+
       ffmpeg
       vlc
+
+      foliate
+
+      inputs.nixOlde.packages.${system}.nix-olde
     ]
   );
 
