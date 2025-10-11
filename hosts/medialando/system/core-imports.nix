@@ -9,7 +9,7 @@
     ../../../modules-lib/hardware-firmware.nix
     ../../../modules-lib/hardware-nvidia-disable.nix
     ../../../modules-lib/hardware-ssd.nix
-    ../../../modules-lib/hardware-lid-ignore.nix
+    ../../../modules-lib/hardware-laptop-lid-ignore.nix
 
     ../../../modules-lib/system-basic-linux.nix
     ../../../modules-lib/system-initrd-systemd.nix

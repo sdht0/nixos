@@ -2,7 +2,6 @@
 {
   imports = [
     ../../../modules-lib/system-nix-linux.nix
-    ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/system-qemu.nix
     ../../../modules-lib/system-zfs.nix
@@ -20,6 +19,7 @@
     ../../../modules-lib/networking-tailscale.nix
 
     ../../../modules-lib/pkgs-common-linux.nix
+    ../../../modules-lib/pkgs-nix-ld.nix
     ../../../modules-lib/pkgs-podman.nix
     ../../../modules-lib/pkgs-syncthing.nix
     ../../../modules-lib/pkgs-sshagent.nix

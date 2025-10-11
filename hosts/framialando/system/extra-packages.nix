@@ -11,11 +11,13 @@
 
       obsidian
       activitywatch
+      libreoffice-qt6-fresh
 
       ffmpeg
       vlc
 
       foliate
+      mcomix
 
       inputs.nixOlde.packages.${system}.nix-olde
     ]

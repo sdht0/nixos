@@ -4,7 +4,6 @@
 {
   imports = [
     ../../../modules-lib/system-nix-linux.nix
-    ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/hardware-amd.nix
     ../../../modules-lib/hardware-amd-rocm.nix
@@ -14,6 +13,7 @@
     ../../../modules-lib/system-zfs.nix
     ../../../modules-lib/system-plasma6.nix
     ../../../modules-lib/system-audio.nix
+    ../../../modules-lib/system-bluetooth.nix
     ../../../modules-lib/system-basic-linux.nix
     ../../../modules-lib/system-initrd-systemd.nix
     ../../../modules-lib/system-oom.nix
@@ -27,12 +27,13 @@
     ../../../modules-lib/networking-tailscale.nix
 
     ../../../modules-lib/pkgs-common-linux.nix
+    ../../../modules-lib/pkgs-nix-ld.nix
     ../../../modules-lib/pkgs-fonts.nix
     ../../../modules-lib/pkgs-sshagent.nix
     ../../../modules-lib/pkgs-debuginfod.nix
-    ../../../modules-lib/pkgs-dev-nix.nix
     ../../../modules-lib/pkgs-podman.nix
-    ../../../modules-lib/pkgs-selfwatcher.nix
     ../../../modules-lib/pkgs-steam.nix
+    ../../../modules-lib/pkgs-dev-nix.nix
+    ../../../modules-lib/pkgs-selfwatcher.nix
   ];
 }

@@ -3,16 +3,18 @@
   ...
 }:
 {
-  imports = [
-    ../../../modules-lib/pkgs-dev-python.nix
-  ];
-
   environment.systemPackages = (
     with pkgs;
     [
       code-cursor
       claude-code
       codex
+
+      rustup
+      jetbrains.rust-rover
+
+      ruff
+      uv
 
       temurin-bin-21
       nodejs
