@@ -1,6 +1,4 @@
-{
-  ...
-}:
+{ ... }:
 {
   imports = [
     ../../../modules-lib/option-python.nix
@@ -9,7 +7,6 @@
     ../../../modules-lib/system-nix-ld.nix
 
     ../../../modules-lib/system-qemu.nix
-
     ../../../modules-lib/system-zfs.nix
     ../../../modules-lib/system-audio.nix
     ../../../modules-lib/system-basic-linux.nix
