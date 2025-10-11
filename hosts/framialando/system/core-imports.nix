@@ -32,7 +32,6 @@
     ../../../modules-lib/pkgs-sshagent.nix
     ../../../modules-lib/pkgs-debuginfod.nix
     ../../../modules-lib/pkgs-podman.nix
-    ../../../modules-lib/pkgs-steam.nix
     ../../../modules-lib/pkgs-dev-nix.nix
     ../../../modules-lib/pkgs-selfwatcher.nix
   ];
