@@ -1,8 +1,6 @@
 { ... }:
 {
   imports = [
-    ../../../modules-lib/option-python.nix
-
     ../../../modules-lib/system-nix-linux.nix
     ../../../modules-lib/system-nix-ld.nix
 
@@ -28,6 +26,7 @@
     ../../../modules-lib/pkgs-sshagent.nix
     ../../../modules-lib/pkgs-fonts.nix
     ../../../modules-lib/pkgs-dev-nix.nix
+    ../../../modules-lib/pkgs-selfwatcher.nix
     ../../../modules-lib/pkgs-debuginfod.nix
   ];
 }

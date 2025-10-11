@@ -53,7 +53,7 @@ in
     NUM_THREADS = "10";
   };
 
-  myPythonPkgs = [
+  my-python.imports = [
     "networkx"
     "pytest"
     "tabulate"

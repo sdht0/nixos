@@ -9,7 +9,7 @@ let
   home = "/home/${mainUser}";
 in
 {
-  myPythonPkgs = [
+  my-python.imports = [
     "pynput"
     "xlib"
   ];
@@ -19,7 +19,7 @@ in
     wantedBy = [ "display-manager.service" ];
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${config.myPythonSet}/bin/python ${home}/.config/dotfiles.safe/scripts/selfwatcher.py";
+      ExecStart = "${config.my-python.final}/bin/python ${home}/.config/dotfiles.safe/scripts/selfwatcher.py";
       User = mainUser;
       Restart = "always";
       RestartSec = 10;

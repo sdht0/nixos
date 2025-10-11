@@ -8,6 +8,8 @@
   programs.zsh.enable = true;
   environment.shells = with pkgs; [ zsh ];
 
+  my-python.enable = true;
+
   environment.systemPackages = with pkgs; [
     starship # prompt
 

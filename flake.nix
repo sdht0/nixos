@@ -76,11 +76,11 @@
             };
             inherit lib' inputs;
           };
-          modules =
-            (lib'.nixFilesInDir_f ./hosts/${hostname}/system)
-            ++ [
+          modules = [
               ./overlays
             ]
+            ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/system)
+            ++ (lib'.nixFilesInDir_f ./options)
             ++ lib.optionals (!(hostData.noHm or false)) [
               inputs.homeManager.nixosModules.home-manager
               {
@@ -111,7 +111,8 @@
           modules = [
             ./overlays
           ]
-          ++ lib'.nixFilesInDir_f ./hosts/${hostname}/system;
+          ++ lib'.nixFilesInDir_f ./hosts/${hostname}/system
+          ++ lib'.nixFilesInDir_f ./options;
         };
 
       hostsData_f =

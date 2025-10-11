@@ -3,8 +3,6 @@
 }:
 {
   imports = [
-    ../../../modules-lib/option-python.nix
-
     ../../../modules-lib/system-nix-linux.nix
 
     ../../../modules-lib/hardware-firmware.nix

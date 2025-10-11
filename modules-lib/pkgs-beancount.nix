@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  myPythonPkgs = [ "beancount" ];
+  my-python.imports = [ "beancount" ];
 
   environment.systemPackages = (with pkgs; [ fava ]);
 }

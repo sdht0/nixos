@@ -3,7 +3,7 @@
   ...
 }:
 {
-  myPythonPkgs = [
+  my-python.imports = [
     "beautifulsoup4"
     "dateutil"
     "lxml"
