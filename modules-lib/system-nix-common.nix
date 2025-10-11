@@ -1,8 +1,4 @@
-{
-  pkgs,
-  hostData,
-  ...
-}:
+{ pkgs, hostData, ... }:
 {
   nix.package = pkgs.nixVersions.latest;
   environment.systemPackages = with pkgs; [

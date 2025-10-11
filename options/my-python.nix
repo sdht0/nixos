@@ -21,7 +21,9 @@
   };
 
   config = lib.mkIf config.my-python.enable {
-    my-python.final = config.my-python.package.withPackages (ps: lib.attrsets.attrVals config.my-python.imports ps);
+    my-python.final = config.my-python.package.withPackages (
+      ps: lib.attrsets.attrVals config.my-python.imports ps
+    );
     environment.systemPackages = [
       config.my-python.final
     ];

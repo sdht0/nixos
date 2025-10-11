@@ -1,10 +1,4 @@
-{
-  lib,
-  config,
-  pkgs,
-  hostData,
-  ...
-}:
+{ hostData, ... }:
 {
   networking.hostName = hostData.hostname;
   time.timeZone = hostData.timezone;

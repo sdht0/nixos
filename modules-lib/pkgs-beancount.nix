@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   my-python.imports = [ "beancount" ];
 

@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  hostData,
-  ...
-}:
+{ pkgs, hostData, ... }:
 let
   inherit (hostData.users.mainuser) username;
   configDir = "/home/${username}/.config/dotfiles.safe/syncthing";

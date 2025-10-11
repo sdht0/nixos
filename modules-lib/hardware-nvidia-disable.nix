@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ config, ... }:
 {
   boot.kernelModules = [ "bbswitch" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ bbswitch ];

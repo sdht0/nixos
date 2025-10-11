@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  hostData,
-  ...
-}:
+{ hostData, ... }:
 {
   services.displayManager.autoLogin = {
     enable = true;

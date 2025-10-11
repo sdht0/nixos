@@ -1,7 +1,4 @@
-{
-  hostData,
-  ...
-}:
+{ hostData, ... }:
 {
   imports = [
     ./system-nix-common.nix

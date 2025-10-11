@@ -1,10 +1,4 @@
-{
-  lib,
-  config,
-  pkgs,
-  hostData,
-  ...
-}:
+{ hostData, ... }:
 let
   hostname = hostData.hostname;
 in

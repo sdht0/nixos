@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  hostData,
-  ...
-}:
-
+{ pkgs, hostData, ... }:
 {
   services.printing.enable = true;
   services.saned.enable = true;

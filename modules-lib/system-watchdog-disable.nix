@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   boot.blacklistedKernelModules = [
     "iTCO_wdt"

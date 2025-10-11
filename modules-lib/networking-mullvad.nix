@@ -1,7 +1,6 @@
 {
   lib,
   lib',
-  config,
   pkgs,
   ...
 }:
