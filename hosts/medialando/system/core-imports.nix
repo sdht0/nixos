@@ -28,5 +28,6 @@
     ../../../modules-lib/pkgs-docker.nix
     ../../../modules-lib/pkgs-syncthing.nix
     ../../../modules-lib/pkgs-graphics.nix
+    ../../../modules-lib/pkgs-beancount.nix
   ];
 }
