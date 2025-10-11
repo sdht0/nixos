@@ -11,4 +11,6 @@
     linux-firmware
     sof-firmware
   ];
+
+  services.fwupd.enable = true;
 }

@@ -11,5 +11,4 @@
     intel-gpu-tools
     nvtopPackages.intel
   ];
-  imports = [ ./pkgs-graphics.nix ];
 }

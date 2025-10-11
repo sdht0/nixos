@@ -3,6 +3,10 @@
   ...
 }:
 {
+  imports = [
+    ../../../modules-lib/pkgs-dev-python.nix
+  ];
+
   environment.systemPackages = (
     with pkgs;
     [

@@ -5,15 +5,13 @@
   imports = [
     ../../../modules-lib/system-nix-linux.nix
 
-    ../../../modules-lib/hardware-firmware.nix
-    ../../../modules-lib/hardware-fwupd.nix
     ../../../modules-lib/hardware-intel.nix
+    ../../../modules-lib/hardware-firmware.nix
     ../../../modules-lib/hardware-nvidia-disable.nix
     ../../../modules-lib/hardware-ssd.nix
     ../../../modules-lib/hardware-lid-ignore.nix
 
     ../../../modules-lib/system-basic-linux.nix
-    ../../../modules-lib/system-basic-linux-sysctl.nix
     ../../../modules-lib/system-initrd-systemd.nix
     ../../../modules-lib/system-oom.nix
     ../../../modules-lib/system-systemd-boot.nix
@@ -29,5 +27,6 @@
     ../../../modules-lib/pkgs-common-linux.nix
     ../../../modules-lib/pkgs-docker.nix
     ../../../modules-lib/pkgs-syncthing.nix
+    ../../../modules-lib/pkgs-graphics.nix
   ];
 }

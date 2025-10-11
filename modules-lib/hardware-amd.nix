@@ -11,5 +11,4 @@
     nvtopPackages.amd
     radeontop
   ];
-  imports = [ ./pkgs-graphics.nix ];
 }
