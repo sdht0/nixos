@@ -14,7 +14,7 @@
     starship # prompt
 
     gitFull
-    gitui # git tui
+    # gitui # git tui
 
     vim
     eza # ls
