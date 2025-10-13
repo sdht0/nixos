@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   lib',
   ...
 }:
@@ -37,7 +36,6 @@ in
       ++ (map lib'.autostartApplication_f [
         "org.kde.yakuake.desktop"
         "aw-qt.desktop"
-        "mullvad-vpn.desktop"
       ])
     )
   );

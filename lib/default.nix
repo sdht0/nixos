@@ -38,4 +38,6 @@ rec {
     lib.attrsets.mapAttrsToList (name: _: dir + "/${name}") (
       lib.filterAttrs (n: _: lib.hasSuffix ".nix" n) (filesInDir_f dir)
     );
+
+  hostsInDir_f = dir: lib.filterAttrs (host: _: builtins.pathExists (dir + "/${host}/host-data.nix")) (lib.optionalAttrs (builtins.pathExists dir) (builtins.readDir dir));
 }

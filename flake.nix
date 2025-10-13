@@ -61,8 +61,9 @@
           {
             home.username = userData.username;
             imports =
-              (lib'.nixFilesInDir_f ./hosts/${hostname}/home/common)
-              ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/home/${userId});
+              (lib'.nixFilesInDir_f ./hosts/+common/home)
+              ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/home/common)
+              ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/home/${userData.username});
           }
         );
 
@@ -80,8 +81,9 @@
               ./overlays
             ]
             ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/system)
+            ++ (lib'.nixFilesInDir_f ./hosts/+common/nixos)
             ++ (lib'.nixFilesInDir_f ./options)
-            ++ (lib'.nixFilesInDir_f ./options/linux)
+            ++ (lib'.nixFilesInDir_f ./options/nixos)
             ++ lib.optionals (!(hostData.noHm or false)) [
               inputs.homeManager.nixosModules.home-manager
               {
@@ -113,6 +115,7 @@
             ./overlays
           ]
           ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/system)
+          ++ (lib'.nixFilesInDir_f ./hosts/+common/darwin)
           ++ (lib'.nixFilesInDir_f ./options)
           ++ (lib'.nixFilesInDir_f ./options/darwin);
         };
@@ -120,7 +123,7 @@
       hostsData_f =
         isDarwin:
         lib.filterAttrs (_: hostData: (hostData.isDarwin or false) == isDarwin) (
-          lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (lib'.filesInDir_f ./hosts)
+          lib.mapAttrs (hostname: _: import ./hosts/${hostname}/host-data.nix) (lib'.hostsInDir_f ./hosts)
         );
 
       hosts = hostsData_f false;

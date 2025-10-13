@@ -17,6 +17,7 @@
       cmake
       ninja
       gcc
+      clang-tools
 
       valgrind
       gdb
