@@ -10,6 +10,16 @@
       claude-code
       codex
 
+      gnumake
+      cmake
+      ninja
+      gcc
+      clang-tools
+
+      perf
+      valgrind
+      gdb
+
       rustup
       jetbrains.rust-rover
 
