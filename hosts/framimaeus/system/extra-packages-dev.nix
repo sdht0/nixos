@@ -28,6 +28,8 @@
 
       temurin-bin-21
       nodejs
+
+      protobuf
     ]
   );
 }
