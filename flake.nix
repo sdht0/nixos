@@ -81,6 +81,7 @@
             ]
             ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/system)
             ++ (lib'.nixFilesInDir_f ./options)
+            ++ (lib'.nixFilesInDir_f ./options/linux)
             ++ lib.optionals (!(hostData.noHm or false)) [
               inputs.homeManager.nixosModules.home-manager
               {
@@ -111,8 +112,9 @@
           modules = [
             ./overlays
           ]
-          ++ lib'.nixFilesInDir_f ./hosts/${hostname}/system
-          ++ lib'.nixFilesInDir_f ./options;
+          ++ (lib'.nixFilesInDir_f ./hosts/${hostname}/system)
+          ++ (lib'.nixFilesInDir_f ./options)
+          ++ (lib'.nixFilesInDir_f ./options/darwin);
         };
 
       hostsData_f =
