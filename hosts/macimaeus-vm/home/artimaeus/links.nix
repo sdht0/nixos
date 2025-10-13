@@ -3,6 +3,6 @@
 }:
 {
   imports = [
-    ../../../framimaeus/home/mainuser/links.nix
+    ../../../framimaeus/home/artimaeus/links.nix
   ];
 }
