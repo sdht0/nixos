@@ -13,6 +13,14 @@
       rustup
       jetbrains.rust-rover
 
+      gnumake
+      cmake
+      ninja
+      gcc
+
+      valgrind
+      gdb
+
       ruff
       uv
 

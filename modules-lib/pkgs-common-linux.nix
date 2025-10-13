@@ -14,6 +14,7 @@
     killall
     checksec
 
+    perf
     perf-tools
     bcc
     # bpftrace
