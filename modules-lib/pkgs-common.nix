@@ -6,19 +6,22 @@
   my-python.enable = true;
 
   environment.systemPackages = with pkgs; [
+    tmux
+    fzf # fuzzy search
+    mcfly # shell history
+    mcfly-fzf
+    peco # interactive filtering
     starship # prompt
 
     gitFull
-    # gitui # git tui
+    gitui # git tui
 
     vim
-    tmux
-    ripgrep # grep
-    fzf # fuzzy search
     eza # ls
+    ripgrep # grep
+    zoxide # cd
     jaq # jq
     bc # calculator
-    peco # interactive filtering
     difftastic # semantic diffs
     bat # cat
     dua # du
@@ -43,5 +46,6 @@
 
     gping # ping
     doggo # dig
+    mtr # traceroute
   ];
 }
