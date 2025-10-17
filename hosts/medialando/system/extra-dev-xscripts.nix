@@ -7,6 +7,7 @@
     "beautifulsoup4"
     "dateutil"
     "lxml"
+    "requests"
   ];
 
   environment.systemPackages = (
