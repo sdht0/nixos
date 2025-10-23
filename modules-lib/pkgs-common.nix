@@ -8,8 +8,6 @@
   environment.systemPackages = with pkgs; [
     tmux
     fzf # fuzzy search
-    mcfly # shell history
-    mcfly-fzf
     peco # interactive filtering
     starship # prompt
 
