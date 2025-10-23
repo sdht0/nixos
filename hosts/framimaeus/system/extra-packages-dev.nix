@@ -13,6 +13,7 @@
       rustup
       jetbrains.rust-rover
 
+      jetbrains.clion
       gnumake
       cmake
       ninja
