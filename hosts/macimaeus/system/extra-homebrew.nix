@@ -14,7 +14,6 @@
     casks = [
       "utm"
       "iterm2"
-      "zoom"
       "firefox"
       "tor-browser"
       "font-jetbrains-mono-nerd-font"
