@@ -34,5 +34,6 @@
     ../../../modules-lib/pkgs-podman.nix
     ../../../modules-lib/pkgs-dev-nix.nix
     ../../../modules-lib/pkgs-selfwatcher.nix
+    ../../../modules-lib/pkgs-ollama.nix
   ];
 }
