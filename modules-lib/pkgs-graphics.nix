@@ -4,6 +4,6 @@
     libva-utils
     vulkan-tools
     vulkan-validation-layers
-    glxinfo
+    mesa-demos
   ];
 }
