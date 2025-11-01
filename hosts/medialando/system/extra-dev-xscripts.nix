@@ -5,7 +5,7 @@
 {
   my-python.imports = [
     "beautifulsoup4"
-    "dateutil"
+    "python-dateutil"
     "lxml"
     "requests"
   ];
