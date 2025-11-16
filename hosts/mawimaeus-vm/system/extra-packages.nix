@@ -17,7 +17,7 @@
       vlc
 
       foliate
-      mcomix
+      # mcomix
 
       code-cursor
     ]
