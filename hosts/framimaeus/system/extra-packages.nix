@@ -17,7 +17,7 @@
       vlc
 
       foliate
-      mcomix
+      # mcomix
 
       inputs.nixOlde.packages.${system}.nix-olde
     ]
