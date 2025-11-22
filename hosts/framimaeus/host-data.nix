@@ -14,4 +14,6 @@ rec {
   disk2 = "/dev/nvme1n1";
   secretsDir = "/var/lib/secrets";
   zfsKeyFile = "${secretsDir}/zroot.key";
+  cloudflareKeyFile = "${secretsDir}/cloudflare.key";
+  tailscaleIp = "100.112.134.54";
 }
