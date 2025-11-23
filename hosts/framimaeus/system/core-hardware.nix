@@ -1,5 +1,6 @@
 {
   hostData,
+  pkgs,
   ...
 }:
 {
@@ -13,6 +14,8 @@
   ];
   boot.initrd.kernelModules = [ ];
   boot.extraModulePackages = [ ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
 

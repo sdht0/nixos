@@ -1,5 +1,6 @@
 {
   hostData,
+  pkgs,
   ...
 }:
 {
@@ -11,6 +12,8 @@
     "usb_storage"
     "sr_mod"
   ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
 
