@@ -20,6 +20,7 @@
       # mcomix
 
       code-cursor
+      antigravity
     ]
   );
 

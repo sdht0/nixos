@@ -24,7 +24,6 @@
     ../../../modules-lib/networking-tailscale.nix
 
     ../../../modules-lib/pkgs-common-linux.nix
-    ../../../modules-lib/pkgs-syncthing.nix
     ../../../modules-lib/pkgs-docker.nix
     ../../../modules-lib/pkgs-ollama.nix
     ../../../modules-lib/pkgs-graphics.nix
