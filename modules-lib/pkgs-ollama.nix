@@ -1,5 +1,5 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services.ollama.enable = true;
-  services.ollama.acceleration = "rocm";
+  services.ollama.package = pkgs.ollama-rocm;
 }
