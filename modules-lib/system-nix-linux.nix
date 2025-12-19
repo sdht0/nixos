@@ -7,8 +7,6 @@
 
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp/nix-daemon";
 
-  system.rebuild.enableNg = true;
-
   nix.gc.automatic = true;
   nix.gc.dates = "daily";
   nix.gc.options = "--delete-older-than 15d";
