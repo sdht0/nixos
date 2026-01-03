@@ -10,7 +10,7 @@
       firefox
 
       obsidian
-      activitywatch
+      # activitywatch
       libreoffice-qt6-fresh
 
       ffmpeg
