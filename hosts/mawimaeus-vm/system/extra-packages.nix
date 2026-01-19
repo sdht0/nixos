@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  hostData,
   ...
 }:
 {
@@ -10,17 +11,20 @@
       firefox
 
       obsidian
-      # activitywatch
+      activitywatch
       libreoffice-qt6-fresh
 
       ffmpeg
       vlc
 
       foliate
-      # mcomix
+      mcomix
 
       code-cursor
-      antigravity
+
+      rustup
+
+      inputs.nixOlde.packages.${hostData.system}.nix-olde
     ]
   );
 

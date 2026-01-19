@@ -14,18 +14,10 @@
     ];
     plugins = lib.mkForce [ ]; # Disable default plugins
   };
-  systemd.services.NetworkManager-wait-online = {
-    serviceConfig = {
-      ExecStart = [
-        ""
-        "${pkgs.networkmanager}/bin/nm-online -q"
-      ];
-    };
-  };
   networking.firewall.enable = false;
   services.resolved = {
     enable = true;
-    fallbackDns = [
+    settings.Resolve.FallbackDNS = [
       "1.1.1.1"
       "8.8.8.8"
     ];
