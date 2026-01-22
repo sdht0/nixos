@@ -13,7 +13,6 @@
     ../../../modules-lib/system-systemd-boot.nix
     ../../../modules-lib/system-users.nix
     ../../../modules-lib/system-users-autologin.nix
-    ../../../modules-lib/system-watchdog-disable.nix
 
     ../../../modules-lib/networking-networkmanager.nix
     ../../../modules-lib/networking-tailscale.nix

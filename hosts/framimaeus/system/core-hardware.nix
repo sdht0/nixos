@@ -13,14 +13,12 @@
     "sd_mod"
   ];
   boot.kernelParams = [
-    # 1. Disable IOMMU translation for performance/stability with large memory maps
+    # Disable IOMMU translation for performance/stability with large memory maps
     "iommu=pt"
-    
-    # 2. amdgpu settings (values are in MB)
-    "amdgpu.gttsize=100000"
-    
-    # 3. TTM settings (values are number of pages)
-    # 31457280 pages * 4KB/page = ~120GB
+
+    # TTM settings
+    # 26214400 pages * 4KB/page = ~100GB
+    # 15728640 pages * 4KB/page = ~60GB
     "ttm.pages_limit=26214400"
     "ttm.page_pool_size=15728640"
   ];
