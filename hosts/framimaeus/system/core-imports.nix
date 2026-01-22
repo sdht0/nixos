@@ -16,6 +16,7 @@
     ../../../modules-lib/system-users.nix
     ../../../modules-lib/system-zfs.nix
     ../../../modules-lib/system-oom.nix
+    ../../../modules-lib/system-watchdog-enable.nix
 
     ../../../modules-lib/networking-networkmanager.nix
     ../../../modules-lib/networking-mullvad.nix
