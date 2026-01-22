@@ -8,6 +8,6 @@
 
   environment.systemPackages = with pkgs; [
     nvtopPackages.amd
-    radeontop
+    amdgpu_top
   ];
 }
