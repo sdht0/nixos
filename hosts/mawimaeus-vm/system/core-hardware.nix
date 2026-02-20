@@ -18,6 +18,8 @@
 
   boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
 
+  services.fwupd.enable = false;
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-partlabel/BOOT";
     fsType = "vfat";
