@@ -12,7 +12,6 @@
       "1.1.1.1"
       "8.8.8.8"
     ];
-    plugins = lib.mkForce [ pkgs.networkmanager-openvpn ]; # Disable default plugins
   };
   networking.firewall.enable = false;
   services.resolved = {
