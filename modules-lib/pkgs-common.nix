@@ -39,7 +39,7 @@
 
     htop
     bottom # top
-    glances # top
+    #glances # top
     procs # ps
 
     gping # ping
