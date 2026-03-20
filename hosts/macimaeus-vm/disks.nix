@@ -4,9 +4,9 @@ in
 {
   disko.devices = {
     disk = {
-      zfsdisk = {
+      disk1 = {
         type = "disk";
-        device = config.disk;
+        device = config.disk1;
         content = {
           type = "gpt";
           partitions = {
@@ -34,10 +34,41 @@ in
           };
         };
       };
+      disk2 = {
+        type = "disk";
+        device = config.disk2;
+        content = {
+          type = "gpt";
+          partitions = {
+            BOOT = {
+              size = "1G";
+              type = "EF00";
+              label = "BOOT";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
+                extraArgs = ["-n" "BOOT"];
+              };
+            };
+            ZFS = {
+              size = "100%";
+              type = "8300";
+              label = "ZFSMIRROR";
+              content = {
+                type = "zfs";
+                pool = "zroot";
+              };
+            };
+          };
+        };
+      };
     };
     zpool = {
       zroot = {
         type = "zpool";
+        mode = "mirror";
         rootFsOptions = {
           mountpoint = "none";
           canmount = "off";
