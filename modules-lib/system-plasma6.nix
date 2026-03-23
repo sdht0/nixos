@@ -6,19 +6,10 @@
   };
   services.desktopManager.plasma6.enable = true;
   services.desktopManager.plasma6.enableQt5Integration = false;
-  services.displayManager = {
-    defaultSession = "plasmax11";
-    sddm = {
-      enable = true;
-      settings = {
-        General = {
-          DisplayServer = "x11-user"; # Rootless xorg
-        };
-      };
-    };
-  };
+  services.displayManager.plasma-login-manager.enable = true;
 
   services.colord.enable = true;
+  services.orca.enable = false;
 
   environment.systemPackages =
     (with pkgs; [

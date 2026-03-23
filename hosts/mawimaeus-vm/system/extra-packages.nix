@@ -9,9 +9,9 @@
     with pkgs;
     [
       firefox
+      chromium
 
       obsidian
-      activitywatch
       libreoffice-qt6-fresh
 
       ffmpeg
