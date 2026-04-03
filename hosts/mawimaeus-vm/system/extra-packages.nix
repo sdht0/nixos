@@ -23,6 +23,7 @@
       code-cursor
 
       rustup
+      gcc
 
       inputs.nixOlde.packages.${hostData.system}.nix-olde
     ]
