@@ -1,18 +1,13 @@
 { pkgs, ... }:
 {
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "modesetting" ];
-  };
   services.desktopManager.plasma6.enable = true;
   services.desktopManager.plasma6.enableQt5Integration = false;
   services.displayManager.plasma-login-manager.enable = true;
 
   environment.systemPackages =
     (with pkgs; [
+      wl-clipboard-rs
       libnotify
-      xclip
-      xdotool
       qt6.qtimageformats
     ])
     ++ (with pkgs.kdePackages; [
@@ -21,7 +16,10 @@
       kgamma
       kconfig
     ]);
-  imports = [ ./pkgs-graphics.nix ];
+  imports = [
+    ./pkgs-graphics.nix
+    ./pkgs-sshagent.nix
+  ];
   environment.plasma6.excludePackages = [
     pkgs.kdePackages.kwin-x11
     pkgs.kdePackages.discover

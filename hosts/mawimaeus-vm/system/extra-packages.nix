@@ -20,7 +20,7 @@
       foliate
       mcomix
 
-      code-cursor
+      vscode
 
       rustup
       gcc

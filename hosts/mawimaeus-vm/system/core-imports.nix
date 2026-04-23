@@ -18,7 +18,6 @@
 
     ../../../modules-lib/pkgs-common-linux.nix
     ../../../modules-lib/pkgs-podman.nix
-    ../../../modules-lib/pkgs-sshagent.nix
     ../../../modules-lib/pkgs-fonts.nix
     ../../../modules-lib/pkgs-dev-nix.nix
     ../../../modules-lib/pkgs-debuginfod.nix
