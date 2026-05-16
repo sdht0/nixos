@@ -13,7 +13,7 @@
     "sr_mod"
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_18;
+  boot.kernelPackages = pkgs.linuxPackages_7_0;
   boot.zfs.package = pkgs.zfs_2_4;
 
   boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
