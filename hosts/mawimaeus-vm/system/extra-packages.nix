@@ -21,6 +21,7 @@
       mcomix
 
       vscode
+      antigravity-cli
 
       rustup
       gcc
