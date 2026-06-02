@@ -14,4 +14,5 @@ rec {
   secretsDir = "/var/lib/secrets";
   zfsKeyFile = "${secretsDir}/zroot.key";
   cloudflareKeyFile = "${secretsDir}/cloudflare.key";
+  tailscaleIp = "100.113.188.30";
 }
