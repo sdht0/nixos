@@ -40,19 +40,19 @@ in
         content = {
           type = "gpt";
           partitions = {
-            BOOT = {
+            BOOTMIRROR = {
               size = "1G";
               type = "EF00";
-              label = "BOOT";
+              label = "BOOTMIRROR";
               content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
                 mountOptions = [ "umask=0077" ];
-                extraArgs = ["-n" "BOOT"];
+                extraArgs = ["-n" "BOOTMIRROR"];
               };
             };
-            ZFS = {
+            ZFSMIRROR = {
               size = "100%";
               type = "8300";
               label = "ZFSMIRROR";
