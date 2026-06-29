@@ -28,7 +28,7 @@
       # Use the direct path to the binaries to avoid PATH issues in systemd
       ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste --type text/plain --watch ${pkgs.xclip}/bin/xclip -selection clipboard";
       Restart = "on-failure";
-      RestartSec = "2";
+      RestartSec = "30";
     };
   };
 }
