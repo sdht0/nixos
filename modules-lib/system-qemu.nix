@@ -26,7 +26,7 @@
 
     serviceConfig = {
       # Use the direct path to the binaries to avoid PATH issues in systemd
-      ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste --type text/plain --watch ${pkgs.xclip}/bin/xclip -selection clipboard";
+      ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste -n --type text/plain --watch ${pkgs.xsel}/bin/xsel -b -i";
       Restart = "on-failure";
       RestartSec = "30";
     };
