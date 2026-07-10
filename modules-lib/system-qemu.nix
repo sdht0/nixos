@@ -25,8 +25,7 @@
     after = [ "graphical-session.target" ];
 
     serviceConfig = {
-      # Use the direct path to the binaries to avoid PATH issues in systemd
-      ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste -n --type text/plain --watch ${pkgs.xsel}/bin/xsel -b -i";
+      ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste -n --type text/plain --watch ${pkgs.bash}/bin/bash -c 'w=$(${pkgs.wl-clipboard}/bin/wl-paste -n 2>/dev/null); x=$(${pkgs.xsel}/bin/xsel -b -o 2>/dev/null); [ -n \"$w\" ] && [ \"$w\" != \"$x\" ] && sleep 0.1 && echo -n \"$w\" | ${pkgs.xsel}/bin/xsel -b -i'";
       Restart = "on-failure";
       RestartSec = "30";
     };
