@@ -1,6 +1,0 @@
-# Setup
-
-```
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ./hosts/hostname/disks.nix
-sudo nixos-install --flake '.#hostname'
-```
