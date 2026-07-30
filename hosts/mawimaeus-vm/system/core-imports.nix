@@ -4,7 +4,6 @@
     ../../../modules-lib/system-nix-linux.nix
 
     ../../../modules-lib/system-qemu.nix
-    ../../../modules-lib/system-zfs.nix
     ../../../modules-lib/system-audio.nix
     ../../../modules-lib/system-basic-linux.nix
     ../../../modules-lib/system-initrd-systemd.nix

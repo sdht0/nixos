@@ -14,30 +14,20 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_6_18;
-  boot.zfs.package = pkgs.zfs_2_4;
-
-  boot.initrd.secrets."${hostData.zfsKeyFile}" = hostData.zfsKeyFile;
 
   services.fwupd.enable = false;
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-partlabel/BOOT";
-    fsType = "vfat";
-    options = [
-      "fmask=0177"
-      "dmask=0077"
-    ];
-  };
-  fileSystems."/" = {
-    device = "zroot/nixos";
-    fsType = "zfs";
-    options = [ "zfsutil" ];
-  };
-  fileSystems."/home" = {
-    device = "zroot/home";
-    fsType = "zfs";
-    options = [ "zfsutil" ];
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/ecca5e94-c285-46c6-a4d3-f81dca0f0fd1";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/5CB0-FF40";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
   swapDevices = [ ];
 
   system.stateVersion = "25.05";

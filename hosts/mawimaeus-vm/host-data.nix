@@ -12,6 +12,4 @@ rec {
   };
   disk1 = "/dev/vda";
   disk2 = "/dev/vdb";
-  zfsKeyDir = "/var/lib/secrets";
-  zfsKeyFile = "${zfsKeyDir}/zroot.key";
 }
