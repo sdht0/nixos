@@ -12,17 +12,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasmaManager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "homeManager";
-    };
+    #plasmaManager = {
+    #  url = "github:nix-community/plasma-manager";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #  inputs.home-manager.follows = "homeManager";
+    #};
 
-    nixOlde = {
-      url = "github:trofi/nix-olde";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.utils.follows = "utils";
-    };
+    #nixOlde = {
+    #  url = "github:trofi/nix-olde";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #  inputs.utils.follows = "utils";
+    #};
 
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
@@ -95,7 +95,7 @@
                   };
                   useGlobalPkgs = true;
                   useUserPackages = true;
-                  sharedModules = [ inputs.plasmaManager.homeModules.plasma-manager ];
+                  #sharedModules = [ inputs.plasmaManager.homeModules.plasma-manager ];
                 };
               }
             ];
