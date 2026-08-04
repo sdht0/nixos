@@ -25,7 +25,6 @@
 
     ../../../modules-lib/pkgs-common-linux.nix
     ../../../modules-lib/pkgs-docker.nix
-    ../../../modules-lib/pkgs-ollama.nix
     ../../../modules-lib/pkgs-graphics.nix
     ../../../modules-lib/pkgs-beancount.nix
   ];
