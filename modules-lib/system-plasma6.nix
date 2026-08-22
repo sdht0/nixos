@@ -9,6 +9,8 @@
       wl-clipboard-rs
       libnotify
       qt6.qtimageformats
+      xsel
+      wl-clipboard
     ])
     ++ (with pkgs.kdePackages; [
       yakuake
