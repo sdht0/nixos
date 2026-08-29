@@ -12,7 +12,7 @@
       chromium
 
       obsidian
-      libreoffice-qt6-fresh
+      libreoffice-qt-stable
 
       ffmpeg
       vlc
