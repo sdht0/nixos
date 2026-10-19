@@ -15,7 +15,6 @@
     ++ (with pkgs.kdePackages; [
       yakuake
       plasma-disks
-      kgamma
       kconfig
     ]);
   imports = [
@@ -23,7 +22,6 @@
     ./pkgs-sshagent.nix
   ];
   environment.plasma6.excludePackages = [
-    pkgs.kdePackages.kwin-x11
     pkgs.kdePackages.discover
   ];
 

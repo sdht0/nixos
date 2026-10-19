@@ -22,6 +22,8 @@
 
       vscode
       antigravity-cli
+      antigravity-ide
+      antigravity-hub
 
       rustup
       gcc
