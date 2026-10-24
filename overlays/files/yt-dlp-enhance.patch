@@ -1,8 +1,16 @@
 diff --git a/yt_dlp/YoutubeDL.py b/yt_dlp/YoutubeDL.py
-index 9691a1ea7..f1b2333a9 100644
+index 051d1b0fb..a1e012fa8 100644
 --- a/yt_dlp/YoutubeDL.py
 +++ b/yt_dlp/YoutubeDL.py
-@@ -821,7 +821,7 @@ def preload_download_archive(fn):
+@@ -59,6 +59,7 @@
+ from .plugins import directories as plugin_directories, load_all_plugins
+ from .postprocessor import (
+     EmbedThumbnailPP,
++    FFmpegExtractAudioPP,
+     FFmpegFixupDuplicateMoovPP,
+     FFmpegFixupDurationPP,
+     FFmpegFixupM3u8PP,
+@@ -852,7 +853,7 @@ def preload_download_archive(fn):
              try:
                  with locked_file(fn, 'r', encoding='utf-8') as archive_file:
                      for line in archive_file:
@@ -11,7 +19,7 @@ index 9691a1ea7..f1b2333a9 100644
              except OSError as ioe:
                  if ioe.errno != errno.ENOENT:
                      raise
-@@ -1556,8 +1556,8 @@ def check_filter():
+@@ -1661,8 +1662,8 @@ def check_filter():
              else:
                  break_opt, break_err = 'break_on_reject', RejectedVideoReached
          if reason is not None:
@@ -22,7 +30,7 @@ index 9691a1ea7..f1b2333a9 100644
              if self.params.get(break_opt, False):
                  raise break_err()
          return reason
-@@ -2028,6 +2028,7 @@ def __process_playlist(self, ie_result, download):
+@@ -2139,6 +2140,7 @@ def __process_playlist(self, ie_result, download):
              self.write_debug('The information of all playlist entries will be held in memory')
  
          failures = 0
@@ -30,7 +38,7 @@ index 9691a1ea7..f1b2333a9 100644
          max_failures = self.params.get('skip_playlist_after_errors') or float('inf')
          for i, (playlist_index, entry) in enumerate(entries):
              if lazy:
-@@ -2046,7 +2047,19 @@ def __process_playlist(self, ie_result, download):
+@@ -2157,7 +2159,19 @@ def __process_playlist(self, ie_result, download):
                  'playlist_autonumber': i + 1,
              })
  
@@ -51,7 +59,7 @@ index 9691a1ea7..f1b2333a9 100644
                  # For compatabilty with youtube-dl. See https://github.com/yt-dlp/yt-dlp/issues/4369
                  resolved_entries[i] = (playlist_index, NO_DEFAULT)
                  continue
-@@ -2082,6 +2095,10 @@ def __process_playlist(self, ie_result, download):
+@@ -2193,6 +2207,10 @@ def __process_playlist(self, ie_result, download):
              return
  
          ie_result = self.run_all_pps('playlist', ie_result)
@@ -62,7 +70,18 @@ index 9691a1ea7..f1b2333a9 100644
          self.to_screen(f'[download] Finished downloading playlist: {title}')
          return ie_result
  
-@@ -3068,7 +3085,6 @@ def process_subtitles(self, video_id, normal_subtitles, automatic_captions):
+@@ -3165,7 +3183,9 @@ def process_subtitles(self, video_id, normal_subtitles, automatic_captions):
+         if automatic_captions and self.params.get('writeautomaticsub'):
+             for lang, cap_info in automatic_captions.items():
+                 if lang not in available_subs:
+-                    available_subs[lang] = cap_info
++                    untranslated = [fmt for fmt in cap_info if 'tlang=' not in (fmt.get('url') or '')]
++                    if untranslated:
++                        available_subs[lang] = untranslated
+ 
+         if not available_subs or (
+                 not self.params.get('writesubtitles')
+@@ -3187,7 +3207,6 @@ def process_subtitles(self, video_id, normal_subtitles, automatic_captions):
                  filter(lambda f: f.startswith('en'), normal_sub_langs),
                  ['en'] if 'en' in all_sub_langs else [],
                  filter(lambda f: f.startswith('en'), all_sub_langs),
@@ -70,16 +89,55 @@ index 9691a1ea7..f1b2333a9 100644
              ))[:1]
          if requested_langs:
              self.to_screen(f'[info] {video_id}: Downloading subtitles: {", ".join(requested_langs)}')
-@@ -3094,6 +3110,8 @@ def process_subtitles(self, video_id, normal_subtitles, automatic_captions):
+@@ -3213,6 +3232,8 @@ def process_subtitles(self, video_id, normal_subtitles, automatic_captions):
                  self.report_warning(
                      'No subtitle format found matching "{}" for language {}, '
                      'using {}. Use --list-subs for a list of available subtitles'.format(formats_query, lang, f['ext']))
 +            if lang not in normal_sub_langs:
-+                f['ext'] = "auto." + f['ext']
++                f = {**f, 'ext': 'auto.' + f['ext']}
              subs[lang] = f
          return subs
  
-@@ -3783,7 +3801,7 @@ def record_download_archive(self, info_dict):
+@@ -3463,7 +3484,8 @@ def _write_link_file(link_type):
+             info_dict['__finaldir'] = os.path.dirname(os.path.abspath(full_filename))
+             info_dict['__files_to_move'] = files_to_move
+             replace_info_dict(self.run_pp(MoveFilesAfterDownloadPP(self, False), info_dict))
+-            info_dict['__write_download_archive'] = self.params.get('force_write_download_archive')
++            info_dict['__write_download_archive'] = bool(
++                self.params.get('force_write_download_archive') and not info_dict.get('__subtitle_error'))
+         else:
+             # Download
+             info_dict.setdefault('__postprocessors', [])
+@@ -3471,8 +3493,13 @@ def _write_link_file(link_type):
+ 
+                 def existing_video_file(*filepaths):
+                     ext = info_dict.get('ext')
+-                    converted = lambda file: replace_extension(file, self.params.get('final_ext') or ext, ext)
+-                    file = self.existing_file(itertools.chain(*zip(map(converted, filepaths), filepaths, strict=True)),
++                    final_ext = self.params.get('final_ext')
++                    exts = [final_ext] if final_ext else (
++                        MEDIA_EXTENSIONS.common_audio
++                        if any(isinstance(pp, FFmpegExtractAudioPP) for pp in self._pps['post_process'])
++                        else [ext])
++                    converted = [replace_extension(f, e, ext) for e in exts for f in filepaths]
++                    file = self.existing_file(itertools.chain(converted, filepaths),
+                                               default_overwrite=False)
+                     if file:
+                         info_dict['ext'] = os.path.splitext(file)[1][1:]
+@@ -3673,10 +3700,10 @@ def ffmpeg_fixup(cndn, msg, cls):
+                 except Exception as err:
+                     self.report_error(f'post hooks: {err}')
+                     return
+-                info_dict['__write_download_archive'] = True
++                info_dict['__write_download_archive'] = not info_dict.get('__subtitle_error')
+ 
+         assert info_dict is original_infodict  # Make sure the info_dict was modified in-place
+-        if self.params.get('force_write_download_archive'):
++        if self.params.get('force_write_download_archive') and not info_dict.get('__subtitle_error'):
+             info_dict['__write_download_archive'] = True
+         check_max_downloads()
+ 
+@@ -3892,7 +3919,7 @@ def record_download_archive(self, info_dict):
          self.write_debug(f'Adding to archive: {vid_id}')
          if is_path_like(fn):
              with locked_file(fn, 'a', encoding='utf-8') as archive_file:
@@ -88,3 +146,78 @@ index 9691a1ea7..f1b2333a9 100644
          self.archive.add(vid_id)
  
      @staticmethod
+@@ -4484,22 +4511,23 @@ def _write_subtitles(self, info_dict, filename):
+                     ret.append((sub_filename, sub_filename_final))
+                     continue
+                 except OSError:
+-                    self.report_error(f'Cannot write video subtitles file {sub_filename}')
+-                    return None
++                    self.report_error(f'Cannot write video subtitles file {sub_filename}', is_error=False)
++                    info_dict['__subtitle_error'] = True
++                    continue
+ 
+             try:
+                 sub_copy = sub_info.copy()
+                 sub_copy.setdefault('http_headers', info_dict.get('http_headers'))
+-                self.dl(sub_filename, sub_copy, subtitle=True)
++                success, _ = self.dl(sub_filename, sub_copy, subtitle=True)
++                if not success:
++                    info_dict['__subtitle_error'] = True
++                    continue
+                 sub_info['filepath'] = sub_filename
+                 ret.append((sub_filename, sub_filename_final))
+             except (DownloadError, ExtractorError, OSError, ValueError, *network_exceptions) as err:
+                 msg = f'Unable to download video subtitles for {sub_lang!r}: {err}'
+-                if self.params.get('ignoreerrors') is not True:  # False or 'only_download'
+-                    if not self.params.get('ignoreerrors'):
+-                        self.report_error(msg)
+-                    raise DownloadError(msg)
+                 self.report_warning(msg)
++                info_dict['__subtitle_error'] = True
+         return ret
+ 
+     def _write_thumbnails(self, label, info_dict, filename, thumb_filename_base=None):
+diff --git a/yt_dlp/postprocessor/ffmpeg.py b/yt_dlp/postprocessor/ffmpeg.py
+index a25d40ff7..16e5718fd 100644
+--- a/yt_dlp/postprocessor/ffmpeg.py
++++ b/yt_dlp/postprocessor/ffmpeg.py
+@@ -478,8 +478,8 @@ def run(self, information):
+         orig_path = path = information['filepath']
+         target_format, _skip_msg = resolve_mapping(information['ext'], self.mapping)
+         if target_format == 'best' and information['ext'] in self.COMMON_AUDIO_EXTS:
+-            target_format, _skip_msg = None, 'the file is already in a common audio format'
+-        if not target_format:
++            _skip_msg = 'the file is already in a common audio format'
++        if not target_format or _skip_msg:
+             self.to_screen(f'Not converting audio {orig_path}; {_skip_msg}')
+             return [], information
+ 
+@@ -517,7 +517,9 @@ def run(self, information):
+         if (self._nopostoverwrites and os.path.exists(new_path)
+                 and os.path.exists(orig_path)):
+             self.to_screen(f'Post-process file {new_path} exists, skipping')
+-            return [], information
++            information['filepath'] = new_path
++            information['ext'] = extension
++            return [orig_path] if orig_path != new_path else [], information
+ 
+         self.to_screen(f'Destination: {new_path}')
+         self.run_ffmpeg(path, temp_path, acodec, more_opts)
+@@ -616,7 +618,7 @@ def run(self, info):
+             if not os.path.exists(sub_info.get('filepath', '')):
+                 self.report_warning(f'Skipping embedding {lang} subtitle because the file is missing')
+                 continue
+-            sub_ext = sub_info['ext']
++            sub_ext = sub_info['ext'].rpartition('.')[2]
+             if sub_ext == 'json':
+                 self.report_warning('JSON subtitles cannot be embedded')
+             elif ext != 'webm' or (ext == 'webm' and sub_ext == 'vtt'):
+@@ -958,7 +960,7 @@ def run(self, info):
+             if not os.path.exists(sub.get('filepath', '')):
+                 self.report_warning(f'Skipping embedding {lang} subtitle because the file is missing')
+                 continue
+-            ext = sub['ext']
++            ext = sub['ext'].rpartition('.')[2]
+             if ext == new_ext:
+                 self.to_screen(f'Subtitle file for {new_ext} is already in the requested format')
+                 continue
