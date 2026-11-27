@@ -25,7 +25,56 @@
     after = [ "graphical-session.target" ];
 
     serviceConfig = {
-      ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste -n --type text/plain --watch ${pkgs.bash}/bin/bash -c 'w=$(${pkgs.wl-clipboard}/bin/wl-paste -n 2>/dev/null); x=$(${pkgs.xsel}/bin/xsel -b -o 2>/dev/null); [ -n \"$w\" ] && [ \"$w\" != \"$x\" ] && sleep 0.1 && echo -n \"$w\" | ${pkgs.xsel}/bin/xsel -b -i'";
+      ExecStart =
+        let
+          bridgeScript = pkgs.writeShellScript "wayland-clipboard-bridge-sync" ''
+            set -u
+            wl_paste="${pkgs.wl-clipboard}/bin/wl-paste"
+            xclip="${pkgs.xclip}/bin/xclip"
+            grep="${pkgs.gnugrep}/bin/grep"
+            cmp="${pkgs.diffutils}/bin/cmp"
+
+            types=$("$wl_paste" -l 2>/dev/null) || exit 0
+            [ -n "$types" ] || exit 0
+
+            wl_type=""
+            x_target=""
+
+            for t in image/png image/jpeg image/bmp image/tiff; do
+              if printf '%s\n' "$types" | "$grep" -qxF "$t"; then
+                wl_type="$t"
+                x_target="$t"
+                break
+              fi
+            done
+
+            if [ -z "$wl_type" ]; then
+              for t in "text/plain;charset=utf-8" "text/plain;charset=UTF-8" "UTF8_STRING" "text/plain"; do
+                if printf '%s\n' "$types" | "$grep" -qxF "$t"; then
+                  wl_type="$t"
+                  x_target="UTF8_STRING"
+                  break
+                fi
+              done
+            fi
+
+            [ -n "$wl_type" ] || exit 0
+
+            tmp_wl=$(${pkgs.coreutils}/bin/mktemp)
+            tmp_x=$(${pkgs.coreutils}/bin/mktemp)
+            trap '${pkgs.coreutils}/bin/rm -f "$tmp_wl" "$tmp_x"' EXIT
+
+            "$wl_paste" -n --type "$wl_type" > "$tmp_wl" 2>/dev/null || exit 0
+            [ -s "$tmp_wl" ] || exit 0
+
+            "$xclip" -selection clipboard -t "$x_target" -o > "$tmp_x" 2>/dev/null || true
+            if ! "$cmp" -s "$tmp_wl" "$tmp_x"; then
+              ${pkgs.coreutils}/bin/sleep 0.1
+              "$xclip" -selection clipboard -t "$x_target" -i < "$tmp_wl" >/dev/null 2>&1
+            fi
+          '';
+        in
+        "${pkgs.wl-clipboard}/bin/wl-paste --watch ${bridgeScript}";
       Restart = "on-failure";
       RestartSec = "30";
     };
